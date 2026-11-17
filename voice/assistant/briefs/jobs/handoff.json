@@ -1,0 +1,43 @@
+{
+ "id": "handoff",
+ "title": "一页接手摘要：停在哪、下一步先做什么、卡在人这里的、别动什么——由任务状态生成",
+ "brief": "briefs/handoff.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 80,
+ "owns": [
+  "tools/handoff/handoff.mjs",
+  "src/xyz/erapi0neer/xingyi/agent/Handoff.java",
+  "tests/agent/HandoffChecks.java",
+  "tests/agent/handoff-fixtures/",
+  "tests/agent/SkillChecks.java",
+  "tests/agent/accept_handoff.sh",
+  "status/HANDOFF.md"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|557[5-9]|55[8-9]\\d|5[6-9]\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_handoff.sh",
+   "timeoutS": 900,
+   "must": [
+    "HANDOFF OK"
+   ]
+  }
+ ]
+}

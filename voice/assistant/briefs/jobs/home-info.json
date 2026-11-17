@@ -1,0 +1,42 @@
+{
+ "id": "home-info",
+ "title": "What the home screen shows from 星仪: 农历, the day's weather, what is playing",
+ "brief": "briefs/home-info.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Almanac.java",
+  "src/xyz/erapi0neer/xingyi/agent/Weather.java",
+  "src/xyz/erapi0neer/xingyi/agent/HomeNotes.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentEngine.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentProvider.java",
+  "tests/agent/HomeInfoChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 400,
+   "must": [
+    "re:agent core: (318\\d|319\\d|3[2-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_home_info.sh",
+   "timeoutS": 900,
+   "must": [
+    "HOME INFO OK"
+   ]
+  }
+ ]
+}

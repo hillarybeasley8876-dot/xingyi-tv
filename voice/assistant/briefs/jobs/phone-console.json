@@ -1,0 +1,41 @@
+{
+ "id": "phone-console",
+ "title": "星仪 from the phone: a paired web app to type, watch the plan and chain, confirm and stop",
+ "brief": "briefs/phone-console.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/PhoneApi.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/PhoneServer.java",
+  "assets/agent/phone.html",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentEngine.java",
+  "tests/agent/PhoneChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 400,
+   "must": [
+    "re:agent core: (325[6-9]|32[6-9]\\d|3[3-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_phone_console.sh",
+   "timeoutS": 900,
+   "must": [
+    "PHONE CONSOLE OK"
+   ]
+  }
+ ]
+}

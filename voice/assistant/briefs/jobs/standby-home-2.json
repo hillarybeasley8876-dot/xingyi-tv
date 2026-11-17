@@ -1,0 +1,40 @@
+{
+ "id": "standby-home-2",
+ "title": "守卫判断桌面被顶掉的旁证是错的：看熄屏前谁在前，不看桌面进程死没死（真机 03:16 失败）",
+ "brief": "briefs/standby-home-2.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 90,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/MemoryCare.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/MemoryGuard.java",
+  "tests/agent/MemoryCareChecks.java",
+  "tests/agent/accept_standby_home.sh"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|509[3-9]|5[1-9]\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_standby_home.sh",
+   "timeoutS": 900,
+   "must": [
+    "STANDBY HOME OK"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+{
+ "id": "private-logs",
+ "title": "Keep the user's words off shared storage",
+ "brief": "briefs/private-logs.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 90,
+ "owns": [
+  "src/xyz/erapi0neer/xiaoaibridge/BridgeLog.java",
+  "src/xyz/erapi0neer/xiaoaibridge/BridgeService.java",
+  "bridge.sh",
+  "tests/StatusTextTest.java",
+  "src/xyz/erapi0neer/xiaoaibridge/StatusText.java"
+ ],
+ "accept": [
+  {
+   "name": "build",
+   "cmd": "sh build.sh",
+   "must": [
+    "xiaoai-bridge.apk"
+   ],
+   "timeoutS": 600
+  },
+  {
+   "name": "jvm-tests",
+   "cmd": "sh tests/run_all.sh",
+   "must": [
+    "ALL JVM TESTS PASSED"
+   ],
+   "timeoutS": 600
+  },
+  {
+   "name": "private-logs",
+   "cmd": "python tests/check_private_logs.py",
+   "must": [
+    "PRIVATE LOGS OK"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+[
+  { "id": "zebra", "history": [{ "round": 1, "tools": 4, "cost": { "usd": 2.5, "outTok": 250 } }] },
+  { "id": "apple", "history": [{ "round": 1, "tools": 4, "cost": { "usd": 2.5, "outTok": 250 } }] },
+  { "id": "mango", "history": [{ "round": 1, "tools": 4, "cost": { "usd": 2.5, "outTok": 250 } }] }
+]

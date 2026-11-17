@@ -1,0 +1,30 @@
+[
+  {
+    "type": "result",
+    "session_id": "s-n",
+    "duration_ms": 1000,
+    "num_turns": 3,
+    "modelUsage": {
+      "minimax-M78": {
+        "inputTokens": 10,
+        "cacheReadInputTokens": 20,
+        "outputTokens": 30,
+        "thinkingTokens": 5
+      }
+    }
+  },
+  {
+    "type": "result",
+    "session_id": "s-n",
+    "duration_ms": 2000,
+    "num_turns": 4,
+    "modelUsage": {
+      "minimax-M78": {
+        "inputTokens": 40,
+        "cacheReadInputTokens": 70,
+        "outputTokens": 90,
+        "thinkingTokens": 11
+      }
+    }
+  }
+]

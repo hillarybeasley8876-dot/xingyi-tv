@@ -1,0 +1,317 @@
+ACTIVITY MANAGER ACTIVITIES (dumpsys activity activities)
+Display #0 (activities from top to bottom):
+
+  Stack #103: type=standard mode=fullscreen
+  isSleeping=true
+  mBounds=Rect(0, 0 - 0, 0)
+    Task id #111
+    mBounds=Rect(0, 0 - 0, 0)
+    mMinWidth=-1
+    mMinHeight=-1
+    mLastNonFullscreenBounds=null
+    * TaskRecord{966d7d3 #111 A=com.netease.cloudmusic.tv U=0 StackId=103 sz=2}
+      userId=0 effectiveUid=u0a22 mCallingUid=u0a22 mUserSetupComplete=true mCallingPackage=com.netease.cloudmusic.tv
+      affinity=com.netease.cloudmusic.tv
+      intent={act=android.intent.action.VIEW dat=nmcloudmusictv://ng/player?RESOURCE_ID=27955653 flg=0x10000000 pkg=com.netease.cloudmusic.tv cmp=com.netease.cloudmusic.tv/.activity.TvRedirectActivity}
+      realActivity=com.netease.cloudmusic.tv/.activity.TvRedirectActivity
+      autoRemoveRecents=false isPersistable=true numFullscreen=2 activityType=1
+      rootWasReset=false mNeverRelinquishIdentity=true mReuseTask=false mLockTaskAuth=LOCK_TASK_AUTH_PINNABLE
+      Activities=[ActivityRecord{da2a421 u0 com.netease.cloudmusic.tv/.activity.MainActivity t111}, ActivityRecord{81d39a6 u0 com.netease.cloudmusic.tv/.activity.newplayer.v2.PlayerActivityV2 t111}]
+      askedCompatMode=false inRecents=true isAvailable=true
+      mRootProcess=ProcessRecord{e659ac6 11469:com.netease.cloudmusic.tv/u0a22}
+      stackId=103
+      hasBeenVisible=true mResizeMode=RESIZE_MODE_RESIZEABLE mSupportsPictureInPicture=false isResizeable=true lastActiveTime=132340755 (inactive for 0s)
+      * Hist #1: ActivityRecord{81d39a6 u0 com.netease.cloudmusic.tv/.activity.newplayer.v2.PlayerActivityV2 t111}
+          packageName=com.netease.cloudmusic.tv processName=com.netease.cloudmusic.tv
+          launchedFromUid=10022 launchedFromPackage=com.netease.cloudmusic.tv userId=0
+          app=ProcessRecord{e659ac6 11469:com.netease.cloudmusic.tv/u0a22}
+          Intent { dat=nmcloudmusictv://ng/player?RESOURCE_ID=27955653 flg=0x10000000 pkg=com.netease.cloudmusic.tv cmp=com.netease.cloudmusic.tv/.activity.newplayer.v2.PlayerActivityV2 (has extras) }
+          frontOfTask=false task=TaskRecord{966d7d3 #111 A=com.netease.cloudmusic.tv U=0 StackId=103 sz=2}
+          taskAffinity=com.netease.cloudmusic.tv
+          realActivity=com.netease.cloudmusic.tv/.activity.newplayer.v2.PlayerActivityV2
+          baseDir=/data/app/com.netease.cloudmusic.tv-VnKnmI3bkxiXdyw0SraMcg==/base.apk
+          dataDir=/data/user/0/com.netease.cloudmusic.tv
+          stateNotNeeded=false componentSpecified=true mActivityType=standard
+          compat={320dpi always-compat} labelRes=0x7f120192 icon=0x7f0f0004 theme=0x7f13000a
+          mLastReportedConfigurations:
+           mGlobalConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 0, 0) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=undefined} s.5}
+           mOverrideConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          CurrentConfiguration={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          taskDescription: label="null" icon=null iconResource=0 iconFilename=null primaryColor=ff6200ee
+           backgroundColor=fffafafa
+           statusBarColor=ff3700b3
+           navigationBarColor=ff000000
+          launchFailed=false launchCount=0 lastLaunchTime=-1h33m11s956ms
+          haveState=false icicle=null
+          state=STOPPED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true visible=true sleeping=true idle=true mStartingWindowState=STARTING_WINDOW_NOT_SHOWN
+          fullscreen=true noDisplay=false immersive=false launchMode=2
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          waitingVisible=false nowVisible=true lastVisibleTime=-10m47s428ms
+          resizeMode=RESIZE_MODE_RESIZEABLE
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+      * Hist #0: ActivityRecord{da2a421 u0 com.netease.cloudmusic.tv/.activity.MainActivity t111}
+          packageName=com.netease.cloudmusic.tv processName=com.netease.cloudmusic.tv
+          launchedFromUid=10022 launchedFromPackage=com.netease.cloudmusic.tv userId=0
+          app=ProcessRecord{e659ac6 11469:com.netease.cloudmusic.tv/u0a22}
+          Intent { dat=nmcloudmusictv://ng/homepage/tvmain?EXTERNAL_URI_REQUEST=nmcloudmusictv%3A%2F%2Fng%2Fplayer%3FRESOURCE_ID%3D27955653 flg=0x10000000 pkg=com.netease.cloudmusic.tv cmp=com.netease.cloudmusic.tv/.activity.MainActivity (has extras) }
+          frontOfTask=true task=TaskRecord{966d7d3 #111 A=com.netease.cloudmusic.tv U=0 StackId=103 sz=2}
+          taskAffinity=com.netease.cloudmusic.tv
+          realActivity=com.netease.cloudmusic.tv/.activity.MainActivity
+          baseDir=/data/app/com.netease.cloudmusic.tv-VnKnmI3bkxiXdyw0SraMcg==/base.apk
+          dataDir=/data/user/0/com.netease.cloudmusic.tv
+          stateNotNeeded=false componentSpecified=true mActivityType=standard
+          compat={320dpi always-compat} labelRes=0x7f120192 icon=0x7f0f0004 theme=0x7f13000a
+          mLastReportedConfigurations:
+           mGlobalConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 0, 0) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=undefined} s.5}
+           mOverrideConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          CurrentConfiguration={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          taskDescription: label="null" icon=null iconResource=0 iconFilename=null primaryColor=ff6200ee
+           backgroundColor=fffafafa
+           statusBarColor=ff3700b3
+           navigationBarColor=ff000000
+          launchFailed=false launchCount=0 lastLaunchTime=-1h33m14s360ms
+          haveState=true icicle=Bundle[mParcelledData.dataSize=16608]
+          state=STOPPED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true visible=false sleeping=true idle=true mStartingWindowState=STARTING_WINDOW_NOT_SHOWN
+          fullscreen=true noDisplay=false immersive=false launchMode=2
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          waitingVisible=false nowVisible=false lastVisibleTime=-1h33m13s584ms
+          resizeMode=RESIZE_MODE_RESIZEABLE
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+
+    Running activities (most recent first):
+      TaskRecord{966d7d3 #111 A=com.netease.cloudmusic.tv U=0 StackId=103 sz=2}
+        Run #1: ActivityRecord{81d39a6 u0 com.netease.cloudmusic.tv/.activity.newplayer.v2.PlayerActivityV2 t111}
+        Run #0: ActivityRecord{da2a421 u0 com.netease.cloudmusic.tv/.activity.MainActivity t111}
+
+    mLastPausedActivity: ActivityRecord{81d39a6 u0 com.netease.cloudmusic.tv/.activity.newplayer.v2.PlayerActivityV2 t111}
+
+  Stack #114: type=standard mode=fullscreen
+  isSleeping=true
+  mBounds=Rect(0, 0 - 0, 0)
+
+    Task id #122
+    mBounds=Rect(0, 0 - 0, 0)
+    mMinWidth=-1
+    mMinHeight=-1
+    mLastNonFullscreenBounds=null
+    * TaskRecord{c6562c3 #122 A=xyz.erapi0neer.xingyi U=0 StackId=114 sz=1}
+      userId=0 effectiveUid=u0a27 mCallingUid=u0a34 mUserSetupComplete=true mCallingPackage=xyz.erapi0neer.xiaoaibridge
+      affinity=xyz.erapi0neer.xingyi
+      intent={act=xyz.erapi0neer.xingyi.AUTO_HANDOFF flg=0x10000000 cmp=xyz.erapi0neer.xingyi/.MainActivity}
+      realActivity=xyz.erapi0neer.xingyi/.MainActivity
+      autoRemoveRecents=false isPersistable=true numFullscreen=1 activityType=1
+      rootWasReset=false mNeverRelinquishIdentity=true mReuseTask=false mLockTaskAuth=LOCK_TASK_AUTH_PINNABLE
+      Activities=[ActivityRecord{52e77e5 u0 xyz.erapi0neer.xingyi/.MainActivity t122}]
+      askedCompatMode=false inRecents=true isAvailable=true
+      mRootProcess=ProcessRecord{d1d0a83 32446:xyz.erapi0neer.xingyi/u0a27}
+      stackId=114
+      hasBeenVisible=true mResizeMode=RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION mSupportsPictureInPicture=false isResizeable=true lastActiveTime=131277857 (inactive for 1062s)
+      * Hist #0: ActivityRecord{52e77e5 u0 xyz.erapi0neer.xingyi/.MainActivity t122}
+          packageName=xyz.erapi0neer.xingyi processName=xyz.erapi0neer.xingyi
+          launchedFromUid=10027 launchedFromPackage=xyz.erapi0neer.xingyi userId=0
+          app=ProcessRecord{d1d0a83 32446:xyz.erapi0neer.xingyi/u0a27}
+          Intent { act=xyz.erapi0neer.xingyi.AUTO_HANDOFF flg=0x10000000 cmp=xyz.erapi0neer.xingyi/.MainActivity (has extras) }
+          frontOfTask=true task=TaskRecord{c6562c3 #122 A=xyz.erapi0neer.xingyi U=0 StackId=114 sz=1}
+          taskAffinity=xyz.erapi0neer.xingyi
+          realActivity=xyz.erapi0neer.xingyi/.MainActivity
+          baseDir=/data/app/xyz.erapi0neer.xingyi-RAmrgu0YkogvQ6QMN9xsoQ==/base.apk
+          dataDir=/data/user/0/xyz.erapi0neer.xingyi
+          stateNotNeeded=false componentSpecified=true mActivityType=standard
+          compat={320dpi always-compat} labelRes=0x0 icon=0x0 theme=0x103022e
+          mLastReportedConfigurations:
+           mGlobalConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 0, 0) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=undefined} s.5}
+           mOverrideConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          CurrentConfiguration={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          taskDescription: label="null" icon=null iconResource=0 iconFilename=null primaryColor=ff212121
+           backgroundColor=ff303030
+           statusBarColor=ff000000
+           navigationBarColor=ff000000
+          launchFailed=false launchCount=0 lastLaunchTime=-40m47s445ms
+          haveState=true icicle=Bundle[mParcelledData.dataSize=3100]
+          state=STOPPED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true visible=false sleeping=true idle=true mStartingWindowState=STARTING_WINDOW_REMOVED
+          fullscreen=true noDisplay=false immersive=false launchMode=2
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          waitingVisible=false nowVisible=false lastVisibleTime=-18m56s347ms
+          resizeMode=RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+
+    Running activities (most recent first):
+      TaskRecord{c6562c3 #122 A=xyz.erapi0neer.xingyi U=0 StackId=114 sz=1}
+        Run #0: ActivityRecord{52e77e5 u0 xyz.erapi0neer.xingyi/.MainActivity t122}
+
+    mLastPausedActivity: ActivityRecord{52e77e5 u0 xyz.erapi0neer.xingyi/.MainActivity t122}
+
+  Stack #62: type=standard mode=fullscreen
+  isSleeping=true
+  mBounds=Rect(0, 0 - 0, 0)
+
+    Task id #69
+    mBounds=Rect(0, 0 - 0, 0)
+    mMinWidth=-1
+    mMinHeight=-1
+    mLastNonFullscreenBounds=null
+    * TaskRecord{c4da7a7 #69 A=com.xiaomi.mitv.appstore U=0 StackId=62 sz=4}
+      userId=0 effectiveUid=1000 mCallingUid=2000 mUserSetupComplete=true mCallingPackage=null
+      affinity=com.xiaomi.mitv.appstore
+      intent={flg=0x10000000 cmp=com.xiaomi.mitv.appstore/.MainActivity}
+      realActivity=com.xiaomi.mitv.appstore/.MainActivity
+      autoRemoveRecents=false isPersistable=true numFullscreen=2 activityType=1
+      rootWasReset=false mNeverRelinquishIdentity=true mReuseTask=false mLockTaskAuth=LOCK_TASK_AUTH_PINNABLE
+      Activities=[ActivityRecord{5078964 u0 com.xiaomi.mitv.appstore/.MainActivity t69}, ActivityRecord{8baddfd u0 com.xiaomi.mitv.appstore/.patchwall.ui.DetailsRouteActivity t69}, ActivityRecord{6019a1e u0 com.xiaomi.mitv.appstore/.qing.QingLoadActivity t69}, ActivityRecord{fcd0b83 u0 com.xiaomi.mitv.appstore/.qing.QingLoadActivity t69}]
+      askedCompatMode=false inRecents=true isAvailable=true
+      stackId=62
+      hasBeenVisible=true mResizeMode=RESIZE_MODE_FORCE_RESIZABLE_LANDSCAPE_ONLY mSupportsPictureInPicture=false isResizeable=true lastActiveTime=125342819 (inactive for 6997s)
+      * Hist #3: ActivityRecord{fcd0b83 u0 com.xiaomi.mitv.appstore/.qing.QingLoadActivity t69}
+          packageName=com.xiaomi.mitv.appstore processName=com.xiaomi.mitv.appstore
+          launchedFromUid=1000 launchedFromPackage=com.xiaomi.mitv.appstore userId=0
+          app=null
+          Intent { act=Qing flg=0x10000000 cmp=com.xiaomi.mitv.appstore/.qing.QingLoadActivity (has extras) }
+          frontOfTask=false task=TaskRecord{c4da7a7 #69 A=com.xiaomi.mitv.appstore U=0 StackId=62 sz=4}
+          taskAffinity=com.xiaomi.mitv.appstore
+          realActivity=com.xiaomi.mitv.appstore/.qing.QingLoadActivity
+          baseDir=/data/app/com.xiaomi.mitv.appstore-_wabvHRT_Cgfg4rv_TvhRg==/base.apk
+          dataDir=/data/user/0/com.xiaomi.mitv.appstore
+          stateNotNeeded=false componentSpecified=true mActivityType=standard
+          compat={320dpi always-compat} labelRes=0x7f100031 icon=0x7f0800cc theme=0x7f1101f2
+          mLastReportedConfigurations:
+           mGlobalConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 0, 0) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=undefined} s.5}
+           mOverrideConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          CurrentConfiguration={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          taskDescription: label="null" icon=null iconResource=0 iconFilename=null primaryColor=ff222222
+           backgroundColor=ff000000
+           statusBarColor=ff000000
+           navigationBarColor=ff000000
+          launchFailed=false launchCount=0 lastLaunchTime=-2h8m10s264ms
+          haveState=true icicle=Bundle[mParcelledData.dataSize=4052]
+          state=DESTROYED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true visible=false sleeping=false idle=true mStartingWindowState=STARTING_WINDOW_NOT_SHOWN
+          fullscreen=false noDisplay=false immersive=false launchMode=0
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          waitingVisible=false nowVisible=false lastVisibleTime=-1h56m54s559ms
+          resizeMode=RESIZE_MODE_FORCE_RESIZEABLE
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+          maxAspectRatio=1.86
+      * Hist #2: ActivityRecord{6019a1e u0 com.xiaomi.mitv.appstore/.qing.QingLoadActivity t69}
+          packageName=com.xiaomi.mitv.appstore processName=com.xiaomi.mitv.appstore
+          launchedFromUid=1000 launchedFromPackage=com.xiaomi.mitv.appstore userId=0
+          app=null
+          Intent { act=Qing flg=0x10400000 cmp=com.xiaomi.mitv.appstore/.qing.QingLoadActivity (has extras) }
+          frontOfTask=false task=TaskRecord{c4da7a7 #69 A=com.xiaomi.mitv.appstore U=0 StackId=62 sz=4}
+          taskAffinity=com.xiaomi.mitv.appstore
+          realActivity=com.xiaomi.mitv.appstore/.qing.QingLoadActivity
+          baseDir=/data/app/com.xiaomi.mitv.appstore-_wabvHRT_Cgfg4rv_TvhRg==/base.apk
+          dataDir=/data/user/0/com.xiaomi.mitv.appstore
+          stateNotNeeded=false componentSpecified=true mActivityType=standard
+          compat={320dpi always-compat} labelRes=0x7f100031 icon=0x7f0800cc theme=0x7f1101f2
+          mLastReportedConfigurations:
+           mGlobalConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 0, 0) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=undefined} s.5}
+           mOverrideConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          CurrentConfiguration={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          taskDescription: label="null" icon=null iconResource=0 iconFilename=null primaryColor=ff222222
+           backgroundColor=ff000000
+           statusBarColor=ff000000
+           navigationBarColor=ff000000
+          launchFailed=false launchCount=0 lastLaunchTime=-2h8m19s826ms
+          haveState=true icicle=Bundle[mParcelledData.dataSize=4052]
+          state=DESTROYED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true visible=false sleeping=false idle=true mStartingWindowState=STARTING_WINDOW_NOT_SHOWN
+          fullscreen=false noDisplay=false immersive=false launchMode=0
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          waitingVisible=false nowVisible=false lastVisibleTime=-1h56m54s559ms
+          resizeMode=RESIZE_MODE_FORCE_RESIZEABLE
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+          maxAspectRatio=1.86
+      * Hist #1: ActivityRecord{8baddfd u0 com.xiaomi.mitv.appstore/.patchwall.ui.DetailsRouteActivity t69}
+          packageName=com.xiaomi.mitv.appstore processName=com.xiaomi.mitv.appstore
+          launchedFromUid=2000 launchedFromPackage=null userId=0
+          app=null
+          Intent { act=android.intent.action.VIEW dat=market://appstore.mitv.xiaomi.com/details?package=com.netease.cloudmusic.tv flg=0x10400000 cmp=com.xiaomi.mitv.appstore/.patchwall.ui.DetailsRouteActivity }
+          frontOfTask=false task=TaskRecord{c4da7a7 #69 A=com.xiaomi.mitv.appstore U=0 StackId=62 sz=4}
+          taskAffinity=com.xiaomi.mitv.appstore
+          realActivity=com.xiaomi.mitv.appstore/.patchwall.ui.DetailsRouteActivity
+          baseDir=/data/app/com.xiaomi.mitv.appstore-_wabvHRT_Cgfg4rv_TvhRg==/base.apk
+          dataDir=/data/user/0/com.xiaomi.mitv.appstore
+          stateNotNeeded=false componentSpecified=false mActivityType=standard
+          compat={320dpi always-compat} labelRes=0x7f100031 icon=0x7f0800cc theme=0x7f110006
+          mLastReportedConfigurations:
+           mGlobalConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 0, 0) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=undefined} s.5}
+           mOverrideConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          CurrentConfiguration={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          taskDescription: label="null" icon=null iconResource=0 iconFilename=null primaryColor=ff212121
+           backgroundColor=ff303030
+           statusBarColor=ff000000
+           navigationBarColor=ff000000
+          launchFailed=false launchCount=0 lastLaunchTime=-9h19m27s649ms
+          haveState=true icicle=Bundle[mParcelledData.dataSize=5140]
+          state=DESTROYED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true visible=false sleeping=false idle=true mStartingWindowState=STARTING_WINDOW_NOT_SHOWN
+          fullscreen=true noDisplay=false immersive=false launchMode=0
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          waitingVisible=false nowVisible=false lastVisibleTime=-1h56m54s478ms
+          resizeMode=RESIZE_MODE_FORCE_RESIZEABLE
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+          maxAspectRatio=1.86
+      * Hist #0: ActivityRecord{5078964 u0 com.xiaomi.mitv.appstore/.MainActivity t69}
+          packageName=com.xiaomi.mitv.appstore processName=com.xiaomi.mitv.appstore
+          launchedFromUid=2000 launchedFromPackage=null userId=0
+          app=null
+          Intent { flg=0x10000000 cmp=com.xiaomi.mitv.appstore/.MainActivity }
+          frontOfTask=true task=TaskRecord{c4da7a7 #69 A=com.xiaomi.mitv.appstore U=0 StackId=62 sz=4}
+          taskAffinity=com.xiaomi.mitv.appstore
+          realActivity=com.xiaomi.mitv.appstore/.MainActivity
+          baseDir=/data/app/com.xiaomi.mitv.appstore-_wabvHRT_Cgfg4rv_TvhRg==/base.apk
+          dataDir=/data/user/0/com.xiaomi.mitv.appstore
+          stateNotNeeded=false componentSpecified=true mActivityType=standard
+          compat={320dpi always-compat} labelRes=0x7f100031 icon=0x7f0800cc theme=0x7f110006
+          mLastReportedConfigurations:
+           mGlobalConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 0, 0) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=undefined} s.5}
+           mOverrideConfig={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          CurrentConfiguration={1.0 ?mcc?mnc [zh_CN] ldltr sw540dp w960dp h516dp 320dpi lrg long hdr land television -touch -keyb/v/h dpad/v winConfig={ mBounds=Rect(0, 0 - 1920, 1080) mAppBounds=Rect(0, 0 - 1920, 1080) mWindowingMode=fullscreen mActivityType=standard} s.5}
+          taskDescription: label="null" icon=null iconResource=0 iconFilename=null primaryColor=ff212121
+           backgroundColor=ff303030
+           statusBarColor=ff000000
+           navigationBarColor=ff000000
+          launchFailed=false launchCount=0 lastLaunchTime=-10h14m37s579ms
+          haveState=true icicle=Bundle[mParcelledData.dataSize=20432]
+          state=DESTROYED stopped=true delayedResume=false finishing=false
+          keysPaused=false inHistory=true visible=false sleeping=false idle=true mStartingWindowState=STARTING_WINDOW_REMOVED
+          fullscreen=true noDisplay=false immersive=false launchMode=2
+          frozenBeforeDestroy=false forceNewConfig=false
+          mActivityType=standard
+          waitingVisible=false nowVisible=false lastVisibleTime=-9h24m42s392ms
+          resizeMode=RESIZE_MODE_FORCE_RESIZABLE_LANDSCAPE_ONLY
+          mLastReportedMultiWindowMode=false mLastReportedPictureInPictureMode=false
+          maxAspectRatio=1.86
+
+  Stack #0: type=home mode=fullscreen
+  isSleeping=true
+  mBounds=Rect(0, 0 - 0, 0)
+
+  ResumedActivity: ActivityRecord{81d39a6 u0 com.netease.cloudmusic.tv/.activity.newplayer.v2.PlayerActivityV2 t111}
+  mFocusedStack=ActivityStack{208ba97 stackId=103 type=standard mode=fullscreen visible=true translucent=false, 1 tasks} mLastFocusedStack=ActivityStack{208ba97 stackId=103 type=standard mode=fullscreen visible=true translucent=false, 1 tasks}
+  mCurTaskIdForUser={0=122}
+  mUserStackInFront={}
+  displayId=0 stacks=4
+   mHomeStack=ActivityStack{9635293 stackId=0 type=home mode=fullscreen visible=false translucent=true, 0 tasks}
+  isHomeRecentsComponent=false  KeyguardController:
+    mKeyguardShowing=false
+    mAodShowing=false
+    mKeyguardGoingAway=false
+    mOccluded=false
+    mDismissingKeyguardActivity=null
+    mDismissalRequested=false
+    mVisibilityTransactionDepth=0
+  LockTaskController
+    mLockTaskModeState=NONE
+    mLockTaskModeTasks=
+    mLockTaskPackages (userId:packages)=
+      u0:[]

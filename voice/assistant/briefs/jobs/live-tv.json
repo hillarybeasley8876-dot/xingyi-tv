@@ -1,0 +1,41 @@
+{
+ "id": "live-tv",
+ "title": "「我想看CCTV5」 gets a true answer at once (no live-TV app here: what the channel is showing), and switch_input is refused unless the user named an input",
+ "brief": "briefs/live-tv.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/QuickCommand.java",
+  "src/xyz/erapi0neer/xingyi/agent/TvGuide.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/QuickChecks.java",
+  "tests/agent/FeedChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: (44[2-9]\\d|4[5-9]\\d\\d|[5-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_live_tv.sh",
+   "timeoutS": 900,
+   "must": [
+    "LIVE TV OK"
+   ]
+  }
+ ]
+}

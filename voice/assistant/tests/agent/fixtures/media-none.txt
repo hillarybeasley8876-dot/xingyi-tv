@@ -1,0 +1,18 @@
+MEDIA SESSION SERVICE (dumpsys media_session)
+
+2 sessions listeners.
+Global priority session is null
+User Records:
+Record for full_user=0
+  Volume key long-press listener: null
+  Volume key long-press listener package: 
+  Media key listener: null
+  Media key listener package: 
+  Callback: null
+  Last MediaButtonReceiver: PendingIntent{60636c0: PendingIntentRecord{88e89c6 tv.danmaku.bili broadcastIntent}}
+  Restored MediaButtonReceiver: null
+  Media button session is null
+  Sessions Stack - have 0 sessions:
+Audio playback (lastly played comes first)
+  uid=10049 packages=tv.danmaku.bili 
+  uid=1000 packages=com.xiaomi.mitv.systemui android com.xiaomi.mitv.mediaexplorer com.android.inputdevices com.xiaomi.mitv.upgrade com.mitv.tvhome com.xiaomi.mitv.tvpush.tvpushservice mitv.service com.xiaomi.mitv.appstore com.xiaomi.tvqs com.xiaomi.mitv.settings com.xiaomi.mitv.healthdiagnosis com.mitv.cloudcontrol com.xiaomi.account com.xiaomi.mitv.karaoke.service com.xiaomi.gamecenter.sdk.service.mibox com.android.location.fused com.droidlogic.tvinput com.xiaomi.miplay com.xiaomi.mitv.smartshare com.xiaomi.setupwizard com.android.wallpaperbackup com.xiaomi.mitv.hyper.screensaver com.android.providers.settings com.mitv.gallery com.xiaomi.mitv.tvplayer com.xiaomi.mi_connect_service com.xiaomi.voicecontrol com.droidlogic com.xiaomi.mitv.tvmanager com.xiaomi.wakeupservice com.xiaomi.hyper_connect.tv com.mitv.overseaservice com.xiaomi.mitv.smartpanel 

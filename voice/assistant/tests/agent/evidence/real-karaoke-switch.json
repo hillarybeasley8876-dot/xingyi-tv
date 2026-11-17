@@ -1,0 +1,17 @@
+{
+  "id": "karaoke-switch",
+  "at": "2026-11-12T20:44:16+08:00",
+  "ok": true,
+  "by": "karaoke-switch.py",
+  "notes": [
+    "放歌：reply: 网易云音乐正在播放汪苏泷的《晴》。这首是网易云会员歌曲：账号不是会员的话，只能听 30 秒左右的试听。",
+    "网易云在放（音频服务的 USAGE_MEDIA 播放器）：True",
+    "切到伴奏：--- 4.8s, eyes=True, tasks=['mwdjhkao'] state=done  goal= reply: 已切到伴奏：随心唱开着，按上键能调人声大小",
+    "切回原唱：--- 4.9s, eyes=True, tasks=['mwdjhrq5'] state=done  goal= reply: 已切回原唱：随心唱关了"
+  ],
+  "shots": [
+    "probe-out\\karaoke-switch-before.png",
+    "probe-out\\karaoke-switch-accomp.png",
+    "probe-out\\karaoke-switch-orig.png"
+  ]
+}

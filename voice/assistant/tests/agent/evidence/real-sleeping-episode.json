@@ -1,0 +1,14 @@
+{
+  "id": "sleeping-episode",
+  "at": "2026-11-14T04:03:04+08:00",
+  "ok": true,
+  "by": "sleeping-episode.py",
+  "notes": [
+    "屏幕亮：True（说出去以后 3.1 秒，判据 15 秒）",
+    "播放页在前：True（说出去以后 8.4 秒，判据 45 秒；前面是 com.ktcp.video/.activity.TVPlayerActivity）",
+    "任务说了什么：reply: 已在云视听极光播放《别无选择》第 5 集；不是会员的话正片前有一两分钟广告（先点亮了屏幕）"
+  ],
+  "shots": [
+    "probe-out\\sleeping-episode.png"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+ "id": "standby-home-4",
+ "title": "待机回桌面：判据换成「熄屏后第一个到前台的包不是桌面」，从系统的使用记录读（广播太晚，真机三次证伪）",
+ "brief": "briefs/standby-home-4.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 70,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/MemoryCare.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/MemoryGuard.java",
+  "tests/agent/MemoryCareChecks.java",
+  "tests/agent/accept_standby_home.sh"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|553[8-9]|55[4-9]\\d|5[6-9]\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_standby_home.sh",
+   "timeoutS": 900,
+   "must": [
+    "STANDBY HOME OK"
+   ]
+  }
+ ]
+}

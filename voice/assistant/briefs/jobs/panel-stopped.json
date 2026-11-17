@@ -1,0 +1,20 @@
+{
+ "id": "panel-stopped",
+ "title": "A stopped panel shows no running step; an answer is not cut to a caption it is not",
+ "brief": "briefs/panel-stopped.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/tv/Hud.java",
+  "src/xyz/erapi0neer/xingyi/agent/PanelRules.java",
+  "tests/agent/CardChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (348[4-9]|349\\d|3[5-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "wired", "cmd": "grep -c PanelRules. src/xyz/erapi0neer/xingyi/agent/tv/Hud.java", "timeoutS": 30,
+    "must": ["re:^([2-9]|\\d\\d)"] }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "verify-durable",
+ "title": "验证本身能从磁盘接着跑：「还没验」是 unverified.json 里的一条记录，NEXT.md 的那一节由它生成",
+ "brief": "briefs/verify-durable.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 110,
+ "owns": [
+  "tests/agent/unverified.json",
+  "src/xyz/erapi0neer/xingyi/agent/Unverified.java",
+  "tests/agent/UnverifiedChecks.java",
+  "tests/agent/unverified_doc.py",
+  "tests/agent/unverified_status.py",
+  "tests/agent/verify.sh",
+  "tests/agent/SkillChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 600,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|498[2-9]|499\\d|[5-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "doc",
+   "cmd": "python tests/agent/unverified_doc.py >/dev/null && python tests/agent/unverified_doc.py --check",
+   "timeoutS": 120,
+   "must": [
+    "UP TO DATE"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_verify_durable.sh",
+   "timeoutS": 900,
+   "must": [
+    "VERIFY DURABLE OK"
+   ]
+  }
+ ]
+}

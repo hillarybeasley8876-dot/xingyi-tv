@@ -1,0 +1,26 @@
+{
+ "id": "data-polish",
+ "title": "NBA last game first, news times with the day, live status with the asked name, typhoon in parallel, 这周的新番",
+ "brief": "briefs/data-polish.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 105,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Sports.java",
+  "src/xyz/erapi0neer/xingyi/agent/News.java",
+  "src/xyz/erapi0neer/xingyi/agent/BiliVideos.java",
+  "src/xyz/erapi0neer/xingyi/agent/Alerts.java",
+  "src/xyz/erapi0neer/xingyi/agent/Bangumi.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/FeedChecks.java",
+  "tests/agent/BiliChecks.java",
+  "tests/agent/AlertChecks.java",
+  "tests/agent/BangumiChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (38(3[7-9]|[4-9]\\d)|39\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_data_polish.sh", "timeoutS": 900, "must": ["DATA POLISH OK"] }
+ ]
+}

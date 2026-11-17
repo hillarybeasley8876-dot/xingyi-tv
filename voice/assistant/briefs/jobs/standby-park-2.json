@@ -1,0 +1,20 @@
+{
+ "id": "standby-park-2",
+ "title": "Home on top before closing a parked app; check that it stayed closed",
+ "brief": "briefs/standby-park-2.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/tv/MemoryGuard.java",
+  "src/xyz/erapi0neer/xingyi/agent/MemoryCare.java",
+  "tests/agent/MemoryCareChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (360[7-9]|36[1-9]\\d|3[7-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "wired", "cmd": "grep -c CATEGORY_HOME src/xyz/erapi0neer/xingyi/agent/tv/MemoryGuard.java", "timeoutS": 30,
+    "must": ["re:^[1-9]"] }
+ ]
+}

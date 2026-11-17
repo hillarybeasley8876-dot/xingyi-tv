@@ -1,0 +1,61 @@
+[
+ {
+  "id": "busy-running",
+  "title": "在跑的那一单（fixture）",
+  "status": "running",
+  "rounds": 2,
+  "maxRounds": 6,
+  "startedMs": 1794446400000,
+  "updatedMs": 1794453300000,
+  "lastText": "第二轮还在跑：刚把 tools/handoff/handoff.mjs 写完。",
+  "history": [
+   {
+    "round": 1,
+    "end": "ok",
+    "tools": 12,
+    "cost": { "usd": 1.2, "outTok": 41000 },
+    "acc": [
+     { "name": "core-checks", "pass": true, "why": [] },
+     { "name": "android-check", "pass": true, "why": [] }
+    ]
+   },
+   {
+    "round": 2,
+    "end": "ok",
+    "tools": 25,
+    "cost": { "usd": 0.83, "outTok": 22000 },
+    "acc": [
+     { "name": "core-checks", "pass": true, "why": [] }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "busy-needs-lead",
+  "title": "卡在人这里的那一单（fixture）",
+  "status": "needs_lead",
+  "rounds": 3,
+  "startedMs": 1794435600000,
+  "updatedMs": 1794442800000,
+  "note": "两条改动要写到 run.mjs 里，那不是它的文件",
+  "lastText": "三条验收过了两条，第三条要 bridge 编一遍才能跑；bridge.sh install 要用户点头，我没有装。最后一句故意写得很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长",
+  "history": [
+   { "round": 1, "end": "ok", "tools": 40 },
+   { "round": 2, "end": "ok", "tools": 66 }
+  ]
+ },
+ {
+  "id": "busy-forgotten",
+  "title": "过了验收没人合的那一单（fixture）",
+  "status": "accepted_mechanical",
+  "rounds": 1,
+  "merged": false,
+  "commit": "106df02aa",
+  "startedMs": 1794360000000,
+  "updatedMs": 1794363600000,
+  "lastText": "验收三条全过，改动已提交，等 lead 合。",
+  "history": [
+   { "round": 1, "end": "ok", "tools": 9 }
+  ]
+ }
+]

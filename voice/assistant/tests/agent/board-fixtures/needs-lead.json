@@ -1,0 +1,40 @@
+{
+ "id": "needs-lead-demo",
+ "title": "验收没过、等我出手的那一单（fixture）",
+ "status": "needs_lead",
+ "rounds": 2,
+ "maxRounds": 6,
+ "sessionStarted": true,
+ "startedAt": "2026-11-11T02:00:00+08:00",
+ "startedMs": 1794333600000,
+ "updatedMs": 1794337200000,
+ "cwd": "H:\\tools\\mitv\\voice\\assistant-wt\\needs-lead-demo",
+ "lastText": "第二轮还是差一条：核心检查数达不到 spec 里写的那个数。",
+ "history": [
+  {
+   "round": 1,
+   "end": "ok",
+   "tools": 30,
+   "models": { "MiniMax-M78": 50 },
+   "wrongModel": false,
+   "stray": [],
+   "acc": [
+    { "name": "core-checks", "pass": false, "why": ["output lacks: agent core: 5022 passed, 0 failed"] },
+    { "name": "android-check", "pass": true, "why": [] }
+   ]
+  },
+  {
+   "round": 2,
+   "end": "ok",
+   "tools": 44,
+   "models": { "MiniMax-M78": 71 },
+   "wrongModel": false,
+   "stray": [],
+   "acc": [
+    { "name": "core-checks", "pass": false, "why": ["output lacks: agent core: 5022 passed, 0 failed", "exit code 1, expected 0"] },
+    { "name": "android-check", "pass": true, "why": [] },
+    { "name": "board", "pass": true, "why": [] }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,215 @@
+#include "common.glsl"
+// Orrery flow, one invocation per particle: advance it along the Chen attractor, then splat it
+// into two integer accumulation images, sharp (full resolution) and soft (quarter resolution).
+// Depth of field is stochastic: each frame a particle lands at a uniform point of its circle of
+// confusion, so discs appear as frames accumulate. Big circles go to the soft layer.
+// Echo: the first particles of the (shuffled) state are splatted a second time into the soft layer, through
+// a scaled, turned copy of the attractor far behind the gesture: a dim, soft, cold plane the sheet sits in front of.
+// Veil (2026-11-06, 「层次感空间感有待加强」): the next ones the same way through a copy close to the lens, wide and
+// out of focus: a faint foreground the gesture is seen through, moving most as the camera sways.
+// Spray (2026-11-06, 「目前只有主体 缺点缀」): the next ones peel off the gesture: each drifts outward from the
+// attractor's centre and up a little over its own cycle, fading as it goes, then starts again on the sheet. With the
+// trails each leaves a fine thread: the edge of the gesture dissolving into the dark.
+layout(local_size_x = 128) in;
+layout(std430, binding = 0) buffer Particles { vec4 P[]; };   // xyz attractor position, w dye (< 0: not set yet)
+layout(r32ui, binding = 0) uniform highp uimage2D u_sharp;
+layout(r32ui, binding = 1) uniform highp uimage2D u_soft;
+
+uniform uint u_count;
+uniform vec3 u_abc;       // Chen a, b, c
+uniform float u_tau;      // attractor time to advance this frame
+uniform int u_steps;      // midpoint steps that cover u_tau
+uniform vec3 u_center;    // attractor centre and 1 / radius: normalised space
+uniform float u_invr;
+uniform mat3 u_rot;       // normalised space -> world
+uniform vec3 u_cam;       // camera position and basis (right, up, forward)
+uniform vec3 u_cr;
+uniform vec3 u_cu;
+uniform vec3 u_cf;
+uniform float u_fpx;      // focal length, px
+uniform vec2 u_pp;        // principal point, px from the bottom-left corner
+uniform vec2 u_res;       // sharp image size
+uniform vec2 u_sres;      // soft image size
+uniform float u_focus;    // focus distance, aperture radius (world units), CoC cap (px), near plane
+uniform float u_aper;
+uniform float u_maxcoc;
+uniform float u_near;
+uniform vec2 u_lt;        // CoC (px) over which particles hand over from the sharp to the soft layer
+uniform vec2 u_atm;       // atmospheric falloff: start distance, rate
+uniform vec4 u_light;     // luminous core: world position, 1 / radius^2
+uniform float u_amb;      // brightness far from the core
+uniform vec4 u_keep;      // dissolution away from the core: min keep, falloff ramp start/end, energy compensation
+uniform float u_energy;   // deposit of an average particle this frame (1.0 = 256 units)
+uniform vec2 u_glint;     // probability, gain
+uniform vec3 u_twinkle;   // glint pulse: sharpness (power of the sine), rate (rad/s), share kept to the focal band
+uniform vec4 u_dye;       // amplitude, spatial frequency, relaxation per visit, field drift per second
+uniform vec2 u_bloom;     // share of in-focus particles thrown into the soft layer as halo, halo radius px
+uniform vec2 u_disc[64];  // sunflower points on the unit disc (stochastic circle of confusion)
+uniform uint u_ecount;    // echo: particles [0, u_ecount) also splat the echo (0 = off)
+uniform mat3 u_erot;      // echo: normalised space -> world (turn x scale), and its centre minus the camera
+uniform vec3 u_erel;
+uniform vec2 u_echo;      // echo: energy (times u_count / u_ecount), blur radius px
+uniform uint u_vcount;    // veil: particles [u_ecount, u_ecount + u_vcount) also splat the veil (0 = off)
+uniform mat3 u_vrot;      // veil: like the echo's, close to the lens
+uniform vec3 u_vrel;
+uniform vec2 u_veil;      // veil: energy (times u_count / u_vcount), blur radius px
+uniform uint u_scount;    // spray: particles [u_ecount + u_vcount, + u_scount) also peel off (0 = off)
+uniform vec4 u_spray;     // spray: reach (world units), spread, cycles per second, energy
+uniform vec2 u_wind;      // spray: the way they drift, in screen directions (right, up)
+
+vec3 F(vec3 p) {
+    return vec3(u_abc.x * (p.y - p.x),
+                (u_abc.z - u_abc.x) * p.x - p.x * p.z + u_abc.z * p.y,
+                p.x * p.y - u_abc.y * p.z);
+}
+
+float corner(uint x, uint y, uint z) { return hashf(x * 73856093u ^ y * 19349663u ^ z * 83492791u); }
+
+float vn3(vec3 p) {                       // value noise in [0, 1]
+    vec3 i = floor(p), f = fract(p);
+    f = f * f * (3.0 - 2.0 * f);
+    uint x0 = uint(int(i.x) + 4096), y0 = uint(int(i.y) + 4096), z0 = uint(int(i.z) + 4096);
+    uint x1 = x0 + 1u, y1 = y0 + 1u, z1 = z0 + 1u;
+    return mix(mix(mix(corner(x0, y0, z0), corner(x1, y0, z0), f.x), mix(corner(x0, y1, z0), corner(x1, y1, z0), f.x), f.y),
+               mix(mix(corner(x0, y0, z1), corner(x1, y0, z1), f.x), mix(corner(x0, y1, z1), corner(x1, y1, z1), f.x), f.y), f.z);
+}
+
+float dye(vec3 n) {                       // smooth puffs, normalised attractor space, drifting slowly
+    vec3 q = n * u_dye.y + vec3(0.0, 0.0, u_time * u_dye.w);
+    return smoothstep(0.30, 0.75, 0.65 * vn3(q) + 0.35 * vn3(q * 2.03 + 17.1));
+}
+
+// The echo copy of this particle: projection, a wide circle of confusion and the gesture's aerial falloff,
+// into the soft layer only. bright: the particle's lit deposit.
+void echo(uint id, vec3 n, float bright, mat3 R, vec3 rel, vec2 e) {
+    vec3 d = R * n + rel;
+    float z = dot(d, u_cf);
+    if (z < u_near) return;
+    float iz = 1.0 / z;
+    vec2 sp = u_pp + (u_fpx * iz) * vec2(dot(d, u_cr), dot(d, u_cu));
+    float coc = max(u_aper * u_fpx * abs(1.0 / u_focus - iz), e.y);
+    uint he = hashu(id * 0x2C1B3C6Du + uint(u_frame) * 0x297A2D39u);
+    vec2 at = sp + coc * u_disc[he & 63u]
+            + vec2(float((he >> 8) & 0xFFu), float((he >> 16) & 0xFFu)) * (4.0 / 256.0) - 2.0;
+    uint amount = uint(bright * e.x * exp(-max(z - u_atm.x, 0.0) * u_atm.y) * 256.0
+                       + float(he >> 24) * (1.0 / 256.0));
+    if (amount == 0u) return;
+    ivec2 ip = ivec2(floor(at * 0.25));
+    if (ip.x < 0 || ip.y < 0 || float(ip.x) >= u_sres.x || float(ip.y) >= u_sres.y) return;
+    imageAtomicAdd(u_soft, ip, amount);
+}
+
+// This particle peeling off the gesture: carried off the sheet into the dark along the wind (screen directions,
+// each with its own spread) over its cycle, fading out; soft layer.
+void spray(uint id, vec3 n, float bright, uint hs) {
+    // a random instant within this frame's step: a fast particle's dots join into a thread (motion blur; 2026-11-06
+    // 「颗粒感有点严重」 — one deposit a frame, a few pixels apart, drew dotted threads)
+    uint hm = hashu(id * 0x2F5E1A93u + uint(u_frame) * 0x51ED270Bu);
+    float back = float(hm & 0xFFFFu) * (1.0 / 65536.0) * u_dt * u_spray.z;
+    float ph = fract(u_time * u_spray.z - back + float(hs >> 20) * (1.0 / 4096.0));
+    uint hr = hashu(id * 0x1B873593u + 0xE6546B64u);
+    vec3 rnd = vec3(float(hr & 0x3FFu), float((hr >> 10) & 0x3FFu), float((hr >> 20) & 0x3FFu)) * (2.0 / 1023.0) - 1.0;
+    // a slow, even drift that sways from side to side twice a cycle: the trail draws a curling thread, not a line
+    float sway = sin(ph * 12.566 + rnd.x * 3.1416) * ph;
+    vec3 off = (u_cr * u_wind.x + u_cu * u_wind.y + rnd * u_spray.y) * ph + u_cr * (0.18 * sway);
+    vec3 d = u_rot * n + off * u_spray.x - u_cam;
+    float z = dot(d, u_cf);
+    if (z < u_near) return;
+    float iz = 1.0 / z;
+    vec2 sp = u_pp + (u_fpx * iz) * vec2(dot(d, u_cr), dot(d, u_cu));
+    float coc = min(u_aper * u_fpx * abs(1.0 / u_focus - iz), u_maxcoc);
+    float fade = (1.0 - ph) * (1.0 - ph) * smoothstep(0.0, 0.08, ph);
+    uint hf = hashu(id * 0x68E31DA4u + uint(u_frame) * 0xB5297A4Du);
+    uint amount = uint(bright * u_spray.w * fade * exp(-max(z - u_atm.x, 0.0) * u_atm.y) * 256.0
+                       + float(hf >> 24) * (1.0 / 256.0));
+    if (amount == 0u) return;
+    // always into the soft layer: a thread a few pixels wide and smooth. In the sharp layer a faint thread was a
+    // string of single bright pixels flickering on and off (2026-11-06 「颗粒感有点严重」)
+    vec2 at = sp + max(coc, 3.0) * u_disc[hf & 63u];
+    ivec2 ip = ivec2(floor(at * 0.25));
+    if (ip.x < 0 || ip.y < 0 || float(ip.x) >= u_sres.x || float(ip.y) >= u_sres.y) return;
+    imageAtomicAdd(u_soft, ip, amount);
+}
+
+void main() {
+    uint id = gl_GlobalInvocationID.x;
+    if (id >= u_count) return;
+    vec4 s = P[id];
+    vec3 p = s.xyz;
+    float h = u_tau / float(u_steps);
+    for (int i = 0; i < 16; i++) {
+        if (i >= u_steps) break;
+        vec3 k1 = F(p);
+        p += h * F(p + 0.5 * h * k1);
+    }
+    // float trouble (NaN compares false): restart where some other particle is
+    if (!(abs(p.x) < 1000.0 && abs(p.y) < 1000.0 && abs(p.z) < 1000.0))
+        p = P[(id * 2654435761u + 7u) % u_count].xyz;
+    vec3 n = (p - u_center) * u_invr;
+    float dv = s.w;
+    if (dv < 0.0) dv = dye(n);
+    else if (((id + uint(u_frame)) & 31u) == 0u) dv = mix(dv, dye(n), u_dye.z);
+    P[id] = vec4(p, dv);
+
+    // static per-particle bits: brightness (low 16), dissolution threshold (high 16), glint (low 12)
+    uint hs = hashu(id * 0x9E3779B9u + 0x632BE5ABu);
+    float r1 = float(hs & 0xFFFFu) * (1.0 / 65536.0);
+    float hk = float(hs >> 16) * (1.0 / 65536.0);
+    vec3 q = u_rot * n;
+    vec3 dl = q - u_light.xyz;
+    float lf = 1.0 / (1.0 + dot(dl, dl) * u_light.w);
+    if (id < u_ecount + u_vcount + u_scount) {   // contiguous ranges: whole warps take each branch
+        float lit = u_energy * (0.55 + 0.9 * r1 * r1) * (u_amb + (1.0 - u_amb) * lf) * (1.0 + u_dye.x * (2.0 * dv - 1.0));
+        if (id < u_ecount) echo(id, n, lit, u_erot, u_erel, u_echo);
+        else if (id < u_ecount + u_vcount) echo(id, n, lit, u_vrot, u_vrel, u_veil);
+        else spray(id, n, lit, hs);
+    }
+    float pk = mix(u_keep.x, 1.0, smoothstep(u_keep.y, u_keep.z, lf));
+    float keep = clamp((pk - hk) * (1.0 / 0.06) + 0.5, 0.0, 1.0);
+    if (keep <= 0.0) return;
+
+    vec3 d = q - u_cam;
+    float z = dot(d, u_cf);
+    if (z < u_near) return;
+    float iz = 1.0 / z;
+    vec2 sp = u_pp + (u_fpx * iz) * vec2(dot(d, u_cr), dot(d, u_cu));
+
+    float w = u_energy * (0.55 + 0.9 * r1 * r1) * keep * pow(pk, -u_keep.w);
+    w *= smoothstep(u_near, u_near * 1.6, z) * exp(-max(z - u_atm.x, 0.0) * u_atm.y);
+    w *= u_amb + (1.0 - u_amb) * lf;
+    w *= 1.0 + u_dye.x * (2.0 * dv - 1.0);
+
+    float coc = u_aper * u_fpx * abs(1.0 / u_focus - iz);
+    if (coc > u_maxcoc) { w *= (u_maxcoc * u_maxcoc) / (coc * coc); coc = u_maxcoc; }
+    // glints: a sparse static set flashes on a sharpened sine pulse, kept (u_twinkle.z) to the focal band,
+    // so sparkle marks the plane of focus; an out-of-focus glint would only smear into the haze
+    if (float(hs & 0xFFFu) < u_glint.x * 4096.0) {
+        float tw = pow(max(0.5 + 0.5 * sin(u_time * u_twinkle.y + r1 * 40.0), 0.0), u_twinkle.x);
+        w *= 1.0 + (u_glint.y - 1.0) * tw * (1.0 - u_twinkle.z * smoothstep(u_lt.x, u_lt.y, coc));
+    }
+
+    // per-frame randoms: one hash and one LCG step, 8 bits each
+    uint hf = hashu(id * 0x85EBCA6Bu + uint(u_frame) * 0xC2B2AE35u);
+    uint h2 = hf * 747796405u + 2891336453u;
+    float ra = float(hf & 0xFFu) * (1.0 / 256.0) + (0.5 / 256.0);
+    float rd = float((hf >> 8) & 0xFFu) * (1.0 / 256.0) + (0.5 / 256.0);
+    vec2 disc = u_disc[(hf >> 16) & 63u];
+    vec2 jit = vec2(float(h2 >> 24), float((h2 >> 16) & 0xFFu)) * (1.0 / 256.0) + (0.5 / 256.0 - 0.5);
+    float rg = float((h2 >> 8) & 0xFFu) * (1.0 / 256.0) + (0.5 / 256.0);
+
+    uint amount = uint(w * 256.0 + rg);       // stochastic rounding keeps dim particles unbiased
+    if (amount == 0u) return;
+    bool soft = ra > 1.0 - smoothstep(u_lt.x, u_lt.y, coc);
+    float rad = coc;
+    if (!soft && rd < u_bloom.x) { soft = true; rad = max(rad, u_bloom.y); }
+    vec2 at = sp + rad * disc;
+    if (soft) {
+        ivec2 ip = ivec2(floor(at * 0.25));
+        if (ip.x < 0 || ip.y < 0 || float(ip.x) >= u_sres.x || float(ip.y) >= u_sres.y) return;
+        imageAtomicAdd(u_soft, ip, amount);
+    } else {
+        ivec2 ip = ivec2(floor(at + jit));
+        if (ip.x < 0 || ip.y < 0 || float(ip.x) >= u_res.x || float(ip.y) >= u_res.y) return;
+        imageAtomicAdd(u_sharp, ip, amount);
+    }
+}

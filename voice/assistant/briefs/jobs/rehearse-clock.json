@@ -1,0 +1,42 @@
+{
+ "id": "rehearse-clock",
+ "title": "时间也能当局面：把「亮了，可是太晚」这一档逼出来",
+ "brief": "briefs/rehearse-clock.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 80,
+ "owns": [
+  "tests/agent/realpath/rehearse.py",
+  "tests/agent/RealPathLedgerChecks.java",
+  "tests/agent/RealPathRehearseChecks.java",
+  "tests/agent/RealPathChecks.java",
+  "tests/agent/RealPathEvidenceChecks.java",
+  "tests/agent/realpath/check.py"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|583[6-9]|58[4-9]\\d|59\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_real_path.sh",
+   "timeoutS": 900,
+   "must": [
+    "REALPATH OK"
+   ]
+  }
+ ]
+}

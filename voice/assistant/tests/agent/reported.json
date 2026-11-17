@@ -1,0 +1,108 @@
+{
+  "entries": [
+    {
+      "id": "pause-not-paused-said-to-xiaoai",
+      "said": "暂停",
+      "when": "2026-11-11",
+      "symptom": "「暂停」说给小爱以后云视听极光还在放：它的按键是切换的，小爱自己的语音先动了手",
+      "check": {"file": "tests/agent/SkillChecks.java", "label": "暂停 while it plays: the key is needed"},
+      "fix": "5ad6439",
+      "before": "5ad6439^",
+      "void_because": "",
+      "verified": "none",
+      "evidence": "",
+      "unverified_because": "真实播放里还没验：这些检查读的是 dumpsys audio 的样本，不是按下暂停以后的电视"
+    },
+    {
+      "id": "panel-never-came-up",
+      "said": "你为什么面板跳不出来",
+      "when": "2026-11-11",
+      "symptom": "接管模式下小爱的卡片被藏起来，星仪的面板要等整句说完才升起来，说话中间屏幕上什么都没有",
+      "check": {"file": "tests/agent/ReportedChecks.java", "label": "the panel goes up with the words so far, while the user is still speaking"},
+      "fix": "c2ea46d",
+      "before": "",
+      "void_because": "这条检查是 2f02281 才写进 ReportedChecks.java 的，跟修复同一个提交，没有修复前的对照；检查读的是 AgentEngine 的源码，行为要真机跑一次才算",
+      "verified": "none",
+      "evidence": "",
+      "unverified_because": "说话中间逐字上屏没在真机上验过：这条检查读的是 AgentEngine 的源码，不是电视上的那块面板"
+    },
+    {
+      "id": "self-check-blind-to-panel",
+      "said": "自检全是问题啊",
+      "when": "2026-11-12",
+      "symptom": "self_check 说「读屏、按键、模型线路都没问题」，却从来没看过面板；面板根本升不起来的时候它也说正常",
+      "check": {"file": "tests/agent/ReportedChecks.java", "label": "self_check puts a panel up and looks whether its window is there"},
+      "fix": "c2ea46d",
+      "before": "",
+      "void_because": "这条检查是读 Hud 和 TvTools 的源码，跟台账同一个提交（2f02281）才写进 ReportedChecks.java，没有修复前的对照：源码里有 probe() 不等于面板真的升起来过",
+      "verified": "test",
+      "evidence": "",
+      "unverified_because": "面板坏了不要重启也能修好，只在 01:58 用故意弄坏验过一次，证据没进仓库"
+    },
+    {
+      "id": "panel-taken-for-an-app",
+      "said": "为什么现在HARNESS面板没有打开",
+      "when": "2026-11-11",
+      "symptom": "问的是星仪自己的面板，星仪却去开电视上的一个应用找它",
+      "check": {"file": "tests/agent/DispatchChecks.java", "label": "为什么现在HARNESS面板没有打开"},
+      "fix": "833d99c",
+      "before": "833d99c^",
+      "void_because": "",
+      "verified": "test",
+      "evidence": "",
+      "unverified_because": ""
+    },
+    {
+      "id": "black-screen-left-open",
+      "said": "你看现在屏幕就是错的呀什么都没有",
+      "when": "2026-11-11",
+      "symptom": "屏幕全黑的时候星仪没有把用户带回桌面，只是接着说",
+      "check": {"file": "tests/agent/QuickChecks.java", "label": "刚才前台是Fluid Lab，已经退回桌面"},
+      "fix": "833d99c",
+      "before": "833d99c^",
+      "void_because": "",
+      "verified": "none",
+      "evidence": "",
+      "unverified_because": "真机上验过（21:12 一片黑，一句话退回桌面），但那份证据没存进仓库"
+    },
+    {
+      "id": "hint-card-switched-by-a-complaint",
+      "said": "你看我现在每次给你提示提示提示提示提示",
+      "when": "2026-11-11",
+      "symptom": "说的是右上角的面板，set_hints 却把亮屏提示卡关了",
+      "check": {"file": "tests/agent/HintChecks.java", "label": "says nothing about the switch: "},
+      "fix": "833d99c",
+      "before": "833d99c^",
+      "void_because": "",
+      "verified": "test",
+      "evidence": "",
+      "unverified_because": ""
+    },
+    {
+      "id": "tv-sleeps-onto-another-app",
+      "said": "（20:07 复现：熄屏后亮屏是浏览器）",
+      "when": "2026-11-11",
+      "symptom": "固件在熄屏时杀掉桌面，亮屏以后留在最上面的是熄屏前压在桌面后面的那个应用",
+      "check": {"file": "tests/agent/MemoryCareChecks.java", "label": "10:05: the browser surfaced behind the desktop: the desktop goes back on top"},
+      "fix": "102cf35",
+      "before": "102cf35^",
+      "void_because": "",
+      "verified": "none",
+      "evidence": "",
+      "unverified_because": "还没在真机上复现第二次"
+    },
+    {
+      "id": "tencent-search-over-1mb",
+      "said": "（搜索结果超过 1 MB 被当「没连上」）",
+      "when": "2026-11-11",
+      "symptom": "腾讯视频一次搜索的回复有 0.1–1.1 MB，超过上限就被当成没连上；现在读到 4 MB，缓存的是切小以后的那份",
+      "check": {"file": "tests/agent/MovieChecks.java", "label": "把那些搜索的回复都拿来试："},
+      "fix": "d70ddb5",
+      "before": "d70ddb5^",
+      "void_because": "",
+      "verified": "test",
+      "evidence": "",
+      "unverified_because": ""
+    }
+  ]
+}

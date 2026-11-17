@@ -1,0 +1,1 @@
+{"app":"Via浏览器","developer":"上海知为网络科技有限公司","page":"https://viayoo.com/zh-cn/docs/get-via.html","url":"https://res.viayoo.com/v1/via-release-cn.apk","package":"","note":"官网下载页明确提供“官网”下载入口；该入口直达开发者自有 CDN 上的 APK。"}

@@ -1,0 +1,17 @@
+# dumpsys usagestats, 2026-11-14 10:38:45-10:41:09, as the TV printed it (event lines only, nothing edited).
+# standby-home.py ran here: browser in front, HOME, screen off at 10:39:05 (power key 26 after SLEEP 223 did nothing),
+# the browser surfaced at 10:39:05 and went to the background 1 s later; the guard put the desktop back at 10:39:33
+# (t+28 s); screen back on at 10:40:47. The scenario polled mResumedActivity every 2 s, which is empty while the
+# screen is off, missed the 1-second surfacing and reported 「浏览器一次都没浮到最上面」. This file is what it should
+# have read.
+    time="2026-11-14 10:38:54" type=MOVE_TO_BACKGROUND package=xyz.erapi0neer.orrery class=xyz.erapi0neer.orrery.HomeActivity flags=0x0
+    time="2026-11-14 10:38:55" type=MOVE_TO_FOREGROUND package=com.phlox.tvwebbrowser class=com.phlox.tvwebbrowser.activity.main.MainActivity flags=0x0
+    time="2026-11-14 10:38:55" type=MOVE_TO_BACKGROUND package=com.phlox.tvwebbrowser class=com.phlox.tvwebbrowser.activity.main.MainActivity flags=0x0
+    time="2026-11-14 10:38:55" type=MOVE_TO_FOREGROUND package=xyz.erapi0neer.orrery class=xyz.erapi0neer.orrery.HomeActivity flags=0x0
+    time="2026-11-14 10:39:05" type=MOVE_TO_FOREGROUND package=com.phlox.tvwebbrowser class=com.phlox.tvwebbrowser.activity.main.MainActivity flags=0x0
+    time="2026-11-14 10:39:05" type=SCREEN_NON_INTERACTIVE package=android flags=0x0
+    time="2026-11-14 10:39:06" type=MOVE_TO_BACKGROUND package=com.phlox.tvwebbrowser class=com.phlox.tvwebbrowser.activity.main.MainActivity flags=0x0
+    time="2026-11-14 10:39:33" type=MOVE_TO_FOREGROUND package=xyz.erapi0neer.orrery class=xyz.erapi0neer.orrery.HomeActivity flags=0x0
+    time="2026-11-14 10:39:33" type=MOVE_TO_BACKGROUND package=xyz.erapi0neer.orrery class=xyz.erapi0neer.orrery.HomeActivity flags=0x0
+    time="2026-11-14 10:40:47" type=SCREEN_INTERACTIVE package=android flags=0x0
+    time="2026-11-14 10:40:47" type=MOVE_TO_FOREGROUND package=xyz.erapi0neer.orrery class=xyz.erapi0neer.orrery.HomeActivity flags=0x0

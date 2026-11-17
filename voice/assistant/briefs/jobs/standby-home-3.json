@@ -1,0 +1,40 @@
+{
+ "id": "standby-home-3",
+ "title": "熄屏那一刻的前台要用 ACTION_SCREEN_OFF 当场读，不是 20 秒心跳采样（那 1.2 秒会漏掉）",
+ "brief": "briefs/standby-home-3.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 70,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/tv/MemoryGuard.java",
+  "src/xyz/erapi0neer/xingyi/agent/MemoryCare.java",
+  "tests/agent/MemoryCareChecks.java",
+  "tests/agent/accept_standby_home.sh"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|521[0-9]|52[2-9]\\d|5[3-9]\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_standby_home.sh",
+   "timeoutS": 900,
+   "must": [
+    "STANDBY HOME OK"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "id": "read-the-overlay",
+ "title": "浮层的字读不到，但画面读得到：进度条比例 + 标题模板",
+ "brief": "briefs/read-the-overlay.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 90,
+ "owns": [
+  "tests/agent/realpath/screen.py",
+  "tests/agent/realpath/screen_check.py",
+  "tests/agent/realpath/probe.py",
+  "tests/agent/realpath/scenarios/pause-through-xiaoai.py",
+  "tests/agent/realpath/scenarios/seek-one-minute.py",
+  "tests/agent/realpath/scenarios/episode-open.py",
+  "tests/agent/realpath/rehearse.py",
+  "tests/agent/accept_real_path.sh"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|583[6-9]|58[4-9]\\d|59\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_real_path.sh",
+   "timeoutS": 900,
+   "must": [
+    "REALPATH OK"
+   ]
+  }
+ ]
+}

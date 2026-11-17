@@ -1,0 +1,21 @@
+{
+ "id": "standby-park",
+ "title": "A media app paused for hours while the TV sleeps is closed; 继续播放 brings the song back",
+ "brief": "briefs/standby-park.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/MemoryCare.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/MemoryGuard.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/MemoryCareChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (359[6-9]|3[6-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "wired", "cmd": "grep -c parkStops src/xyz/erapi0neer/xingyi/agent/tv/MemoryGuard.java", "timeoutS": 30,
+    "must": ["re:^([2-9]|\\d\\d)"] }
+ ]
+}

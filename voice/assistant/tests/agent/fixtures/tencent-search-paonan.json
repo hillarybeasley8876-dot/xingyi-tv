@@ -1,0 +1,487 @@
+{
+ "data": {
+  "errcode": 0,
+  "errmsg": "",
+  "areaBoxList": [
+   {
+    "boxId": "MainNeed",
+    "itemList": [
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002001mel3nv"
+      },
+      "videoInfo": {
+       "title": "奔跑吧 第10季",
+       "typeName": "综艺",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "跑男团集结再度出发",
+       "descrip": "跑男团集体整活儿！",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 36,
+         "episodeInfoList": [
+          {
+           "id": "f4102vy1re7",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc002001mel3nv/f4102vy1re7.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200r0w51xd"
+      },
+      "videoInfo": {
+       "title": "奔跑吧·大湾区篇",
+       "typeName": "综艺",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "嚟啦，玩嘢！",
+       "descrip": "《奔跑吧·大湾区篇》即将发车，嚟啦，玩嘢！(来咯，开跑)",
+       "status": 1,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 23,
+         "episodeInfoList": [
+          {
+           "id": "t1294c0nap3",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc00200r0w51xd/t1294c0nap3.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200cffp47v"
+      },
+      "videoInfo": {
+       "title": "奔跑吧 第9季",
+       "typeName": "综艺",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "又名：奔跑吧",
+       "descrip": "奔跑吧13轻装上阵，放肆奔跑！",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 29,
+         "episodeInfoList": [
+          {
+           "id": "h41012tk2vi",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc00200cffp47v/h41012tk2vi.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200su82gca"
+      },
+      "videoInfo": {
+       "title": "奔跑吧兄弟",
+       "typeName": "综艺",
+       "year": 2014,
+       "area": "内地",
+       "subTitle": "又名：奔跑吧",
+       "descrip": "《奔跑吧兄弟》是浙江卫视全新推出的大型户外竞技真人秀节目，将于10月17日接档《中国好声音》登陆浙江卫视和腾讯视频的周五",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 16,
+         "episodeInfoList": [
+          {
+           "id": "c0015nraflu",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc00200su82gca/c0015nraflu.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002004624g9i"
+      },
+      "videoInfo": {
+       "title": "奔跑吧 第3季",
+       "typeName": "综艺",
+       "year": 2019,
+       "area": "内地",
+       "subTitle": "全新兄弟团热血开跑",
+       "descrip": "《奔跑吧》第3季是一档由浙江卫视推出的真人秀节目，是节目《奔跑吧兄弟》的第7季。节目的常驻嘉宾有李晨、Angelabab",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 13,
+         "episodeInfoList": [
+          {
+           "id": "e00313i3b3x",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc002004624g9i/e00313i3b3x.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200w8gc06w"
+      },
+      "videoInfo": {
+       "title": "奔跑吧兄弟 第4季",
+       "typeName": "综艺",
+       "year": 2016,
+       "area": "内地",
+       "subTitle": "邓超鹿晗遭惊吓浑身瘫软",
+       "descrip": "《奔跑吧兄弟第四季》是浙江卫视引进韩国SBS电视台综艺节目《Running Man》推出的大型户外竞技真人秀节目，由浙江",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 13,
+         "episodeInfoList": [
+          {
+           "id": "m0020rr019m",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc00200w8gc06w/m0020rr019m.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200t0rcvwg"
+      },
+      "videoInfo": {
+       "title": "奔跑吧",
+       "typeName": "综艺",
+       "year": 2017,
+       "area": "内地",
+       "subTitle": "鹿晗热巴超萌对手指",
+       "descrip": "《奔跑吧》是一档由浙江卫视推出的真人秀节目，是节目《奔跑吧兄弟》的第五季。节目的常驻嘉宾有邓超、李晨、陈赫、郑恺、王祖蓝",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 13,
+         "episodeInfoList": [
+          {
+           "id": "f0024n2lq7g",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc00200t0rcvwg/f0024n2lq7g.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002004ec2ose"
+      },
+      "videoInfo": {
+       "title": "奔跑吧 第2季",
+       "typeName": "综艺",
+       "year": 2018,
+       "area": "内地",
+       "subTitle": "邓超狂秀独创英文笑疯跑男团",
+       "descrip": "《奔跑吧》第2季是一档由浙江卫视推出的真人秀节目，是节目《奔跑吧兄弟》的第6季。节目的常驻嘉宾有邓超、Angelabab",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 15,
+         "episodeInfoList": [
+          {
+           "id": "b0743ckgss7",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc002004ec2ose/b0743ckgss7.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200a1gnqbx"
+      },
+      "videoInfo": {
+       "title": "奔跑吧兄弟 第3季",
+       "typeName": "综艺",
+       "year": 2015,
+       "area": "内地",
+       "subTitle": "鹿晗首秀挑战跑男前辈",
+       "descrip": "第三季节目七位固定主持是邓超、Angelababy（杨颖）、李晨、陈赫、郑恺、王祖蓝、鹿晗。第二季固定主持包贝尔因档期原",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 12,
+         "episodeInfoList": [
+          {
+           "id": "m003782w80l",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc00200a1gnqbx/m003782w80l.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002007lmv4ne"
+      },
+      "videoInfo": {
+       "title": "奔跑吧·茶马古道篇",
+       "typeName": "综艺",
+       "year": 2024,
+       "area": "内地",
+       "subTitle": "兄弟团云南团建",
+       "descrip": "奔跑吧团建行程开启",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 17,
+         "episodeInfoList": [
+          {
+           "id": "j4100274v5n",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc002007lmv4ne/j4100274v5n.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200nm5itm6"
+      },
+      "videoInfo": {
+       "title": "奔跑吧 第6季",
+       "typeName": "综艺",
+       "year": 2022,
+       "area": "内地",
+       "subTitle": "又名：奔跑吧",
+       "descrip": "奔跑吧旅程不停，即刻出发！李晨、angelababy、郑恺、沙溢、蔡徐坤、白鹿、周深 用跑的来啦，我们一起踏着鲜花之路，",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 26,
+         "episodeInfoList": [
+          {
+           "id": "e00433r6xjh",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc00200nm5itm6/e00433r6xjh.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200102dx2m"
+      },
+      "videoInfo": {
+       "title": "奔跑吧 第8季",
+       "typeName": "综艺",
+       "year": 2024,
+       "area": "内地",
+       "subTitle": "又名：奔跑吧",
+       "descrip": "龙腾万里，焕发新生。龙年继续Keep Running，开启全新篇章",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 27,
+         "episodeInfoList": [
+          {
+           "id": "t4100vkmcrv",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc00200102dx2m/t4100vkmcrv.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002001n373g7"
+      },
+      "videoInfo": {
+       "title": "奔跑吧 第5季",
+       "typeName": "综艺",
+       "year": 2021,
+       "area": "内地",
+       "subTitle": "又名：奔跑吧",
+       "descrip": "《奔跑吧》第5季是一档由浙江卫视推出的真人秀节目，是节目《奔跑吧兄弟》的第9季。节目的常驻嘉宾有李晨、Angelabab",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 14,
+         "episodeInfoList": [
+          {
+           "id": "t0039j7vyoo",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc002001n373g7/t0039j7vyoo.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200gvy0g5b"
+      },
+      "videoInfo": {
+       "title": "奔跑吧·天路篇",
+       "typeName": "综艺",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "跑男团开启高原之旅",
+       "descrip": "奔跑吧团建一起奔赴天路！",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 17,
+         "episodeInfoList": [
+          {
+           "id": "b4101kciy2d",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc00200gvy0g5b/b4101kciy2d.html"
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "normalList": {
+   "itemList": [
+    {
+     "doc": {
+      "dataType": 5000,
+      "id": "MainNeed"
+     },
+     "videoInfo": {
+      "title": null,
+      "typeName": null,
+      "year": null,
+      "area": null,
+      "subTitle": null,
+      "descrip": "",
+      "status": null,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "d32434pm2ok"
+     },
+     "videoInfo": {
+      "title": "<em>奔跑吧</em>：白鹿挑战最高极限，把男生都比下去了，你是来比赛的吧",
+      "typeName": "综艺",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "j4102i7kgju"
+     },
+     "videoInfo": {
+      "title": "全员含泪告别<em>奔跑吧</em>14",
+      "typeName": "综艺",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "k41003qu59d"
+     },
+     "videoInfo": {
+      "title": "<em>奔跑吧</em>全员跳宋雨琦的《FREAK》",
+      "typeName": "综艺",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    }
+   ]
+  }
+ }
+}

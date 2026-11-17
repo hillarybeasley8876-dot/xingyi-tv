@@ -1,0 +1,40 @@
+{
+ "note": "坏在：这个单一次 run.mjs 都没起来过 —— 一份没起过 runner 的报告，什么也没证明",
+ "tool": "tools/resume/rehearse.mjs",
+ "at": "2026-11-12T05:32:47.000Z",
+ "scratch": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1",
+ "out": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/out",
+ "wt": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/wt",
+ "env": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/env",
+ "claude": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/stub/claude-stub.exe",
+ "realOut": "H:/tools/mitv/voice/assistant-out",
+ "jobs": [
+  {
+   "id": "rehearse-1-kill",
+   "scenario": "kill",
+   "model": "MiniMax-M78",
+   "maxRounds": 3,
+   "state0": {
+    "rounds": 0,
+    "history": 0,
+    "sessionStarted": false,
+    "sessionModel": null,
+    "sessionId": "55555555-5555-4555-8555-555555555555",
+    "status": "new"
+   },
+   "launches": [],
+   "final": {
+    "rounds": 0,
+    "history": 0,
+    "sessionStarted": false,
+    "sessionModel": null,
+    "sessionId": "55555555-5555-4555-8555-555555555555",
+    "status": "new"
+   },
+   "stub": {
+    "runs": 0,
+    "finished": 0
+   }
+  }
+ ]
+}

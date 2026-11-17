@@ -1,0 +1,41 @@
+{
+ "id": "self-repair",
+ "title": "自检不只报告：读屏、面板、ADB 调试、小爱的卡片，能修的当场修好并再验一遍",
+ "brief": "briefs/self-repair.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Repairs.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/SelfRepair.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/RepairsChecks.java",
+  "tests/agent/SkillChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|492[4-9]|49[3-9]\\d|[5-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_self_repair.sh",
+   "timeoutS": 900,
+   "must": [
+    "SELF REPAIR OK"
+   ]
+  }
+ ]
+}

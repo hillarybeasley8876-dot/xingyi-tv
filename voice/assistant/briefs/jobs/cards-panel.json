@@ -1,0 +1,39 @@
+{
+ "id": "cards-panel",
+ "title": "Answer cards on the floating panel: weather, stocks, a list",
+ "brief": "briefs/cards-panel.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/tv/Hud.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/HudCards.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentDebug.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 400,
+   "must": [
+    "re:agent core: (253[4-9]|25[4-9]\\d|2[6-9]\\d\\d|[3-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_cards_panel.sh",
+   "timeoutS": 900,
+   "must": [
+    "CARDS PANEL OK"
+   ]
+  }
+ ]
+}

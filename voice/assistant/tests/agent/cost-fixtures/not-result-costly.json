@@ -1,0 +1,14 @@
+{
+  "type": "assistant",
+  "session_id": "s-vd",
+  "total_cost_usd": 99.0,
+  "duration_ms": 123456,
+  "num_turns": 7,
+  "modelUsage": {
+    "minimax-M78": { "inputTokens": 500, "outputTokens": 600, "costUSD": 99.0 }
+  },
+  "message": {
+    "model": "minimax-M78",
+    "content": [{ "type": "text", "text": "这一条不是 result，就算它带着成本也不算一轮的账" }]
+  }
+}

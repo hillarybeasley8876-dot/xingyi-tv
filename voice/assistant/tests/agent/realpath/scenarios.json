@@ -1,0 +1,123 @@
+{
+ "scenarios": [
+  {
+   "id": "panel-while-speaking",
+   "what": "说话时逐字上屏：一个静音任务跑起来 3 秒后，面板的窗口还在，句子在屏上",
+   "needs": [
+    "亮屏",
+    "桌面在前",
+    "20 分钟没人动"
+   ],
+   "script": "tests/agent/realpath/scenarios/panel-while-speaking.py",
+   "hours": 2,
+   "unverified": "panel-while-speaking"
+  },
+  {
+   "id": "panel-self-check",
+   "what": "面板自检：self_check 的回答里说面板，面板的窗口真的出现",
+   "needs": [
+    "亮屏",
+    "桌面在前",
+    "20 分钟没人动"
+   ],
+   "script": "tests/agent/realpath/scenarios/panel-self-check.py",
+   "hours": 2,
+   "unverified": "panel-self-check"
+  },
+  {
+   "id": "black-screen-home",
+   "what": "「屏幕黑了」：自己的测试应用在前，说完以后桌面回到最上面",
+   "needs": [
+    "亮屏",
+    "桌面在前",
+    "20 分钟没人动"
+   ],
+   "script": "tests/agent/realpath/scenarios/black-screen-home.py",
+   "hours": 2,
+   "unverified": "black-screen-home"
+  },
+  {
+   "id": "hint-card-not-a-switch",
+   "what": "提示卡不是开关：一句只有「提示」的话说完，hints 设置没变",
+   "needs": [
+    "亮屏",
+    "桌面在前",
+    "20 分钟没人动"
+   ],
+   "script": "tests/agent/realpath/scenarios/hint-card-not-a-switch.py",
+   "hours": 3,
+   "unverified": "hint-card-not-a-switch"
+  },
+  {
+   "id": "episode-open",
+   "what": "「我想看别无选择第5集」：暂停浮层上写着第5集，然后继续放",
+   "needs": [
+    "亮屏",
+    "桌面在前",
+    "20 分钟没人动"
+   ],
+   "script": "tests/agent/realpath/scenarios/episode-open.py",
+   "hours": 5,
+   "unverified": ""
+  },
+  {
+   "id": "pause-through-xiaoai",
+   "what": "对真实播放说「暂停」：3 秒后音频服务说这个应用是 paused",
+   "needs": [
+    "亮屏",
+    "放一集",
+    "播放页在前",
+    "20 分钟没人动"
+   ],
+   "script": "tests/agent/realpath/scenarios/pause-through-xiaoai.py",
+   "hours": 5,
+   "unverified": ""
+  },
+  {
+   "id": "karaoke-switch",
+   "what": "网易云的伴奏/原唱切换（11-08 连续三次真实失败）",
+   "needs": [
+    "亮屏",
+    "桌面在前",
+    "20 分钟没人动"
+   ],
+   "script": "tests/agent/realpath/scenarios/karaoke-switch.py",
+   "hours": 2,
+   "unverified": ""
+  },
+  {
+   "id": "seek-one-minute",
+   "what": "「快进一分钟」：两次暂停浮层上的进度差了大约一分钟，任务自己说已快进",
+   "needs": [
+    "亮屏",
+    "桌面在前",
+    "20 分钟没人动"
+   ],
+   "script": "tests/agent/realpath/scenarios/seek-one-minute.py",
+   "hours": 3,
+   "unverified": ""
+  },
+  {
+   "id": "standby-home",
+   "what": "熄屏以后守护把桌面放回最上面：浏览器浮到过最前，60 秒内桌面回来",
+   "needs": [
+    "亮屏",
+    "桌面在前",
+    "20 分钟没人动"
+   ],
+   "script": "tests/agent/realpath/scenarios/standby-home.py",
+   "hours": 2,
+   "unverified": ""
+  },
+  {
+   "id": "sleeping-episode",
+   "what": "待机时说「我想看别无选择第5集」：15 秒内亮屏，45 秒内播放页在最前面",
+   "needs": [
+    "待机"
+   ],
+   "script": "tests/agent/realpath/scenarios/sleeping-episode.py",
+   "hours": 2,
+   "unverified": ""
+  }
+ ]
+}

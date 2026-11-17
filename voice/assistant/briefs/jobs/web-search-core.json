@@ -1,0 +1,38 @@
+{
+ "id": "web-search-core",
+ "title": "Web search core: Responses API client + speakable text",
+ "brief": "briefs/web-search-core.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/ResponsesText.java",
+  "src/xyz/erapi0neer/xingyi/agent/WebSearch.java",
+  "tests/agent/WebSearchChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 300,
+   "must": [
+    "re:agent core: (1[89]\\d|[2-9]\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "api",
+   "cmd": "sh tests/agent/accept_web_search.sh",
+   "must": [
+    "API_OK"
+   ]
+  }
+ ]
+}

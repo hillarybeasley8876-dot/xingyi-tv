@@ -1,0 +1,49 @@
+{
+ "id": "ledger-vs-registry",
+ "title": "账本和注册表必须说的是同一件事：没跑过的场景要指着一条待办，验过的待办要删掉",
+ "brief": "briefs/ledger-vs-registry.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 70,
+ "owns": [
+  "tests/agent/realpath/check.py",
+  "tests/agent/realpath/scenarios.json",
+  "tests/agent/RealPathChecks.java",
+  "tests/agent/UnverifiedChecks.java",
+  "tests/agent/accept_real_path.sh"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|565[2-9]|56[6-9]\\d|5[7-9]\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_real_path.sh",
+   "timeoutS": 900,
+   "must": [
+    "REALPATH OK"
+   ]
+  },
+  {
+   "name": "verify-durable",
+   "cmd": "sh tests/agent/accept_verify_durable.sh",
+   "timeoutS": 900,
+   "must": [
+    "VERIFY DURABLE OK"
+   ]
+  }
+ ]
+}

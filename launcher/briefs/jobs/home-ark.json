@@ -1,0 +1,25 @@
+{
+ "id": "home-ark",
+ "title": "The home screen as a line-drawn terminal at the bottom centre (the user's choice)",
+ "brief": "briefs/home-ark.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/orrery/HomeUi.java",
+  "src/xyz/erapi0neer/orrery/HomeActivity.java",
+  "src/xyz/erapi0neer/orrery/HomeLayout.java",
+  "src/xyz/erapi0neer/orrery/HomeInfo.java",
+  "tools/HomeLayoutCheck.java"
+ ],
+ "accept": [
+  {
+   "name": "build-checks-design",
+   "cmd": "sh tools/accept_home_ark.sh",
+   "timeoutS": 900,
+   "must": [
+    "HOME ARK OK"
+   ]
+  }
+ ]
+}

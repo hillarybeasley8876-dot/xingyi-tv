@@ -1,0 +1,35 @@
+{
+ "id": "cost-known-demo",
+ "title": "两轮都记了成本的那一单（fixture）",
+ "status": "accepted_mechanical",
+ "rounds": 2,
+ "maxRounds": 4,
+ "startedAt": "2026-11-12T01:00:00+08:00",
+ "startedMs": 1794418800000,
+ "updatedMs": 1794420000000,
+ "merged": true,
+ "commit": "aaa1111bbb2222ccc3333ddd4444eee5555",
+ "lastText": "两轮都跑完了，账记上了。",
+ "history": [
+  {
+   "round": 1,
+   "end": "ok",
+   "tools": 30,
+   "cost": { "usd": 4.821722, "outTok": 68913, "models": { "minimax-M78": { "usd": 4.821722, "outTok": 68913 } } },
+   "acc": [
+    { "name": "core-checks", "pass": true, "why": [] },
+    { "name": "android-check", "pass": true, "why": [] }
+   ]
+  },
+  {
+   "round": 2,
+   "end": "ok",
+   "tools": 11,
+   "cost": { "usd": 1.323325, "outTok": 19568, "models": { "minimax-M78": { "usd": 1.323325, "outTok": 19568 } } },
+   "acc": [
+    { "name": "core-checks", "pass": true, "why": [] },
+    { "name": "android-check", "pass": true, "why": [] }
+   ]
+  }
+ ]
+}

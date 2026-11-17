@@ -1,0 +1,19 @@
+{
+ "id": "bili-fullscreen",
+ "title": "A B站 video that 星仪 started fills the TV screen (one touch on the player, a click on 展开全屏)",
+ "brief": "briefs/bili-fullscreen.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/PlayerPages.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/SkillChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (42(0[2-9]|[1-9]\\d)|4[3-9]\\d\\d|[5-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_bili_fullscreen.sh", "timeoutS": 900, "must": ["BILI FULLSCREEN OK"] }
+ ]
+}

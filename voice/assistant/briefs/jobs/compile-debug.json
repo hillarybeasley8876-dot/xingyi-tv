@@ -1,0 +1,20 @@
+{
+ "id": "compile-debug",
+ "title": "The standby compile can be run on demand from the PC (AgentDebug COMPILE), so its path is tried on the TV",
+ "brief": "briefs/compile-debug.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 90,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/AppCompile.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/MemoryGuard.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentDebug.java",
+  "tests/agent/MemoryCareChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (4(19[89]|2\\d\\d)|4[3-9]\\d\\d|[5-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_compile_debug.sh", "timeoutS": 900, "must": ["COMPILE DEBUG OK"] }
+ ]
+}

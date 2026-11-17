@@ -1,0 +1,38 @@
+{
+ "id": "payload-shapes",
+ "title": "场景从广播里读的每个键，离线就能核对它在真机上存在",
+ "brief": "briefs/payload-shapes.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 70,
+ "owns": [
+  "tests/agent/realpath/check.py",
+  "tests/agent/RealPathChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|569[6-9]|5[7-9]\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_real_path.sh",
+   "timeoutS": 900,
+   "must": [
+    "REALPATH OK"
+   ]
+  }
+ ]
+}

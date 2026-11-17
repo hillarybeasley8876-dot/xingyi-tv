@@ -1,0 +1,1081 @@
+Activity Resolver Table:
+  Schemes:
+      market:
+        4ebd519 com.xiaomi.mitv.appstore/.MainActivity filter 9816d60
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "appstore.mitv.xiaomi.com": -1
+          Path: "PatternMatcher{LITERAL: /home}"
+        dad89de com.xiaomi.mitv.appstore/.patchwall.ui.DetailsRouteActivity filter 3b8fcbf
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "appstore.mitv.xiaomi.com": -1
+          Path: "PatternMatcher{LITERAL: /details}"
+        29987bf com.xiaomi.mitv.appstore/.skill.ui.SkillAppDetailActivity filter d7fff8c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "appstore.mitv.xiaomi.com": -1
+          Path: "PatternMatcher{LITERAL: /skill}"
+        f752e8c com.xiaomi.mitv.appstore/.search.SearchActivity filter 1a4a6d5
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "appstore.mitv.xiaomi.com": -1
+          Path: "PatternMatcher{LITERAL: /search}"
+        55ba9d5 com.xiaomi.mitv.appstore/.about.AboutActivity filter 98aa5db
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "appstore.mitv.xiaomi.com": -1
+          Path: "PatternMatcher{LITERAL: /about}"
+        58465ea com.xiaomi.mitv.appstore/.category.AppCategoryActivity filter f38878
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "appstore.mitv.xiaomi.com": -1
+          Path: "PatternMatcher{LITERAL: /category}"
+        d68e0db com.xiaomi.mitv.appstore/.tag.AppTagActivity filter 15db51
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "appstore.mitv.xiaomi.com": -1
+          Path: "PatternMatcher{LITERAL: /tag}"
+        e8ca778 com.xiaomi.mitv.appstore/.recommend.RelatedRecommendActivity filter 3c73fb6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "appstore.mitv.xiaomi.com": -1
+          Path: "PatternMatcher{LITERAL: /appmilist}"
+      miwebcontent:
+        bba0e51 com.xiaomi.mitv.appstore/.game.GameWebViewActivity filter de7a389
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "miwebcontent"
+          Authority: "game": -1
+
+  Non-Data Actions:
+      PluginTestActivity:
+        23af6b6 com.xiaomi.mitv.appstore/com.mitv.pcdn.test.PluginTestActivity filter 46a8f8e
+          Action: "PluginTestActivity"
+          Category: "android.intent.category.DEFAULT"
+      android.intent.action.MAIN:
+        4ebd519 com.xiaomi.mitv.appstore/.MainActivity filter 4102f92
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.APPSTORE_LAUNCHER"
+        4ebd519 com.xiaomi.mitv.appstore/.MainActivity filter 3af0219
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.MONKEY"
+        bba0e51 com.xiaomi.mitv.appstore/.game.GameWebViewActivity filter 7faee90
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.DEFAULT"
+      testactivity::
+        10aafb7 com.xiaomi.mitv.appstore/.TestActivity filter e03c4b7
+          Action: "testactivity:"
+          Category: "android.intent.category.DEFAULT"
+      com.xiaomi.mitv.appstore.action.recommendapp:
+        1a0c324 com.xiaomi.mitv.appstore/.recommendapp.RecommendAppActivity filter c7db2de
+          Action: "com.xiaomi.mitv.appstore.action.recommendapp"
+          Category: "android.intent.category.DEFAULT"
+      com.xiaomi.mitv.appstore.ACTION_OPEN_AUTO_UPDATE_SETTINGS:
+        ec03e8d com.xiaomi.mitv.appstore/.appmanager.upmanager.AutoUpdateSettingsActivity filter 18bdb8d
+          Action: "com.xiaomi.mitv.appstore.ACTION_OPEN_AUTO_UPDATE_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      com.xiaomi.mitv.appstore.appmanager.appmanageractivity:
+        8f7c842 com.xiaomi.mitv.appstore/.appmanager.AppManagerActivity filter 17fa142
+          Action: "com.xiaomi.mitv.appstore.appmanager.appmanageractivity"
+          Category: "android.intent.category.DEFAULT"
+      com.xiaomi.mitv.appstore.appmanager.upmanager.upmanageractivity:
+        5909053 com.xiaomi.mitv.appstore/.appmanager.upmanager.UpManagerActivity filter a14b424
+          Action: "com.xiaomi.mitv.appstore.appmanager.upmanager.upmanageractivity"
+          Category: "android.intent.category.DEFAULT"
+      Qing:
+        db8ed90 com.xiaomi.mitv.appstore/.qing.QingLoadActivity filter bae1eea
+          Action: "Qing"
+          Category: "android.intent.category.DEFAULT"
+      mitv.appstore.action.LAUNCHER:
+        4ebd519 com.xiaomi.mitv.appstore/.MainActivity filter 64eed63
+          Action: "mitv.appstore.action.LAUNCHER"
+          Category: "android.intent.category.DEFAULT"
+      com.xiaomi.mitv.appstore.appmanager.delmanager.delmanageractivity:
+        d7f3689 com.xiaomi.mitv.appstore/.appmanager.delmanager.DelManagerActivity filter 185f553
+          Action: "com.xiaomi.mitv.appstore.appmanager.delmanager.delmanageractivity"
+          Category: "android.intent.category.DEFAULT"
+
+Receiver Resolver Table:
+  Schemes:
+      package:
+        8be268e com.xiaomi.mitv.appstore/.boot.AppBoot$PackageReplace filter 37f9830
+          Action: "android.intent.action.PACKAGE_REPLACED"
+          Action: "android.intent.action.MY_PACKAGE_REPLACED"
+          Scheme: "package"
+        889deaf com.xiaomi.mitv.appstore/.receiver.ApplicationReceiver filter 31e622e
+          Action: "android.intent.action.PACKAGE_ADDED"
+          Action: "android.intent.action.PACKAGE_CHANGED"
+          Action: "android.intent.action.PACKAGE_REMOVED"
+          Action: "android.intent.action.PACKAGE_REPLACED"
+          Scheme: "package"
+
+  Non-Data Actions:
+      android.intent.action.BATTERY_OKAY:
+        ee752bc com.xiaomi.mitv.appstore/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy filter 72ebeb
+          Action: "android.intent.action.BATTERY_OKAY"
+          Action: "android.intent.action.BATTERY_LOW"
+      android.intent.action.updateThirdChannelApps:
+        d1bb245 com.xiaomi.mitv.appstore/.receiver.TestCaseReceiver filter 2d29ca9
+          Action: "android.intent.action.triggerUpdate"
+          Action: "android.intent.action.updateThirdChannelApps"
+          Action: "android.intent.action.getDeviceStatus"
+          Action: "android.intent.action.updateThirdAppConfig"
+          Action: "android.intent.action.clearGarbage"
+          Action: "android.intent.action.refreshAppExtraInfos"
+          Action: "android.intent.action.autoStart"
+          Action: "android.intent.action.pauseDownload"
+          Action: "android.intent.action.analyseBigDir"
+          Action: "android.intent.action.analyseThirdApps"
+          Action: "android.intent.action.reserveSpace"
+      android.intent.action.ACTION_POWER_DISCONNECTED:
+        b7a1d9a com.xiaomi.mitv.appstore/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy filter f32733a
+          Action: "android.intent.action.ACTION_POWER_CONNECTED"
+          Action: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      android.intent.action.refreshAppExtraInfos:
+        d1bb245 com.xiaomi.mitv.appstore/.receiver.TestCaseReceiver filter 2d29ca9
+          Action: "android.intent.action.triggerUpdate"
+          Action: "android.intent.action.updateThirdChannelApps"
+          Action: "android.intent.action.getDeviceStatus"
+          Action: "android.intent.action.updateThirdAppConfig"
+          Action: "android.intent.action.clearGarbage"
+          Action: "android.intent.action.refreshAppExtraInfos"
+          Action: "android.intent.action.autoStart"
+          Action: "android.intent.action.pauseDownload"
+          Action: "android.intent.action.analyseBigDir"
+          Action: "android.intent.action.analyseThirdApps"
+          Action: "android.intent.action.reserveSpace"
+      android.intent.action.triggerUpdate:
+        d1bb245 com.xiaomi.mitv.appstore/.receiver.TestCaseReceiver filter 2d29ca9
+          Action: "android.intent.action.triggerUpdate"
+          Action: "android.intent.action.updateThirdChannelApps"
+          Action: "android.intent.action.getDeviceStatus"
+          Action: "android.intent.action.updateThirdAppConfig"
+          Action: "android.intent.action.clearGarbage"
+          Action: "android.intent.action.refreshAppExtraInfos"
+          Action: "android.intent.action.autoStart"
+          Action: "android.intent.action.pauseDownload"
+          Action: "android.intent.action.analyseBigDir"
+          Action: "android.intent.action.analyseThirdApps"
+          Action: "android.intent.action.reserveSpace"
+      appstore.intent.action.track:
+        71fb6cb com.xiaomi.mitv.appstore/.receiver.TaskReceiver filter 36e01cf
+          Action: "android.intent.action.updateAppTask"
+          Action: "android.intent.action.notify.updateApp"
+          Action: "android.intent.action.notify.check.update.home"
+          Action: "appstore.intent.action.track"
+      android.intent.action.updateThirdAppConfig:
+        d1bb245 com.xiaomi.mitv.appstore/.receiver.TestCaseReceiver filter 2d29ca9
+          Action: "android.intent.action.triggerUpdate"
+          Action: "android.intent.action.updateThirdChannelApps"
+          Action: "android.intent.action.getDeviceStatus"
+          Action: "android.intent.action.updateThirdAppConfig"
+          Action: "android.intent.action.clearGarbage"
+          Action: "android.intent.action.refreshAppExtraInfos"
+          Action: "android.intent.action.autoStart"
+          Action: "android.intent.action.pauseDownload"
+          Action: "android.intent.action.analyseBigDir"
+          Action: "android.intent.action.analyseThirdApps"
+          Action: "android.intent.action.reserveSpace"
+      android.intent.action.getDeviceStatus:
+        d1bb245 com.xiaomi.mitv.appstore/.receiver.TestCaseReceiver filter 2d29ca9
+          Action: "android.intent.action.triggerUpdate"
+          Action: "android.intent.action.updateThirdChannelApps"
+          Action: "android.intent.action.getDeviceStatus"
+          Action: "android.intent.action.updateThirdAppConfig"
+          Action: "android.intent.action.clearGarbage"
+          Action: "android.intent.action.refreshAppExtraInfos"
+          Action: "android.intent.action.autoStart"
+          Action: "android.intent.action.pauseDownload"
+          Action: "android.intent.action.analyseBigDir"
+          Action: "android.intent.action.analyseThirdApps"
+          Action: "android.intent.action.reserveSpace"
+      android.intent.action.DEVICE_STORAGE_LOW:
+        e34dea8 com.xiaomi.mitv.appstore/androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy filter 7923d48
+          Action: "android.intent.action.DEVICE_STORAGE_LOW"
+          Action: "android.intent.action.DEVICE_STORAGE_OK"
+      android.net.conn.CONNECTIVITY_CHANGE:
+        64a2dc1 com.xiaomi.mitv.appstore/androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy filter 5a037e1
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+        bcc7966 com.xiaomi.mitv.appstore/com.xiaomi.ad.internal.server.AdReceiver filter f07711d
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      android.intent.action.appstore.escape:
+        df0f4a7 com.xiaomi.mitv.appstore/.receiver.AppEscapeTaskReceiver filter f7e075c
+          Action: "android.intent.action.appstore.escape"
+      android.intent.action.DEVICE_STORAGE_OK:
+        e34dea8 com.xiaomi.mitv.appstore/androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy filter 7923d48
+          Action: "android.intent.action.DEVICE_STORAGE_LOW"
+          Action: "android.intent.action.DEVICE_STORAGE_OK"
+      android.intent.action.analyseThirdApps:
+        d1bb245 com.xiaomi.mitv.appstore/.receiver.TestCaseReceiver filter 2d29ca9
+          Action: "android.intent.action.triggerUpdate"
+          Action: "android.intent.action.updateThirdChannelApps"
+          Action: "android.intent.action.getDeviceStatus"
+          Action: "android.intent.action.updateThirdAppConfig"
+          Action: "android.intent.action.clearGarbage"
+          Action: "android.intent.action.refreshAppExtraInfos"
+          Action: "android.intent.action.autoStart"
+          Action: "android.intent.action.pauseDownload"
+          Action: "android.intent.action.analyseBigDir"
+          Action: "android.intent.action.analyseThirdApps"
+          Action: "android.intent.action.reserveSpace"
+      android.intent.action.pauseDownload:
+        d1bb245 com.xiaomi.mitv.appstore/.receiver.TestCaseReceiver filter 2d29ca9
+          Action: "android.intent.action.triggerUpdate"
+          Action: "android.intent.action.updateThirdChannelApps"
+          Action: "android.intent.action.getDeviceStatus"
+          Action: "android.intent.action.updateThirdAppConfig"
+          Action: "android.intent.action.clearGarbage"
+          Action: "android.intent.action.refreshAppExtraInfos"
+          Action: "android.intent.action.autoStart"
+          Action: "android.intent.action.pauseDownload"
+          Action: "android.intent.action.analyseBigDir"
+          Action: "android.intent.action.analyseThirdApps"
+          Action: "android.intent.action.reserveSpace"
+      android.intent.action.BATTERY_LOW:
+        ee752bc com.xiaomi.mitv.appstore/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy filter 72ebeb
+          Action: "android.intent.action.BATTERY_OKAY"
+          Action: "android.intent.action.BATTERY_LOW"
+      android.intent.action.TIMEZONE_CHANGED:
+        a4d3d54 com.xiaomi.mitv.appstore/androidx.work.impl.background.systemalarm.RescheduleReceiver filter f448906
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+      android.intent.action.TIME_SET:
+        a4d3d54 com.xiaomi.mitv.appstore/androidx.work.impl.background.systemalarm.RescheduleReceiver filter f448906
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+      android.intent.action.reserveSpace:
+        d1bb245 com.xiaomi.mitv.appstore/.receiver.TestCaseReceiver filter 2d29ca9
+          Action: "android.intent.action.triggerUpdate"
+          Action: "android.intent.action.updateThirdChannelApps"
+          Action: "android.intent.action.getDeviceStatus"
+          Action: "android.intent.action.updateThirdAppConfig"
+          Action: "android.intent.action.clearGarbage"
+          Action: "android.intent.action.refreshAppExtraInfos"
+          Action: "android.intent.action.autoStart"
+          Action: "android.intent.action.pauseDownload"
+          Action: "android.intent.action.analyseBigDir"
+          Action: "android.intent.action.analyseThirdApps"
+          Action: "android.intent.action.reserveSpace"
+      android.intent.action.BOOT_COMPLETED:
+        e8ae4fd com.xiaomi.mitv.appstore/.boot.AppBoot$BootComplete filter 932c173
+          Action: "android.intent.action.BOOT_COMPLETED"
+        a4d3d54 com.xiaomi.mitv.appstore/androidx.work.impl.background.systemalarm.RescheduleReceiver filter f448906
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+      android.intent.action.analyseBigDir:
+        d1bb245 com.xiaomi.mitv.appstore/.receiver.TestCaseReceiver filter 2d29ca9
+          Action: "android.intent.action.triggerUpdate"
+          Action: "android.intent.action.updateThirdChannelApps"
+          Action: "android.intent.action.getDeviceStatus"
+          Action: "android.intent.action.updateThirdAppConfig"
+          Action: "android.intent.action.clearGarbage"
+          Action: "android.intent.action.refreshAppExtraInfos"
+          Action: "android.intent.action.autoStart"
+          Action: "android.intent.action.pauseDownload"
+          Action: "android.intent.action.analyseBigDir"
+          Action: "android.intent.action.analyseThirdApps"
+          Action: "android.intent.action.reserveSpace"
+      android.intent.action.ACTION_POWER_CONNECTED:
+        b7a1d9a com.xiaomi.mitv.appstore/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy filter f32733a
+          Action: "android.intent.action.ACTION_POWER_CONNECTED"
+          Action: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      android.intent.action.notify.updateApp:
+        71fb6cb com.xiaomi.mitv.appstore/.receiver.TaskReceiver filter 36e01cf
+          Action: "android.intent.action.updateAppTask"
+          Action: "android.intent.action.notify.updateApp"
+          Action: "android.intent.action.notify.check.update.home"
+          Action: "appstore.intent.action.track"
+      com.android.packageinstaller.ACTION_INSTALL_COMMIT.APPSTORE:
+        b96c5f2 com.xiaomi.mitv.appstore/com.xiaomi.mitv.pie.InstallEventReceiver filter c0f5a65
+          Action: "com.android.packageinstaller.ACTION_INSTALL_COMMIT.APPSTORE"
+      android.intent.action.clearGarbage:
+        d1bb245 com.xiaomi.mitv.appstore/.receiver.TestCaseReceiver filter 2d29ca9
+          Action: "android.intent.action.triggerUpdate"
+          Action: "android.intent.action.updateThirdChannelApps"
+          Action: "android.intent.action.getDeviceStatus"
+          Action: "android.intent.action.updateThirdAppConfig"
+          Action: "android.intent.action.clearGarbage"
+          Action: "android.intent.action.refreshAppExtraInfos"
+          Action: "android.intent.action.autoStart"
+          Action: "android.intent.action.pauseDownload"
+          Action: "android.intent.action.analyseBigDir"
+          Action: "android.intent.action.analyseThirdApps"
+          Action: "android.intent.action.reserveSpace"
+      android.intent.action.autoStart:
+        d1bb245 com.xiaomi.mitv.appstore/.receiver.TestCaseReceiver filter 2d29ca9
+          Action: "android.intent.action.triggerUpdate"
+          Action: "android.intent.action.updateThirdChannelApps"
+          Action: "android.intent.action.getDeviceStatus"
+          Action: "android.intent.action.updateThirdAppConfig"
+          Action: "android.intent.action.clearGarbage"
+          Action: "android.intent.action.refreshAppExtraInfos"
+          Action: "android.intent.action.autoStart"
+          Action: "android.intent.action.pauseDownload"
+          Action: "android.intent.action.analyseBigDir"
+          Action: "android.intent.action.analyseThirdApps"
+          Action: "android.intent.action.reserveSpace"
+      androidx.work.diagnostics.REQUEST_DIAGNOSTICS:
+        aae3443 com.xiaomi.mitv.appstore/androidx.work.impl.diagnostics.DiagnosticsReceiver filter 331e5f4
+          Action: "androidx.work.diagnostics.REQUEST_DIAGNOSTICS"
+      android.intent.action.notify.check.update.home:
+        71fb6cb com.xiaomi.mitv.appstore/.receiver.TaskReceiver filter 36e01cf
+          Action: "android.intent.action.updateAppTask"
+          Action: "android.intent.action.notify.updateApp"
+          Action: "android.intent.action.notify.check.update.home"
+          Action: "appstore.intent.action.track"
+      androidx.work.impl.background.systemalarm.UpdateProxies:
+        eeadac0 com.xiaomi.mitv.appstore/androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver filter 2925bc7
+          Action: "androidx.work.impl.background.systemalarm.UpdateProxies"
+      android.intent.action.updateAppTask:
+        71fb6cb com.xiaomi.mitv.appstore/.receiver.TaskReceiver filter 36e01cf
+          Action: "android.intent.action.updateAppTask"
+          Action: "android.intent.action.notify.updateApp"
+          Action: "android.intent.action.notify.check.update.home"
+          Action: "appstore.intent.action.track"
+
+Service Resolver Table:
+  Non-Data Actions:
+      com.xiaomi.mitv.appstore.REMOTE_DOWNLOAD_SERVICE:
+        925d3f9 com.xiaomi.mitv.appstore/.service.download.RemoteDownloadService filter a6403c4
+          Action: "com.xiaomi.mitv.appstore.REMOTE_DOWNLOAD_SERVICE"
+      com.xiaomi.mitv.appstore.FIRST_INIT_CHECK:
+        7474f3e com.xiaomi.mitv.appstore/.service.InitService filter 35382ad
+          Action: "com.xiaomi.mitv.appstore.FIRST_INIT_CHECK"
+      com.xiaomi.mitv.appstore.remotecontrol.service:
+        b75d19f com.xiaomi.mitv.appstore/com.xiaomi.appstore.remotecontrol.AppRemoteControlService filter 7d9de56
+          Action: "com.xiaomi.mitv.appstore.remotecontrol.service"
+      android.accessibilityservice.AccessibilityService:
+        702e2ec com.xiaomi.mitv.appstore/.appmodel.monitor.MonitorAccessibilityService filter 4ab5071 permission android.permission.BIND_ACCESSIBILITY_SERVICE
+          Action: "android.accessibilityservice.AccessibilityService"
+      milink.intent.action.CLIENT_CALLBACK_SERVICE:
+        be6b6b5 com.xiaomi.mitv.appstore/com.milink.kit.MiLinkKitService filter b2d89e2
+          Action: "milink.intent.action.CLIENT_CALLBACK_SERVICE"
+      com.xiaomi.mitv.appstore.REMOTE_UPGRADE_SERVICE:
+        1e5214a com.xiaomi.mitv.appstore/.upgrade.RemoteUpgradeService filter 6060ed7
+          Action: "com.xiaomi.mitv.appstore.REMOTE_UPGRADE_SERVICE"
+
+Provider Resolver Table:
+  Non-Data Actions:
+      hyperos.action.AIACTION_PROVIDER:
+        7efe8bb com.xiaomi.mitv.appstore/.aiaction.provider.AIActionProvider filter 68f1e18
+          Action: "hyperos.action.AIACTION_PROVIDER"
+          Category: "android.intent.category.DEFAULT"
+
+Permissions:
+  Permission [com.xiaomi.mitv.appstore.receiver.AppEscapeTaskReceiver.ESCAPE_TASK] (5b141d8):
+    sourcePackage=com.xiaomi.mitv.appstore
+    uid=1000 gids=null type=0 prot=normal
+    perm=Permission{3990931 com.xiaomi.mitv.appstore.receiver.AppEscapeTaskReceiver.ESCAPE_TASK}
+    packageSetting=PackageSetting{e4b5a0a com.xiaomi.mitv.appstore/1000}
+
+Permissions:
+  Permission [com.xiaomi.mitv.appstore.permission.LAUNCH_FROM_PW] (5dc0816):
+    sourcePackage=com.xiaomi.mitv.appstore
+    uid=1000 gids=null type=0 prot=signature|privileged
+    perm=Permission{2a5597 com.xiaomi.mitv.appstore.permission.LAUNCH_FROM_PW}
+    packageSetting=PackageSetting{e4b5a0a com.xiaomi.mitv.appstore/1000}
+
+Permissions:
+  Permission [com.xiaomi.mitv.appstore.permission.GET_LBS] (1e4a384):
+    sourcePackage=com.xiaomi.mitv.appstore
+    uid=1000 gids=null type=0 prot=normal
+    perm=Permission{444076d com.xiaomi.mitv.appstore.permission.GET_LBS}
+    packageSetting=PackageSetting{e4b5a0a com.xiaomi.mitv.appstore/1000}
+
+Registered ContentProviders:
+  com.xiaomi.mitv.appstore/com.xiaomi.ad.internal.provider.LBSProvider:
+    Provider{6888fa2 com.xiaomi.mitv.appstore/com.xiaomi.ad.internal.provider.LBSProvider}
+  com.xiaomi.mitv.appstore/.aiaction.provider.AIActionProvider:
+    Provider{7efe8bb com.xiaomi.mitv.appstore/.aiaction.provider.AIActionProvider}
+  com.xiaomi.mitv.appstore/androidx.startup.InitializationProvider:
+    Provider{d34b433 com.xiaomi.mitv.appstore/androidx.startup.InitializationProvider}
+  com.xiaomi.mitv.appstore/com.xiaomi.ad.internal.provider.PreviewProvider:
+    Provider{ca73f0 com.xiaomi.mitv.appstore/com.xiaomi.ad.internal.provider.PreviewProvider}
+
+ContentProvider Authorities:
+  [com.xiaomi.mitv.appstore.androidx-startup]:
+    Provider{d34b433 com.xiaomi.mitv.appstore/androidx.startup.InitializationProvider}
+      applicationInfo=ApplicationInfo{126ad69 com.xiaomi.mitv.appstore}
+  [com.xiaomi.mitv.appstore.lbs]:
+    Provider{6888fa2 com.xiaomi.mitv.appstore/com.xiaomi.ad.internal.provider.LBSProvider}
+      applicationInfo=ApplicationInfo{126ad69 com.xiaomi.mitv.appstore}
+  [com.xiaomi.mitv.appstore.aiprovider]:
+    Provider{7efe8bb com.xiaomi.mitv.appstore/.aiaction.provider.AIActionProvider}
+      applicationInfo=ApplicationInfo{126ad69 com.xiaomi.mitv.appstore}
+  [com.xiaomi.mitv.appstore.preview]:
+    Provider{ca73f0 com.xiaomi.mitv.appstore/com.xiaomi.ad.internal.provider.PreviewProvider}
+      applicationInfo=ApplicationInfo{126ad69 com.xiaomi.mitv.appstore}
+
+Key Set Manager:
+  [com.xiaomi.mitv.appstore]
+      Signing KeySets: 1
+
+Packages:
+  Package [com.xiaomi.mitv.appstore] (e4b5a0a):
+    userId=1000
+    sharedUser=SharedUserSetting{32af569 android.uid.system/1000}
+    pkg=Package{e8403ee com.xiaomi.mitv.appstore}
+    codePath=/data/app/com.xiaomi.mitv.appstore-_wabvHRT_Cgfg4rv_TvhRg==
+    resourcePath=/data/app/com.xiaomi.mitv.appstore-_wabvHRT_Cgfg4rv_TvhRg==
+    legacyNativeLibraryDir=/data/app/com.xiaomi.mitv.appstore-_wabvHRT_Cgfg4rv_TvhRg==/lib
+    primaryCpuAbi=armeabi-v7a
+    secondaryCpuAbi=null
+    versionCode=22400 minSdk=19 targetSdk=23
+    versionName=2.24.0
+    splits=[base]
+    apkSigningVersion=2
+    applicationInfo=ApplicationInfo{126ad69 com.xiaomi.mitv.appstore}
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA UPDATED_SYSTEM_APP LARGE_HEAP ]
+    privateFlags=[ PARTIALLY_DIRECT_BOOT_AWARE VENDOR ]
+    dataDir=/data/user/0/com.xiaomi.mitv.appstore
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      org.apache.http.legacy
+    usesOptionalLibraries:
+      com.xiaomi.mitv.api
+      mitvmiddlewareimpl
+    usesLibraryFiles:
+      /system/framework/org.apache.http.legacy.boot.jar
+      /system/framework/MitvAPIImpl.jar
+      /system/framework/mitvmiddlewareimpl.jar
+    timeStamp=2026-09-01 14:30:11
+    firstInstallTime=2009-01-01 00:00:00
+    lastUpdateTime=2026-09-01 14:30:12
+    installerPackageName=com.xiaomi.mitv.appstore
+    signatures=PackageSignatures{f7c608f version:2, signatures:[3f47b269], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA UPDATED_SYSTEM_APP LARGE_HEAP ]
+    declared permissions:
+      com.xiaomi.mitv.appstore.receiver.AppEscapeTaskReceiver.ESCAPE_TASK: prot=normal, INSTALLED
+      com.xiaomi.mitv.appstore.permission.LAUNCH_FROM_PW: prot=signature|privileged, INSTALLED
+      com.xiaomi.mitv.appstore.permission.GET_LBS: prot=normal, INSTALLED
+    requested permissions:
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.INTERNET
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.GET_PACKAGE_SIZE
+      mitv.permission.ACCESS_INNER_APPLICATION
+      android.permission.SYSTEM_ALERT_WINDOW
+      android.permission.WAKE_LOCK
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.READ_PHONE_STATE
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.PACKAGE_USAGE_STATS
+      android.permission.DELETE_CACHE_FILES
+      android.permission.CLEAR_APP_CACHE
+      android.permission.WRITE_SECURE_SETTINGS
+      android.permission.INSTALL_PACKAGES
+      android.permission.DELETE_PACKAGES
+      android.permission.WRITE_MEDIA_STORAGE
+      hyperos.permission.READ_AIACTION
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.CHANGE_NETWORK_STATE
+      android.permission.WRITE_SETTINGS
+      android.permission.BLUETOOTH
+      android.permission.ACCESS_FINE_LOCATION
+      android.permission.ACCESS_COARSE_LOCATION
+      android.permission.FOREGROUND_SERVICE
+      android.permission.GET_ACCOUNTS_PRIVILEGED
+      miui.permission.USE_INTERNAL_GENERAL_API
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+      android.permission.READ_PRIVILEGED_PHONE_STATE
+      android.permission.GET_TASKS
+      android.permission.REAL_GET_TASKS
+      android.permission.STATUS_BAR_SERVICE
+      android.permission.INTERNAL_SYSTEM_WINDOW
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
+      android.permission.BROADCAST_PACKAGE_REMOVED
+      android.permission.INTERACT_ACROSS_USERS
+      android.permission.INTERACT_ACROSS_USERS_FULL
+      com.mitv.tvhome.permission.GET_LBS
+      com.xiaomi.ad.ottpreview.demo.permission.PREVIEW_INFO
+    install permissions:
+      android.permission.REAL_GET_TASKS: granted=true
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      com.xiaomi.mitv.appstore.receiver.AppEscapeTaskReceiver.ESCAPE_TASK: granted=true
+      android.permission.CONTROL_KEYGUARD: granted=true
+      com.mitv.shoplugin.permission.TBEVENTTRACK: granted=true
+      android.permission.CONFIGURE_WIFI_DISPLAY: granted=true
+      android.permission.SET_PROCESS_LIMIT: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      com.mitv.tvhome.permission.GET_LBS: granted=true
+      android.permission.MODIFY_AUDIO_SETTINGS: granted=true
+      android.permission.MODIFY_AUDIO_ROUTING: granted=true
+      com.xiaomi.mitv.tvplayer.searchprovider.READ: granted=true
+      com.mitv.tvhome.permission.VIDEO_DATA: granted=true
+      android.permission.INSTALL_LOCATION_PROVIDER: granted=true
+      android.permission.USE_RESERVED_DISK: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      com.miui.gallery.permission.SCAN: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      com.mitv.tvhome.PERMISSION_MUSIC_SERVICE: granted=true
+      com.xiaomi.mitv.hyper.screensaver.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.GET_TOP_ACTIVITY_INFO: granted=true
+      android.permission.CLEAR_APP_USER_DATA: granted=true
+      android.permission.INSTALL_PACKAGES: granted=true
+      com.xiaomi.mitv.smartshare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.SHUTDOWN: granted=true
+      android.permission.NFC: granted=true
+      android.permission.INTERNAL_SYSTEM_WINDOW: granted=true
+      android.permission.NETWORK_SETTINGS: granted=true
+      com.xiaomi.smarthome.tv.permission.READ: granted=true
+      android.permission.START_ANY_ACTIVITY: granted=true
+      com.xiaomi.permission.BIND_CONTINUITY_LISTENER_SERVICE: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      android.permission.WRITE_SYNC_SETTINGS: granted=true
+      com.xiaomi.mi_connect_service.permission.MIPUSH_RECEIVE: granted=true
+      com.xiaomi.mitv.appstore.permission.LAUNCH_FROM_PW: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      android.permission.DEVICE_POWER: granted=true
+      android.permission.REMOVE_TASKS: granted=true
+      com.android.providers.tv.permission.READ_EPG_DATA: granted=true
+      android.permission.BLUETOOTH: granted=true
+      android.permission.CHANGE_WIFI_MULTICAST_STATE: granted=true
+      com.android.alarm.permission.SET_ALARM: granted=true
+      android.permission.WRITE_MEDIA_STORAGE: granted=true
+      com.xiaomi.permission.BIND_CONTINUITY_SERVICE: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.TV_INPUT_HARDWARE: granted=true
+      com.xiaomi.permission.BIND_CONTINUITY_SERVICE_INTERNAL: granted=true
+      android.permission.REORDER_TASKS: granted=true
+      com.xiaomi.mitv.tvpush.tvpushservice.permission.MIPUSH_RECEIVE: granted=true
+      android.permission.BLUETOOTH_ADMIN: granted=true
+      android.permission.CONTROL_VPN: granted=true
+      com.android.providers.tv.permission.WRITE_EPG_DATA: granted=true
+      android.permission.ACCESS_INSTANT_APPS: granted=true
+      android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      android.permission.MANAGE_USB: granted=true
+      android.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      android.permission.STOP_APP_SWITCHES: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS: granted=true
+      android.permission.GET_ACCOUNTS_PRIVILEGED: granted=true
+      android.permission.TETHER_PRIVILEGED: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      android.permission.CAPTURE_AUDIO_OUTPUT: granted=true
+      android.permission.SET_ACTIVITY_WATCHER: granted=true
+      android.permission.STATUS_BAR_SERVICE: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      android.permission.TRIGGER_TIME_ZONE_RULES_CHECK: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER: granted=true
+      android.permission.BROADCAST_STICKY: granted=true
+      android.permission.BLUETOOTH_PRIVILEGED: granted=true
+      android.permission.NETWORK_STACK: granted=true
+      android.permission.CALL_PHONE: granted=true
+      com.xiaomi.permission.CLOUD_MANAGER: granted=true
+      com.xiaomi.mitv.pip.connect: granted=true
+      android.intent.category.MASTER_CLEAR.permission.C2D_MESSAGE: granted=true
+      android.permission.BIND_JOB_SERVICE: granted=true
+      com.mitv.tvhome.permission.READ_USERGROUP: granted=true
+      android.permission.CONFIRM_FULL_BACKUP: granted=true
+      android.permission.SET_TIME: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      com.xiaomi.permission.AUTH_SERVICE: granted=true
+      android.permission.REVOKE_RUNTIME_PERMISSIONS: granted=true
+      com.android.providers.tv.permission.ACCESS_ALL_EPG_DATA: granted=true
+      android.permission.MANAGE_USERS: granted=true
+      android.permission.SET_PREFERRED_APPLICATIONS: granted=true
+      android.permission.FLASHLIGHT: granted=true
+      android.permission.DELETE_CACHE_FILES: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      android.permission.CHANGE_CONFIGURATION: granted=true
+      com.xiaomi.mitv.remotecontroller.service.permission.MIPUSH_RECEIVE: granted=true
+      android.permission.LOCAL_MAC_ADDRESS: granted=true
+      android.permission.READ_LOGS: granted=true
+      com.xiaomi.mitv.systemui.MiTVSystemUIService.SEND_COMMAND: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      android.permission.SET_WALLPAPER: granted=true
+      android.permission.READ_DREAM_STATE: granted=true
+      mitv.permission.ACCESS_INNER_APPLICATION: granted=true
+      android.permission.KILL_BACKGROUND_PROCESSES: granted=true
+      com.xiaomi.mitv.tvmanager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      com.mitv.tvhome.permission.MIPUSH_RECEIVE: granted=true
+      android.permission.READ_SYNC_STATS: granted=true
+      android.permission.WRITE_DREAM_STATE: granted=true
+      android.permission.REBOOT: granted=true
+      com.xiaomi.mi_connect_service.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      com.xiaomi.mitv.code.SMARTSHARE_CODE: granted=true
+      com.xiaomi.voicecontrol.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.CLEAR_APP_CACHE: granted=true
+      android.permission.MANAGE_NETWORK_POLICY: granted=true
+      android.permission.GRANT_RUNTIME_PERMISSIONS: granted=true
+      droidlogic.permission.SYSTEM_CONTROL: granted=true
+      android.permission.SEND_SHOW_SUSPENDED_APP_DETAILS: granted=true
+      android.permission.CONNECTIVITY_INTERNAL: granted=true
+      android.permission.MANAGE_MEDIA_PROJECTION: granted=true
+      android.permission.READ_SYNC_SETTINGS: granted=true
+      android.permission.BROADCAST_PACKAGE_REMOVED: granted=true
+      com.xiaomi.gallery.permission.CLOUD: granted=true
+      android.permission.OVERRIDE_WIFI_CONFIG: granted=true
+      android.permission.FORCE_STOP_PACKAGES: granted=true
+      android.permission.VIBRATE: granted=true
+      com.android.certinstaller.INSTALL_AS_USER: granted=true
+      android.permission.BIND_ACCESSIBILITY_SERVICE: granted=true
+      android.permission.HDMI_CEC: granted=true
+      com.xiaomi.voicecontrol.permission.XIAO_AI_BROADCAST: granted=true
+      android.permission.GET_DETAILED_TASKS: granted=true
+      com.duokan.permission.AIRKAN_SERVICE: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      android.permission.MANAGE_APP_OPS_MODES: granted=true
+      android.permission.REQUEST_INSTALL_PACKAGES: granted=true
+      android.permission.MODIFY_PHONE_STATE: granted=true
+      com.xiaomi.iot.permission.ACCESS_TOKEN: granted=true
+      com.android.launcher.permission.INSTALL_SHORTCUT: granted=true
+      android.permission.STATUS_BAR: granted=true
+      android.permission.READ_FRAME_BUFFER: granted=true
+      com.mitv.gallery.permission.MIPUSH_RECEIVE: granted=true
+      com.duokan.permission.START_STOP_SERVICE: granted=true
+      android.permission.LOCATION_HARDWARE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.INJECT_EVENTS: granted=true
+      android.permission.BIND_NETWORK_RECOMMENDATION_SERVICE: granted=true
+      com.mitv.tvhome.permission.HOME_STATE: granted=true
+      android.permission.UPDATE_APP_OPS_STATS: granted=true
+      com.xiaomi.mi_connect_service.permission.RECEIVE_ENDPOINT: granted=true
+      android.permission.SET_SCREEN_COMPATIBILITY: granted=true
+      android.permission.MEDIA_CONTENT_CONTROL: granted=true
+      android.permission.DELETE_PACKAGES: granted=true
+    User 0: ceDataInode=-4294836560 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      enabledComponents:
+        androidx.work.impl.background.systemalarm.RescheduleReceiver
+        androidx.work.impl.background.systemjob.SystemJobService
+
+Hidden system packages:
+  Package [com.xiaomi.mitv.appstore] (809deb6):
+    userId=1000
+    sharedUser=SharedUserSetting{32af569 android.uid.system/1000}
+    pkg=Package{afadf1c com.xiaomi.mitv.appstore}
+    codePath=/vendor/app/appstore_2.13.3_202410242023_mitv
+    resourcePath=/vendor/app/appstore_2.13.3_202410242023_mitv
+    legacyNativeLibraryDir=/vendor/app/appstore_2.13.3_202410242023_mitv/lib
+    primaryCpuAbi=armeabi-v7a
+    secondaryCpuAbi=null
+    versionCode=21303 minSdk=18 targetSdk=23
+    versionName=2.13.3
+    splits=[base]
+    apkSigningVersion=0
+    applicationInfo=ApplicationInfo{873b725 com.xiaomi.mitv.appstore}
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA LARGE_HEAP ]
+    privateFlags=[ PARTIALLY_DIRECT_BOOT_AWARE VENDOR ]
+    dataDir=/data/user/0/com.xiaomi.mitv.appstore
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      org.apache.http.legacy
+    usesOptionalLibraries:
+      com.xiaomi.mitv.api
+      mitvmiddlewareimpl
+    timeStamp=2009-01-01 00:00:00
+    firstInstallTime=2009-01-01 00:00:00
+    lastUpdateTime=2009-01-01 00:00:00
+    signatures=PackageSignatures{6b070fa version:0, signatures:[], past signatures:[]}
+    installPermissionsFixed=false
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA LARGE_HEAP ]
+    declared permissions:
+      com.xiaomi.mitv.appstore.receiver.AppEscapeTaskReceiver.ESCAPE_TASK: prot=normal
+    requested permissions:
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.INTERNET
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.GET_PACKAGE_SIZE
+      mitv.permission.ACCESS_INNER_APPLICATION
+      android.permission.SYSTEM_ALERT_WINDOW
+      android.permission.WAKE_LOCK
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.READ_PHONE_STATE
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.PACKAGE_USAGE_STATS
+      android.permission.DELETE_CACHE_FILES
+      android.permission.CLEAR_APP_CACHE
+      android.permission.INSTALL_PACKAGES
+      android.permission.DELETE_PACKAGES
+      android.permission.WRITE_MEDIA_STORAGE
+      miui.permission.USE_INTERNAL_GENERAL_API
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+      android.permission.READ_PRIVILEGED_PHONE_STATE
+      android.permission.GET_TASKS
+      android.permission.REAL_GET_TASKS
+      android.permission.STATUS_BAR_SERVICE
+      android.permission.INTERNAL_SYSTEM_WINDOW
+      android.permission.WRITE_SECURE_SETTINGS
+      android.permission.WRITE_SETTINGS
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
+      android.permission.BROADCAST_PACKAGE_REMOVED
+      android.permission.INTERACT_ACROSS_USERS
+      android.permission.INTERACT_ACROSS_USERS_FULL
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.CHANGE_NETWORK_STATE
+      android.permission.BLUETOOTH
+      android.permission.ACCESS_FINE_LOCATION
+      android.permission.ACCESS_COARSE_LOCATION
+      android.permission.FOREGROUND_SERVICE
+    install permissions:
+      android.permission.REAL_GET_TASKS: granted=true
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      com.xiaomi.mitv.appstore.receiver.AppEscapeTaskReceiver.ESCAPE_TASK: granted=true
+      android.permission.CONTROL_KEYGUARD: granted=true
+      com.mitv.shoplugin.permission.TBEVENTTRACK: granted=true
+      android.permission.CONFIGURE_WIFI_DISPLAY: granted=true
+      android.permission.SET_PROCESS_LIMIT: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      com.mitv.tvhome.permission.GET_LBS: granted=true
+      android.permission.MODIFY_AUDIO_SETTINGS: granted=true
+      android.permission.MODIFY_AUDIO_ROUTING: granted=true
+      com.xiaomi.mitv.tvplayer.searchprovider.READ: granted=true
+      com.mitv.tvhome.permission.VIDEO_DATA: granted=true
+      android.permission.INSTALL_LOCATION_PROVIDER: granted=true
+      android.permission.USE_RESERVED_DISK: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      com.miui.gallery.permission.SCAN: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      com.mitv.tvhome.PERMISSION_MUSIC_SERVICE: granted=true
+      com.xiaomi.mitv.hyper.screensaver.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.GET_TOP_ACTIVITY_INFO: granted=true
+      android.permission.CLEAR_APP_USER_DATA: granted=true
+      android.permission.INSTALL_PACKAGES: granted=true
+      com.xiaomi.mitv.smartshare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.SHUTDOWN: granted=true
+      android.permission.NFC: granted=true
+      android.permission.INTERNAL_SYSTEM_WINDOW: granted=true
+      android.permission.NETWORK_SETTINGS: granted=true
+      com.xiaomi.smarthome.tv.permission.READ: granted=true
+      android.permission.START_ANY_ACTIVITY: granted=true
+      com.xiaomi.permission.BIND_CONTINUITY_LISTENER_SERVICE: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      android.permission.WRITE_SYNC_SETTINGS: granted=true
+      com.xiaomi.mi_connect_service.permission.MIPUSH_RECEIVE: granted=true
+      com.xiaomi.mitv.appstore.permission.LAUNCH_FROM_PW: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      android.permission.DEVICE_POWER: granted=true
+      android.permission.REMOVE_TASKS: granted=true
+      com.android.providers.tv.permission.READ_EPG_DATA: granted=true
+      android.permission.BLUETOOTH: granted=true
+      android.permission.CHANGE_WIFI_MULTICAST_STATE: granted=true
+      com.android.alarm.permission.SET_ALARM: granted=true
+      android.permission.WRITE_MEDIA_STORAGE: granted=true
+      com.xiaomi.permission.BIND_CONTINUITY_SERVICE: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.TV_INPUT_HARDWARE: granted=true
+      com.xiaomi.permission.BIND_CONTINUITY_SERVICE_INTERNAL: granted=true
+      android.permission.REORDER_TASKS: granted=true
+      com.xiaomi.mitv.tvpush.tvpushservice.permission.MIPUSH_RECEIVE: granted=true
+      android.permission.BLUETOOTH_ADMIN: granted=true
+      android.permission.CONTROL_VPN: granted=true
+      com.android.providers.tv.permission.WRITE_EPG_DATA: granted=true
+      android.permission.ACCESS_INSTANT_APPS: granted=true
+      android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      android.permission.MANAGE_USB: granted=true
+      android.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      android.permission.STOP_APP_SWITCHES: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS: granted=true
+      android.permission.GET_ACCOUNTS_PRIVILEGED: granted=true
+      android.permission.TETHER_PRIVILEGED: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      android.permission.CAPTURE_AUDIO_OUTPUT: granted=true
+      android.permission.SET_ACTIVITY_WATCHER: granted=true
+      android.permission.STATUS_BAR_SERVICE: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      android.permission.TRIGGER_TIME_ZONE_RULES_CHECK: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER: granted=true
+      android.permission.BROADCAST_STICKY: granted=true
+      android.permission.BLUETOOTH_PRIVILEGED: granted=true
+      android.permission.NETWORK_STACK: granted=true
+      android.permission.CALL_PHONE: granted=true
+      com.xiaomi.permission.CLOUD_MANAGER: granted=true
+      com.xiaomi.mitv.pip.connect: granted=true
+      android.intent.category.MASTER_CLEAR.permission.C2D_MESSAGE: granted=true
+      android.permission.BIND_JOB_SERVICE: granted=true
+      com.mitv.tvhome.permission.READ_USERGROUP: granted=true
+      android.permission.CONFIRM_FULL_BACKUP: granted=true
+      android.permission.SET_TIME: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      com.xiaomi.permission.AUTH_SERVICE: granted=true
+      android.permission.REVOKE_RUNTIME_PERMISSIONS: granted=true
+      com.android.providers.tv.permission.ACCESS_ALL_EPG_DATA: granted=true
+      android.permission.MANAGE_USERS: granted=true
+      android.permission.SET_PREFERRED_APPLICATIONS: granted=true
+      android.permission.FLASHLIGHT: granted=true
+      android.permission.DELETE_CACHE_FILES: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      android.permission.CHANGE_CONFIGURATION: granted=true
+      com.xiaomi.mitv.remotecontroller.service.permission.MIPUSH_RECEIVE: granted=true
+      android.permission.LOCAL_MAC_ADDRESS: granted=true
+      android.permission.READ_LOGS: granted=true
+      com.xiaomi.mitv.systemui.MiTVSystemUIService.SEND_COMMAND: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      android.permission.SET_WALLPAPER: granted=true
+      android.permission.READ_DREAM_STATE: granted=true
+      mitv.permission.ACCESS_INNER_APPLICATION: granted=true
+      android.permission.KILL_BACKGROUND_PROCESSES: granted=true
+      com.xiaomi.mitv.tvmanager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      com.mitv.tvhome.permission.MIPUSH_RECEIVE: granted=true
+      android.permission.READ_SYNC_STATS: granted=true
+      android.permission.WRITE_DREAM_STATE: granted=true
+      android.permission.REBOOT: granted=true
+      com.xiaomi.mi_connect_service.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      com.xiaomi.mitv.code.SMARTSHARE_CODE: granted=true
+      com.xiaomi.voicecontrol.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.CLEAR_APP_CACHE: granted=true
+      android.permission.MANAGE_NETWORK_POLICY: granted=true
+      android.permission.GRANT_RUNTIME_PERMISSIONS: granted=true
+      droidlogic.permission.SYSTEM_CONTROL: granted=true
+      android.permission.SEND_SHOW_SUSPENDED_APP_DETAILS: granted=true
+      android.permission.CONNECTIVITY_INTERNAL: granted=true
+      android.permission.MANAGE_MEDIA_PROJECTION: granted=true
+      android.permission.READ_SYNC_SETTINGS: granted=true
+      android.permission.BROADCAST_PACKAGE_REMOVED: granted=true
+      com.xiaomi.gallery.permission.CLOUD: granted=true
+      android.permission.OVERRIDE_WIFI_CONFIG: granted=true
+      android.permission.FORCE_STOP_PACKAGES: granted=true
+      android.permission.VIBRATE: granted=true
+      com.android.certinstaller.INSTALL_AS_USER: granted=true
+      android.permission.BIND_ACCESSIBILITY_SERVICE: granted=true
+      android.permission.HDMI_CEC: granted=true
+      com.xiaomi.voicecontrol.permission.XIAO_AI_BROADCAST: granted=true
+      android.permission.GET_DETAILED_TASKS: granted=true
+      com.duokan.permission.AIRKAN_SERVICE: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      android.permission.MANAGE_APP_OPS_MODES: granted=true
+      android.permission.REQUEST_INSTALL_PACKAGES: granted=true
+      android.permission.MODIFY_PHONE_STATE: granted=true
+      com.xiaomi.iot.permission.ACCESS_TOKEN: granted=true
+      com.android.launcher.permission.INSTALL_SHORTCUT: granted=true
+      android.permission.STATUS_BAR: granted=true
+      android.permission.READ_FRAME_BUFFER: granted=true
+      com.mitv.gallery.permission.MIPUSH_RECEIVE: granted=true
+      com.duokan.permission.START_STOP_SERVICE: granted=true
+      android.permission.LOCATION_HARDWARE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.INJECT_EVENTS: granted=true
+      android.permission.BIND_NETWORK_RECOMMENDATION_SERVICE: granted=true
+      com.mitv.tvhome.permission.HOME_STATE: granted=true
+      android.permission.UPDATE_APP_OPS_STATS: granted=true
+      com.xiaomi.mi_connect_service.permission.RECEIVE_ENDPOINT: granted=true
+      android.permission.SET_SCREEN_COMPATIBILITY: granted=true
+      android.permission.MEDIA_CONTENT_CONTROL: granted=true
+      android.permission.DELETE_PACKAGES: granted=true
+    User 0: ceDataInode=0 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+
+Shared users:
+  SharedUser [android.uid.system] (32af569):
+    userId=1000
+    install permissions:
+      android.permission.REAL_GET_TASKS: granted=true
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      com.xiaomi.mitv.appstore.receiver.AppEscapeTaskReceiver.ESCAPE_TASK: granted=true
+      android.permission.CONTROL_KEYGUARD: granted=true
+      com.mitv.shoplugin.permission.TBEVENTTRACK: granted=true
+      android.permission.CONFIGURE_WIFI_DISPLAY: granted=true
+      android.permission.SET_PROCESS_LIMIT: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      com.mitv.tvhome.permission.GET_LBS: granted=true
+      android.permission.MODIFY_AUDIO_SETTINGS: granted=true
+      android.permission.MODIFY_AUDIO_ROUTING: granted=true
+      com.xiaomi.mitv.tvplayer.searchprovider.READ: granted=true
+      com.mitv.tvhome.permission.VIDEO_DATA: granted=true
+      android.permission.INSTALL_LOCATION_PROVIDER: granted=true
+      android.permission.USE_RESERVED_DISK: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      com.miui.gallery.permission.SCAN: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      com.mitv.tvhome.PERMISSION_MUSIC_SERVICE: granted=true
+      com.xiaomi.mitv.hyper.screensaver.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.GET_TOP_ACTIVITY_INFO: granted=true
+      android.permission.CLEAR_APP_USER_DATA: granted=true
+      android.permission.INSTALL_PACKAGES: granted=true
+      com.xiaomi.mitv.smartshare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.SHUTDOWN: granted=true
+      android.permission.NFC: granted=true
+      android.permission.INTERNAL_SYSTEM_WINDOW: granted=true
+      android.permission.NETWORK_SETTINGS: granted=true
+      com.xiaomi.smarthome.tv.permission.READ: granted=true
+      android.permission.START_ANY_ACTIVITY: granted=true
+      com.xiaomi.permission.BIND_CONTINUITY_LISTENER_SERVICE: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      android.permission.WRITE_SYNC_SETTINGS: granted=true
+      com.xiaomi.mi_connect_service.permission.MIPUSH_RECEIVE: granted=true
+      com.xiaomi.mitv.appstore.permission.LAUNCH_FROM_PW: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      android.permission.DEVICE_POWER: granted=true
+      android.permission.REMOVE_TASKS: granted=true
+      com.android.providers.tv.permission.READ_EPG_DATA: granted=true
+      android.permission.BLUETOOTH: granted=true
+      android.permission.CHANGE_WIFI_MULTICAST_STATE: granted=true
+      com.android.alarm.permission.SET_ALARM: granted=true
+      android.permission.WRITE_MEDIA_STORAGE: granted=true
+      com.xiaomi.permission.BIND_CONTINUITY_SERVICE: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.TV_INPUT_HARDWARE: granted=true
+      com.xiaomi.permission.BIND_CONTINUITY_SERVICE_INTERNAL: granted=true
+      android.permission.REORDER_TASKS: granted=true
+      com.xiaomi.mitv.tvpush.tvpushservice.permission.MIPUSH_RECEIVE: granted=true
+      android.permission.BLUETOOTH_ADMIN: granted=true
+      android.permission.CONTROL_VPN: granted=true
+      com.android.providers.tv.permission.WRITE_EPG_DATA: granted=true
+      android.permission.ACCESS_INSTANT_APPS: granted=true
+      android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      android.permission.MANAGE_USB: granted=true
+      android.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      android.permission.STOP_APP_SWITCHES: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS: granted=true
+      android.permission.GET_ACCOUNTS_PRIVILEGED: granted=true
+      android.permission.TETHER_PRIVILEGED: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      android.permission.CAPTURE_AUDIO_OUTPUT: granted=true
+      android.permission.SET_ACTIVITY_WATCHER: granted=true
+      android.permission.STATUS_BAR_SERVICE: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      android.permission.TRIGGER_TIME_ZONE_RULES_CHECK: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER: granted=true
+      android.permission.BROADCAST_STICKY: granted=true
+      android.permission.BLUETOOTH_PRIVILEGED: granted=true
+      android.permission.NETWORK_STACK: granted=true
+      android.permission.CALL_PHONE: granted=true
+      com.xiaomi.permission.CLOUD_MANAGER: granted=true
+      com.xiaomi.mitv.pip.connect: granted=true
+      android.intent.category.MASTER_CLEAR.permission.C2D_MESSAGE: granted=true
+      android.permission.BIND_JOB_SERVICE: granted=true
+      com.mitv.tvhome.permission.READ_USERGROUP: granted=true
+      android.permission.CONFIRM_FULL_BACKUP: granted=true
+      android.permission.SET_TIME: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      com.xiaomi.permission.AUTH_SERVICE: granted=true
+      android.permission.REVOKE_RUNTIME_PERMISSIONS: granted=true
+      com.android.providers.tv.permission.ACCESS_ALL_EPG_DATA: granted=true
+      android.permission.MANAGE_USERS: granted=true
+      android.permission.SET_PREFERRED_APPLICATIONS: granted=true
+      android.permission.FLASHLIGHT: granted=true
+      android.permission.DELETE_CACHE_FILES: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      android.permission.CHANGE_CONFIGURATION: granted=true
+      com.xiaomi.mitv.remotecontroller.service.permission.MIPUSH_RECEIVE: granted=true
+      android.permission.LOCAL_MAC_ADDRESS: granted=true
+      android.permission.READ_LOGS: granted=true
+      com.xiaomi.mitv.systemui.MiTVSystemUIService.SEND_COMMAND: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      android.permission.SET_WALLPAPER: granted=true
+      android.permission.READ_DREAM_STATE: granted=true
+      mitv.permission.ACCESS_INNER_APPLICATION: granted=true
+      android.permission.KILL_BACKGROUND_PROCESSES: granted=true
+      com.xiaomi.mitv.tvmanager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      com.mitv.tvhome.permission.MIPUSH_RECEIVE: granted=true
+      android.permission.READ_SYNC_STATS: granted=true
+      android.permission.WRITE_DREAM_STATE: granted=true
+      android.permission.REBOOT: granted=true
+      com.xiaomi.mi_connect_service.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      com.xiaomi.mitv.code.SMARTSHARE_CODE: granted=true
+      com.xiaomi.voicecontrol.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+      android.permission.CLEAR_APP_CACHE: granted=true
+      android.permission.MANAGE_NETWORK_POLICY: granted=true
+      android.permission.GRANT_RUNTIME_PERMISSIONS: granted=true
+      droidlogic.permission.SYSTEM_CONTROL: granted=true
+      android.permission.SEND_SHOW_SUSPENDED_APP_DETAILS: granted=true
+      android.permission.CONNECTIVITY_INTERNAL: granted=true
+      android.permission.MANAGE_MEDIA_PROJECTION: granted=true
+      android.permission.READ_SYNC_SETTINGS: granted=true
+      android.permission.BROADCAST_PACKAGE_REMOVED: granted=true
+      com.xiaomi.gallery.permission.CLOUD: granted=true
+      android.permission.OVERRIDE_WIFI_CONFIG: granted=true
+      android.permission.FORCE_STOP_PACKAGES: granted=true
+      android.permission.VIBRATE: granted=true
+      com.android.certinstaller.INSTALL_AS_USER: granted=true
+      android.permission.BIND_ACCESSIBILITY_SERVICE: granted=true
+      android.permission.HDMI_CEC: granted=true
+      com.xiaomi.voicecontrol.permission.XIAO_AI_BROADCAST: granted=true
+      android.permission.GET_DETAILED_TASKS: granted=true
+      com.duokan.permission.AIRKAN_SERVICE: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      android.permission.MANAGE_APP_OPS_MODES: granted=true
+      android.permission.REQUEST_INSTALL_PACKAGES: granted=true
+      android.permission.MODIFY_PHONE_STATE: granted=true
+      com.xiaomi.iot.permission.ACCESS_TOKEN: granted=true
+      com.android.launcher.permission.INSTALL_SHORTCUT: granted=true
+      android.permission.STATUS_BAR: granted=true
+      android.permission.READ_FRAME_BUFFER: granted=true
+      com.mitv.gallery.permission.MIPUSH_RECEIVE: granted=true
+      com.duokan.permission.START_STOP_SERVICE: granted=true
+      android.permission.LOCATION_HARDWARE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.INJECT_EVENTS: granted=true
+      android.permission.BIND_NETWORK_RECOMMENDATION_SERVICE: granted=true
+      com.mitv.tvhome.permission.HOME_STATE: granted=true
+      android.permission.UPDATE_APP_OPS_STATS: granted=true
+      com.xiaomi.mi_connect_service.permission.RECEIVE_ENDPOINT: granted=true
+      android.permission.SET_SCREEN_COMPATIBILITY: granted=true
+      android.permission.MEDIA_CONTENT_CONTROL: granted=true
+      android.permission.DELETE_PACKAGES: granted=true
+    User 0: 
+      gids=[1065, 3002, 1023, 3003, 3001, 1007]
+      runtime permissions:
+        android.permission.ACCESS_FINE_LOCATION: granted=true
+        android.permission.READ_EXTERNAL_STORAGE: granted=true
+        android.permission.ACCESS_COARSE_LOCATION: granted=true
+        android.permission.READ_PHONE_STATE: granted=true
+        android.permission.CAMERA: granted=true, flags=[ SYSTEM_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.GET_ACCOUNTS: granted=true, flags=[ SYSTEM_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true
+        android.permission.RECORD_AUDIO: granted=true, flags=[ SYSTEM_FIXED GRANTED_BY_DEFAULT ]
+
+Package Changes:
+  Sequence number=31
+  User 0:
+    seq=1, package=com.xiaomi.voicecontrol
+    seq=14, package=xyz.erapi0neer.orrery
+    seq=29, package=xyz.erapi0neer.xingyi
+    seq=30, package=xyz.erapi0neer.xiaoaibridge
+
+
+Dexopt state:
+  [com.xiaomi.mitv.appstore]
+    path: /data/app/com.xiaomi.mitv.appstore-_wabvHRT_Cgfg4rv_TvhRg==/base.apk
+      arm: [status=verify] [reason=inactive]
+      known secondary dex files:
+        /data/user/0/com.xiaomi.mitv.appstore/app_analytics/analytics_asset.apk
+          class loader context: PCL[];PCL[]
+
+
+Compiler stats:
+  [com.xiaomi.mitv.appstore]
+     base.apk - 7969

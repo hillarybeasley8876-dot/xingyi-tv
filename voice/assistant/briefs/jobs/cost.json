@@ -1,0 +1,41 @@
+{
+ "id": "cost",
+ "title": "每单的真实成本自己记账：result 事件的美元/令牌/时长落进 history，一单一行（tools/cost/cost.mjs → Cost.java）",
+ "brief": "briefs/cost.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 100,
+ "owns": [
+  "tools/cost/cost.mjs",
+  "src/xyz/erapi0neer/xingyi/agent/Cost.java",
+  "tests/agent/CostChecks.java",
+  "tests/agent/cost-fixtures/",
+  "tests/agent/SkillChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|509[7-9]|5[1-9]\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_cost.sh",
+   "timeoutS": 900,
+   "must": [
+    "COST OK"
+   ]
+  }
+ ]
+}

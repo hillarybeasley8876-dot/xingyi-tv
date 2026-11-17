@@ -1,0 +1,49 @@
+{
+ "id": "handoff-speed",
+ "title": "Faster Xingyi handoff, and give the screen back afterwards",
+ "brief": "briefs/handoff-speed.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xiaoaibridge/Takeover.java",
+  "src/xyz/erapi0neer/xiaoaibridge/Harness.java",
+  "src/xyz/erapi0neer/xiaoaibridge/Foreground.java",
+  "tests/ForegroundTest.java",
+  "AndroidManifest.xml"
+ ],
+ "accept": [
+  {
+   "name": "build",
+   "cmd": "sh build.sh",
+   "must": [
+    "xiaoai-bridge.apk"
+   ],
+   "timeoutS": 600
+  },
+  {
+   "name": "jvm-tests",
+   "cmd": "sh tests/run_all.sh",
+   "timeoutS": 600,
+   "must": [
+    "ALL JVM TESTS PASSED",
+    "re:PASS \\d+ passed, 0 failed \\(foreground\\)"
+   ]
+  },
+  {
+   "name": "no-fixed-sleep",
+   "cmd": "grep -c \"SystemClock.sleep(450)\" src/xyz/erapi0neer/xiaoaibridge/Takeover.java src/xyz/erapi0neer/xiaoaibridge/Harness.java",
+   "exit": null,
+   "mustNot": [
+    "re::[1-9]"
+   ]
+  },
+  {
+   "name": "reorder-permission",
+   "cmd": "grep -c REORDER_TASKS AndroidManifest.xml",
+   "must": [
+    "1"
+   ]
+  }
+ ]
+}

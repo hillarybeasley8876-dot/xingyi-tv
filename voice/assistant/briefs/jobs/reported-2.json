@@ -1,0 +1,42 @@
+{
+ "id": "reported-2",
+ "title": "台账的证明不许是空的：检查文件在 before 才造出来的，判 VOID；标签必须是一条检查的句子",
+ "brief": "briefs/reported-2.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 70,
+ "owns": [
+  "tests/agent/reported.json",
+  "tests/agent/reported.sh",
+  "src/xyz/erapi0neer/xingyi/agent/Reported.java",
+  "tests/agent/ReportedChecks.java",
+  "tests/agent/ReportedMain.java",
+  "tests/agent/accept_reported2.sh"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|502[2-9]|50[3-9]\\d|5[1-9]\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_reported2.sh",
+   "timeoutS": 900,
+   "must": [
+    "REPORTED2 OK"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+{
+ "id": "song-verify",
+ "title": "The bridge never calls the song that was already playing a success",
+ "brief": "briefs/song-verify.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xiaoaibridge/Takeover.java",
+  "src/xyz/erapi0neer/xiaoaibridge/SongArrival.java",
+  "tests/SongArrivalTest.java"
+ ],
+ "accept": [
+  {
+   "name": "build",
+   "cmd": "sh build.sh",
+   "must": [
+    "xiaoai-bridge.apk"
+   ],
+   "timeoutS": 600
+  },
+  {
+   "name": "jvm-tests",
+   "cmd": "sh tests/run_all.sh",
+   "timeoutS": 600,
+   "must": [
+    "ALL JVM TESTS PASSED",
+    "re:PASS (1[6-9]|[2-9]\\d|\\d{3}) passed, 0 failed \\(SongArrival\\)"
+   ]
+  },
+  {
+   "name": "pieces",
+   "cmd": "sh tests/accept_song_verify.sh",
+   "timeoutS": 60,
+   "must": [
+    "SONG VERIFY OK"
+   ]
+  }
+ ]
+}

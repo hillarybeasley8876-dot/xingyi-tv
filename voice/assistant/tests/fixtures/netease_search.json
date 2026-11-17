@@ -1,0 +1,8110 @@
+{
+ "songs": {
+  "薛之谦的你还要我怎样": {
+   "code": 200,
+   "result": {
+    "songCount": 69,
+    "songs": [
+     {
+      "id": 27955653,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 430297373,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "中国新歌声 第10期 中秋特辑",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 429261445,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦"
+       },
+       {
+        "name": "林子群"
+       }
+      ],
+      "album": {
+       "name": "中国新声代第四季 第10期",
+       "size": 9
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 417859631,
+      "name": "我好像在哪见过你",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "初学者",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "动画电影《精灵王座》主题曲"
+      ]
+     },
+     {
+      "id": 1466319699,
+      "name": "我有多么爱你",
+      "artists": [
+       {
+        "name": "刘大壮"
+       }
+      ],
+      "album": {
+       "name": "我有多么爱你",
+       "size": 3
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3372816584,
+      "name": "你还要我怎样 (Cover 薛之谦)",
+      "artists": [
+       {
+        "name": "晴天"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2735873902,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "李鑫ya"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2731597662,
+      "name": "你还要我怎样 (Live)(DJ阿名版)",
+      "artists": [
+       {
+        "name": "DJ阿名"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 27955654,
+      "name": "其实",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1463165983,
+      "name": "天外来物",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "天外来物",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 32507038,
+      "name": "演员",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "绅士",
+       "size": 3
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2147002443,
+      "name": "你还要我怎样（翻唱完整版）",
+      "artists": [
+       {
+        "name": "节奏黑武士"
+       }
+      ],
+      "album": {
+       "name": "无敌循环男声翻唱9",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 432792819,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "汪晨蕊"
+       }
+      ],
+      "album": {
+       "name": "中国新歌声 第13期",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": [
+       "汪晨蕊晋级"
+      ]
+     },
+     {
+      "id": 169185,
+      "name": "认真的雪",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "未完成的歌",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3407451664,
+      "name": "媚人",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "媚人",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27808044,
+      "name": "丑八怪",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3393921998,
+      "name": "你还要我怎样 (爷爷翻唱混搭版)",
+      "artists": [
+       {
+        "name": "夜海棠"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 471385043,
+      "name": "暧昧",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "渡",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 516657051,
+      "name": "像风一样",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "渡",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "电视剧《小女花不弃》插曲"
+      ]
+     },
+     {
+      "id": 2064033095,
+      "name": "念",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "守村人",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "薛之谦 你还要我怎样": {
+   "code": 200,
+   "result": {
+    "songCount": 184,
+    "songs": [
+     {
+      "id": 27955653,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 430297373,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "中国新歌声 第10期 中秋特辑",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 429261445,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦"
+       },
+       {
+        "name": "林子群"
+       }
+      ],
+      "album": {
+       "name": "中国新声代第四季 第10期",
+       "size": 9
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3372816584,
+      "name": "你还要我怎样 (Cover 薛之谦)",
+      "artists": [
+       {
+        "name": "晴天"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 417859631,
+      "name": "我好像在哪见过你",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "初学者",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "动画电影《精灵王座》主题曲"
+      ]
+     },
+     {
+      "id": 1983617926,
+      "name": "你还要我怎样（Cover by 薛之谦）",
+      "artists": [
+       {
+        "name": "8cmRose"
+       }
+      ],
+      "album": {
+       "name": "短玫瑰翻唱集",
+       "size": 3
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2147002443,
+      "name": "你还要我怎样（翻唱完整版）",
+      "artists": [
+       {
+        "name": "节奏黑武士"
+       }
+      ],
+      "album": {
+       "name": "无敌循环男声翻唱9",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 27808044,
+      "name": "丑八怪",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27955658,
+      "name": "方圆几里",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "电视剧《妈妈像花儿一样》插曲",
+       "微电影《最熟悉的陌生人》主题曲"
+      ]
+     },
+     {
+      "id": 516657051,
+      "name": "像风一样",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "渡",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "电视剧《小女花不弃》插曲"
+      ]
+     },
+     {
+      "id": 32507038,
+      "name": "演员",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "绅士",
+       "size": 3
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2735873902,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "李鑫ya"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2731597263,
+      "name": "薛之谦-你还要我怎样 (DJ苏天伦版)",
+      "artists": [
+       {
+        "name": "苏天伦"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1463165983,
+      "name": "天外来物",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "天外来物",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 415792881,
+      "name": "刚刚好",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "初学者",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "网剧《我与你的光年距离》主题曲"
+      ]
+     },
+     {
+      "id": 2731597662,
+      "name": "你还要我怎样 (Live)(DJ阿名版)",
+      "artists": [
+       {
+        "name": "DJ阿名"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1920534690,
+      "name": "simon - 你还要我怎样",
+      "artists": [
+       {
+        "name": "Simon李同学"
+       }
+      ],
+      "album": {
+       "name": "薛之谦翻唱锦集",
+       "size": 5
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3407451664,
+      "name": "媚人",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "媚人",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2139587843,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "满眼星辰都是你"
+       }
+      ],
+      "album": {
+       "name": "动感AM 4",
+       "size": 0
+      },
+      "fee": 8,
+      "alias": [
+       "全网热播"
+      ]
+     },
+     {
+      "id": 1950031919,
+      "name": "你还要我怎样（Cover薛之谦）",
+      "artists": [
+       {
+        "name": "叶绍华"
+       }
+      ],
+      "album": {
+       "name": "谎言 Cover 集",
+       "size": 2
+      },
+      "fee": 0,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "薛之谦的你还要我怎么样": {
+   "code": 200,
+   "result": {
+    "songCount": 32,
+    "songs": [
+     {
+      "id": 442493778,
+      "name": "- 你还要我怎样（林音 remix）",
+      "artists": [
+       {
+        "name": "苏凡"
+       }
+      ],
+      "album": {
+       "name": "苏凡",
+       "size": 45
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3436808593,
+      "name": "爱了很久",
+      "artists": [
+       {
+        "name": "杜宣达"
+       }
+      ],
+      "album": {
+       "name": "宣言",
+       "size": 10
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1316330078,
+      "name": "演员 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦"
+       },
+       {
+        "name": "阿兰"
+       },
+       {
+        "name": "刘宇宁"
+       },
+       {
+        "name": "白举纲"
+       },
+       {
+        "name": "袁成杰"
+       }
+      ],
+      "album": {
+       "name": "金曲捞第二季 第11期",
+       "size": 7
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2727148258,
+      "name": "错过世界，来拥抱你",
+      "artists": [
+       {
+        "name": "乔韶"
+       }
+      ],
+      "album": {
+       "name": "错过世界 来拥抱你",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1439459899,
+      "name": "求你别再骗我了",
+      "artists": [
+       {
+        "name": "SipSu小口酥"
+       }
+      ],
+      "album": {
+       "name": "求你别再骗我了",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 26599895,
+      "name": "连哭都是我的错",
+      "artists": [
+       {
+        "name": "东来东往"
+       }
+      ],
+      "album": {
+       "name": "东来东往原创合集",
+       "size": 44
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 432792819,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "汪晨蕊"
+       }
+      ],
+      "album": {
+       "name": "中国新歌声 第13期",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": [
+       "汪晨蕊晋级"
+      ]
+     },
+     {
+      "id": 33418578,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "谭艳"
+       }
+      ],
+      "album": {
+       "name": "最走心好声音",
+       "size": 12
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1983617926,
+      "name": "你还要我怎样（Cover by 薛之谦）",
+      "artists": [
+       {
+        "name": "8cmRose"
+       }
+      ],
+      "album": {
+       "name": "短玫瑰翻唱集",
+       "size": 3
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2759756450,
+      "name": "连哭都是我的错",
+      "artists": [
+       {
+        "name": "烟嗓船长"
+       }
+      ],
+      "album": {
+       "name": "连哭都是我的错",
+       "size": 3
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3365914911,
+      "name": "连哭都是我的错",
+      "artists": [
+       {
+        "name": "赵乃吉"
+       }
+      ],
+      "album": {
+       "name": "连哭都是我的错",
+       "size": 4
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2125522387,
+      "name": "你还要我怎样（DJ版）",
+      "artists": [
+       {
+        "name": "梦迪吖"
+       }
+      ],
+      "album": {
+       "name": "男兒當自強",
+       "size": 21
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2750385460,
+      "name": "连哭都是我的错",
+      "artists": [
+       {
+        "name": "洋澜一"
+       }
+      ],
+      "album": {
+       "name": "连哭都是我的错",
+       "size": 4
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1820949885,
+      "name": "天花板",
+      "artists": [
+       {
+        "name": "1NGarson"
+       }
+      ],
+      "album": {
+       "name": "天花板",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2756661249,
+      "name": "连哭都是我的错",
+      "artists": [
+       {
+        "name": "恰恰恰恰恰"
+       }
+      ],
+      "album": {
+       "name": "连哭都是我的错",
+       "size": 0
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 430297373,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "中国新歌声 第10期 中秋特辑",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27955653,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2132091784,
+      "name": "温柔的试探",
+      "artists": [
+       {
+        "name": "噔咦嘁"
+       }
+      ],
+      "album": {
+       "name": "温柔的试探",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 77256,
+      "name": "枯萎",
+      "artists": [
+       {
+        "name": "东来东往"
+       }
+      ],
+      "album": {
+       "name": "连哭都是我的错",
+       "size": 17
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1380825950,
+      "name": "W!th U",
+      "artists": [
+       {
+        "name": "幺丸"
+       },
+       {
+        "name": "BAOG"
+       }
+      ],
+      "album": {
+       "name": "W!th U",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "薛之谦 你还要我怎么样": {
+   "code": 200,
+   "result": {
+    "songCount": 62,
+    "songs": [
+     {
+      "id": 3317125435,
+      "name": "其实(分开时难过不要说 混搭版)",
+      "artists": [
+       {
+        "name": "薄冰哥"
+       }
+      ],
+      "album": {
+       "name": "说散就散（热播版）",
+       "size": 2
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1961221300,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "匡桐菲"
+       }
+      ],
+      "album": {
+       "name": "xue",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1316330078,
+      "name": "演员 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦"
+       },
+       {
+        "name": "阿兰"
+       },
+       {
+        "name": "刘宇宁"
+       },
+       {
+        "name": "白举纲"
+       },
+       {
+        "name": "袁成杰"
+       }
+      ],
+      "album": {
+       "name": "金曲捞第二季 第11期",
+       "size": 7
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 442493778,
+      "name": "- 你还要我怎样（林音 remix）",
+      "artists": [
+       {
+        "name": "苏凡"
+       }
+      ],
+      "album": {
+       "name": "苏凡",
+       "size": 45
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 26599895,
+      "name": "连哭都是我的错",
+      "artists": [
+       {
+        "name": "东来东往"
+       }
+      ],
+      "album": {
+       "name": "东来东往原创合集",
+       "size": 44
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3365914911,
+      "name": "连哭都是我的错",
+      "artists": [
+       {
+        "name": "赵乃吉"
+       }
+      ],
+      "album": {
+       "name": "连哭都是我的错",
+       "size": 4
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2759756450,
+      "name": "连哭都是我的错",
+      "artists": [
+       {
+        "name": "烟嗓船长"
+       }
+      ],
+      "album": {
+       "name": "连哭都是我的错",
+       "size": 3
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3436808593,
+      "name": "爱了很久",
+      "artists": [
+       {
+        "name": "杜宣达"
+       }
+      ],
+      "album": {
+       "name": "宣言",
+       "size": 10
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2756661249,
+      "name": "连哭都是我的错",
+      "artists": [
+       {
+        "name": "恰恰恰恰恰"
+       }
+      ],
+      "album": {
+       "name": "连哭都是我的错",
+       "size": 0
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2750385460,
+      "name": "连哭都是我的错",
+      "artists": [
+       {
+        "name": "洋澜一"
+       }
+      ],
+      "album": {
+       "name": "连哭都是我的错",
+       "size": 4
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 568741706,
+      "name": "隔壁老樊 - 天分(Remix)",
+      "artists": [
+       {
+        "name": "隔壁老樊"
+       }
+      ],
+      "album": {
+       "name": "大风遇到了雨",
+       "size": 6
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3319814438,
+      "name": "楚门的世界",
+      "artists": [
+       {
+        "name": "Vansdaddy"
+       },
+       {
+        "name": "mac ova seas"
+       }
+      ],
+      "album": {
+       "name": "都市醉漢",
+       "size": 16
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 77256,
+      "name": "枯萎",
+      "artists": [
+       {
+        "name": "东来东往"
+       }
+      ],
+      "album": {
+       "name": "连哭都是我的错",
+       "size": 17
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3410686594,
+      "name": "再一次",
+      "artists": [
+       {
+        "name": "丸儿"
+       },
+       {
+        "name": "图灵"
+       }
+      ],
+      "album": {
+       "name": "再一次",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2727148258,
+      "name": "错过世界，来拥抱你",
+      "artists": [
+       {
+        "name": "乔韶"
+       }
+      ],
+      "album": {
+       "name": "错过世界 来拥抱你",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1439459899,
+      "name": "求你别再骗我了",
+      "artists": [
+       {
+        "name": "SipSu小口酥"
+       }
+      ],
+      "album": {
+       "name": "求你别再骗我了",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 77259,
+      "name": "连哭都是我的错",
+      "artists": [
+       {
+        "name": "东来东往"
+       }
+      ],
+      "album": {
+       "name": "连哭都是我的错",
+       "size": 17
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 429261445,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦"
+       },
+       {
+        "name": "林子群"
+       }
+      ],
+      "album": {
+       "name": "中国新声代第四季 第10期",
+       "size": 9
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2717623537,
+      "name": "我需要你",
+      "artists": [
+       {
+        "name": "赵宥乔"
+       }
+      ],
+      "album": {
+       "name": "我需要你",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1340897222,
+      "name": "薛之谦",
+      "artists": [
+       {
+        "name": "万能音符（The Key)"
+       }
+      ],
+      "album": {
+       "name": "薛之谦",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "你还要我怎样": {
+   "code": 200,
+   "result": {
+    "songCount": 302,
+    "songs": [
+     {
+      "id": 27955653,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3372816584,
+      "name": "你还要我怎样 (Cover 薛之谦)",
+      "artists": [
+       {
+        "name": "晴天"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1983617926,
+      "name": "你还要我怎样（Cover by 薛之谦）",
+      "artists": [
+       {
+        "name": "8cmRose"
+       }
+      ],
+      "album": {
+       "name": "短玫瑰翻唱集",
+       "size": 3
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 33418578,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "谭艳"
+       }
+      ],
+      "album": {
+       "name": "最走心好声音",
+       "size": 12
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 432792819,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "汪晨蕊"
+       }
+      ],
+      "album": {
+       "name": "中国新歌声 第13期",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": [
+       "汪晨蕊晋级"
+      ]
+     },
+     {
+      "id": 430297373,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦"
+       }
+      ],
+      "album": {
+       "name": "中国新歌声 第10期 中秋特辑",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2147002443,
+      "name": "你还要我怎样（翻唱完整版）",
+      "artists": [
+       {
+        "name": "节奏黑武士"
+       }
+      ],
+      "album": {
+       "name": "无敌循环男声翻唱9",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3393921998,
+      "name": "你还要我怎样 (爷爷翻唱混搭版)",
+      "artists": [
+       {
+        "name": "夜海棠"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1924059601,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "泽野"
+       }
+      ],
+      "album": {
+       "name": "谦谦",
+       "size": 2
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3397430521,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "7wiz"
+       }
+      ],
+      "album": {
+       "name": "你还要我怎样",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [
+       "爷爷翻唱版"
+      ]
+     },
+     {
+      "id": 3339549620,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "江越"
+       }
+      ],
+      "album": {
+       "name": "你还要我怎样",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [
+       " (R&B)"
+      ]
+     },
+     {
+      "id": 1959528921,
+      "name": "你还要我怎样（Live）",
+      "artists": [
+       {
+        "name": "呆呆破"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2698319601,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "卢卢快闭嘴"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2731597662,
+      "name": "你还要我怎样 (Live)(DJ阿名版)",
+      "artists": [
+       {
+        "name": "DJ阿名"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2735873902,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "李鑫ya"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3372567215,
+      "name": "你还要我怎样 (Cover 汪晨蕊)",
+      "artists": [
+       {
+        "name": "洪勇勇"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3397914240,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "DJ阿哲"
+       }
+      ],
+      "album": {
+       "name": "你还要我怎样",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [
+       "DJ版"
+      ]
+     },
+     {
+      "id": 3427739474,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "山北"
+       }
+      ],
+      "album": {
+       "name": "你还要我怎样",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3374833726,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "石头组合"
+       }
+      ],
+      "album": {
+       "name": "你还要我怎样",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1876808593,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "-Jason嘉-"
+       }
+      ],
+      "album": {
+       "name": "翻唱歌曲辑",
+       "size": 66
+      },
+      "fee": 0,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "林俊杰的不为谁而作的歌": {
+   "code": 200,
+   "result": {
+    "songCount": 75,
+    "songs": [
+     {
+      "id": 40147552,
+      "name": "不为谁而作的歌",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "和自己对话",
+       "size": 18
+      },
+      "fee": 4,
+      "alias": [],
+      "transNames": [
+       "Twilight"
+      ]
+     },
+     {
+      "id": 1468115100,
+      "name": "不为谁而作的歌",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "上一首情歌 (国语精选)",
+       "size": 30
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "Twilight"
+      ]
+     },
+     {
+      "id": 409060875,
+      "name": "不为谁而作的歌 (Live)",
+      "artists": [
+       {
+        "name": "徐佳莹"
+       },
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "我是歌手第四季 歌王之战",
+       "size": 16
+      },
+      "fee": 1,
+      "alias": [
+       "原唱 : 林俊杰"
+      ]
+     },
+     {
+      "id": 486194136,
+      "name": "不为谁而作的歌",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "天生是优我 第十二期",
+       "size": 13
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2714372549,
+      "name": "不为谁而作的歌",
+      "artists": [
+       {
+        "name": "Jason Chen"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2019574451,
+      "name": "那女孩对我说",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "JJ的咖啡调调, Vol. 2",
+       "size": 6
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 108485,
+      "name": "Always Online",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "JJ陆",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": [
+       " 《Cries In A Distance》国语版"
+      ]
+     },
+     {
+      "id": 37196629,
+      "name": "不为谁而作的歌",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "不为谁而作的歌",
+       "size": 1
+      },
+      "fee": 4,
+      "alias": [],
+      "transNames": [
+       "Twilight"
+      ]
+     },
+     {
+      "id": 108795,
+      "name": "曹操",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "曹操",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 29774171,
+      "name": "新地球",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "新地球 - 人 (Special Edition)",
+       "size": 13
+      },
+      "fee": 1,
+      "alias": [
+       "Brave New World"
+      ]
+     },
+     {
+      "id": 426852363,
+      "name": "不为谁而作的歌 (Live)",
+      "artists": [
+       {
+        "name": "Claudia"
+       }
+      ],
+      "album": {
+       "name": "中国新声代第四季 第8期",
+       "size": 7
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 108914,
+      "name": "江南",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "第二天堂",
+       "size": 15
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "River South"
+      ]
+     },
+     {
+      "id": 1391477429,
+      "name": "将故事写成我们",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "将故事写成我们",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "The Story Of Us"
+      ]
+     },
+     {
+      "id": 2019562367,
+      "name": "恨幸福来过",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "JJ的咖啡调调, Vol. 1",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 108463,
+      "name": "不潮不用花钱",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "JJ陆",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "High Fashion"
+      ]
+     },
+     {
+      "id": 451701924,
+      "name": "不为谁而作的歌 (Live)",
+      "artists": [
+       {
+        "name": "徐漫侨（徐苑）"
+       }
+      ],
+      "album": {
+       "name": "梦想的声音 第11期",
+       "size": 13
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2041026502,
+      "name": "愿与愁",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "愿与愁",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3353437817,
+      "name": "我对缘分小心翼翼",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "我对缘分小心翼翼",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": [
+       "影视剧《逐玉》主题曲"
+      ]
+     },
+     {
+      "id": 1366053680,
+      "name": "茉莉雨",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "新地球",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 29814898,
+      "name": "可惜没如果",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "新地球 - 人 (Special Edition)",
+       "size": 13
+      },
+      "fee": 1,
+      "alias": [
+       "If Only…"
+      ]
+     }
+    ]
+   }
+  },
+  "林俊杰 不为谁而作的歌": {
+   "code": 200,
+   "result": {
+    "songCount": 75,
+    "songs": [
+     {
+      "id": 1468115100,
+      "name": "不为谁而作的歌",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "上一首情歌 (国语精选)",
+       "size": 30
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "Twilight"
+      ]
+     },
+     {
+      "id": 40147552,
+      "name": "不为谁而作的歌",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "和自己对话",
+       "size": 18
+      },
+      "fee": 4,
+      "alias": [],
+      "transNames": [
+       "Twilight"
+      ]
+     },
+     {
+      "id": 409060875,
+      "name": "不为谁而作的歌 (Live)",
+      "artists": [
+       {
+        "name": "徐佳莹"
+       },
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "我是歌手第四季 歌王之战",
+       "size": 16
+      },
+      "fee": 1,
+      "alias": [
+       "原唱 : 林俊杰"
+      ]
+     },
+     {
+      "id": 486194136,
+      "name": "不为谁而作的歌",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "天生是优我 第十二期",
+       "size": 13
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1391477429,
+      "name": "将故事写成我们",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "将故事写成我们",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "The Story Of Us"
+      ]
+     },
+     {
+      "id": 426852363,
+      "name": "不为谁而作的歌 (Live)",
+      "artists": [
+       {
+        "name": "Claudia"
+       }
+      ],
+      "album": {
+       "name": "中国新声代第四季 第8期",
+       "size": 7
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 108134,
+      "name": "学不会",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "学不会",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "Lost N Found"
+      ]
+     },
+     {
+      "id": 37196629,
+      "name": "不为谁而作的歌",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "不为谁而作的歌",
+       "size": 1
+      },
+      "fee": 4,
+      "alias": [],
+      "transNames": [
+       "Twilight"
+      ]
+     },
+     {
+      "id": 25727803,
+      "name": "修炼爱情",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "因你而在",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "Practice Love"
+      ]
+     },
+     {
+      "id": 108795,
+      "name": "曹操",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "曹操",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2041026502,
+      "name": "愿与愁",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "愿与愁",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1366053680,
+      "name": "茉莉雨",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "新地球",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 108485,
+      "name": "Always Online",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "JJ陆",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": [
+       " 《Cries In A Distance》国语版"
+      ]
+     },
+     {
+      "id": 108810,
+      "name": "不死之身",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "曹操",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": [
+       "电视剧《极道学园》插曲"
+      ],
+      "transNames": [
+       "Eternal Life"
+      ]
+     },
+     {
+      "id": 108493,
+      "name": "我还想她",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "JJ陆",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "I Still Miss Her"
+      ]
+     },
+     {
+      "id": 2714372549,
+      "name": "不为谁而作的歌",
+      "artists": [
+       {
+        "name": "Jason Chen"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 108254,
+      "name": "一眼万年",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "她说 概念自选辑",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": [
+       "电视剧《爱情睡醒了》原声带"
+      ],
+      "transNames": [
+       "Forever"
+      ]
+     },
+     {
+      "id": 108463,
+      "name": "不潮不用花钱",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "JJ陆",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "High Fashion"
+      ]
+     },
+     {
+      "id": 108914,
+      "name": "江南",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "第二天堂",
+       "size": 15
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "River South"
+      ]
+     },
+     {
+      "id": 29850683,
+      "name": "浪漫血液",
+      "artists": [
+       {
+        "name": "林俊杰"
+       }
+      ],
+      "album": {
+       "name": "新地球 - 人 (Special Edition)",
+       "size": 13
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "The Romantic"
+      ]
+     }
+    ]
+   }
+  },
+  "周杰伦的我的地盘": {
+   "code": 200,
+   "result": {
+    "songCount": 68,
+    "songs": [
+     {
+      "id": 470147782,
+      "name": "我的地盘（Cover 周杰伦）",
+      "artists": [
+       {
+        "name": "青春"
+       }
+      ],
+      "album": {
+       "name": "他们叫我青杰伦.",
+       "size": 17
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 464153427,
+      "name": "我的地盘（Cover 周杰伦）",
+      "artists": [
+       {
+        "name": "青春"
+       }
+      ],
+      "album": {
+       "name": "11111",
+       "size": 19
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 440355789,
+      "name": "我的地盘（Cover 周杰伦）",
+      "artists": [
+       {
+        "name": "张鸿宇"
+       }
+      ],
+      "album": {
+       "name": "鸿宇翻唱辑",
+       "size": 50
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 186000,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "周杰伦"
+       }
+      ],
+      "album": {
+       "name": "七里香",
+       "size": 10
+      },
+      "fee": 0,
+      "alias": [
+       "中国移动《动感地带》广告曲"
+      ]
+     },
+     {
+      "id": 185972,
+      "name": "我的地盘(Live)",
+      "artists": [
+       {
+        "name": "周杰伦"
+       }
+      ],
+      "album": {
+       "name": "2004 无与伦比演唱会",
+       "size": 25
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 466704487,
+      "name": "我的地盘（翻自 周杰伦）",
+      "artists": [
+       {
+        "name": "青年老艺术家Wangs"
+       }
+      ],
+      "album": {
+       "name": "Cover Jay",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2164471815,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "周杰伦歌迷会"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2144670330,
+      "name": "水中花 + 说散就散 + 我的地盘 (片段版)",
+      "artists": [
+       {
+        "name": "郁可唯"
+       },
+       {
+        "name": "周杰伦"
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1929062443,
+      "name": "你我几兄弟 (feat.Ty./Melo/KnowKnow/PSY.P)",
+      "artists": [
+       {
+        "name": "马思唯"
+       },
+       {
+        "name": "Ty."
+       },
+       {
+        "name": "Melo"
+       },
+       {
+        "name": "KnowKnow"
+       },
+       {
+        "name": "PSY.P"
+       }
+      ],
+      "album": {
+       "name": "Humble Swag",
+       "size": 16
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1318899627,
+      "name": "VVS",
+      "artists": [
+       {
+        "name": "JarStick"
+       },
+       {
+        "name": "高天佐"
+       },
+       {
+        "name": "李毅杰PISSY"
+       },
+       {
+        "name": "Kc"
+       }
+      ],
+      "album": {
+       "name": "VVS",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 509781655,
+      "name": "想你就写信 (Live)",
+      "artists": [
+       {
+        "name": "周杰伦"
+       },
+       {
+        "name": "李硕"
+       },
+       {
+        "name": "张鑫"
+       }
+      ],
+      "album": {
+       "name": "中国新歌声第二季 第13期",
+       "size": 16
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3322095502,
+      "name": "二零二五",
+      "artists": [
+       {
+        "name": "亚当魔星"
+       },
+       {
+        "name": "azazel"
+       }
+      ],
+      "album": {
+       "name": "M.C.S.A.",
+       "size": 16
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1984762436,
+      "name": "头发",
+      "artists": [
+       {
+        "name": "马赫mood"
+       },
+       {
+        "name": "杜逸风 Firewind SoKu"
+       }
+      ],
+      "album": {
+       "name": "糟糕的日子里",
+       "size": 21
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1912603719,
+      "name": "Mr.J",
+      "artists": [
+       {
+        "name": "刘瑞琦"
+       }
+      ],
+      "album": {
+       "name": "琦遇记",
+       "size": 13
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1803936748,
+      "name": "耳 喃",
+      "artists": [
+       {
+        "name": "PIggy"
+       }
+      ],
+      "album": {
+       "name": "耳 喃",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2656866926,
+      "name": "汉尼拔",
+      "artists": [
+       {
+        "name": "Akemen"
+       },
+       {
+        "name": "SASIOVERLXRD"
+       }
+      ],
+      "album": {
+       "name": "FOR BLOCK",
+       "size": 16
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2705192624,
+      "name": "子曰",
+      "artists": [
+       {
+        "name": "因你而在的梦"
+       },
+       {
+        "name": "卦者灵风"
+       }
+      ],
+      "album": {
+       "name": "素人",
+       "size": 8
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1937944090,
+      "name": "落日 晚霞和你",
+      "artists": [
+       {
+        "name": "奕南"
+       },
+       {
+        "name": "王海颖"
+       }
+      ],
+      "album": {
+       "name": "落日 晚霞和你",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2103738051,
+      "name": "随身听",
+      "artists": [
+       {
+        "name": "Vital马睿骋"
+       },
+       {
+        "name": "李晨曦Chrisulous"
+       }
+      ],
+      "album": {
+       "name": "随身听",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2680632194,
+      "name": "扮演",
+      "artists": [
+       {
+        "name": "袁语宸As"
+       }
+      ],
+      "album": {
+       "name": "扮演",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "周杰伦 我的地盘": {
+   "code": 200,
+   "result": {
+    "songCount": 43,
+    "songs": [
+     {
+      "id": 3368726852,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "THOME"
+       }
+      ],
+      "album": {
+       "name": "我的地盘",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3453386086,
+      "name": "老样子",
+      "artists": [
+       {
+        "name": "周杰伦♚"
+       }
+      ],
+      "album": {
+       "name": "老样子",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1910954593,
+      "name": "该怎么停在你心中",
+      "artists": [
+       {
+        "name": "周杰伦."
+       }
+      ],
+      "album": {
+       "name": "我开始接受没有你的瞬间",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3419724488,
+      "name": "我爱你",
+      "artists": [
+       {
+        "name": "周杰伦♚"
+       }
+      ],
+      "album": {
+       "name": "我爱你",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2153891227,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "杜文昌"
+       }
+      ],
+      "album": {
+       "name": "我的地盘",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3453385217,
+      "name": "算了吧！",
+      "artists": [
+       {
+        "name": "周杰伦♚"
+       }
+      ],
+      "album": {
+       "name": "算了吧！",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2616746825,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "声动便利店"
+       }
+      ],
+      "album": {
+       "name": "网都不网",
+       "size": 0
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 186064,
+      "name": "刀马旦",
+      "artists": [
+       {
+        "name": "周杰伦"
+       },
+       {
+        "name": "李玟"
+       }
+      ],
+      "album": {
+       "name": "Partners 拍档",
+       "size": 13
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3453385063,
+      "name": "迢迢！",
+      "artists": [
+       {
+        "name": "周杰伦♚"
+       }
+      ],
+      "album": {
+       "name": "迢迢！",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3419725523,
+      "name": "撤回一句话",
+      "artists": [
+       {
+        "name": "周杰伦♚"
+       }
+      ],
+      "album": {
+       "name": "撤回一句话",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3416146596,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "泽明"
+       }
+      ],
+      "album": {
+       "name": "团扇的绣边",
+       "size": 0
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2120808687,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "童一首歌"
+       }
+      ],
+      "album": {
+       "name": "童一首歌",
+       "size": 27
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3453385162,
+      "name": "她拍的！",
+      "artists": [
+       {
+        "name": "周杰伦♚"
+       }
+      ],
+      "album": {
+       "name": "她拍的！",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2739428261,
+      "name": "可惜故事太长，只有风听我讲",
+      "artists": [
+       {
+        "name": "周杰伦."
+       }
+      ],
+      "album": {
+       "name": "我开始接受没有你的瞬间",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3375500370,
+      "name": "学狗叫",
+      "artists": [
+       {
+        "name": "周杰伦♚"
+       }
+      ],
+      "album": {
+       "name": "学狗叫",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 399367164,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "林玛黛"
+       }
+      ],
+      "album": {
+       "name": "房间里的动物",
+       "size": 10
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2652445441,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "考研流塔姆"
+       }
+      ],
+      "album": {
+       "name": "河流之王",
+       "size": 3
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2740523719,
+      "name": "想你一次落一粒沙小沈阳（原版）",
+      "artists": [
+       {
+        "name": "周杰伦."
+       }
+      ],
+      "album": {
+       "name": "就像白鸽不会爱乌鸦",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3453411996,
+      "name": "若把你！",
+      "artists": [
+       {
+        "name": "周杰伦♚"
+       }
+      ],
+      "album": {
+       "name": "若把你！",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 546730510,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "潘鹏展"
+       }
+      ],
+      "album": {
+       "name": "鹏展作品集Ⅱ",
+       "size": 78
+      },
+      "fee": 8,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "我的地盘": {
+   "code": 200,
+   "result": {
+    "songCount": 93,
+    "songs": [
+     {
+      "id": 3368726852,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "THOME"
+       }
+      ],
+      "album": {
+       "name": "我的地盘",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1895645023,
+      "name": "动感地带!我的地盘我做主!",
+      "artists": [
+       {
+        "name": "CO1ORR"
+       }
+      ],
+      "album": {
+       "name": "lllllluv",
+       "size": 2
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2099667732,
+      "name": "我心澎湃",
+      "artists": [
+       {
+        "name": "雷军"
+       }
+      ],
+      "album": {
+       "name": "我心澎湃",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2120808687,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "童一首歌"
+       }
+      ],
+      "album": {
+       "name": "童一首歌",
+       "size": 27
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3416146596,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "泽明"
+       }
+      ],
+      "album": {
+       "name": "团扇的绣边",
+       "size": 0
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1941199485,
+      "name": "Ma place",
+      "artists": [
+       {
+        "name": "Mb14"
+       }
+      ],
+      "album": {
+       "name": "Ma place",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [],
+      "transNames": [
+       "我的地盘"
+      ]
+     },
+     {
+      "id": 546730510,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "潘鹏展"
+       }
+      ],
+      "album": {
+       "name": "鹏展作品集Ⅱ",
+       "size": 78
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2153891227,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "杜文昌"
+       }
+      ],
+      "album": {
+       "name": "我的地盘",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 209718,
+      "name": "舞娘",
+      "artists": [
+       {
+        "name": "蔡依林"
+       }
+      ],
+      "album": {
+       "name": "舞娘",
+       "size": 11
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 110477,
+      "name": "精舞门",
+      "artists": [
+       {
+        "name": "罗志祥"
+       }
+      ],
+      "album": {
+       "name": "Speshow",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3400322000,
+      "name": "\"我的地盘我做主\"-2000s swag×THOME×Westwood TYPE BEAT",
+      "artists": [
+       {
+        "name": "Wlao.T"
+       }
+      ],
+      "album": {
+       "name": "\"我的地盘我做主\"-2000s swag×THOME×Westwood TYPE BEAT",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 399367164,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "林玛黛"
+       }
+      ],
+      "album": {
+       "name": "房间里的动物",
+       "size": 10
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2616746825,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "声动便利店"
+       }
+      ],
+      "album": {
+       "name": "网都不网",
+       "size": 0
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2652445441,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "考研流塔姆"
+       }
+      ],
+      "album": {
+       "name": "河流之王",
+       "size": 3
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 386175,
+      "name": "倔强",
+      "artists": [
+       {
+        "name": "五月天"
+       }
+      ],
+      "album": {
+       "name": "神的孩子都在跳舞",
+       "size": 16
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3360177304,
+      "name": "我的地盘你盘着(PHONK)",
+      "artists": [
+       {
+        "name": "RICHBIGMAN"
+       }
+      ],
+      "album": {
+       "name": "我的地盘你盘着(PHONK)",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3344033815,
+      "name": "我的地盘，潮流自定！",
+      "artists": [
+       {
+        "name": "董润祺"
+       }
+      ],
+      "album": {
+       "name": "《名侦探学院》系列鬼畜",
+       "size": 2
+      },
+      "fee": 0,
+      "alias": [
+       "名侦探学院RAP"
+      ]
+     },
+     {
+      "id": 3432135487,
+      "name": "我的地盘(Free Type Beat)",
+      "artists": [
+       {
+        "name": "Lil Isle"
+       }
+      ],
+      "album": {
+       "name": "【Free】Thome 黄格雷“我的地盘” 2000s type beat",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2080764047,
+      "name": "我的地盘",
+      "artists": [
+       {
+        "name": "上晓航"
+       }
+      ],
+      "album": {
+       "name": "追不上我",
+       "size": 13
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2071131531,
+      "name": "敢在我的地盘惹事",
+      "artists": [
+       {
+        "name": "吴司令"
+       }
+      ],
+      "album": {
+       "name": "敢在我的地盘惹事",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "薛之谦的你还要我怎样live": {
+   "code": 200,
+   "result": {
+    "songCount": 53,
+    "songs": [
+     {
+      "id": 3366369928,
+      "name": "钢琴组曲（最好+刚刚好+哑巴+你还要我怎样+爱好+像风一样）",
+      "artists": [
+       {
+        "name": "一點七三啦",
+        "id": 123687214
+       }
+      ],
+      "album": {
+       "name": "3.27广州万兽之王",
+       "size": 9
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1961221300,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "匡桐菲",
+        "id": 12302273
+       }
+      ],
+      "album": {
+       "name": "xue",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1316330078,
+      "name": "演员 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       },
+       {
+        "name": "阿兰",
+        "id": 7076
+       },
+       {
+        "name": "刘宇宁",
+        "id": 1094010
+       },
+       {
+        "name": "白举纲",
+        "id": 909029
+       },
+       {
+        "name": "袁成杰",
+        "id": 6363
+       }
+      ],
+      "album": {
+       "name": "金曲捞第二季 第11期",
+       "size": 7
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 442493778,
+      "name": "- 你还要我怎样（林音 remix）",
+      "artists": [
+       {
+        "name": "苏凡",
+        "id": 12184070
+       }
+      ],
+      "album": {
+       "name": "苏凡",
+       "size": 45
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2147002443,
+      "name": "你还要我怎样（翻唱完整版）",
+      "artists": [
+       {
+        "name": "节奏黑武士",
+        "id": 59639407
+       }
+      ],
+      "album": {
+       "name": "无敌循环男声翻唱9",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 432792819,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "汪晨蕊",
+        "id": 12916020
+       }
+      ],
+      "album": {
+       "name": "中国新歌声 第13期",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": [
+       "汪晨蕊晋级"
+      ]
+     },
+     {
+      "id": 33418578,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "谭艳",
+        "id": 935286
+       }
+      ],
+      "album": {
+       "name": "最走心好声音",
+       "size": 12
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1983617926,
+      "name": "你还要我怎样（Cover by 薛之谦）",
+      "artists": [
+       {
+        "name": "8cmRose",
+        "id": 52813669
+       }
+      ],
+      "album": {
+       "name": "短玫瑰翻唱集",
+       "size": 3
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 27955653,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3423898016,
+      "name": "解药",
+      "artists": [
+       {
+        "name": "加木",
+        "id": 49320722
+       }
+      ],
+      "album": {
+       "name": "星光大道",
+       "size": 4
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 430297373,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "中国新歌声 第10期 中秋特辑",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2727148258,
+      "name": "错过世界，来拥抱你",
+      "artists": [
+       {
+        "name": "乔韶",
+        "id": 99290321
+       }
+      ],
+      "album": {
+       "name": "错过世界 来拥抱你",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2718274323,
+      "name": "还想要我怎样",
+      "artists": [
+       {
+        "name": "七雨SevenRain",
+        "id": 97657220
+       }
+      ],
+      "album": {
+       "name": "Memories",
+       "size": 9
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3440043333,
+      "name": "一个人的天荒地老",
+      "artists": [
+       {
+        "name": "Flow子轩",
+        "id": 122157179
+       }
+      ],
+      "album": {
+       "name": "以爱为名",
+       "size": 9
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3427143070,
+      "name": "一个人的天荒地老",
+      "artists": [
+       {
+        "name": "瓦特",
+        "id": 122043759
+       }
+      ],
+      "album": {
+       "name": "一个人的天荒地老",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [
+       "烟嗓版"
+      ]
+     },
+     {
+      "id": 3439822016,
+      "name": "一个人的天荒地老",
+      "artists": [
+       {
+        "name": "Flow子轩",
+        "id": 122157179
+       }
+      ],
+      "album": {
+       "name": "以爱为名",
+       "size": 8
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3427235234,
+      "name": "一个人的天荒地老",
+      "artists": [
+       {
+        "name": "纸飞机",
+        "id": 123532428
+       }
+      ],
+      "album": {
+       "name": "一个人的天荒地老",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [
+       "烟嗓版"
+      ]
+     },
+     {
+      "id": 2731982473,
+      "name": "你还要我怎样 (叮咚版)(节目)",
+      "artists": [
+       {
+        "name": "周森",
+        "id": 33020756
+       }
+      ],
+      "album": {
+       "name": "蹦迪神曲dj合集",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1401481790,
+      "name": "渣男biss！",
+      "artists": [
+       {
+        "name": "PICO",
+        "id": 31963018
+       }
+      ],
+      "album": {
+       "name": "渣男biss！",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2125522387,
+      "name": "你还要我怎样（DJ版）",
+      "artists": [
+       {
+        "name": "梦迪吖",
+        "id": 54345238
+       }
+      ],
+      "album": {
+       "name": "男兒當自強",
+       "size": 21
+      },
+      "fee": 0,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "薛之谦 你还要我怎样live": {
+   "code": 200,
+   "result": {
+    "songCount": 47,
+    "songs": [
+     {
+      "id": 27955653,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 430297373,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "中国新歌声 第10期 中秋特辑",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 429261445,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       },
+       {
+        "name": "林子群",
+        "id": 30073299
+       }
+      ],
+      "album": {
+       "name": "中国新声代第四季 第10期",
+       "size": 9
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 417859631,
+      "name": "我好像在哪见过你",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "初学者",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "动画电影《精灵王座》主题曲"
+      ]
+     },
+     {
+      "id": 3372816584,
+      "name": "你还要我怎样 (Cover 薛之谦)",
+      "artists": [
+       {
+        "name": "晴天",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2735873902,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "李鑫ya",
+        "id": 96878839
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2731597662,
+      "name": "你还要我怎样 (Live)(DJ阿名版)",
+      "artists": [
+       {
+        "name": "DJ阿名",
+        "id": 61256930
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 27955654,
+      "name": "其实",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1463165983,
+      "name": "天外来物",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "天外来物",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 32507038,
+      "name": "演员",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "绅士",
+       "size": 3
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2147002443,
+      "name": "你还要我怎样（翻唱完整版）",
+      "artists": [
+       {
+        "name": "节奏黑武士",
+        "id": 59639407
+       }
+      ],
+      "album": {
+       "name": "无敌循环男声翻唱9",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 432792819,
+      "name": "你还要我怎样 (Live)",
+      "artists": [
+       {
+        "name": "汪晨蕊",
+        "id": 12916020
+       }
+      ],
+      "album": {
+       "name": "中国新歌声 第13期",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": [
+       "汪晨蕊晋级"
+      ]
+     },
+     {
+      "id": 169185,
+      "name": "认真的雪",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "未完成的歌",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3407451664,
+      "name": "媚人",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "媚人",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27808044,
+      "name": "丑八怪",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3393921998,
+      "name": "你还要我怎样 (爷爷翻唱混搭版)",
+      "artists": [
+       {
+        "name": "夜海棠",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 471385043,
+      "name": "暧昧",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "渡",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 516657051,
+      "name": "像风一样",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "渡",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "电视剧《小女花不弃》插曲"
+      ]
+     },
+     {
+      "id": 2064033095,
+      "name": "念",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "守村人",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1803349526,
+      "name": "野心",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "天外来物",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "电影《缉魂》推广曲"
+      ]
+     }
+    ]
+   }
+  },
+  "陈奕迅的十年": {
+   "code": 200,
+   "result": {
+    "songCount": 77,
+    "songs": [
+     {
+      "id": 66842,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "黑白灰",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 65326,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "你的陈奕迅 国语精选",
+       "size": 30
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 31877628,
+      "name": "十年(Live)",
+      "artists": [
+       {
+        "name": "韩红",
+        "id": 7891
+       },
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "我是歌手第三季 总决赛",
+       "size": 13
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27867519,
+      "name": "给十年后的我 (Live)",
+      "artists": [
+       {
+        "name": "容祖儿",
+        "id": 9269
+       },
+       {
+        "name": "苏永康",
+        "id": 4948
+       },
+       {
+        "name": "薛凯琪",
+        "id": 9944
+       },
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       },
+       {
+        "name": "黄伟文",
+        "id": 3078
+       }
+      ],
+      "album": {
+       "name": "Concert YY 黄伟文作品展 演唱会",
+       "size": 84
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1901371647,
+      "name": "孤勇者",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "孤勇者",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": [
+       "动画剧集《英雄联盟：双城之战》中文主题曲"
+      ]
+     },
+     {
+      "id": 409931814,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "The Best Moment",
+       "size": 50
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2064034399,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "白天",
+        "id": 52970641
+       }
+      ],
+      "album": {
+       "name": "深情男声版",
+       "size": 25
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 358462,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "黄金年代",
+        "id": 11793
+       }
+      ],
+      "album": {
+       "name": "黄金年代 同名EP",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 551816010,
+      "name": "我们",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "我们",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": [
+       "电影《后来的我们》主题曲"
+      ]
+     },
+     {
+      "id": 111129,
+      "name": "十年(Live)",
+      "artists": [
+       {
+        "name": "刘德华",
+        "id": 3691
+       }
+      ],
+      "album": {
+       "name": "反转红馆倒转地球96香港演唱会",
+       "size": 23
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1897927515,
+      "name": "十年 (OT: 明年今日)",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "陈奕迅 国语精选",
+       "size": 17
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 65800,
+      "name": "最佳损友",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "Life Continues…",
+       "size": 7
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2105336418,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "天艺",
+        "id": 59210656
+       }
+      ],
+      "album": {
+       "name": "天艺精选",
+       "size": 9
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2737654473,
+      "name": "那些歌名，陪我们到站",
+      "artists": [
+       {
+        "name": "奕曲随心",
+        "id": 99021325
+       }
+      ],
+      "album": {
+       "name": "十年一谶：陈奕迅的歌单叙事诗",
+       "size": 3
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 66608,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "七",
+       "size": 18
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 34040853,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "赵丽颖",
+        "id": 1081056
+       }
+      ],
+      "album": {
+       "name": "十年",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1364418234,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "孙露",
+        "id": 9292
+       }
+      ],
+      "album": {
+       "name": "十大华语金曲",
+       "size": 50
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 25730757,
+      "name": "稳稳的幸福",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "稳稳的幸福",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": [
+       "电影《越来越好之村晚》主题曲"
+      ]
+     },
+     {
+      "id": 65050,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "The 1st Eleven Years 然后呢？",
+       "size": 30
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 65766,
+      "name": "富士山下",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "What's Going On…?",
+       "size": 15
+      },
+      "fee": 1,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "陈奕迅 十年": {
+   "code": 200,
+   "result": {
+    "songCount": 134,
+    "songs": [
+     {
+      "id": 66842,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "黑白灰",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 31877628,
+      "name": "十年(Live)",
+      "artists": [
+       {
+        "name": "韩红",
+        "id": 7891
+       },
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "我是歌手第三季 总决赛",
+       "size": 13
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 65326,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "你的陈奕迅 国语精选",
+       "size": 30
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 65766,
+      "name": "富士山下",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "What's Going On…?",
+       "size": 15
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 65536,
+      "name": "爱情转移",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "认了吧",
+       "size": 11
+      },
+      "fee": 1,
+      "alias": [
+       "电影《爱情呼叫转移》主题曲",
+       " 《富士山下》国语版"
+      ]
+     },
+     {
+      "id": 1467536356,
+      "name": "十年 原唱. 陈奕迅",
+      "artists": [
+       {
+        "name": "BeatzHummer",
+        "id": 36168431
+       }
+      ],
+      "album": {
+       "name": "Masters of Tributes Vol 3",
+       "size": 2
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 409931814,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "The Best Moment",
+       "size": 50
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 64599,
+      "name": "明年今日(Live)",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "DUO 陈奕迅2010演唱会",
+       "size": 37
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 65528,
+      "name": "淘汰",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "认了吧",
+       "size": 11
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 358462,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "黄金年代",
+        "id": 11793
+       }
+      ],
+      "album": {
+       "name": "黄金年代 同名EP",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1897927515,
+      "name": "十年 (OT: 明年今日)",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "陈奕迅 国语精选",
+       "size": 17
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 65538,
+      "name": "好久不见",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "认了吧",
+       "size": 11
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3368267046,
+      "name": "十年 (原唱：陳奕迅)",
+      "artists": [
+       {
+        "name": "Hyperentropist",
+        "id": 128110591
+       }
+      ],
+      "album": {
+       "name": "華語流行曲 鋼琴輕音樂",
+       "size": 14
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 64093,
+      "name": "孤独患者",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "？",
+       "size": 13
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 66608,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "七",
+       "size": 18
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 65533,
+      "name": "红玫瑰",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "认了吧",
+       "size": 11
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1901371647,
+      "name": "孤勇者",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "孤勇者",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": [
+       "动画剧集《英雄联盟：双城之战》中文主题曲"
+      ]
+     },
+     {
+      "id": 446875807,
+      "name": "十年",
+      "artists": [
+       {
+        "name": "梁朝伟",
+        "id": 3715
+       },
+       {
+        "name": "李宇春",
+        "id": 8327
+       }
+      ],
+      "album": {
+       "name": "十年",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": [
+       "电影《摆渡人》岁月版主题曲"
+      ]
+     },
+     {
+      "id": 26608828,
+      "name": "十年 (国语版)",
+      "artists": [
+       {
+        "name": "陈奕迅",
+        "id": 2116
+       }
+      ],
+      "album": {
+       "name": "2013 陈奕迅 music life 精选",
+       "size": 74
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1394384263,
+      "name": "陈奕迅-十年(手碟版)（苏牧哲 ）",
+      "artists": [
+       {
+        "name": "苏牧哲",
+        "id": 31004594
+       }
+      ],
+      "album": {
+       "name": "当手碟遇上流行",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": [
+       "翻唱版"
+      ]
+     }
+    ]
+   }
+  },
+  "稻香": {
+   "code": 200,
+   "result": {
+    "songCount": 302,
+    "songs": [
+     {
+      "id": 2104034295,
+      "name": "《稻香》童声",
+      "artists": [
+       {
+        "name": "卡罗尔",
+        "id": 59235151
+       }
+      ],
+      "album": {
+       "name": "《悬溺》+《空心》+《没有泪点》",
+       "size": 4
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3404293607,
+      "name": "稻香",
+      "artists": [
+       {
+        "name": "Lie",
+        "id": 123533131
+       }
+      ],
+      "album": {
+       "name": "稻香",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1945895725,
+      "name": "稻香 (钢琴版) [原唱: 周杰伦]",
+      "artists": [
+       {
+        "name": "纪钧瀚 (Bryan Chi)",
+        "id": 52587505
+       }
+      ],
+      "album": {
+       "name": "钢琴放松轻听 流行轻音乐 华语经典",
+       "size": 20
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1947584923,
+      "name": "稻香 (女声版)",
+      "artists": [
+       {
+        "name": "余不不",
+        "id": 49293918
+       }
+      ],
+      "album": {
+       "name": "稻香 (女声版)",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3381542797,
+      "name": "稻香(治愈版)",
+      "artists": [
+       {
+        "name": "周杰伦.",
+        "id": 0
+       },
+       {
+        "name": "街道办GDC/欧阳耀莹.",
+        "id": 48356474
+       }
+      ],
+      "album": {
+       "name": "终究意难平",
+       "size": 5
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3441643322,
+      "name": "稻香",
+      "artists": [
+       {
+        "name": "Jay",
+        "id": 122200643
+       }
+      ],
+      "album": {
+       "name": "稻香",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2135106643,
+      "name": "《稻香》童声",
+      "artists": [
+       {
+        "name": "连麻Swimming",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "000作废",
+       "size": 7
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2146737748,
+      "name": "稻香 (钢琴版) (原唱：周杰伦)",
+      "artists": [
+       {
+        "name": "酷客音乐",
+        "id": 60969269
+       }
+      ],
+      "album": {
+       "name": "流行轻音乐 沉睡催眠钢琴曲",
+       "size": 20
+      },
+      "fee": 8,
+      "alias": [
+       "Rice Field(Piano Instrumental)(Originally Performed By Jay Chou)"
+      ]
+     },
+     {
+      "id": 1379930857,
+      "name": "稻香",
+      "artists": [
+       {
+        "name": "itmusicstudio",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "日和 花盛 阳光雨",
+       "size": 10
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3373894494,
+      "name": "稻香",
+      "artists": [
+       {
+        "name": "小女孩",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "稻香",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3404226514,
+      "name": "稻香",
+      "artists": [
+       {
+        "name": "音屿",
+        "id": 122966183
+       }
+      ],
+      "album": {
+       "name": "稻香",
+       "size": 0
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2154503538,
+      "name": "稻香（深情版）",
+      "artists": [
+       {
+        "name": "肖启伦",
+        "id": 59410635
+       }
+      ],
+      "album": {
+       "name": "晴天（深情版）",
+       "size": 10
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2736563612,
+      "name": "稻香 (Live)",
+      "artists": [
+       {
+        "name": "小皓",
+        "id": 46584147
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3344001367,
+      "name": "稻香",
+      "artists": [
+       {
+        "name": "大川",
+        "id": 121655797
+       }
+      ],
+      "album": {
+       "name": "稻香",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [
+       "还记得你说家是唯一的城堡"
+      ]
+     },
+     {
+      "id": 3371061415,
+      "name": "稻香",
+      "artists": [
+       {
+        "name": "段仔仔",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "稻香",
+       "size": 0
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 109998,
+      "name": "贝加尔湖畔",
+      "artists": [
+       {
+        "name": "李健",
+        "id": 3695
+       }
+      ],
+      "album": {
+       "name": "依然",
+       "size": 11
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3343998608,
+      "name": "稻香",
+      "artists": [
+       {
+        "name": "大碗小面",
+        "id": 121655800
+       }
+      ],
+      "album": {
+       "name": "稻香（清新女版）",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [
+       "还记得你说家是唯一的城堡"
+      ]
+     },
+     {
+      "id": 2736206210,
+      "name": "稻香",
+      "artists": [
+       {
+        "name": "秦一豪",
+        "id": 31435676
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3357698666,
+      "name": "稻香",
+      "artists": [
+       {
+        "name": "Montagem",
+        "id": 100446359
+       }
+      ],
+      "album": {
+       "name": "青花瓷",
+       "size": 7
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2615520314,
+      "name": "稻香 伴奏",
+      "artists": [
+       {
+        "name": "Lunarie",
+        "id": 51670366
+       },
+       {
+        "name": "小堂妹（虚拟歌手）",
+        "id": 53606839
+       }
+      ],
+      "album": {
+       "name": "稻香（回不去的夏天）",
+       "size": 2
+      },
+      "fee": 8,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "邓紫棋的光年之外": {
+   "code": 200,
+   "result": {
+    "songCount": 78,
+    "songs": [
+     {
+      "id": 449818741,
+      "name": "光年之外",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "光年之外",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": [
+       "电影《太空旅客》中文主题曲"
+      ]
+     },
+     {
+      "id": 1332424898,
+      "name": "光年之外 (热爱版)",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       },
+       {
+        "name": "艾热 AIR",
+        "id": 1203045
+       }
+      ],
+      "album": {
+       "name": "光年之外 (热爱版)",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2714278528,
+      "name": "光年之外 (G.E.M.重生版)",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "I AM GLORIA",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 552458417,
+      "name": "光年之外 (Live)",
+      "artists": [
+       {
+        "name": "华晨宇",
+        "id": 861777
+       },
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "歌手2018 歌王之战",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 28661549,
+      "name": "Between Worlds",
+      "artists": [
+       {
+        "name": "Roger Subirana",
+        "id": 42057
+       }
+      ],
+      "album": {
+       "name": "X I I",
+       "size": 15
+      },
+      "fee": 1,
+      "alias": [],
+      "transNames": [
+       "世界之间"
+      ]
+     },
+     {
+      "id": 486194122,
+      "name": "光年之外",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       },
+       {
+        "name": "余赛亚",
+        "id": 12474635
+       }
+      ],
+      "album": {
+       "name": "我想和你唱 第二季 第9期",
+       "size": 5
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3436855494,
+      "name": "自由的你",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "自由的你",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3434662329,
+      "name": "光年之外 (0.9x)",
+      "artists": [
+       {
+        "name": "Saiin7",
+        "id": 60846890
+       }
+      ],
+      "album": {
+       "name": "光年之外（我没想到 为了你我能疯狂到）",
+       "size": 2
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 457264737,
+      "name": "光年之外(翻自 G.E.M.鄧紫棋）",
+      "artists": [
+       {
+        "name": "韩茹1204",
+        "id": 12282238
+       }
+      ],
+      "album": {
+       "name": "是邓紫棋啊",
+       "size": 2
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 234015,
+      "name": "A.I.N.Y. 爱你",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "18",
+       "size": 11
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 28793502,
+      "name": "后会无期",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "后会无期",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [],
+      "transNames": [
+       "OT: The End of the World"
+      ]
+     },
+     {
+      "id": 2608063423,
+      "name": "光年之外",
+      "artists": [
+       {
+        "name": "爱因斯毯",
+        "id": 55372609
+       }
+      ],
+      "album": {
+       "name": "翻唱歌曲",
+       "size": 7
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1957866769,
+      "name": "光年之外",
+      "artists": [
+       {
+        "name": "Ayu刘语淇",
+        "id": 12434960
+       }
+      ],
+      "album": {
+       "name": "光年之外",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3445535362,
+      "name": "光年之外(DJ版)",
+      "artists": [
+       {
+        "name": "曲无忆",
+        "id": 123840011
+       }
+      ],
+      "album": {
+       "name": "未知-曲无忆",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3442662664,
+      "name": "光年之外",
+      "artists": [
+       {
+        "name": "土豆不打伞",
+        "id": 129350902
+       }
+      ],
+      "album": {
+       "name": "《把夜晚还给你》",
+       "size": 18
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3449118495,
+      "name": "光年之外",
+      "artists": [
+       {
+        "name": "DJ阿布",
+        "id": 124636624
+       }
+      ],
+      "album": {
+       "name": "光年之外",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [
+       "DJ高燃版"
+      ]
+     },
+     {
+      "id": 3445314819,
+      "name": "光年之外 (DJ版)",
+      "artists": [
+       {
+        "name": "DJ白鸽",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": [],
+      "transNames": [
+       "光年之外 DJ"
+      ]
+     },
+     {
+      "id": 3442858121,
+      "name": "光年之外",
+      "artists": [
+       {
+        "name": "丁巳",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": [],
+      "transNames": [
+       "光年之外"
+      ]
+     },
+     {
+      "id": 2083785152,
+      "name": "唯一",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "T.I.M.E.",
+       "size": 6
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 30612793,
+      "name": "多远都要在一起",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "新的心跳",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "邓紫棋 光年之外": {
+   "code": 200,
+   "result": {
+    "songCount": 197,
+    "songs": [
+     {
+      "id": 449818741,
+      "name": "光年之外",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "光年之外",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": [
+       "电影《太空旅客》中文主题曲"
+      ]
+     },
+     {
+      "id": 1332424898,
+      "name": "光年之外 (热爱版)",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       },
+       {
+        "name": "艾热 AIR",
+        "id": 1203045
+       }
+      ],
+      "album": {
+       "name": "光年之外 (热爱版)",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2714278528,
+      "name": "光年之外 (G.E.M.重生版)",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "I AM GLORIA",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 552458417,
+      "name": "光年之外 (Live)",
+      "artists": [
+       {
+        "name": "华晨宇",
+        "id": 861777
+       },
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "歌手2018 歌王之战",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 486194122,
+      "name": "光年之外",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       },
+       {
+        "name": "余赛亚",
+        "id": 12474635
+       }
+      ],
+      "album": {
+       "name": "我想和你唱 第二季 第9期",
+       "size": 5
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 457264737,
+      "name": "光年之外(翻自 G.E.M.鄧紫棋）",
+      "artists": [
+       {
+        "name": "韩茹1204",
+        "id": 12282238
+       }
+      ],
+      "album": {
+       "name": "是邓紫棋啊",
+       "size": 2
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3436855494,
+      "name": "自由的你",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "自由的你",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3445535362,
+      "name": "光年之外(DJ版)",
+      "artists": [
+       {
+        "name": "曲无忆",
+        "id": 123840011
+       }
+      ],
+      "album": {
+       "name": "未知-曲无忆",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3434662329,
+      "name": "光年之外 (0.9x)",
+      "artists": [
+       {
+        "name": "Saiin7",
+        "id": 60846890
+       }
+      ],
+      "album": {
+       "name": "光年之外（我没想到 为了你我能疯狂到）",
+       "size": 2
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 234015,
+      "name": "A.I.N.Y. 爱你",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "18",
+       "size": 11
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2083785152,
+      "name": "唯一",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "T.I.M.E.",
+       "size": 6
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3382255329,
+      "name": "光年之外 (Cover邓紫棋)",
+      "artists": [
+       {
+        "name": "李饱饱",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3371328593,
+      "name": "光年之外  (如何瞬间冻结时间) (Cover G.E.M. 邓紫棋)",
+      "artists": [
+       {
+        "name": "图钉姐",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3372567459,
+      "name": "光年之外 (Cover G.E.M. 邓紫棋)",
+      "artists": [
+       {
+        "name": "元元",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1957866769,
+      "name": "光年之外",
+      "artists": [
+       {
+        "name": "Ayu刘语淇",
+        "id": 12434960
+       }
+      ],
+      "album": {
+       "name": "光年之外",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3449118495,
+      "name": "光年之外",
+      "artists": [
+       {
+        "name": "DJ阿布",
+        "id": 124636624
+       }
+      ],
+      "album": {
+       "name": "光年之外",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [
+       "DJ高燃版"
+      ]
+     },
+     {
+      "id": 3445314819,
+      "name": "光年之外 (DJ版)",
+      "artists": [
+       {
+        "name": "DJ白鸽",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": [],
+      "transNames": [
+       "光年之外 DJ"
+      ]
+     },
+     {
+      "id": 1348838456,
+      "name": "G.E.M.邓紫棋-光年之外（徐大猫remix）（徐大猫 remix）",
+      "artists": [
+       {
+        "name": "徐大猫",
+        "id": 30792458
+       }
+      ],
+      "album": {
+       "name": "愛してる",
+       "size": 3
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 28793502,
+      "name": "后会无期",
+      "artists": [
+       {
+        "name": "G.E.M.邓紫棋",
+        "id": 7763
+       }
+      ],
+      "album": {
+       "name": "后会无期",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [],
+      "transNames": [
+       "OT: The End of the World"
+      ]
+     },
+     {
+      "id": 1999626505,
+      "name": "光年之外  伴奏（唯美钢琴）",
+      "artists": [
+       {
+        "name": "一宁",
+        "id": 31010281
+       }
+      ],
+      "album": {
+       "name": "邓紫棋合集",
+       "size": 43
+      },
+      "fee": 0,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "阿斯顿发生的发生": {
+   "code": 200,
+   "result": {
+    "songCount": 25,
+    "songs": [
+     {
+      "id": 2635973528,
+      "name": "呀秘密发生的",
+      "artists": [
+       {
+        "name": "蔡菜",
+        "id": 95246541
+       },
+       {
+        "name": "若溪（虚拟歌手）",
+        "id": 56507264
+       }
+      ],
+      "album": {
+       "name": "阿斯顿发顺",
+       "size": 12
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2635973529,
+      "name": "呀秘密发生的 伴奏",
+      "artists": [
+       {
+        "name": "蔡菜",
+        "id": 95246541
+       },
+       {
+        "name": "若溪（虚拟歌手）",
+        "id": 56507264
+       }
+      ],
+      "album": {
+       "name": "阿斯顿发顺",
+       "size": 12
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 350797,
+      "name": "NA NA",
+      "artists": [
+       {
+        "name": "厉娜",
+        "id": 8413
+       }
+      ],
+      "album": {
+       "name": "2006超级女声长沙唱区×10强",
+       "size": 11
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3312508535,
+      "name": "少女的祈祷",
+      "artists": [
+       {
+        "name": "杨千嬅",
+        "id": 10204
+       }
+      ],
+      "album": {
+       "name": "RECOLLECTION, VOL. I - MY Harmonic Minor",
+       "size": 9
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1452470089,
+      "name": "IF I CRASH",
+      "artists": [
+       {
+        "name": "皇昶枢（MULA SAKEE）",
+        "id": 14925064
+       }
+      ],
+      "album": {
+       "name": "IF I CRASH",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 317251,
+      "name": "少女的祈祷(Live)",
+      "artists": [
+       {
+        "name": "杨千嬅",
+        "id": 10204
+       }
+      ],
+      "album": {
+       "name": "万紫千红演唱会2002",
+       "size": 27
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1939621843,
+      "name": "火鸟",
+      "artists": [
+       {
+        "name": "陈辉阳 x 女声合唱",
+        "id": 52298444
+       }
+      ],
+      "album": {
+       "name": "火鸟",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3348920199,
+      "name": "宇宙会听见",
+      "artists": [
+       {
+        "name": "阿肆",
+        "id": 7122
+       }
+      ],
+      "album": {
+       "name": "跟着我念，宇宙会听见",
+       "size": 3
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2686898673,
+      "name": "MIA",
+      "artists": [
+       {
+        "name": "CashTrippy",
+        "id": 33937972
+       }
+      ],
+      "album": {
+       "name": "万古",
+       "size": 14
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3317670133,
+      "name": "rain rain",
+      "artists": [
+       {
+        "name": "Yaka",
+        "id": 32992079
+       },
+       {
+        "name": "99 God",
+        "id": 31511662
+       }
+      ],
+      "album": {
+       "name": "JUNGLE +",
+       "size": 11
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2100624065,
+      "name": "飞飞",
+      "artists": [
+       {
+        "name": "功夫胖KUNGFU-PEN",
+        "id": 12453329
+       },
+       {
+        "name": "KEY.L刘聪",
+        "id": 12788674
+       },
+       {
+        "name": "THE-BETA",
+        "id": 12059091
+       }
+      ],
+      "album": {
+       "name": "飞飞",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 86771,
+      "name": "劲歌金曲",
+      "artists": [
+       {
+        "name": "古巨基",
+        "id": 2849
+       }
+      ],
+      "album": {
+       "name": "劲歌. 金曲新曲 + 精选",
+       "size": 19
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 277748,
+      "name": "爱我的请举手",
+      "artists": [
+       {
+        "name": "莫文蔚",
+        "id": 8926
+       }
+      ],
+      "album": {
+       "name": "就是 莫文蔚",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 86223,
+      "name": "劲歌.金曲 (Live)",
+      "artists": [
+       {
+        "name": "古巨基",
+        "id": 2849
+       }
+      ],
+      "album": {
+       "name": "古巨基 Eye Fever 演唱会2009",
+       "size": 30
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 25727428,
+      "name": "少女的祈祷",
+      "artists": [
+       {
+        "name": "张敬轩",
+        "id": 6462
+       }
+      ],
+      "album": {
+       "name": "Pink Dahlia",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 192400,
+      "name": "少女的祈祷(Live)",
+      "artists": [
+       {
+        "name": "张智霖",
+        "id": 6487
+       }
+      ],
+      "album": {
+       "name": "十指紧扣",
+       "size": 13
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2648887149,
+      "name": "火鸟",
+      "artists": [
+       {
+        "name": "杨千嬅",
+        "id": 10204
+       }
+      ],
+      "album": {
+       "name": "火鸟",
+       "size": 8
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 316908,
+      "name": "少女的祈祷",
+      "artists": [
+       {
+        "name": "杨千嬅",
+        "id": 10204
+       }
+      ],
+      "album": {
+       "name": "Miriam's Melodies",
+       "size": 32
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 29593497,
+      "name": "少女的祈祷",
+      "artists": [
+       {
+        "name": "杨千嬅",
+        "id": 10204
+       }
+      ],
+      "album": {
+       "name": "Kiss Me Soft avep1",
+       "size": 8
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 27510420,
+      "name": "少女的祈祷",
+      "artists": [
+       {
+        "name": "杨千嬅",
+        "id": 10204
+       }
+      ],
+      "album": {
+       "name": "Play It Loud avep 2",
+       "size": 9
+      },
+      "fee": 0,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "ed sheeran的shape of you": {
+   "code": 200,
+   "result": {
+    "songCount": 23,
+    "songs": [
+     {
+      "id": 1818503920,
+      "name": "Ed Sheeran-Shape of You(水滴版)（记忆的鱼 remix）",
+      "artists": [
+       {
+        "name": "记忆的鱼",
+        "id": 12405350
+       }
+      ],
+      "album": {
+       "name": "改编",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 482753824,
+      "name": "Ed Sheeran - shape of you(remix)",
+      "artists": [
+       {
+        "name": "覆盖色的美",
+        "id": 12429059
+       }
+      ],
+      "album": {
+       "name": "shape of you",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2008485286,
+      "name": "Ed Sheeran-Shape of You",
+      "artists": [
+       {
+        "name": "当风与海两清",
+        "id": 50499135
+       },
+       {
+        "name": "小多情情",
+        "id": 51450202
+       },
+       {
+        "name": "被遗忘的溪泽",
+        "id": 53546799
+       }
+      ],
+      "album": {
+       "name": "Shape of You",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1408039270,
+      "name": "Ed Sheeran-Shape of You（吉他改编之改的面目全非）（tsmax Remix）",
+      "artists": [
+       {
+        "name": "tsmax",
+        "id": 33711139
+       }
+      ],
+      "album": {
+       "name": "碎梦",
+       "size": 19
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1449664826,
+      "name": "Shape of You（串烧）cover （刘思鉴）",
+      "artists": [
+       {
+        "name": "EdSheerancj",
+        "id": 35176298
+       }
+      ],
+      "album": {
+       "name": "Shape Of You(自制串烧)",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 522772163,
+      "name": "你的形状（Cover Ed Sheeran - Shape of You）",
+      "artists": [
+       {
+        "name": "zPone",
+        "id": 12138507
+       }
+      ],
+      "album": {
+       "name": "zPone是个神经病",
+       "size": 5
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1357621268,
+      "name": "Ed Sheeran-Shape of You（RAMS remix）",
+      "artists": [
+       {
+        "name": "山川中的清风",
+        "id": 12200039
+       }
+      ],
+      "album": {
+       "name": "窒息",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1884550053,
+      "name": "shape of you 调速版",
+      "artists": [
+       {
+        "name": "辻忧",
+        "id": 50001031
+       },
+       {
+        "name": "ed sheeran",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "爱是种不死的欲望",
+       "size": 2
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1854458494,
+      "name": "Ed Sheeran-Shape of You（神宴Music remix）",
+      "artists": [
+       {
+        "name": "神宴",
+        "id": 48351713
+       }
+      ],
+      "album": {
+       "name": "风继续吹",
+       "size": 15
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1396766493,
+      "name": "Shape of you(女版铃声片段）（翻自 Ed Sheeran）",
+      "artists": [
+       {
+        "name": "星苒",
+        "id": 30220516
+       }
+      ],
+      "album": {
+       "name": "星苒的英文翻唱",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 518890670,
+      "name": "Shape of You（Cover Ed Sheeran）",
+      "artists": [
+       {
+        "name": "时砂",
+        "id": 12085695
+       }
+      ],
+      "album": {
+       "name": "camellia",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1426110614,
+      "name": "Ed Sheeran-shape of you串烧-女生版（喵心妍 remix）",
+      "artists": [
+       {
+        "name": "喵心妍",
+        "id": 34396741
+       }
+      ],
+      "album": {
+       "name": "「做你的喵」",
+       "size": 2
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 3354016744,
+      "name": "Ed Sheeran-Shape of You 2026",
+      "artists": [
+       {
+        "name": "雅凫yaff",
+        "id": 60665750
+       }
+      ],
+      "album": {
+       "name": "我想要的",
+       "size": 7
+      },
+      "fee": 0,
+      "alias": [
+       "翻唱版"
+      ]
+     },
+     {
+      "id": 1422380684,
+      "name": "Shape of you(Cover Ed Sheeran)（翻自 Ed Sheeran）",
+      "artists": [
+       {
+        "name": "别用芒果喂阿东丶",
+        "id": 34206211
+       }
+      ],
+      "album": {
+       "name": "阿东的翻唱",
+       "size": 8
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1867104535,
+      "name": "Shape of you(cover ed sheeran)",
+      "artists": [
+       {
+        "name": "贾大头",
+        "id": 48992705
+       }
+      ],
+      "album": {
+       "name": "稀烂的练习记录",
+       "size": 5
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 526631478,
+      "name": "Shape of you 很黄的老板呼唤你（Cover Ed Sheeran）（Cover Ed Sheeran）",
+      "artists": [
+       {
+        "name": "春盏儿",
+        "id": 12324735
+       }
+      ],
+      "album": {
+       "name": "古巴人民呼唤你",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 467927574,
+      "name": "阿卡贝拉SHAPE OF YOU（Cover ed sheeran）",
+      "artists": [
+       {
+        "name": "JACK TWO",
+        "id": 12205075
+       },
+       {
+        "name": "睡PAO友",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "我的阿卡贝拉专辑",
+       "size": 12
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 546883280,
+      "name": "Shape of You×中文歌（翻自 Ed Sheeran）",
+      "artists": [
+       {
+        "name": "韩旭",
+        "id": 1192131
+       }
+      ],
+      "album": {
+       "name": "用Shape of You的伴奏唱中文歌",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1342846661,
+      "name": "shape of you (piano ver.)（翻自 Ed Sheeran）",
+      "artists": [
+       {
+        "name": "特污兔-Dirtyrabbit2",
+        "id": 31335944
+       }
+      ],
+      "album": {
+       "name": "我把我的心送给你",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 528582548,
+      "name": "Shape of You（Cover Ed Sheeran）",
+      "artists": [
+       {
+        "name": "Coming",
+        "id": 12611942
+       }
+      ],
+      "album": {
+       "name": "Shape of You",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "ed sheeran shape of you": {
+   "code": 200,
+   "result": {
+    "songCount": 344,
+    "songs": [
+     {
+      "id": 451703096,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "Shape of You",
+       "size": 2
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2630189452,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "+-=÷× (TOUR COLLECTION)",
+       "size": 24
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1319853590,
+      "name": "Shape of You (Yxng Bane Remix)",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "Shape of You (Yxng Bane Remix)",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2659779522,
+      "name": "Shape of You (Live)",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "+-=÷× (Tour Collection: Live)",
+       "size": 50
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1998394200,
+      "name": "Shape Of You (Jack Wins Mix)",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "Shape Of You (Jack Wins Mix)",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3451680326,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "Wuhan Pools",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "Shape of You",
+       "size": 0
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 459720198,
+      "name": "Shape Of You (Galantis Extended Remix)",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       },
+       {
+        "name": "Galantis",
+        "id": 851397
+       }
+      ],
+      "album": {
+       "name": "Shape of You (Galantis Remix)",
+       "size": 2
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 461518835,
+      "name": "Shape of You (feat. Nyla & Kranium) [Major Lazer Remix]",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 0
+       },
+       {
+        "name": "Nyla",
+        "id": 581060
+       },
+       {
+        "name": "Kranium",
+        "id": 365542
+       }
+      ],
+      "album": {
+       "name": "Shape of You (feat. Nyla & Kranium) [Major Lazer Remix]",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1998395142,
+      "name": "Shape Of You (Breaux Remix)",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "Shape Of You (Breaux Remix)",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2659782246,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "+-=÷× (Tour Collection: Live)",
+       "size": 50
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 458697799,
+      "name": "Shape of You (Galantis Remix)",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       },
+       {
+        "name": "Galantis",
+        "id": 851397
+       }
+      ],
+      "album": {
+       "name": "Shape of You (Galantis Remix)",
+       "size": 2
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 467590256,
+      "name": "Shape of You (Extended Mix)",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "Shape of You",
+       "size": 2
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 458697809,
+      "name": "Shape of You (Acoustic)",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "Shape of You (Acoustic)",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 460043702,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "÷ (Deluxe)",
+       "size": 16
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 465973758,
+      "name": "Shape of You (Latin Remix)",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       },
+       {
+        "name": "Zion & Lennox",
+        "id": 85134
+       }
+      ],
+      "album": {
+       "name": "Shape of You (Latin Remix)",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 461544605,
+      "name": "Shape of You (Stormzy Remix)",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       },
+       {
+        "name": "Stormzy",
+        "id": 1050763
+       }
+      ],
+      "album": {
+       "name": "Shape of You (Stormzy Remix)",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 2659660943,
+      "name": "Shape of You (Live)",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "+-=÷× (Tour Collection: Live)",
+       "size": 47
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1304875455,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "÷",
+       "size": 12
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1972641464,
+      "name": "Ed Sheeran-shape of you（止质 remix）",
+      "artists": [
+       {
+        "name": "止质",
+        "id": 53704352
+       }
+      ],
+      "album": {
+       "name": "低音",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 508971067,
+      "name": "Ed Sheeran - Shape Of You [Album Instrumental]",
+      "artists": [
+       {
+        "name": "Kenny Saxton",
+        "id": 12215179
+       }
+      ],
+      "album": {
+       "name": "Shape Of You [Kenny Saxton Remix]",
+       "size": 4
+      },
+      "fee": 0,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "shape of you": {
+   "code": 200,
+   "result": {
+    "songCount": 301,
+    "songs": [
+     {
+      "id": 451703096,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "Shape of You",
+       "size": 2
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 452601986,
+      "name": "Shape Of You (James Carter x Levi Remix)",
+      "artists": [
+       {
+        "name": "James Carter",
+        "id": 12047749
+       },
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       },
+       {
+        "name": "Levi",
+        "id": 144183
+       }
+      ],
+      "album": {
+       "name": "Shape Of You (James Carter x Levi Remix)",
+       "size": 1
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 1390355299,
+      "name": "Shape Of You",
+      "artists": [
+       {
+        "name": "Cyan",
+        "id": 33164863
+       }
+      ],
+      "album": {
+       "name": "Greatest Hits",
+       "size": 5
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2630189452,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "+-=÷× (TOUR COLLECTION)",
+       "size": 24
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3313826546,
+      "name": "Shape of You (slowed)",
+      "artists": [
+       {
+        "name": "Slowed Audios",
+        "id": 58472946
+       }
+      ],
+      "album": {
+       "name": "Warm Dalat",
+       "size": 2
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3451680326,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "Wuhan Pools",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "Shape of You",
+       "size": 0
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 509531832,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "J.Fla",
+        "id": 805090
+       }
+      ],
+      "album": {
+       "name": "Shape of You",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2731893087,
+      "name": "Shape of you",
+      "artists": [
+       {
+        "name": "蔡文姬",
+        "id": 30751393
+       },
+       {
+        "name": "澜",
+        "id": 0
+       }
+      ],
+      "album": {
+       "name": "眼里只有你",
+       "size": 5
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 2082281232,
+      "name": "SHAPE OF YOU (sped up)",
+      "artists": [
+       {
+        "name": "Cutie Pie",
+        "id": 46722384
+       },
+       {
+        "name": "TV Girl",
+        "id": 35865219
+       }
+      ],
+      "album": {
+       "name": "Sped Up List Vol.38 (sped up)",
+       "size": 20
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 2079642628,
+      "name": "Shape of you (slowed)",
+      "artists": [
+       {
+        "name": "Casz",
+        "id": 29201768
+       }
+      ],
+      "album": {
+       "name": "Tranquil Melodies",
+       "size": 30
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 468882985,
+      "name": "Shape Of You",
+      "artists": [
+       {
+        "name": "J.Fla",
+        "id": 805090
+       }
+      ],
+      "album": {
+       "name": "Blossom",
+       "size": 7
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1844548269,
+      "name": "Shape of You（3D立体混音）",
+      "artists": [
+       {
+        "name": "鸣谦",
+        "id": 34814077
+       }
+      ],
+      "album": {
+       "name": "环绕立体音",
+       "size": 5
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 3442694947,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "池澜",
+        "id": 121589895
+       },
+       {
+        "name": "灰蒙蒙",
+        "id": 99278903
+       }
+      ],
+      "album": {
+       "name": "Shape of You",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": [
+       "烟嗓版"
+      ]
+     },
+     {
+      "id": 1807028718,
+      "name": "Shape Of You",
+      "artists": [
+       {
+        "name": "Ziyoмузык",
+        "id": 34374041
+       }
+      ],
+      "album": {
+       "name": "Shape Of You",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1920511318,
+      "name": "Shape Of You (Cello Version)",
+      "artists": [
+       {
+        "name": "Jodok Cello",
+        "id": 49148989
+       }
+      ],
+      "album": {
+       "name": "Shape Of You (Cello Version)",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 1453896915,
+      "name": "Shape of You (Live)",
+      "artists": [
+       {
+        "name": "HENRY刘宪华",
+        "id": 776875
+       },
+       {
+        "name": "李秀贤",
+        "id": 1032036
+       },
+       {
+        "name": "朴正炫",
+        "id": 125822
+       }
+      ],
+      "album": {
+       "name": "",
+       "size": 0
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 461301681,
+      "name": "Shape Of You (MAKJ Remix) [Radio Edit]",
+      "artists": [
+       {
+        "name": "MAKJ",
+        "id": 725091
+       },
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "Shape Of You (MAKJ Remix)",
+       "size": 2
+      },
+      "fee": 0,
+      "alias": []
+     },
+     {
+      "id": 461347784,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "MADILYN",
+        "id": 69270
+       }
+      ],
+      "album": {
+       "name": "Shape of You",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 468490461,
+      "name": "Shape of You",
+      "artists": [
+       {
+        "name": "Alex Goot",
+        "id": 28690
+       },
+       {
+        "name": "Andie Case",
+        "id": 47898
+       }
+      ],
+      "album": {
+       "name": "Alex Goot & Friends, Vol. 5",
+       "size": 11
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 461332332,
+      "name": "Shape Of You (MAKJ Remix)",
+      "artists": [
+       {
+        "name": "MAKJ",
+        "id": 725091
+       },
+       {
+        "name": "Ed Sheeran",
+        "id": 33184
+       }
+      ],
+      "album": {
+       "name": "Shape Of You (MAKJ Remix)",
+       "size": 2
+      },
+      "fee": 8,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "薛之谦": {
+   "code": 200,
+   "result": {
+    "songCount": 284,
+    "songs": [
+     {
+      "id": 417859631,
+      "name": "我好像在哪见过你",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "初学者",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "动画电影《精灵王座》主题曲"
+      ]
+     },
+     {
+      "id": 32507038,
+      "name": "演员",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "绅士",
+       "size": 3
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1463165983,
+      "name": "天外来物",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "天外来物",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27955654,
+      "name": "其实",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 169185,
+      "name": "认真的雪",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "未完成的歌",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27955655,
+      "name": "我想起你了",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 32192436,
+      "name": "绅士",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "绅士",
+       "size": 3
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1374061043,
+      "name": "聊表心意",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       },
+       {
+        "name": "刘惜君",
+        "id": 8334
+       }
+      ],
+      "album": {
+       "name": "尘",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27890306,
+      "name": "意外",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 516657051,
+      "name": "像风一样",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "渡",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "电视剧《小女花不弃》插曲"
+      ]
+     },
+     {
+      "id": 3407451664,
+      "name": "媚人",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "媚人",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 471385043,
+      "name": "暧昧",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "渡",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1803349526,
+      "name": "野心",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "天外来物",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "电影《缉魂》推广曲"
+      ]
+     },
+     {
+      "id": 1307334195,
+      "name": "违背的青春",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "怪咖",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "致不易青年主题曲"
+      ]
+     },
+     {
+      "id": 1473782328,
+      "name": "小尖尖",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       },
+       {
+        "name": "韩红",
+        "id": 7891
+       }
+      ],
+      "album": {
+       "name": "天外来物",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27955653,
+      "name": "你还要我怎样",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3315586072,
+      "name": "平庸 (Live)",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "音乐缘计划2 第3期",
+       "size": 8
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 574921549,
+      "name": "怪咖",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "怪咖",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27955658,
+      "name": "方圆几里",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "电视剧《妈妈像花儿一样》插曲",
+       "微电影《最熟悉的陌生人》主题曲"
+      ]
+     },
+     {
+      "id": 1808053189,
+      "name": "迟迟",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "天外来物",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     }
+    ]
+   }
+  },
+  "薛之谦 你还要我怎么样 薛之谦": {
+   "code": 200,
+   "result": {
+    "songCount": 22,
+    "songs": [
+     {
+      "id": 417859631,
+      "name": "我好像在哪见过你",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "初学者",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "动画电影《精灵王座》主题曲"
+      ]
+     },
+     {
+      "id": 32507038,
+      "name": "演员",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "绅士",
+       "size": 3
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3374993372,
+      "name": "你还要我怎么样",
+      "artists": [
+       {
+        "name": "拽拽大王",
+        "id": 123142793
+       }
+      ],
+      "album": {
+       "name": "ㅤ",
+       "size": 1
+      },
+      "fee": 8,
+      "alias": []
+     },
+     {
+      "id": 27955654,
+      "name": "其实",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1463165983,
+      "name": "天外来物",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "天外来物",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 169185,
+      "name": "认真的雪",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "未完成的歌",
+       "size": 14
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 3407451664,
+      "name": "媚人",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "媚人",
+       "size": 1
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27808044,
+      "name": "丑八怪",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 471385043,
+      "name": "暧昧",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "渡",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 516657051,
+      "name": "像风一样",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "渡",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "电视剧《小女花不弃》插曲"
+      ]
+     },
+     {
+      "id": 2064033095,
+      "name": "念",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "守村人",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1803349526,
+      "name": "野心",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "天外来物",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "电影《缉魂》推广曲"
+      ]
+     },
+     {
+      "id": 574921549,
+      "name": "怪咖",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "怪咖",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1307334195,
+      "name": "违背的青春",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "怪咖",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "致不易青年主题曲"
+      ]
+     },
+     {
+      "id": 2648841571,
+      "name": "租购",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "守村人",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 1374056689,
+      "name": "陪你去流浪",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "尘",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27890306,
+      "name": "意外",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     },
+     {
+      "id": 27955658,
+      "name": "方圆几里",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "意外",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "电视剧《妈妈像花儿一样》插曲",
+       "微电影《最熟悉的陌生人》主题曲"
+      ]
+     },
+     {
+      "id": 415792881,
+      "name": "刚刚好",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "初学者",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": [
+       "网剧《我与你的光年距离》主题曲"
+      ]
+     },
+     {
+      "id": 468517654,
+      "name": "动物世界",
+      "artists": [
+       {
+        "name": "薛之谦",
+        "id": 5781
+       }
+      ],
+      "album": {
+       "name": "渡",
+       "size": 10
+      },
+      "fee": 1,
+      "alias": []
+     }
+    ]
+   }
+  }
+ },
+ "artists": {
+  "薛之谦": {
+   "code": 200,
+   "result": {
+    "artistCount": 63,
+    "artists": [
+     {
+      "id": 5781,
+      "name": "薛之谦",
+      "alias": [
+       "Joker Xue",
+       "Jacky Xue"
+      ],
+      "trans": null
+     },
+     {
+      "id": 35248193,
+      "name": "薛之谦后援会",
+      "alias": [
+       "Joker Xue"
+      ],
+      "trans": null
+     },
+     {
+      "id": 100616215,
+      "name": "Jokerbai",
+      "alias": [
+       "薛之谦"
+      ],
+      "trans": null
+     },
+     {
+      "id": 54125026,
+      "name": "薛之谦的小音响",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 98677119,
+      "name": "HF薛之谦",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 121496479,
+      "name": "鲤城薛之谦",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 46586441,
+      "name": "叶落",
+      "alias": [
+       "薛之谦"
+      ],
+      "trans": null
+     },
+     {
+      "id": 122332838,
+      "name": "薛之谦.",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 95639883,
+      "name": "麟听薛之谦",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 95579697,
+      "name": "郑州薛之谦",
+      "alias": [],
+      "trans": null
+     }
+    ]
+   }
+  },
+  "邓紫棋": {
+   "code": 200,
+   "result": {
+    "artistCount": 43,
+    "artists": [
+     {
+      "id": 7763,
+      "name": "G.E.M.邓紫棋",
+      "alias": [
+       "G.E.M.",
+       "Gloria Tang"
+      ],
+      "trans": null
+     },
+     {
+      "id": 62017015,
+      "name": "邓紫棋",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 123806118,
+      "name": "邓紫棋",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 98983615,
+      "name": "邓紫棋",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 98018108,
+      "name": "邓紫棋",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 121440966,
+      "name": "邓紫棋解解",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 122630019,
+      "name": "lD_宝",
+      "alias": [
+       "张作霖",
+       "邓紫棋",
+       "周杰伦",
+       "林俊杰",
+       "江苏泷"
+      ],
+      "trans": null
+     },
+     {
+      "id": 122105739,
+      "name": "G·E·M 鄧紫棋",
+      "alias": [
+       "念晚"
+      ],
+      "trans": null
+     },
+     {
+      "id": 123145425,
+      "name": "邓紫棋",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 5538,
+      "name": "汪苏泷",
+      "alias": [
+       "Silence Wang"
+      ],
+      "trans": null
+     }
+    ]
+   }
+  },
+  "周杰伦": {
+   "code": 200,
+   "result": {
+    "artistCount": 84,
+    "artists": [
+     {
+      "id": 6452,
+      "name": "周杰伦",
+      "alias": [
+       "Jay Chou",
+       "周董"
+      ],
+      "trans": null
+     },
+     {
+      "id": 51128649,
+      "name": "周杰伦.",
+      "alias": [
+       "周杰伦头号粉"
+      ],
+      "trans": null
+     },
+     {
+      "id": 122200643,
+      "name": "Jay",
+      "alias": [
+       "周杰伦",
+       "林俊杰",
+       "权志龙",
+       "章若楠"
+      ],
+      "trans": null
+     },
+     {
+      "id": 122494823,
+      "name": "周杰伦♚",
+      "alias": [
+       "周杰伦"
+      ],
+      "trans": null
+     },
+     {
+      "id": 52198464,
+      "name": "周杰伦jay",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 52348016,
+      "name": "何兵兵",
+      "alias": [
+       "林俊杰",
+       "周杰伦",
+       "王源",
+       "易烊千玺",
+       "黄明昊"
+      ],
+      "trans": null
+     },
+     {
+      "id": 60800058,
+      "name": "周杰倫",
+      "alias": [],
+      "trans": null
+     },
+     {
+      "id": 121573756,
+      "name": "Jay Chou",
+      "alias": [
+       "周杰倫"
+      ],
+      "trans": null
+     },
+     {
+      "id": 97534636,
+      "name": "东北周杰伦",
+      "alias": [
+       "东北周杰伦"
+      ],
+      "trans": null
+     },
+     {
+      "id": 54707474,
+      "name": "周杰伦.",
+      "alias": [],
+      "trans": null
+     }
+    ]
+   }
+  },
+  "你还要我怎样": {
+   "code": 200,
+   "result": {
+    "artistCount": 2,
+    "artists": [
+     {
+      "id": 5781,
+      "name": "薛之谦",
+      "alias": [
+       "Joker Xue",
+       "Jacky Xue"
+      ],
+      "trans": null
+     },
+     {
+      "id": 59099939,
+      "name": "7wiz",
+      "alias": [],
+      "trans": null
+     }
+    ]
+   }
+  },
+  "ed sheeran": {
+   "code": 405,
+   "result": {
+    "artistCount": 0,
+    "artists": []
+   }
+  }
+ }
+}

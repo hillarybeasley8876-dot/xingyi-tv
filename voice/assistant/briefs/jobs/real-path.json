@@ -1,0 +1,48 @@
+{
+ "id": "real-path",
+ "title": "真实路径的探测进仓库（六个场景 + 离线校验 + 注册表），和静音测试分开标",
+ "brief": "briefs/real-path.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 110,
+ "owns": [
+  "tests/agent/realpath/probe.py",
+  "tests/agent/realpath/check.py",
+  "tests/agent/realpath/run.py",
+  "tests/agent/realpath/scenarios.json",
+  "tests/agent/realpath/scenarios/panel-while-speaking.py",
+  "tests/agent/realpath/scenarios/panel-self-check.py",
+  "tests/agent/realpath/scenarios/black-screen-home.py",
+  "tests/agent/realpath/scenarios/hint-card-not-a-switch.py",
+  "tests/agent/realpath/scenarios/episode-open.py",
+  "tests/agent/realpath/scenarios/pause-through-xiaoai.py",
+  "tests/agent/RealPathChecks.java",
+  "tests/agent/SkillChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 600,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|502[4-9]|50[3-9]\\d|5[1-9]\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "realpath",
+   "cmd": "sh tests/agent/accept_real_path.sh",
+   "timeoutS": 900,
+   "must": [
+    "REALPATH OK"
+   ]
+  }
+ ]
+}

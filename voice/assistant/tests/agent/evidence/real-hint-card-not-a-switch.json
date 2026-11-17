@@ -1,0 +1,13 @@
+{
+  "id": "hint-card-not-a-switch",
+  "at": "2026-11-12T23:07:52+08:00",
+  "ok": true,
+  "by": "hint-card-not-a-switch.py",
+  "notes": [
+    "说之前 hints = True",
+    "说完之后 hints = True",
+    "任务里和提示有关的几行：- set_hints: 关掉亮屏提示 -> denied",
+    "回答：reply: 你说的这个“提示提示提示提示提示”，不是亮屏提示卡，更多像是小爱的语音转写把“提示”重复了。我的右上角执行面板本身是正常的，这句话现在就在面板上。"
+  ],
+  "shots": []
+}

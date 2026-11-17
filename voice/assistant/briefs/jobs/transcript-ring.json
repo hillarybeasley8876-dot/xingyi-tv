@@ -1,0 +1,20 @@
+{
+ "id": "transcript-ring",
+ "title": "Keep the last 12 real tasks' transcripts (not just the last one) and export them through AgentDebug",
+ "brief": "briefs/transcript-ring.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/TranscriptRing.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentEngine.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentDebug.java",
+  "tests/agent/PerfChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (36(8[4-9]|9\\d)|3[7-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_transcript_ring.sh", "timeoutS": 900, "must": ["TRANSCRIPT RING OK"] }
+ ]
+}

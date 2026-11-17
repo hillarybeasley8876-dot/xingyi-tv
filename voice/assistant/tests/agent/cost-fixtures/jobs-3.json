@@ -1,0 +1,33 @@
+[
+  {
+    "id": "alpha",
+    "history": [
+      {
+        "round": 1,
+        "tools": 40,
+        "cost": { "usd": 4.821722, "outTok": 68913, "models": { "minimax-M78": { "usd": 4.821722, "outTok": 68913 } } }
+      },
+      {
+        "round": 2,
+        "tools": 11,
+        "cost": { "usd": 1.323325, "outTok": 19568, "models": { "minimax-M78": { "usd": 1.323325, "outTok": 19568 } } }
+      }
+    ]
+  },
+  {
+    "id": "beta",
+    "history": [
+      {
+        "round": 1,
+        "tools": 25,
+        "cost": { "usd": 6.154953, "outTok": 30000, "models": { "minimax-M78": { "usd": 6.154953, "outTok": 30000 } } }
+      }
+    ]
+  },
+  {
+    "id": "gamma",
+    "history": [
+      { "round": 1, "tools": 7 }
+    ]
+  }
+]

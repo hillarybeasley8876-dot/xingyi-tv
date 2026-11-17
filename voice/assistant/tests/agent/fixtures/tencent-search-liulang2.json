@@ -1,0 +1,545 @@
+{
+ "data": {
+  "errcode": 0,
+  "errmsg": "",
+  "areaBoxList": [
+   {
+    "boxId": "3505",
+    "itemList": [
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200a4m2z36"
+      },
+      "videoInfo": {
+       "title": "流浪地球3(上)",
+       "typeName": "电影",
+       "year": 2027,
+       "area": "内地",
+       "subTitle": "同系列·第3部",
+       "descrip": "太阳即将毁灭，人类在地球表面建造出巨大的推进器，寻找新的家园。然而宇宙之路危机四伏，为了拯救地球，为了人类能在漫长的25",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "m30873wxlnv",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "3fvg46217gw800n"
+      },
+      "videoInfo": {
+       "title": "流浪地球",
+       "typeName": "电影",
+       "year": 2019,
+       "area": "内地",
+       "subTitle": "同系列·第1部",
+       "descrip": "近未来，科学家们发现太阳急速衰老膨胀，短时间内包括地球在内的整个太阳系都将被太阳所吞没。为了自救，人类提出一个名为“流浪",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "h0030qj4fov",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002001dbx90v"
+      },
+      "videoInfo": {
+       "title": "流浪地球：飞跃2020特别版",
+       "typeName": "电影",
+       "year": 2020,
+       "area": "内地",
+       "subTitle": "同IP·流浪地球",
+       "descrip": "电影《流浪地球》特别重映版。该片根据刘慈欣同名小说改编，故事设定在2075年，讲述了太阳即将毁灭，人类在地球表面建造出巨",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "n0035iqsnod",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002007knmh3g"
+      },
+      "videoInfo": {
+       "title": "三体",
+       "typeName": "电视剧",
+       "year": 2023,
+       "area": "内地",
+       "subTitle": "同题材·硬科幻",
+       "descrip": "2007年，地球基础科学出现了异常的扰动，科学界人心惶惶。离奇自杀的科学家，近乎神迹的倒计时，行事隐秘的科学边界，神秘莫",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "i0045u918s5",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "vyggt7o2cz16bsa"
+      },
+      "videoInfo": {
+       "title": "我的三体·罗辑传",
+       "typeName": "动漫",
+       "year": 2016,
+       "area": "内地",
+       "subTitle": "面壁者罗辑的故事",
+       "descrip": "三体人在利用科技锁死了地球人的科学之后，出动庞大的宇宙舰队直扑太阳系，意欲清除地球文明，面对地球文明前所未有的危局，人类",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "v0305tjsfla",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200x51n2yo"
+      },
+      "videoInfo": {
+       "title": "重启地球",
+       "typeName": "电影",
+       "year": 2021,
+       "area": "内地",
+       "subTitle": "同题材·末日题材",
+       "descrip": "本片主要讲述了由于新研发的“超级生长素”泄露，植物的细胞活性大幅度增强，开始急速生长，迅速蔓延。人类遭遇了前所未有的危机",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "s0040ihhl3x",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200f81m12m"
+      },
+      "videoInfo": {
+       "title": "和平精英：地铁逃生",
+       "typeName": "电影",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "同题材·末日题材",
+       "descrip": "毁灭性爆炸使苏尔南成废土，家园覆灭、紫矿蔓延、黑鹰入侵。武力至上的末日里，昔日兄弟奥本与卡德尔分道扬镳；当终结一切的力量",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "m4102865kc2",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc003wllznlak5"
+      },
+      "videoInfo": {
+       "title": "《流浪地球》电影解读",
+       "typeName": "电影",
+       "year": 0,
+       "area": "",
+       "subTitle": "",
+       "descrip": "",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "f3294qefg1z",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200nx1hbcr"
+      },
+      "videoInfo": {
+       "title": "长津湖",
+       "typeName": "电影",
+       "year": 2021,
+       "area": "内地",
+       "subTitle": "同主演·吴京",
+       "descrip": "电影《长津湖》以抗美援朝战争第二次战役中的长津湖战役为背景，讲述了一段波澜壮阔的历史：71年前，中国人民志愿军赴朝作战，",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "j0041h6t8nu",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200kolznba"
+      },
+      "videoInfo": {
+       "title": "未来之心",
+       "typeName": "电影",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "同题材·科幻冒险",
+       "descrip": "余书与梁澜夫妇研发了革命性AI“超心智脑”，旨在复原古生物生态。因儿子重病急需资金，二人分道扬镳：梁澜与投资人何叔合作，",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "y4101uf1sdx",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002000y0q8uy"
+      },
+      "videoInfo": {
+       "title": "独行月球",
+       "typeName": "电影",
+       "year": 2022,
+       "area": "内地",
+       "subTitle": "同题材·未来科幻",
+       "descrip": "人类为抵御小行星的撞击，拯救地球，在月球部署了月盾计划。陨石提前来袭，全员紧急撤离时，维修工独孤月因为意外，错过了领队马",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "r0044rrsowz",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "hswhwhxw05n7jso"
+      },
+      "videoInfo": {
+       "title": "上海堡垒",
+       "typeName": "电影",
+       "year": 2019,
+       "area": "内地",
+       "subTitle": "同题材·未来科幻",
+       "descrip": "未来世界外星黑暗势力突袭地球，上海成为了人类最后的希望。大学生江洋追随女指挥官林澜进入了上海堡垒成为一名指挥员。外星势力",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "g4102nkhdhq",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200gq865do"
+      },
+      "videoInfo": {
+       "title": "三体·黑暗森林",
+       "typeName": "电视剧",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "同题材·硬科幻",
+       "descrip": "三体人来势汹汹，舰队直扑太阳系、智子锁死地球科技，人类毫无正面战场优势，迎来前所未有的文明危局。以罗辑为代表的面壁者们用",
+       "status": 1,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "z4102k86t29",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200hina79f"
+      },
+      "videoInfo": {
+       "title": "阿凡达：火与烬",
+       "typeName": "电影",
+       "year": 2025,
+       "area": "美国",
+       "subTitle": "同题材·科幻冒险",
+       "descrip": "剧情承接前作，库里奇联手灰烬族，撕开潘多拉不为人知的黑暗传说。杰克与奈蒂莉团结各族奋力抗敌，萨利子女在绝境中磨砺成长。伴",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "o4102qr7joe",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "normalList": {
+   "itemList": [
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "mzc002008v8rka3"
+     },
+     "videoInfo": {
+      "title": "流浪地球2",
+      "typeName": "电影",
+      "year": 2023,
+      "area": "内地",
+      "subTitle": "吴京刘德华联手救地球",
+      "descrip": "太阳即将毁灭，人类在地球表面建造出巨大的推进器，寻找新的家园。然而宇宙之路危机四伏，为了拯救地球，流浪地球时代的年轻人再",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "腾讯视频",
+        "enName": "qq",
+        "totalEpisode": 1,
+        "episodeInfoList": [
+         {
+          "id": "d0046v4pddg",
+          "title": "立即播放",
+          "url": "https://v.qq.com/x/cover/mzc002008v8rka3/d0046v4pddg.html"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "mzc00200qio4xf8"
+     },
+     "videoInfo": {
+      "title": "流浪地球2：再次冒险",
+      "typeName": "电影",
+      "year": 2024,
+      "area": "内地",
+      "subTitle": "探索《流浪地球2》幕后世界",
+      "descrip": "该纪录片将带观众深入探索《流浪地球2》的幕后世界：导演、制片人、美术及特效团队等电影核心主创将亲自讲述这部科幻巨制的制作",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "腾讯视频",
+        "enName": "qq",
+        "totalEpisode": 1,
+        "episodeInfoList": [
+         {
+          "id": "w4100swoc5u",
+          "title": "立即播放",
+          "url": "https://v.qq.com/x/cover/mzc00200qio4xf8/w4100swoc5u.html"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "w41001bwign"
+     },
+     "videoInfo": {
+      "title": "<em>流浪地球2</em>_高光片段",
+      "typeName": "电影",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "r3500ss3alf"
+     },
+     "videoInfo": {
+      "title": "<em>流浪地球2</em>：第一部成功，让原著作者刘慈欣很担忧，前作难以超越",
+      "typeName": "电影",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "p3510h706xq"
+     },
+     "videoInfo": {
+      "title": "<em>流浪地球2</em>",
+      "typeName": "电影",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "c3510m7p5co"
+     },
+     "videoInfo": {
+      "title": "《<em>流浪地球2</em>》意想不到！操纵<em>地球</em>毁灭的幕后大BOSS竟然是他",
+      "typeName": "电影",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    }
+   ]
+  }
+ }
+}

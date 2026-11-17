@@ -1,0 +1,19 @@
+[
+  {
+    "id": "no-a",
+    "history": [
+      { "round": 1, "tools": 5 }
+    ]
+  },
+  {
+    "id": "no-b",
+    "history": [
+      { "round": 1, "tools": 9 },
+      { "round": 2, "tools": 2 }
+    ]
+  },
+  {
+    "id": "no-c",
+    "history": []
+  }
+]

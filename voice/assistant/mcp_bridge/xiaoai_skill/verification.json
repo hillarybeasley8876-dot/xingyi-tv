@@ -1,0 +1,18 @@
+{
+  "origin": "合成小爱技能请求，未连接小米账号或采集语音",
+  "official_signature_vectors": "GET 与 POST 均匹配",
+  "volume": {
+    "transport": "official MCP SDK over real stdio",
+    "spoken_response": "暂时无法读取电视音量，请检查家庭电脑与电视的连接。"
+  },
+  "song": "签名模拟请求→真正的 stdio MCP xingyi_submit。只模拟电视受理边界，验证歌手、曲名、待确认回复和防重复提交。",
+  "routing": "新意图以外的指令和静默均结束技能会话，未调用 MCP；成功和待确认回复均结束技能会话。",
+  "rejection_checks": [
+    "错误摘要",
+    "缺少摘要",
+    "过期签名",
+    "其他账号",
+    "其他技能",
+    "重放"
+  ]
+}

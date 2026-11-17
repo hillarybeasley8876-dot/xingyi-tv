@@ -1,0 +1,18 @@
+{
+ "id": "quick-info-2",
+ "title": "Everyday data questions that still waited for a model round become quick commands (热搜, 美股昨晚, 开奖, 宜不宜, 在哪看, NBA, 这周新番, 别处天气)",
+ "brief": "briefs/quick-info-2.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 105,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/QuickCommand.java",
+  "tests/agent/QuickChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (38(6[2-9]|[7-9]\\d)|39\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_quick_info2.sh", "timeoutS": 900, "must": ["QUICK INFO2 OK"] }
+ ]
+}

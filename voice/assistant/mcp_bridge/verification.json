@@ -1,0 +1,21 @@
+{
+  "real_paired_device": {
+    "protocol": "2025-11-25",
+    "server": "xingyi-tv",
+    "tools": [
+      "tv_status",
+      "xingyi_submit",
+      "xingyi_result"
+    ],
+    "status": {
+      "message": "电视离线或未配对，未读取到电视状态。"
+    },
+    "isError": true
+  },
+  "synthetic_tv_fixture": {
+    "submitted": true,
+    "preview_seen": true,
+    "approval_argument_rejected": true,
+    "foreign_receipt_rejected": true
+  }
+}

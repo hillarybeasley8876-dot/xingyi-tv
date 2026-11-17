@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="xyz.erapi0neer.homepreview" android:versionCode="1" android:versionName="1.0">
+ <!-- Off-screen samples of the home screen's type layer from any source tree; one receiver, nothing starts by itself.
+      Only the shell (it holds DUMP) can trigger it. -->
+ <uses-permission android:name="xyz.erapi0neer.xingyi.permission.USE_LOCAL_MCP"/>
+ <application android:label="桌面样张" android:hardwareAccelerated="false" android:allowBackup="false">
+  <receiver android:name="xyz.erapi0neer.orrery.PreviewRender" android:exported="true" android:permission="android.permission.DUMP">
+   <intent-filter><action android:name="xyz.erapi0neer.homepreview.RENDER"/></intent-filter>
+  </receiver>
+ </application>
+</manifest>

@@ -1,0 +1,520 @@
+{
+ "tool": "tools/resume/rehearse.mjs",
+ "at": "2026-11-11T21:45:56.492Z",
+ "ms": 6286,
+ "runMjs": "tools/m31w/run.mjs",
+ "node": "C:/Program Files/nodejs/node.exe",
+ "model": "MiniMax-M78",
+ "scratch": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-20261111214550",
+ "out": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-20261111214550/out",
+ "wt": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-20261111214550/wt",
+ "env": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-20261111214550/env",
+ "claude": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-20261111214550/stub/claude-stub.exe",
+ "realOut": "H:/tools/mitv/voice/assistant-out",
+ "killAfterSec": 3,
+ "resumed": true,
+ "jobs": [
+  {
+   "id": "rehearse-20261111214550-kill",
+   "scenario": "kill",
+   "model": "MiniMax-M78",
+   "maxRounds": 3,
+   "brief": "../../assistant-out/tmp/resume/rehearse-20261111214550/briefs/jobs/rehearse-20261111214550-kill.json",
+   "spec": "spec-kill.json",
+   "state0": {
+    "rounds": 0,
+    "history": 0,
+    "sessionStarted": false,
+    "sessionModel": null,
+    "sessionId": "c46fa167-005a-474b-b852-e8ccc3f8049f",
+    "status": "new"
+   },
+   "launches": [
+    {
+     "n": 1,
+     "killed": true,
+     "roundStarted": true,
+     "killedAtMs": 3454,
+     "exitCode": 1,
+     "ms": 4190,
+     "stateBefore": {
+      "rounds": 0,
+      "history": 0,
+      "sessionStarted": false,
+      "sessionModel": null,
+      "sessionId": "c46fa167-005a-474b-b852-e8ccc3f8049f",
+      "status": "new"
+     },
+     "stateAfter": {
+      "rounds": 1,
+      "history": 0,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "c46fa167-005a-474b-b852-e8ccc3f8049f",
+      "status": "running"
+     },
+     "beginRound": 1,
+     "rounds": [
+      1
+     ],
+     "stub": [
+      {
+       "round": 1,
+       "finished": false,
+       "resume": false,
+       "sessionId": "c46fa167-005a-474b-b852-e8ccc3f8049f",
+       "argv": [
+        "-p",
+        "--model",
+        "MiniMax-M78",
+        "--permission-mode",
+        "bypassPermissions",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--max-turns",
+        "4",
+        "--session-id",
+        "c46fa167-005a-474b-b852-e8ccc3f8049f",
+        "--disallowedTools",
+        "WebFetch",
+        "WebSearch",
+        "Agent",
+        "Task",
+        "Workflow",
+        "Bash(rm",
+        "-rf:*)",
+        "Bash(rm",
+        "-fr:*)",
+        "Bash(rm",
+        "-r:*)",
+        "Bash(rmdir:*)",
+        "Bash(rd:*)",
+        "Bash(del:*)",
+        "Bash(format:*)",
+        "Bash(git",
+        "push:*)",
+        "Bash(git",
+        "reset:*)",
+        "Bash(git",
+        "clean:*)",
+        "Bash(git",
+        "checkout:*)",
+        "Bash(git",
+        "restore:*)",
+        "Bash(git",
+        "stash:*)",
+        "Bash(git",
+        "rebase:*)",
+        "Bash(git",
+        "commit:*)",
+        "Bash(git",
+        "add:*)",
+        "Bash(pip:*)",
+        "Bash(pip3:*)",
+        "Bash(npm:*)",
+        "Bash(winget:*)",
+        "Bash(curl:*)",
+        "Bash(wget:*)",
+        "Bash(powershell:*)",
+        "Bash(taskkill:*)"
+       ],
+       "prompt": "# WORKER RULES — 星仪 agent harness, job `rehearse-20261111214550-kill`\n\nYou are an implementation worker on 星仪 (Xingyi), an agent that lives on a Xiaomi TV (Android 9 / API 28, 2 GB RAM).\nIt understands a spoken request, plans, operates the TV through tools (read the screen, click, press keys, open apps,\nsearch Bilibili, play NetEase music…), shows its progress on screen and speaks the result through XiaoAi.\nThe agent core is pure Java in `src/xyz/erapi0neer/xingyi/agent/` (no android.* there); the Android side (tools, the\nengine host, the accessibility service) is in `src/xyz/erapi0neer/xingyi/agent/tv/`. `HARNESS.md` explains the rules\nthe core enforces. The runtime ships inside a second app (the XiaoAi bridge) that compiles these sources.\nA lead plans, checks and reviews your work; you implement. You work alone: never use the Agent / Task / Workflow tools.\nYour work is machine-checked, then read by the lead.\n\n## The loop you must follow (do not skip steps)\n1. READ first: your brief below, then every source file it names, and `status/improve/rehearse-20261111214550-kill.md` if it exists (your own earlier checkpoint — continue from it, never restart finished work).\n2. PLAN: write your plan into `status/improve/rehearse-20261111214550-kill.md` before touching code: numbered steps, and for EVERY step the exact command that proves it worked. Max 30 lines.\n3. IMPLEMENT one step at a time. After each step run that step's verification command and READ its output.\n4. If something fails, find the cause by reading the actual output and the actual code. Fix the cause. Do not guess, do not retry the same thing unchanged, do not weaken a check.\n5. Before you finish, run every command in the brief's \"Acceptance\" section yourself.\n6. Final message (short, factual): files changed, commands you ran with their key output lines, what is still not working.\n\n## Build and tests\n- Offline core tests: `sh tests/agent/run_core.sh` — compiles the core package plus `tests/agent/*.java` with the desktop org.json and runs `AgentCoreTest`, which prints `agent core: N passed, 0 failed`. Check helpers live in `AgentCoreTest` (`check(boolean, label)`, `Script` = a scripted model, `Fake` = a fake tool, `loop(...)`, `o(...)`, `plan(...)`); look at how existing checks use them.\n- Android check: `sh tests/agent/android_check.sh` — compiles the core package against Android's android.jar alone. Must print `ANDROID CHECK OK`.\n- Test files for your job are named in your brief; they are classes in package `xyz.erapi0neer.xingyi.agent` with a `static void run() throws Exception` that `AgentCoreTest.main` already calls. Use `AgentCoreTest.check(...)` for every assertion and give each a label that says what it proves.\n\n## Hard rules\n- You may create/edit ONLY the paths listed under \"Files you own\". Everything else is read-only. Edits elsewhere are reverted automatically and counted against you. Need a change elsewhere? Write it under `## Requests` in your status file.\n- NEVER edit existing checks, `run_core.sh`, `android_check.sh` or fixtures to make them pass. Changing the check instead of the code is cheating; it is detected and the job fails. Add NEW checks instead.\n- Java 8 source level and Android API 28 at runtime: no `var`, no switch expressions, no text blocks, no records; no `List.of / Set.of / Map.of`, no `String.repeat / isBlank / strip / lines`, no `Stream.toList()`, no `java.nio.file.*` in `src/` (tests may use it), no `Optional`. **Never use `Pattern.UNICODE_CHARACTER_CLASS` or `(?U)`** — Android throws \"Unsupported flags: 256\". On Android `org.json.JSONException` is a CHECKED exception: catch or declare it (the Android check enforces this).\n- The core package stays pure: no `android.*` imports in `src/xyz/erapi0neer/xingyi/agent/*.java`.\n- Never run `adb`, never touch the TV, never access the network (no real HTTP calls in code you run, tests use fakes), no installs or downloads (`pip`, `npm`, `curl`), no `git commit/reset/checkout/stash/push`. The lead tests on the TV.\n- Never edit anything outside this repository.\n- Write Java with the Write/Edit tools, NOT with shell heredocs: Git Bash collapses backslashes and breaks regexes and escapes. Every Write/Edit call at most 120 lines; build long files in several parts. Short single-purpose methods. Match the existing style: terse comments that say why, no decorative comments. User-facing strings are Chinese, as in the existing code.\n- Change only what your brief needs. Never reformat, re-wrap or compact code you do not otherwise change (no folding loops onto one line, no turning javadoc into trailing comments): the lead reviews the diff. New classes stay under 400 lines; if an existing file grows past that, say so under `## Requests` instead of squeezing it.\n- Scratch files go to `H:/tools/mitv/voice/assistant-out/tmp/rehearse-20261111214550-kill/` (never C:, never `/tmp`).\n- Honesty over appearance: never say something works unless you ran it and read the output.\n\n## Checkpoint (mandatory, after every milestone)\n`status/improve/rehearse-20261111214550-kill.md` with sections: `## Plan`, `## Done`, `## In progress / next`, `## How to test (exact commands)`, `## Evidence (key output lines)`, `## Known issues`, `## Requests`.\n\n\n# YOUR BRIEF — rehearsal kill\n\n# Brief: rehearsal\n\nThis job does not exist. It is a rehearsal: tools/resume/rehearse.mjs drives the real runner with it, so that the\ncontinuation rules (which round a restarted job begins with, --resume or --session-id, which prompt) are proved\nagainst the runner itself and not against a comment about it.\nFIRST-PROMPT-MARKER\n\n\n## Files you own (the only paths you may edit)\n- `rehearse-round.txt`\n- `status/improve/rehearse-20261111214550-kill.md`\n\n## Acceptance (the runner executes these itself after you finish)\n1. **round** — run `\"C:/Program Files/nodejs/node.exe\" \"H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-20261111214550/accept-round.mjs\"` and the output must contain: `rehearse round ok` (exit code 0)\n",
+       "promptFile": "prompt-1.md",
+       "mark": "H:\\tools\\mitv\\voice\\assistant-out\\tmp\\resume\\rehearse-20261111214550\\wt\\rehearse-20261111214550-kill\\rehearse-round.txt"
+      }
+     ],
+     "accept": [],
+     "log": "logs/kill-1.out"
+    },
+    {
+     "n": 2,
+     "killed": false,
+     "roundStarted": null,
+     "killedAtMs": null,
+     "exitCode": 0,
+     "ms": 472,
+     "stateBefore": {
+      "rounds": 1,
+      "history": 0,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "c46fa167-005a-474b-b852-e8ccc3f8049f",
+      "status": "running"
+     },
+     "stateAfter": {
+      "rounds": 1,
+      "history": 1,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "c46fa167-005a-474b-b852-e8ccc3f8049f",
+      "status": "accepted_mechanical"
+     },
+     "beginRound": 1,
+     "rounds": [
+      1
+     ],
+     "stub": [
+      {
+       "round": 1,
+       "finished": true,
+       "resume": true,
+       "sessionId": "c46fa167-005a-474b-b852-e8ccc3f8049f",
+       "argv": [
+        "-p",
+        "--model",
+        "MiniMax-M78",
+        "--permission-mode",
+        "bypassPermissions",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--max-turns",
+        "4",
+        "--resume",
+        "c46fa167-005a-474b-b852-e8ccc3f8049f",
+        "--disallowedTools",
+        "WebFetch",
+        "WebSearch",
+        "Agent",
+        "Task",
+        "Workflow",
+        "Bash(rm",
+        "-rf:*)",
+        "Bash(rm",
+        "-fr:*)",
+        "Bash(rm",
+        "-r:*)",
+        "Bash(rmdir:*)",
+        "Bash(rd:*)",
+        "Bash(del:*)",
+        "Bash(format:*)",
+        "Bash(git",
+        "push:*)",
+        "Bash(git",
+        "reset:*)",
+        "Bash(git",
+        "clean:*)",
+        "Bash(git",
+        "checkout:*)",
+        "Bash(git",
+        "restore:*)",
+        "Bash(git",
+        "stash:*)",
+        "Bash(git",
+        "rebase:*)",
+        "Bash(git",
+        "commit:*)",
+        "Bash(git",
+        "add:*)",
+        "Bash(pip:*)",
+        "Bash(pip3:*)",
+        "Bash(npm:*)",
+        "Bash(winget:*)",
+        "Bash(curl:*)",
+        "Bash(wget:*)",
+        "Bash(powershell:*)",
+        "Bash(taskkill:*)"
+       ],
+       "prompt": "The lead resumes this job. Re-read your status file and the brief, check what is on disk, and continue until the acceptance commands pass.",
+       "promptFile": "prompt-1.md",
+       "mark": "H:\\tools\\mitv\\voice\\assistant-out\\tmp\\resume\\rehearse-20261111214550\\wt\\rehearse-20261111214550-kill\\rehearse-round.txt"
+      }
+     ],
+     "accept": [
+      {
+       "round": 1,
+       "end": "ok",
+       "pass": true,
+       "why": [],
+       "stray": []
+      }
+     ],
+     "log": "logs/kill-2.out"
+    }
+   ],
+   "final": {
+    "rounds": 1,
+    "history": 1,
+    "sessionStarted": true,
+    "sessionModel": "MiniMax-M78",
+    "sessionId": "c46fa167-005a-474b-b852-e8ccc3f8049f",
+    "status": "accepted_mechanical"
+   },
+   "stub": {
+    "runs": 2,
+    "finished": 1
+   }
+  },
+  {
+   "id": "rehearse-20261111214550-model",
+   "scenario": "model",
+   "model": "MiniMax-M78",
+   "maxRounds": 3,
+   "brief": "../../assistant-out/tmp/resume/rehearse-20261111214550/briefs/jobs/rehearse-20261111214550-model.json",
+   "spec": "spec-model.json",
+   "state0": {
+    "rounds": 1,
+    "history": 1,
+    "sessionStarted": true,
+    "sessionModel": "MiniMax-M3.1-Flash",
+    "sessionId": "741626a7-fbde-45b8-9be0-b8febc751a92",
+    "status": "failed_round"
+   },
+   "launches": [
+    {
+     "n": 1,
+     "killed": false,
+     "roundStarted": null,
+     "killedAtMs": null,
+     "exitCode": 0,
+     "ms": 727,
+     "stateBefore": {
+      "rounds": 1,
+      "history": 1,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M3.1-Flash",
+      "sessionId": "741626a7-fbde-45b8-9be0-b8febc751a92",
+      "status": "failed_round"
+     },
+     "stateAfter": {
+      "rounds": 2,
+      "history": 2,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "8b1684eb-0b19-486f-88d6-363970e1a6b3",
+      "status": "accepted_mechanical"
+     },
+     "beginRound": 2,
+     "rounds": [
+      2
+     ],
+     "stub": [
+      {
+       "round": 2,
+       "finished": true,
+       "resume": false,
+       "sessionId": "8b1684eb-0b19-486f-88d6-363970e1a6b3",
+       "argv": [
+        "-p",
+        "--model",
+        "MiniMax-M78",
+        "--permission-mode",
+        "bypassPermissions",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--max-turns",
+        "4",
+        "--session-id",
+        "8b1684eb-0b19-486f-88d6-363970e1a6b3",
+        "--disallowedTools",
+        "WebFetch",
+        "WebSearch",
+        "Agent",
+        "Task",
+        "Workflow",
+        "Bash(rm",
+        "-rf:*)",
+        "Bash(rm",
+        "-fr:*)",
+        "Bash(rm",
+        "-r:*)",
+        "Bash(rmdir:*)",
+        "Bash(rd:*)",
+        "Bash(del:*)",
+        "Bash(format:*)",
+        "Bash(git",
+        "push:*)",
+        "Bash(git",
+        "reset:*)",
+        "Bash(git",
+        "clean:*)",
+        "Bash(git",
+        "checkout:*)",
+        "Bash(git",
+        "restore:*)",
+        "Bash(git",
+        "stash:*)",
+        "Bash(git",
+        "rebase:*)",
+        "Bash(git",
+        "commit:*)",
+        "Bash(git",
+        "add:*)",
+        "Bash(pip:*)",
+        "Bash(pip3:*)",
+        "Bash(npm:*)",
+        "Bash(winget:*)",
+        "Bash(curl:*)",
+        "Bash(wget:*)",
+        "Bash(powershell:*)",
+        "Bash(taskkill:*)"
+       ],
+       "prompt": "# WORKER RULES — 星仪 agent harness, job `rehearse-20261111214550-model`\n\nYou are an implementation worker on 星仪 (Xingyi), an agent that lives on a Xiaomi TV (Android 9 / API 28, 2 GB RAM).\nIt understands a spoken request, plans, operates the TV through tools (read the screen, click, press keys, open apps,\nsearch Bilibili, play NetEase music…), shows its progress on screen and speaks the result through XiaoAi.\nThe agent core is pure Java in `src/xyz/erapi0neer/xingyi/agent/` (no android.* there); the Android side (tools, the\nengine host, the accessibility service) is in `src/xyz/erapi0neer/xingyi/agent/tv/`. `HARNESS.md` explains the rules\nthe core enforces. The runtime ships inside a second app (the XiaoAi bridge) that compiles these sources.\nA lead plans, checks and reviews your work; you implement. You work alone: never use the Agent / Task / Workflow tools.\nYour work is machine-checked, then read by the lead.\n\n## The loop you must follow (do not skip steps)\n1. READ first: your brief below, then every source file it names, and `status/improve/rehearse-20261111214550-model.md` if it exists (your own earlier checkpoint — continue from it, never restart finished work).\n2. PLAN: write your plan into `status/improve/rehearse-20261111214550-model.md` before touching code: numbered steps, and for EVERY step the exact command that proves it worked. Max 30 lines.\n3. IMPLEMENT one step at a time. After each step run that step's verification command and READ its output.\n4. If something fails, find the cause by reading the actual output and the actual code. Fix the cause. Do not guess, do not retry the same thing unchanged, do not weaken a check.\n5. Before you finish, run every command in the brief's \"Acceptance\" section yourself.\n6. Final message (short, factual): files changed, commands you ran with their key output lines, what is still not working.\n\n## Build and tests\n- Offline core tests: `sh tests/agent/run_core.sh` — compiles the core package plus `tests/agent/*.java` with the desktop org.json and runs `AgentCoreTest`, which prints `agent core: N passed, 0 failed`. Check helpers live in `AgentCoreTest` (`check(boolean, label)`, `Script` = a scripted model, `Fake` = a fake tool, `loop(...)`, `o(...)`, `plan(...)`); look at how existing checks use them.\n- Android check: `sh tests/agent/android_check.sh` — compiles the core package against Android's android.jar alone. Must print `ANDROID CHECK OK`.\n- Test files for your job are named in your brief; they are classes in package `xyz.erapi0neer.xingyi.agent` with a `static void run() throws Exception` that `AgentCoreTest.main` already calls. Use `AgentCoreTest.check(...)` for every assertion and give each a label that says what it proves.\n\n## Hard rules\n- You may create/edit ONLY the paths listed under \"Files you own\". Everything else is read-only. Edits elsewhere are reverted automatically and counted against you. Need a change elsewhere? Write it under `## Requests` in your status file.\n- NEVER edit existing checks, `run_core.sh`, `android_check.sh` or fixtures to make them pass. Changing the check instead of the code is cheating; it is detected and the job fails. Add NEW checks instead.\n- Java 8 source level and Android API 28 at runtime: no `var`, no switch expressions, no text blocks, no records; no `List.of / Set.of / Map.of`, no `String.repeat / isBlank / strip / lines`, no `Stream.toList()`, no `java.nio.file.*` in `src/` (tests may use it), no `Optional`. **Never use `Pattern.UNICODE_CHARACTER_CLASS` or `(?U)`** — Android throws \"Unsupported flags: 256\". On Android `org.json.JSONException` is a CHECKED exception: catch or declare it (the Android check enforces this).\n- The core package stays pure: no `android.*` imports in `src/xyz/erapi0neer/xingyi/agent/*.java`.\n- Never run `adb`, never touch the TV, never access the network (no real HTTP calls in code you run, tests use fakes), no installs or downloads (`pip`, `npm`, `curl`), no `git commit/reset/checkout/stash/push`. The lead tests on the TV.\n- Never edit anything outside this repository.\n- Write Java with the Write/Edit tools, NOT with shell heredocs: Git Bash collapses backslashes and breaks regexes and escapes. Every Write/Edit call at most 120 lines; build long files in several parts. Short single-purpose methods. Match the existing style: terse comments that say why, no decorative comments. User-facing strings are Chinese, as in the existing code.\n- Change only what your brief needs. Never reformat, re-wrap or compact code you do not otherwise change (no folding loops onto one line, no turning javadoc into trailing comments): the lead reviews the diff. New classes stay under 400 lines; if an existing file grows past that, say so under `## Requests` instead of squeezing it.\n- Scratch files go to `H:/tools/mitv/voice/assistant-out/tmp/rehearse-20261111214550-model/` (never C:, never `/tmp`).\n- Honesty over appearance: never say something works unless you ran it and read the output.\n\n## Checkpoint (mandatory, after every milestone)\n`status/improve/rehearse-20261111214550-model.md` with sections: `## Plan`, `## Done`, `## In progress / next`, `## How to test (exact commands)`, `## Evidence (key output lines)`, `## Known issues`, `## Requests`.\n\n\n# YOUR BRIEF — rehearsal model\n\n# Brief: rehearsal\n\nThis job does not exist. It is a rehearsal: tools/resume/rehearse.mjs drives the real runner with it, so that the\ncontinuation rules (which round a restarted job begins with, --resume or --session-id, which prompt) are proved\nagainst the runner itself and not against a comment about it.\nFIRST-PROMPT-MARKER\n\n\n## Files you own (the only paths you may edit)\n- `rehearse-round.txt`\n- `status/improve/rehearse-20261111214550-model.md`\n\n## Acceptance (the runner executes these itself after you finish)\n1. **round** — run `\"C:/Program Files/nodejs/node.exe\" \"H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-20261111214550/accept-round.mjs\"` and the output must contain: `rehearse round ok` (exit code 0)\n\n\n# CONTINUATION: a fresh session on an existing task (another worker model started it); everything done so far is on disk in your working directory. Read your status file and `git diff` first.",
+       "promptFile": "prompt-2.md",
+       "mark": "H:\\tools\\mitv\\voice\\assistant-out\\tmp\\resume\\rehearse-20261111214550\\wt\\rehearse-20261111214550-model\\rehearse-round.txt"
+      }
+     ],
+     "accept": [
+      {
+       "round": 2,
+       "end": "ok",
+       "pass": true,
+       "why": [],
+       "stray": []
+      }
+     ],
+     "log": "logs/model-1.out"
+    }
+   ],
+   "final": {
+    "rounds": 2,
+    "history": 2,
+    "sessionStarted": true,
+    "sessionModel": "MiniMax-M78",
+    "sessionId": "8b1684eb-0b19-486f-88d6-363970e1a6b3",
+    "status": "accepted_mechanical"
+   },
+   "stub": {
+    "runs": 1,
+    "finished": 1
+   }
+  },
+  {
+   "id": "rehearse-20261111214550-cap",
+   "scenario": "cap",
+   "model": "MiniMax-M78",
+   "maxRounds": 2,
+   "brief": "../../assistant-out/tmp/resume/rehearse-20261111214550/briefs/jobs/rehearse-20261111214550-cap.json",
+   "spec": "spec-cap.json",
+   "state0": {
+    "rounds": 2,
+    "history": 2,
+    "sessionStarted": true,
+    "sessionModel": "MiniMax-M78",
+    "sessionId": "b3b003ae-aa79-4800-9a7f-4dff003953cb",
+    "status": "failed_round"
+   },
+   "launches": [
+    {
+     "n": 1,
+     "killed": false,
+     "roundStarted": null,
+     "killedAtMs": null,
+     "exitCode": 0,
+     "ms": 725,
+     "stateBefore": {
+      "rounds": 2,
+      "history": 2,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "b3b003ae-aa79-4800-9a7f-4dff003953cb",
+      "status": "failed_round"
+     },
+     "stateAfter": {
+      "rounds": 2,
+      "history": 3,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "b3b003ae-aa79-4800-9a7f-4dff003953cb",
+      "status": "accepted_mechanical"
+     },
+     "beginRound": 2,
+     "rounds": [
+      2
+     ],
+     "stub": [
+      {
+       "round": 2,
+       "finished": true,
+       "resume": true,
+       "sessionId": "b3b003ae-aa79-4800-9a7f-4dff003953cb",
+       "argv": [
+        "-p",
+        "--model",
+        "MiniMax-M78",
+        "--permission-mode",
+        "bypassPermissions",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--max-turns",
+        "4",
+        "--resume",
+        "b3b003ae-aa79-4800-9a7f-4dff003953cb",
+        "--disallowedTools",
+        "WebFetch",
+        "WebSearch",
+        "Agent",
+        "Task",
+        "Workflow",
+        "Bash(rm",
+        "-rf:*)",
+        "Bash(rm",
+        "-fr:*)",
+        "Bash(rm",
+        "-r:*)",
+        "Bash(rmdir:*)",
+        "Bash(rd:*)",
+        "Bash(del:*)",
+        "Bash(format:*)",
+        "Bash(git",
+        "push:*)",
+        "Bash(git",
+        "reset:*)",
+        "Bash(git",
+        "clean:*)",
+        "Bash(git",
+        "checkout:*)",
+        "Bash(git",
+        "restore:*)",
+        "Bash(git",
+        "stash:*)",
+        "Bash(git",
+        "rebase:*)",
+        "Bash(git",
+        "commit:*)",
+        "Bash(git",
+        "add:*)",
+        "Bash(pip:*)",
+        "Bash(pip3:*)",
+        "Bash(npm:*)",
+        "Bash(winget:*)",
+        "Bash(curl:*)",
+        "Bash(wget:*)",
+        "Bash(powershell:*)",
+        "Bash(taskkill:*)"
+       ],
+       "prompt": "The lead resumes this job. Re-read your status file and the brief, check what is on disk, and continue until the acceptance commands pass.",
+       "promptFile": "prompt-2.md",
+       "mark": "H:\\tools\\mitv\\voice\\assistant-out\\tmp\\resume\\rehearse-20261111214550\\wt\\rehearse-20261111214550-cap\\rehearse-round.txt"
+      }
+     ],
+     "accept": [
+      {
+       "round": 2,
+       "end": "ok",
+       "pass": true,
+       "why": [],
+       "stray": []
+      }
+     ],
+     "log": "logs/cap-1.out"
+    }
+   ],
+   "final": {
+    "rounds": 2,
+    "history": 3,
+    "sessionStarted": true,
+    "sessionModel": "MiniMax-M78",
+    "sessionId": "b3b003ae-aa79-4800-9a7f-4dff003953cb",
+    "status": "accepted_mechanical"
+   },
+   "stub": {
+    "runs": 1,
+    "finished": 1
+   }
+  }
+ ]
+}

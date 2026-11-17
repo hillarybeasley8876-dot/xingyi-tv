@@ -1,0 +1,19 @@
+{
+ "id": "tencent-open-2",
+ "title": "tencent_video_open: a show known by a shorter name (甄嬛传 = 后宫甄嬛传), more platform names (乐视视频, 央视频)",
+ "brief": "briefs/tencent-open-2.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/TencentVideo.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/MovieChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (414[5-9]|41[5-9]\\d|4[2-9]\\d\\d|[5-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_tencent_open.sh", "timeoutS": 900, "must": ["TENCENT OPEN OK"] }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "note": "坏在：scratch 自己就在真的 jobs 目录里 —— 一次演练会掐掉别的会话正在跑的单，这是唯一会真正伤到人的错",
+ "tool": "tools/resume/rehearse.mjs",
+ "at": "2026-11-12T05:32:47.000Z",
+ "scratch": "H:/tools/mitv/voice/assistant-out/jobs/rehearse-1",
+ "out": "H:/tools/mitv/voice/assistant-out/jobs/rehearse-1/out",
+ "wt": "H:/tools/mitv/voice/assistant-out/jobs/rehearse-1/wt",
+ "env": "H:/tools/mitv/voice/assistant-out/jobs/rehearse-1/env",
+ "claude": "H:/tools/mitv/voice/assistant-out/jobs/rehearse-1/stub/claude-stub.exe",
+ "realOut": "H:/tools/mitv/voice/assistant-out",
+ "jobs": [
+  {
+   "id": "rehearse-1-kill",
+   "scenario": "kill",
+   "model": "MiniMax-M78",
+   "maxRounds": 3,
+   "state0": {
+    "rounds": 0,
+    "history": 0,
+    "sessionStarted": false,
+    "sessionModel": null,
+    "sessionId": "66666666-6666-4666-8666-666666666666",
+    "status": "new"
+   },
+   "launches": [
+    {
+     "n": 1,
+     "killed": true,
+     "beginRound": 1,
+     "rounds": [
+      1
+     ],
+     "stateBefore": {
+      "rounds": 0,
+      "history": 0,
+      "sessionStarted": false,
+      "sessionModel": null,
+      "sessionId": "66666666-6666-4666-8666-666666666666",
+      "status": "new"
+     },
+     "stateAfter": {
+      "rounds": 1,
+      "history": 0,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "66666666-6666-4666-8666-666666666666",
+      "status": "running"
+     },
+     "stub": [
+      {
+       "round": 1,
+       "finished": false,
+       "resume": false,
+       "sessionId": "66666666-6666-4666-8666-666666666666",
+       "argv": [
+        "-p",
+        "--model",
+        "MiniMax-M78",
+        "--session-id",
+        "66666666-6666-4666-8666-666666666666"
+       ],
+       "prompt": "# WORKER RULES\n\n# YOUR BRIEF - rehearsal kill\n\nFIRST-PROMPT-MARKER\n",
+       "promptFile": "prompt-1.md"
+      }
+     ],
+     "accept": []
+    },
+    {
+     "n": 2,
+     "killed": false,
+     "beginRound": 1,
+     "rounds": [
+      1
+     ],
+     "stateBefore": {
+      "rounds": 1,
+      "history": 0,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "66666666-6666-4666-8666-666666666666",
+      "status": "running"
+     },
+     "stateAfter": {
+      "rounds": 1,
+      "history": 1,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "66666666-6666-4666-8666-666666666666",
+      "status": "accepted_mechanical"
+     },
+     "stub": [
+      {
+       "round": 1,
+       "finished": true,
+       "resume": true,
+       "sessionId": "66666666-6666-4666-8666-666666666666",
+       "argv": [
+        "-p",
+        "--model",
+        "MiniMax-M78",
+        "--resume",
+        "66666666-6666-4666-8666-666666666666"
+       ],
+       "prompt": "The lead resumes this job. Re-read your status file and the brief, check what is on disk, and continue until the acceptance commands pass.",
+       "promptFile": "prompt-1.md"
+      }
+     ],
+     "accept": [
+      {
+       "round": 1,
+       "end": "ok",
+       "pass": true,
+       "why": [],
+       "stray": []
+      }
+     ]
+    }
+   ],
+   "final": {
+    "rounds": 1,
+    "history": 1,
+    "sessionStarted": true,
+    "sessionModel": "MiniMax-M78",
+    "sessionId": "66666666-6666-4666-8666-666666666666",
+    "status": "accepted_mechanical"
+   },
+   "stub": {
+    "runs": 2,
+    "finished": 1
+   }
+  }
+ ]
+}

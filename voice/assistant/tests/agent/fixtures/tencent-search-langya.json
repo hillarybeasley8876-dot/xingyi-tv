@@ -1,0 +1,551 @@
+{
+ "data": {
+  "errcode": 0,
+  "errmsg": "",
+  "areaBoxList": [
+   {
+    "boxId": "3505",
+    "itemList": [
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002008q42o6m"
+      },
+      "videoInfo": {
+       "title": "琅琊榜：权谋三十六计",
+       "typeName": "纪录片",
+       "year": 2022,
+       "area": "其它地区",
+       "subTitle": "",
+       "descrip": "琅琊榜全剧以权谋贯穿全剧，里面的人物无论男女，无论官职各个擅长权术谋略，我们中国自古有很多谋略相关的名著和名人，自战国合",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "y3310wsuwqy",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "rjae621myqca41h"
+      },
+      "videoInfo": {
+       "title": "庆余年",
+       "typeName": "电视剧",
+       "year": 2019,
+       "area": "内地",
+       "subTitle": "张若昀身陷棋局绝处逢生",
+       "descrip": "某大学文学史专业的学生张庆熟读古典名著，但他用现代观念剖析古代文学史的论文命题不被叶教授所认可。为了让叶教授成为自己的研",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "i0032qxbi2v",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200pzl5rvb"
+      },
+      "videoInfo": {
+       "title": "县委大院",
+       "typeName": "电视剧",
+       "year": 2022,
+       "area": "内地",
+       "subTitle": "同主演·胡歌",
+       "descrip": "十九大前夕，梅晓歌走马上任光明县县长，与县委书记吕青山、副书记艾鲜枝等成为同事，此时摆在他们面前的是急需修复与发展的光明",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "l0045z5d3s0",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "r5vtahc8vj93nx8"
+      },
+      "videoInfo": {
+       "title": "陆贞传奇",
+       "typeName": "电视剧",
+       "year": 2013,
+       "area": "内地",
+       "subTitle": "陈晓赵丽颖甜虐相恋",
+       "descrip": "陆贞出身于官商世家，母亲早亡的她自小善良聪慧，是父亲生意上的得力助手，因此被继母妒恨，后遭继母迫害，导致父死家亡，无处安",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "o0012yc3ibr",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200whsp9r6"
+      },
+      "videoInfo": {
+       "title": "繁花",
+       "typeName": "电视剧",
+       "year": 2023,
+       "area": "内地",
+       "subTitle": "同主演·胡歌",
+       "descrip": "九十年代的上海处处是机遇与希望。青年阿宝凭借改革开放的春风和自己的打拼跻身成为商界后起之秀，黄河路上无人不晓。平凡阿宝蜕",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "a0047l69jnp",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "xfxd9mej2luhfoz"
+      },
+      "videoInfo": {
+       "title": "芈月传",
+       "typeName": "电视剧",
+       "year": 2015,
+       "area": "内地",
+       "subTitle": "孙俪演绎第一女政治家",
+       "descrip": "兵荒马乱的战国时代，一个被安加了“霸星”宿命的小女孩在楚威王的宫殿中诞生了。作为一代霸主，楚威王渴望雄霸天下，他对这个可",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "s00190fcjfl",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "wv1zqjqfu0oc9qc"
+      },
+      "videoInfo": {
+       "title": "大秦赋",
+       "typeName": "电视剧",
+       "year": 2020,
+       "area": "内地",
+       "subTitle": "张鲁一再现嬴政辉煌一生",
+       "descrip": "战国晚期，纷乱五百余年的华夏大地仍战火不息、生灵涂炭。彼时六国势弱、秦国独强，天下统一之势渐显。巨商吕不韦携时在赵国为质",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "l0035e3vymt",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002002kqssyu"
+      },
+      "videoInfo": {
+       "title": "庆余年第二季",
+       "typeName": "电视剧",
+       "year": 2024,
+       "area": "内地",
+       "subTitle": "与范闲再探庙堂江湖",
+       "descrip": "故事讲述了一个身世神秘的青年范闲，历经家族、江湖、庙堂的种种考验与锤炼，他秉持正义、良善，开始了新的人生征途，继续书写出",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "q4100dpkd26",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200af624jn"
+      },
+      "videoInfo": {
+       "title": "抓特务",
+       "typeName": "电影",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "同主演·胡歌",
+       "descrip": "1949年开国大典这天，刚入城改编成公安派出所所长的肖大力发现小学教员冯静波嫌疑点重重。他本着军人的高度警惕和公安战士的",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "y4102vw7a4j",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200803dr6b"
+      },
+      "videoInfo": {
+       "title": "兰香如故",
+       "typeName": "电视剧",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "高门跌落！婢女深宅挣生机",
+       "descrip": "大学士府长孙女沈嘉兰与吏部尚书林家的长孙林锦岐订下婚约，然而朝堂风云突变，祖父沈大学士被判谋逆之罪，沈家惨遭灭门。林家为",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "c4102g9a01t",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "ceusrubximxm0g8"
+      },
+      "videoInfo": {
+       "title": "新三国",
+       "typeName": "电视剧",
+       "year": 2010,
+       "area": "内地",
+       "subTitle": "陈建斌倪大红陆毅乱世争霸",
+       "descrip": "东汉末年，朝纲混乱。内有董卓巨奸权倾朝野，专横跋扈；外有黄巾军起义，撼动社稷。时有曹操韬光养晦，欲为国除害。逃出京城后，",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "g0023yhas9e",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc0020020cyvqh"
+      },
+      "videoInfo": {
+       "title": "雪中悍刀行",
+       "typeName": "电视剧",
+       "year": 2021,
+       "area": "内地",
+       "subTitle": "张若昀搅动庙堂江湖",
+       "descrip": "为逃避做隋珠公主的驸马，“天下第一纨绔”的北椋世子徐凤年在父亲徐骁的安排下褪去锦衣华服，初进江湖，和马夫老黄苦中作乐，结",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "r00418ld4f2",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "ix5xxn7iawh8x5a"
+      },
+      "videoInfo": {
+       "title": "美人心计",
+       "typeName": "电视剧",
+       "year": 2010,
+       "area": "内地",
+       "subTitle": "年度宫廷大戏",
+       "descrip": "西汉初年，幼年窦漪房因母亲卷入后宫斗争被追杀，导致满门抄斩，长大后误打误撞被选入宫为奴成为家人子。她设计将周美人生的儿子",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "8VMla3oaEYp",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "efpd8iu7nadmjyk"
+      },
+      "videoInfo": {
+       "title": "鹿鼎记",
+       "typeName": "电视剧",
+       "year": 1998,
+       "area": "中国香港",
+       "subTitle": "经典回归！陈小春版韦小宝",
+       "descrip": "该剧改编自金庸的同名武侠小说，讲述了清代康熙年间，出身市井的韦小宝机缘巧合下进宫当了太监，并与江湖势力结交，在他与康熙帝",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "m4101whl7mq",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "normalList": {
+   "itemList": [
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "sdp00100515ow3q"
+     },
+     "videoInfo": {
+      "title": "琅琊榜",
+      "typeName": "电视剧",
+      "year": 2015,
+      "area": "内地",
+      "subTitle": "来源·外站",
+      "descrip": "十二年前七万赤焰军被奸人所害导致全军覆没，冤死梅岭，只剩少帅林殊（张哲瀚 饰）侥幸生还。十二年后林殊改头换面化身“麒麟才",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "播放源",
+        "enName": "yangshipin",
+        "totalEpisode": 54,
+        "episodeInfoList": [
+         {
+          "id": "https://v.qq.com/search_redirect.html?url=https%3A%2F%2Fm.yangshipin.cn%2Fvideo%3Ftype%3D0%26vid%3Ds0000251n05%26channel%3Dtxsp_quanwangsou",
+          "title": "立即播放",
+          "url": "https://v.qq.com/search_redirect.html?cid=sdp00100515ow3q&url=https%3A%2F%2Fm.yangshipin.cn%2Fvideo%3Ftype%3D0%26vid%3Ds0000251n05%26channel%3Dtxsp_quanwangsou"
+         }
+        ]
+       },
+       {
+        "showName": "播放源",
+        "enName": "qiyi",
+        "totalEpisode": 0,
+        "episodeInfoList": []
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "sdp001xfb90bapr"
+     },
+     "videoInfo": {
+      "title": "琅琊榜之风起长林",
+      "typeName": "电视剧",
+      "year": 2017,
+      "area": "内地",
+      "subTitle": "来源·外站",
+      "descrip": "该剧讲述了在琅琊阁学艺的萧平旌调查其兄长林军副帅萧平章一案而牵扯到大梁安危的故事。 大梁朝局安稳，但边境战火不断。守护大",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "播放源",
+        "enName": "qiyi",
+        "totalEpisode": 50,
+        "episodeInfoList": [
+         {
+          "id": "https://v.qq.com/search_redirect.html?url=https%3A%2F%2Fwww.iqiyi.com%2Fv_19rrf3e07c.html%3Fvfm%3Dm_103_txsp",
+          "title": "",
+          "url": "https://v.qq.com/search_redirect.html?cid=sdp001xfb90bapr&url=https%3A%2F%2Fwww.iqiyi.com%2Fv_19rrf3e07c.html%3Fvfm%3Dm_103_txsp"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "h3366u1n9i1"
+     },
+     "videoInfo": {
+      "title": "<em>琅琊榜</em>",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "q0319cvh4vh"
+     },
+     "videoInfo": {
+      "title": "《<em>琅琊榜</em>2》确定年底开机 靖王王凯独撑大局",
+      "typeName": "综艺",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "i002557evx0"
+     },
+     "videoInfo": {
+      "title": "刘涛唯美献唱《红颜旧》 一开嗓仿佛又见《<em>琅琊榜</em>》",
+      "typeName": "综艺",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "a33172utwtf"
+     },
+     "videoInfo": {
+      "title": "中国评分最高的9部国产剧，《<em>琅琊榜</em>》仅排第8，第1名无争议",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    }
+   ]
+  }
+ }
+}

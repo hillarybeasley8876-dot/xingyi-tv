@@ -1,0 +1,1 @@
+{"app":"当贝市场","developer":"杭州当贝网络科技有限公司","page":"https://www.dangbei.com/app/m/","url":"https://app.qingyingyong.net/down/20260706/dangbeimarket_6.0.7_613_znds.apk","package":"","note":"官网页面提供“电视版”下载，直链指向官网列出的下载域名 app.qingyingyong.net；该包名后缀含 znds，适用于电视版，当贝官网当前展示版本为 6.0.7。"}

@@ -1,0 +1,41 @@
+{
+ "id": "notes-history",
+ "title": "Quick notes (note_add / note_list / note_done) and recall_history over a 30-day log",
+ "brief": "briefs/notes-history.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 120,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Notes.java",
+  "src/xyz/erapi0neer/xingyi/agent/NoteTools.java",
+  "src/xyz/erapi0neer/xingyi/agent/History.java",
+  "src/xyz/erapi0neer/xingyi/agent/HistoryTools.java",
+  "tests/agent/NoteChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 300,
+   "must": [
+    "re:agent core: (8[5-9]\\d|9\\d\\d|9\\d\\d|\\d{4}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "tv-build-and-api",
+   "cmd": "sh tests/agent/accept_notes.sh",
+   "timeoutS": 900,
+   "must": [
+    "NOTES OK"
+   ]
+  }
+ ]
+}

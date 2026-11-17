@@ -1,0 +1,11 @@
+data: {"id":"073c0f59b7edd03c2b2ccb310daaa35f","choices":[{"index":0,"delta":{"role":"assistant","name":"MiniMax AI","audio_content":"","reasoning_content":"Do"}}],"created":1793907801,"model":"MiniMax-M3.1-Flash","object":"chat.completion.chunk","usage":null,"input_sensitive":false,"output_sensitive":false,"input_sensitive_type":0,"output_sensitive_type":0,"output_sensitive_int":0}
+
+data: {"id":"073c0f59b7edd03c2b2ccb310daaa35f","choices":[{"index":0,"delta":{"role":"assistant","name":"MiniMax AI","audio_content":"","reasoning_content":" both: set volume and search weather."}}],"created":1793907801,"model":"MiniMax-M3.1-Flash","object":"chat.completion.chunk","usage":null,"input_sensitive":false,"output_sensitive":false,"input_sensitive_type":0,"output_sensitive_type":0,"output_sensitive_int":0}
+
+data: {"id":"073c0f59b7edd03c2b2ccb310daaa35f","choices":[{"index":0,"delta":{"role":"assistant","name":"MiniMax AI","tool_calls":[{"id":"call_function_de50ecuxmzbw_1","type":"function","function":{"name":"set_volume","arguments":"{\"level\": 20}"},"index":0}]}}],"created":1793907801,"model":"MiniMax-M3.1-Flash","object":"chat.completion.chunk","usage":null,"input_sensitive":false,"output_sensitive":false,"input_sensitive_type":0,"output_sensitive_type":0,"output_sensitive_int":0}
+
+data: {"id":"073c0f59b7edd03c2b2ccb310daaa35f","choices":[{"finish_reason":"tool_calls","index":0,"delta":{"role":"assistant","name":"MiniMax AI","tool_calls":[{"id":"call_function_de50ecuxmzbw_2","type":"function","function":{"name":"web_search","arguments":"{\"query\": \"明天上海天气预报\"}"},"index":1}]}}],"created":1793907801,"model":"MiniMax-M3.1-Flash","object":"chat.completion.chunk","usage":null,"input_sensitive":false,"output_sensitive":false,"input_sensitive_type":0,"output_sensitive_type":0,"output_sensitive_int":0}
+
+data: {"id":"073c0f59b7edd03c2b2ccb310daaa35f","choices":[],"created":1793907801,"model":"MiniMax-M3.1-Flash","object":"chat.completion.chunk","usage":{"total_tokens":579,"total_characters":0,"prompt_tokens":519,"completion_tokens":60,"completion_tokens_details":{"reasoning_tokens":11},"prompt_tokens_details":{"cached_tokens":174}},"base_resp":{"status_code":0,"status_msg":""}}
+
+data: [DONE]

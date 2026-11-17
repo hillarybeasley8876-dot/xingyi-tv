@@ -1,0 +1,41 @@
+{
+ "id": "tencent-episode",
+ "title": "「我想看别无选择第3集」 opens that episode: Tencent Video's episode list (web API) gives the episode's id, the link with video_id plays it",
+ "brief": "briefs/tencent-episode.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/TencentVideo.java",
+  "src/xyz/erapi0neer/xingyi/agent/QuickCommand.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/MovieChecks.java",
+  "tests/agent/QuickChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|472[4-9]|47[3-9]\\d|4[8-9]\\d\\d|[5-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_tencent_episode.sh",
+   "timeoutS": 900,
+   "must": [
+    "TENCENT EPISODE OK"
+   ]
+  }
+ ]
+}

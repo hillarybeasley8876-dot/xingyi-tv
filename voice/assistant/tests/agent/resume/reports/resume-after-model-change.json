@@ -1,0 +1,91 @@
+{
+ "note": "坏在：state 里记的会话是别的模型开的，却用了 --resume（该换一个 --session-id <新>）",
+ "tool": "tools/resume/rehearse.mjs",
+ "at": "2026-11-12T05:32:47.000Z",
+ "scratch": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1",
+ "out": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/out",
+ "wt": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/wt",
+ "env": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/env",
+ "claude": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/stub/claude-stub.exe",
+ "realOut": "H:/tools/mitv/voice/assistant-out",
+ "jobs": [
+  {
+   "id": "rehearse-1-model",
+   "scenario": "model",
+   "model": "MiniMax-M78",
+   "maxRounds": 3,
+   "state0": {
+    "rounds": 1,
+    "history": 1,
+    "sessionStarted": true,
+    "sessionModel": "MiniMax-M3.1-Flash",
+    "sessionId": "33333333-3333-4333-8333-333333333333",
+    "status": "failed_round"
+   },
+   "launches": [
+    {
+     "n": 1,
+     "killed": false,
+     "beginRound": 2,
+     "rounds": [
+      2
+     ],
+     "stateBefore": {
+      "rounds": 1,
+      "history": 1,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M3.1-Flash",
+      "sessionId": "33333333-3333-4333-8333-333333333333",
+      "status": "failed_round"
+     },
+     "stateAfter": {
+      "rounds": 2,
+      "history": 2,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "33333333-3333-4333-8333-333333333333",
+      "status": "accepted_mechanical"
+     },
+     "stub": [
+      {
+       "round": 2,
+       "finished": true,
+       "resume": true,
+       "sessionId": "33333333-3333-4333-8333-333333333333",
+       "argv": [
+        "-p",
+        "--model",
+        "MiniMax-M78",
+        "--resume",
+        "33333333-3333-4333-8333-333333333333"
+       ],
+       "prompt": "# WORKER RULES\n\n# YOUR BRIEF - rehearsal model\n\nFIRST-PROMPT-MARKER\n\n# CONTINUATION: a fresh session on an existing task (another worker model started it); everything done so far is on disk in your working directory. Read your status file and `git diff` first.\n",
+       "promptFile": "prompt-2.md"
+      }
+     ],
+     "accept": [
+      {
+       "round": 2,
+       "end": "ok",
+       "pass": true,
+       "why": [],
+       "stray": []
+      }
+     ]
+    }
+   ],
+   "final": {
+    "rounds": 2,
+    "history": 2,
+    "sessionStarted": true,
+    "sessionModel": "MiniMax-M78",
+    "sessionId": "33333333-3333-4333-8333-333333333333",
+    "status": "accepted_mechanical"
+   },
+   "stub": {
+    "runs": 1,
+    "finished": 1
+   }
+  }
+ ]
+}

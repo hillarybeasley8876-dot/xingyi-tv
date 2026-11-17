@@ -1,0 +1,34 @@
+MEDIA SESSION SERVICE (dumpsys media_session)
+
+2 sessions listeners.
+Global priority session is null
+User Records:
+Record for full_user=0
+  Volume key long-press listener: null
+  Volume key long-press listener package: 
+  Media key listener: null
+  Media key listener package: 
+  Callback: null
+  Last MediaButtonReceiver: PendingIntent{35d2596: PendingIntentRecord{cfd7052 com.netease.cloudmusic.tv broadcastIntent}}
+  Restored MediaButtonReceiver: null
+  Media button session is com.netease.cloudmusic.tv/MediaSession (userId=0)
+  Sessions Stack - have 1 sessions:
+    MediaSession com.netease.cloudmusic.tv/MediaSession (userId=0)
+      ownerPid=11469, ownerUid=10022, userId=0
+      package=com.netease.cloudmusic.tv
+      launchIntent=PendingIntent{820e517: PendingIntentRecord{298bd04 com.netease.cloudmusic.tv startActivity}}
+      mediaButtonReceiver=PendingIntent{35d2596: PendingIntentRecord{cfd7052 com.netease.cloudmusic.tv broadcastIntent}}
+      active=true
+      flags=3
+      rating type=1
+      controllers: 1
+      state=PlaybackState {state=2, position=14042, buffered position=0, speed=1.0, updated=131445183, actions=822, custom actions=[], active item id=-1, error=null}
+      audioAttrs=AudioAttributes: usage=USAGE_MEDIA content=CONTENT_TYPE_UNKNOWN flags=0x0 tags= bundle=null
+      volumeType=1, controlType=2, max=0, current=0
+      metadata:size=6, description=你还要我怎样, 薛之谦, 意外
+      queueTitle=null, size=0
+
+Audio playback (lastly played comes first)
+  uid=1000 packages=com.droidlogic.tvinput com.xiaomi.mitv.hyper.screensaver com.mitv.cloudcontrol com.xiaomi.mitv.systemui com.xiaomi.mitv.karaoke.service com.xiaomi.voicecontrol com.mitv.gallery com.xiaomi.gamecenter.sdk.service.mibox com.xiaomi.miplay com.xiaomi.mitv.smartshare mitv.service com.xiaomi.mitv.settings com.android.inputdevices com.xiaomi.hyper_connect.tv com.mitv.tvhome com.xiaomi.mitv.upgrade com.xiaomi.mitv.tvpush.tvpushservice com.xiaomi.account com.xiaomi.tvqs com.xiaomi.mitv.appstore com.xiaomi.mitv.smartpanel com.xiaomi.mitv.tvplayer com.xiaomi.mitv.tvmanager com.android.providers.settings com.android.location.fused com.mitv.overseaservice com.xiaomi.mi_connect_service com.xiaomi.setupwizard com.xiaomi.mitv.healthdiagnosis android com.android.wallpaperbackup com.xiaomi.mitv.mediaexplorer com.droidlogic com.xiaomi.wakeupservice 
+  uid=10024 packages=xyz.erapi0neer.orrery 
+  uid=10022 packages=com.netease.cloudmusic.tv 

@@ -1,0 +1,67 @@
+#include "common.glsl"
+// The sky (2026-11-06, 「要有银河粒子那种深邃感觉 拉丝感觉」, then 「目前没很好的融合在一起」): a galaxy disc of stars
+// around the luminous core, in the same 3-D space and through the same camera as the gesture — leaning back from the
+// view, so its far side recedes small and dim while its near side comes close and blurs, swaying with the camera
+// like everything else. It turns slowly; each frame every star lays one random point of its arc (a long-exposure
+// trail, brightest at the head) into the soft layer, and the brighter ones in focus their head into the sharp layer.
+// Its own dispatch, so the particle pass keeps its registers.
+layout(local_size_x = 128) in;
+layout(r32ui, binding = 0) uniform highp uimage2D u_sharp;
+layout(r32ui, binding = 1) uniform highp uimage2D u_soft;
+
+uniform uint u_stars;     // how many
+uniform vec4 u_sky;       // inner radius, outer radius (world units), turn rad/s, deposit
+uniform vec2 u_arc;       // arc length rad: shortest, longest
+uniform vec3 u_dc;        // the disc: centre (the luminous core) and two axes, world space
+uniform vec3 u_da;
+uniform vec3 u_db;
+uniform vec3 u_cam;       // the flow's camera: position, basis, focal length px, principal point px
+uniform vec3 u_cr;
+uniform vec3 u_cu;
+uniform vec3 u_cf;
+uniform float u_fpx;
+uniform vec2 u_pp;
+uniform vec4 u_lens;      // focus distance, aperture, CoC cap px, near plane
+uniform vec2 u_atm;       // the flow's aerial falloff: start distance, rate
+uniform vec2 u_res;       // sharp image size
+uniform vec2 u_sres;      // soft image size
+
+void main() {
+    uint id = gl_GlobalInvocationID.x;
+    if (id >= u_stars) return;
+    uint h1 = hashu(id * 0x9E3779B9u + 0x7F4A7C15u), h2 = hashu(h1 ^ 0x632BE5ABu);
+    float rn = pow(float(h1 & 0xFFFFu) * (1.0 / 65536.0), 1.6);      // denser toward the core
+    float r = mix(u_sky.x, u_sky.y, rn);
+    float head = float(h1 >> 16) * (6.2831853 / 65536.0) + u_time * u_sky.z;
+    float arc = mix(u_arc.x, u_arc.y, float(h2 & 0xFFu) * (1.0 / 256.0));
+    float mag = float((h2 >> 8) & 0xFFu) * (1.0 / 256.0);
+    float bright = u_sky.w * (0.2 + 4.0 * mag * mag * mag * mag) * (1.0 - 0.6 * rn);   // many faint, a few bright
+
+    uint hf = hashu(id * 0x85EBCA6Bu + uint(u_frame) * 0xC2B2AE35u);
+    float u = float(hf & 0xFFFFu) * (1.0 / 65536.0);
+    float a = head - sign(u_sky.z) * u * arc;                         // behind the head, as the disc turns
+    vec3 d = u_dc + r * (cos(a) * u_da + sin(a) * u_db) - u_cam;
+    float z = dot(d, u_cf);
+    if (z < u_lens.w) return;
+    float iz = 1.0 / z;
+    vec2 sp = u_pp + (u_fpx * iz) * vec2(dot(d, u_cr), dot(d, u_cu));
+    float coc = min(u_lens.y * u_fpx * abs(1.0 / u_lens.x - iz), u_lens.z);
+    float fall = exp(-max(z - u_atm.x, 0.0) * u_atm.y) * smoothstep(u_lens.w, u_lens.w * 1.6, z);
+    // a point of the circle of confusion, as the gesture's particles land
+    float ca = float(hf >> 16) * (6.2831853 / 65536.0);
+    vec2 at = sp + max(coc, 3.0) * sqrt(float((hf >> 8) & 0xFFu) * (1.0 / 256.0)) * vec2(cos(ca), sin(ca));
+    uint amount = uint(bright * fall * (1.0 - u) * 256.0 + float(hf >> 24) * (1.0 / 256.0));
+    ivec2 ip = ivec2(floor(at * 0.25));
+    if (amount > 0u && ip.x >= 0 && ip.y >= 0 && float(ip.x) < u_sres.x && float(ip.y) < u_sres.y)
+        imageAtomicAdd(u_soft, ip, amount);
+    if (mag > 0.8 && coc < 4.0) {          // the brighter stars in focus: a crisp head
+        vec3 g = u_dc + r * (cos(head) * u_da + sin(head) * u_db) - u_cam;
+        float zg = dot(g, u_cf);
+        if (zg < u_lens.w) return;
+        vec2 q = u_pp + (u_fpx / zg) * vec2(dot(g, u_cr), dot(g, u_cu));
+        ivec2 iq = ivec2(floor(q));
+        uint ha = uint(bright * fall * 0.5 * 256.0);
+        if (iq.x >= 0 && iq.y >= 0 && float(iq.x) < u_res.x && float(iq.y) < u_res.y)
+            imageAtomicAdd(u_sharp, iq, ha);
+    }
+}

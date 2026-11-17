@@ -1,0 +1,15 @@
+data: {"id":"073c0f57248fb82cad8800b08449bb06","choices":[{"index":0,"delta":{"role":"assistant","name":"MiniMax AI","audio_content":"","reasoning_content":"We need answer"}}],"created":1793907799,"model":"MiniMax-M3.1-Flash","object":"chat.completion.chunk","usage":null,"input_sensitive":false,"output_sensitive":false,"input_sensitive_type":0,"output_sensitive_type":0,"output_sensitive_int":0}
+
+data: {"id":"073c0f57248fb82cad8800b08449bb06","choices":[{"index":0,"delta":{"content":"","role":"assistant","name":"MiniMax AI","audio_content":"","reasoning_content":" Chinese exactly two sentences, conversational, no lists/symbols. Explain Rayleigh scattering. Ensure spoken."}}],"created":1793907799,"model":"MiniMax-M3.1-Flash","object":"chat.completion.chunk","usage":null,"input_sensitive":false,"output_sensitive":false,"input_sensitive_type":0,"output_sensitive_type":0,"output_sensitive_int":0}
+
+data: {"id":"073c0f57248fb82cad8800b08449bb06","choices":[{"index":0,"delta":{"content":"天空看起来是蓝色的","role":"assistant","name":"MiniMax AI","audio_content":""}}],"created":1793907799,"model":"MiniMax-M3.1-Flash","object":"chat.completion.chunk","usage":null,"input_sensitive":false,"output_sensitive":false,"input_sensitive_type":0,"output_sensitive_type":0,"output_sensitive_int":0}
+
+data: {"id":"073c0f57248fb82cad8800b08449bb06","choices":[{"index":0,"delta":{"content":"，是因为阳光进入大气后，波长较短的蓝光更容易被空气分子","role":"assistant","name":"MiniMax AI","audio_content":""}}],"created":1793907799,"model":"MiniMax-M3.1-Flash","object":"chat.completion.chunk","usage":null,"input_sensitive":false,"output_sensitive":false,"input_sensitive_type":0,"output_sensitive_type":0,"output_sensitive_int":0}
+
+data: {"id":"073c0f57248fb82cad8800b08449bb06","choices":[{"index":0,"delta":{"content":"散射到各个方向。散射后的蓝光从四面八方进入我们的","role":"assistant","name":"MiniMax AI","audio_content":""}}],"created":1793907799,"model":"MiniMax-M3.1-Flash","object":"chat.completion.chunk","usage":null,"input_sensitive":false,"output_sensitive":false,"input_sensitive_type":0,"output_sensitive_type":0,"output_sensitive_int":0}
+
+data: {"id":"073c0f57248fb82cad8800b08449bb06","choices":[{"finish_reason":"stop","index":0,"delta":{"content":"眼睛，所以天空呈现蓝色。","role":"assistant","name":"MiniMax AI","audio_content":""}}],"created":1793907799,"model":"MiniMax-M3.1-Flash","object":"chat.completion.chunk","usage":null,"input_sensitive":false,"output_sensitive":false,"input_sensitive_type":0,"output_sensitive_type":0,"output_sensitive_int":0}
+
+data: {"id":"073c0f57248fb82cad8800b08449bb06","choices":[],"created":1793907799,"model":"MiniMax-M3.1-Flash","object":"chat.completion.chunk","usage":{"total_tokens":288,"total_characters":0,"prompt_tokens":224,"completion_tokens":64,"completion_tokens_details":{"reasoning_tokens":25},"prompt_tokens_details":{"cached_tokens":184}},"base_resp":{"status_code":0,"status_msg":""}}
+
+data: [DONE]

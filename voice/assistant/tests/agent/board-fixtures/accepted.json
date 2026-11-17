@@ -1,0 +1,30 @@
+{
+ "id": "accepted-demo",
+ "title": "过了验收、我还没合的那一单（fixture）",
+ "status": "accepted_mechanical",
+ "rounds": 1,
+ "maxRounds": 6,
+ "sessionStarted": true,
+ "startedAt": "2026-11-12T00:40:00+08:00",
+ "startedMs": 1794415200000,
+ "updatedMs": 1794416400000,
+ "merged": false,
+ "commit": "abc1234def5678901234567890abcdef01234567",
+ "cwd": "H:\\tools\\mitv\\voice\\assistant-wt\\accepted-demo",
+ "lastText": "三条验收都过了，等 lead 合。",
+ "history": [
+  {
+   "round": 1,
+   "end": "ok",
+   "tools": 41,
+   "models": { "MiniMax-M78": 66 },
+   "wrongModel": false,
+   "stray": [],
+   "acc": [
+    { "name": "core-checks", "pass": true, "why": [] },
+    { "name": "android-check", "pass": true, "why": [] },
+    { "name": "board", "pass": true, "why": [] }
+   ]
+  }
+ ]
+}

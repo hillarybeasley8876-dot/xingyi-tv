@@ -1,0 +1,8 @@
+{
+  "type": "assistant",
+  "session_id": "s-vd",
+  "message": {
+    "model": "minimax-M78",
+    "content": [{ "type": "text", "text": "还在跑" }]
+  }
+}

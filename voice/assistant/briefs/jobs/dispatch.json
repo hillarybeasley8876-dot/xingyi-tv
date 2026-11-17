@@ -1,0 +1,40 @@
+{
+ "id": "dispatch",
+ "title": "Dispatch: volume beside a running task, quiet supersede, 停 for questions and idle, panels that hide",
+ "brief": "briefs/dispatch.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 120,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Dispatch.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentEngine.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/Hud.java",
+  "tests/agent/DispatchChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 300,
+   "must": [
+    "re:agent core: (8[4-9]\\d|9\\d\\d|9\\d\\d|\\d{4}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "tv-build-and-api",
+   "cmd": "sh tests/agent/accept_dispatch.sh",
+   "timeoutS": 900,
+   "must": [
+    "DISPATCH OK"
+   ]
+  }
+ ]
+}

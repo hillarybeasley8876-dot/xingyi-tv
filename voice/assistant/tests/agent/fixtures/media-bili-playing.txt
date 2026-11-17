@@ -1,0 +1,33 @@
+MEDIA SESSION SERVICE (dumpsys media_session)
+
+2 sessions listeners.
+Global priority session is null
+User Records:
+Record for full_user=0
+  Volume key long-press listener: null
+  Volume key long-press listener package: 
+  Media key listener: null
+  Media key listener package: 
+  Callback: null
+  Last MediaButtonReceiver: PendingIntent{60636c0: PendingIntentRecord{88e89c6 tv.danmaku.bili broadcastIntent}}
+  Restored MediaButtonReceiver: null
+  Media button session is tv.danmaku.bili/HeadsetControlPlayAdapter.Session (userId=0)
+  Sessions Stack - have 1 sessions:
+    HeadsetControlPlayAdapter.Session tv.danmaku.bili/HeadsetControlPlayAdapter.Session (userId=0)
+      ownerPid=18915, ownerUid=10049, userId=0
+      package=tv.danmaku.bili
+      launchIntent=null
+      mediaButtonReceiver=PendingIntent{60636c0: PendingIntentRecord{88e89c6 tv.danmaku.bili broadcastIntent}}
+      active=true
+      flags=3
+      rating type=0
+      controllers: 2
+      state=PlaybackState {state=3, position=2103, buffered position=0, speed=1.0, updated=30616127, actions=847, custom actions=[], active item id=-1, error=null}
+      audioAttrs=AudioAttributes: usage=USAGE_MEDIA content=CONTENT_TYPE_MUSIC flags=0x0 tags= bundle=null
+      volumeType=1, controlType=2, max=0, current=0
+      metadata:size=9, description=动态视频｜2026，它来了…, 自动连播, null
+      queueTitle=null, size=0
+
+Audio playback (lastly played comes first)
+  uid=10049 packages=tv.danmaku.bili 
+  uid=1000 packages=com.xiaomi.mitv.systemui android com.xiaomi.mitv.mediaexplorer com.android.inputdevices com.xiaomi.mitv.upgrade com.mitv.tvhome com.xiaomi.mitv.tvpush.tvpushservice mitv.service com.xiaomi.mitv.appstore com.xiaomi.tvqs com.xiaomi.mitv.settings com.xiaomi.mitv.healthdiagnosis com.mitv.cloudcontrol com.xiaomi.account com.xiaomi.mitv.karaoke.service com.xiaomi.gamecenter.sdk.service.mibox com.android.location.fused com.droidlogic.tvinput com.xiaomi.miplay com.xiaomi.mitv.smartshare com.xiaomi.setupwizard com.android.wallpaperbackup com.xiaomi.mitv.hyper.screensaver com.android.providers.settings com.mitv.gallery com.xiaomi.mitv.tvplayer com.xiaomi.mi_connect_service com.xiaomi.voicecontrol com.droidlogic com.xiaomi.mitv.tvmanager com.xiaomi.wakeupservice com.xiaomi.hyper_connect.tv com.mitv.overseaservice com.xiaomi.mitv.smartpanel 

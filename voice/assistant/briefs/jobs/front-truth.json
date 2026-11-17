@@ -1,0 +1,22 @@
+{
+ "id": "front-truth",
+ "title": "XiaoAi's hidden panel is never the app in front; 伴奏 never sends the model to NetEase's home page",
+ "brief": "briefs/front-truth.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/FrontApp.java",
+  "src/xyz/erapi0neer/xingyi/agent/Karaoke.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/Eyes.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/MemoryGuard.java",
+  "tests/agent/ScreenChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (36(89|9\\d)|3[7-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_front_truth.sh", "timeoutS": 900, "must": ["FRONT TRUTH OK"] }
+ ]
+}

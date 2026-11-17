@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="xyz.erapi0neer.hudpreview" android:versionCode="1" android:versionName="1.0">
+ <!-- Off-screen samples of 星仪's panel from any source tree (a worker's worktree before merging), without touching the
+      bridge that runs 星仪: one receiver, nothing that starts by itself. Only the shell (it holds DUMP) can trigger it. -->
+ <application android:label="星仪面板样张" android:hardwareAccelerated="false" android:allowBackup="false">
+  <receiver android:name=".Render" android:exported="true" android:permission="android.permission.DUMP">
+   <intent-filter><action android:name="xyz.erapi0neer.hudpreview.RENDER"/></intent-filter>
+  </receiver>
+ </application>
+</manifest>

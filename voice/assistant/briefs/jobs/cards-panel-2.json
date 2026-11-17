@@ -1,0 +1,39 @@
+{
+ "id": "cards-panel-2",
+ "title": "Answer cards, round 2: rain bars only when it may rain, a quieter caption, the temperature range",
+ "brief": "briefs/cards-panel-2.md",
+ "isolation": "worktree",
+ "maxRounds": 4,
+ "timeoutMin": 90,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/tv/Hud.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/HudCards.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentDebug.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 400,
+   "must": [
+    "re:agent core: (259[89]|2[6-9]\\d\\d|[3-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_cards_panel.sh",
+   "timeoutS": 900,
+   "must": [
+    "CARDS PANEL OK"
+   ]
+  }
+ ]
+}

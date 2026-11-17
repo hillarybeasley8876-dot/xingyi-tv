@@ -1,0 +1,655 @@
+<!doctype html>
+<!-- 星仪 from the phone. Layout checked at 360, 390 and 430 CSS px wide: at all three nothing is wider than the
+     viewport — the thread wraps, the send button stays on screen, the chips row scrolls on its own and the pairing
+     block is centred. -->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0c0f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="星仪">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>星仪</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon.svg">
+<style>
+:root{
+  --bg:#0b0c0f;
+  --line:rgba(255,255,255,.12);
+  --accent:#A8C8EE;
+  --hi:rgba(255,255,255,.94);
+  --mid:rgba(255,255,255,.62);
+  --low:rgba(255,255,255,.38);
+  --faint:rgba(255,255,255,.06);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+/* nothing may be wider than the phone: 360, 390 and 430 CSS px were all checked */
+html,body{margin:0;height:100%;max-width:100%;overflow-x:hidden}
+body{
+  background:var(--bg);color:var(--hi);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%;
+  display:flex;flex-direction:column;overflow:hidden;
+}
+button{font-family:inherit;cursor:pointer}
+input,textarea{font-family:inherit;font-size:16px}
+:focus{outline:none}
+textarea:focus,input:focus{border-color:var(--accent)}
+
+/* ---- the paired screen ---- */
+#app{flex:1;display:none;flex-direction:column;min-height:0}
+#app.show{display:flex}
+header{
+  flex:0 0 auto;display:flex;align-items:center;gap:9px;min-width:0;
+  padding:calc(env(safe-area-inset-top) + 11px) 16px 11px;
+  border-bottom:1px solid var(--line);
+}
+header svg{flex:0 0 19px;width:19px;height:19px;display:block}
+header .name{font-size:15px;letter-spacing:.1em;color:var(--hi);min-width:0;white-space:nowrap}
+header .state{margin-left:auto;flex:0 0 auto;font-size:12px;color:var(--low);display:flex;align-items:center;gap:7px}
+header .dot{flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:var(--hi);opacity:.85}
+header.off .dot{opacity:.25;animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{50%{opacity:.7}}
+
+main{flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:6px 14px 10px;min-width:0}
+.row{text-align:right;margin:12px 0 4px}
+.bubble{
+  display:inline-block;text-align:left;max-width:85%;
+  padding:8px 12px;border:1px solid var(--line);border-radius:14px 14px 4px 14px;
+  background:var(--faint);color:var(--mid);font-size:15px;white-space:pre-wrap;overflow-wrap:anywhere;
+}
+.reply{
+  margin:2px 0 12px;max-width:94%;color:var(--hi);font-size:16px;
+  white-space:pre-wrap;overflow-wrap:anywhere;
+}
+.note{margin:6px 0 12px;font-size:12.5px;color:var(--low);overflow-wrap:anywhere}
+
+/* ---- the plan and the thinking chain, as the TV's panel draws them ---- */
+.plan{margin:2px 0 10px;padding-left:11px;border-left:1px solid var(--line);min-width:0}
+.goal{font-size:13.5px;color:var(--mid);margin-bottom:5px;overflow-wrap:anywhere}
+.step{display:flex;gap:10px;align-items:flex-start;padding:2px 0;min-width:0}
+.step .n{
+  flex:0 0 20px;text-align:right;font-size:11.5px;line-height:1.7;
+  color:var(--low);font-variant-numeric:tabular-nums;
+}
+.step .t{font-size:14.5px;color:var(--low);min-width:0;overflow-wrap:anywhere}
+.step.done .n,.step.done .t{color:var(--mid)}
+.step.now .t{color:var(--hi)}
+.step .arc{
+  display:inline-block;width:10px;height:10px;margin:4px 2px 0 0;
+  border:1.4px solid rgba(255,255,255,.2);border-top-color:rgba(255,255,255,.85);
+  border-radius:50%;animation:spin 1.1s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.chain{margin:3px 0 7px 30px;min-width:0}
+.chain div{display:flex;gap:8px;font-size:12.5px;line-height:1.55;color:var(--low);padding:1px 0;min-width:0}
+.chain i{flex:0 0 4px;width:4px;height:4px;border-radius:50%;background:currentColor;margin-top:7px}
+.chain span{min-width:0;overflow-wrap:anywhere}
+
+/* ---- a confirmation the TV is waiting for ---- */
+#consent{flex:0 0 auto;display:none;border-top:1px solid var(--line);padding:12px 14px;min-width:0}
+#consent.show{display:block}
+#consent p{margin:0 0 10px;font-size:15px;color:var(--hi);overflow-wrap:anywhere}
+#consent .btns{display:flex;gap:10px}
+#consent button{
+  flex:1;min-width:0;height:46px;border-radius:12px;border:1px solid var(--line);
+  background:var(--faint);color:var(--hi);font-size:16px;
+}
+#consent button:active{background:rgba(255,255,255,.12)}
+
+/* ---- the bottom: chips, the switch, the input ---- */
+footer{flex:0 0 auto;border-top:1px solid var(--line);min-width:0}
+/* the chips scroll on their own; the switch is beside them, so neither pushes the page wider */
+#quick{display:flex;align-items:center;gap:10px;padding:9px 14px 3px;min-width:0}
+#chips{flex:1 1 auto;min-width:0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+#chips::-webkit-scrollbar{display:none}
+.chip{
+  flex:0 0 auto;height:31px;padding:0 12px;border-radius:16px;
+  border:1px solid var(--line);background:transparent;color:var(--mid);font-size:14px;
+}
+.chip:active{background:var(--faint);color:var(--hi)}
+.chip[disabled]{opacity:.4}
+.sw{
+  flex:0 0 auto;display:flex;align-items:center;gap:7px;
+  background:none;border:0;padding:3px 0 0;font-size:12px;color:var(--low);white-space:nowrap;
+}
+.sw .track{position:relative;width:28px;height:16px;border-radius:8px;border:1px solid var(--line)}
+.sw .knob{
+  position:absolute;top:2px;left:2px;width:10px;height:10px;border-radius:50%;
+  background:var(--low);transition:left .16s ease,background .16s ease;
+}
+.sw[aria-checked="true"] .knob{left:14px;background:var(--hi)}
+#bar{display:flex;gap:10px;align-items:flex-end;padding:7px 14px calc(env(safe-area-inset-bottom) + 10px);min-width:0}
+#text{
+  flex:1 1 auto;min-width:0;min-height:40px;max-height:132px;resize:none;
+  border:1px solid var(--line);border-radius:20px;background:var(--faint);
+  color:var(--hi);font-size:16px;line-height:1.4;padding:9px 14px;
+}
+#text::placeholder{color:var(--low)}
+#send{
+  flex:0 0 40px;width:40px;height:40px;border-radius:50%;border:0;
+  background:var(--accent);color:#0b0c0f;display:flex;align-items:center;justify-content:center;
+}
+#send svg{width:19px;height:19px;display:block}
+#send[disabled]{opacity:.35}
+
+/* ---- not paired yet ---- */
+#pair{
+  flex:1;display:none;flex-direction:column;align-items:center;justify-content:center;
+  gap:13px;text-align:center;width:100%;max-width:320px;margin:0 auto;
+  padding:24px 24px calc(env(safe-area-inset-bottom) + 24px);
+}
+#pair.show{display:flex}
+#pair svg{width:46px;height:46px}
+#pair h1{margin:0;font-size:21px;font-weight:500;letter-spacing:.14em}
+#pair p{margin:0;font-size:14px;color:var(--mid);max-width:19em}
+#pair .err{color:var(--mid);min-height:1.4em;font-size:13.5px;overflow-wrap:anywhere}
+#pair button{
+  height:46px;max-width:100%;padding:0 22px;border-radius:12px;border:1px solid var(--line);
+  background:var(--faint);color:var(--hi);font-size:16px;
+}
+#pair button:active{background:rgba(255,255,255,.12)}
+#code{
+  width:9.5em;max-width:100%;height:52px;text-align:center;letter-spacing:.32em;text-indent:.32em;
+  border:1px solid var(--line);border-radius:12px;background:var(--faint);
+  color:var(--hi);font-size:22px;font-variant-numeric:tabular-nums;
+}
+#step2{display:none;flex-direction:column;align-items:center;gap:13px;max-width:100%}
+#step2.show{display:flex}
+</style>
+</head>
+<body>
+
+<div id="app">
+  <header id="head">
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="32" cy="32" r="22" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3.4"/>
+      <circle cx="47.6" cy="16.4" r="7.4" fill="#fff"/>
+    </svg>
+    <span class="name">星仪</span>
+    <span class="state"><span id="conn">已连接</span><span class="dot"></span></span>
+  </header>
+
+  <main id="thread"></main>
+
+  <div id="consent">
+    <p id="ask"></p>
+    <div class="btns">
+      <button id="yes" type="button">好的</button>
+      <button id="no" type="button">算了</button>
+    </div>
+  </div>
+
+  <footer>
+    <div id="quick">
+      <div id="chips">
+        <button class="chip" type="button" data-key="vol_down">音量−</button>
+        <button class="chip" type="button" data-key="vol_up">音量＋</button>
+        <button class="chip" type="button" data-key="play_pause">暂停/继续</button>
+        <button class="chip" type="button" data-key="home">回桌面</button>
+        <button class="chip" type="button" data-key="screen_off">关屏</button>
+        <button class="chip" type="button" data-stop="1">停</button>
+      </div>
+      <button class="sw" id="speak" type="button" role="switch" aria-checked="true">
+        <span class="track"><span class="knob"></span></span>电视朗读
+      </button>
+    </div>
+    <div id="bar">
+      <textarea id="text" rows="1" maxlength="500" placeholder="跟星仪说点什么…"></textarea>
+      <button id="send" type="button" aria-label="发送">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3.6 4.4 11.2l1.7 1.7 4.7-4.7V20.4h2.4V8.2l4.7 4.7 1.7-1.7z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </footer>
+</div>
+
+<div id="pair">
+  <svg viewBox="0 0 64 64" aria-hidden="true">
+    <circle cx="32" cy="32" r="22" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3.4"/>
+    <circle cx="47.6" cy="16.4" r="7.4" fill="#fff"/>
+  </svg>
+  <h1>星仪</h1>
+  <p>手机和电视连同一个 Wi-Fi。先在电视上显示配对码，再在这里输入。</p>
+  <button id="show" type="button">在电视上显示配对码</button>
+  <div id="step2">
+    <input id="code" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6"
+           autocomplete="one-time-code" placeholder="6 位数字">
+    <button id="go" type="button">配对</button>
+  </div>
+  <div class="err" id="perr"></div>
+</div>
+
+<!-- The finished part of the thread, on its own and pure: no document, no window, no storage, no requests, so the
+     same code runs under node (tests/agent/phone_thread_test.mjs). The page asks the TV for the history and for its
+     state at the same time and the two answers overlap — this decides, from both, what the thread shows once. -->
+<script>
+var PhoneThread = (function () {
+  'use strict';
+
+  var WHEN = /^(\d{1,2})月(\d{1,2})日 (\d{1,2}):(\d{2})$/;
+  var MINUTE = 60000, DAY = 86400000, MAX = 20, MAX_SAID = 80, MAX_REPLIED = 120;
+
+  /** The five states the thread counts as finished; anything else is still on screen as the live block. */
+  function finished(t) {
+    if (!t) return false;
+    return t.state === 'done' || t.state === 'cancelled' || t.state === 'failed'
+            || t.state === 'interrupted' || t.state === 'answered';
+  }
+
+  /** "11月9日 14:05" → the ms of the start of that minute, local time. The history carries no year: the year of
+   * now, or the one before when that date would be more than a day ahead (「12月31日 23:58」 read on 1 January).
+   * Anything else — 「昨天 22:58」, "", null — is NaN. */
+  function at(text, now) {
+    var m = WHEN.exec(text === null || text === undefined ? '' : String(text));
+    if (!m) return NaN;
+    var year = new Date(now).getFullYear(), mon = +m[1] - 1, day = +m[2], hour = +m[3], min = +m[4];
+    var ms = new Date(year, mon, day, hour, min).getTime();
+    return ms > now + DAY ? new Date(year - 1, mon, day, hour, min).getTime() : ms;
+  }
+
+  /** What the TV keeps of an exchange: Java's trim() (only up to U+0020) and then the first n characters. A cut
+   * through an emoji leaves its high surrogate alone, and the TV writes the history with getBytes(UTF_8), which
+   * turns that half into '?' — so it is '?' here too, and the two still match instead of the exchange showing twice. */
+  function cut(s, n) {
+    var t = (s === null || s === undefined ? '' : String(s)).replace(/^[\u0000-\u0020]+|[\u0000-\u0020]+$/g, '');
+    if (t.length > n) t = t.substring(0, n);
+    var last = t.charCodeAt(t.length - 1);
+    return last >= 0xD800 && last <= 0xDBFF ? t.substring(0, t.length - 1) + '?' : t;
+  }
+
+  /** When the task last moved: updated_at, or started_at when it has none. 0 when the ledger has neither. */
+  function when(t) { return Number(t.updated_at) || Number(t.started_at) || 0; }
+
+  /** The history's own entries, oldest first, without the ones that said nothing. */
+  function entries(history) {
+    var out = [], i;
+    for (i = history.length - 1; i >= 0; i--) {
+      var e = history[i];
+      if (!e || !e.said) continue;
+      out.push({ said: e.said, reply: e.replied || '' });
+    }
+    return out;
+  }
+
+  /** The newest minute the history knows about, or NaN when it knows none. */
+  function newest(history, now) {
+    var best = NaN, i;
+    for (i = 0; i < history.length; i++) {
+      var ms = history[i] ? at(history[i].when, now) : NaN;
+      if (ms !== ms) continue;
+      if (best !== best || ms > best) best = ms;
+    }
+    return best;
+  }
+
+  /** Is this task already one of the history's entries? An entry of the task's own minute or later that says the
+   * same thing and was answered the same way — the answer cut to the 120 characters the history keeps, so a longer
+   * answer still matches. */
+  function held(history, t, now) {
+    var said = cut(t.utterance, MAX_SAID), replied = cut(t.last_reply || '', MAX_REPLIED), ms = when(t), i;
+    for (i = 0; i < history.length; i++) {
+      var e = history[i];
+      if (!e) continue;
+      var at2 = at(e.when, now);
+      if (ms && at2 === at2 && at2 + MINUTE <= ms) continue; // an entry from before the task's minute
+      if (e.said === said && (e.replied || '') === replied) return true;
+    }
+    return false;
+  }
+
+  /** Has an earlier finished task of the same list already decided this id? */
+  function decided(tasks, idx, id) {
+    if (!id) return false;
+    for (var i = 0; i < idx; i++) if (finished(tasks[i]) && tasks[i].id === id) return true;
+    return false;
+  }
+
+  /** The finished thread, oldest first, at most the newest 20: the history's entries, then the tasks the state
+   * reported that the history does not already hold and that are not older than anything the thread already holds
+   * (the restarted bridge's last_task.json). A running task is never here — the page shows it once, as the live block. */
+  function merge(history, tasks, now) {
+    var h = history && history.length ? history : [];
+    var list = tasks && tasks.length ? tasks : [];
+    // the newest time the thread holds: the history's newest minute, and then every task that joined after it
+    var out = entries(h), latest = newest(h, now), i;
+    for (i = 0; i < list.length; i++) {
+      var t = list[i];
+      if (!t || !t.utterance || !finished(t)) continue;
+      if (decided(list, i, t.id)) continue;
+      var ms = when(t);
+      // older than what the thread already shows: the restarted bridge reports its last_task.json after a newer
+      // task finished, and pushed last that older task would be drawn below it as the newest exchange
+      if (ms && latest === latest && ms < latest) continue;
+      if (held(h, t, now)) continue;
+      out.push({ said: t.utterance, reply: t.last_reply || '' });
+      if (ms && (latest !== latest || ms > latest)) latest = ms;
+    }
+    return out.length > MAX ? out.slice(out.length - MAX) : out;
+  }
+
+  return { finished: finished, at: at, merge: merge };
+})();
+</script>
+<script>
+(function () {
+  'use strict';
+
+  var TOKEN = 'xingyi.token', SPEAK = 'xingyi.speak';
+  var BUSY_MS = 700, IDLE_MS = 4000, TIMEOUT_MS = 8000, FRESH_MS = 10000;
+  var token = localStorage.getItem(TOKEN) || '';
+  var speak = localStorage.getItem(SPEAK) !== '0';
+  /** Finished exchanges, oldest first: {said, reply}. Rebuilt by PhoneThread.merge whenever an answer comes back. */
+  var log = [];
+  /** Today and yesterday as GET /api/history sent them, newest first; null until that answer came back. */
+  var hist = null;
+  /** The finished tasks GET /api/state reported, oldest first, the first report of each id, at most 20. */
+  var done = [];
+  /** The task on screen: what was asked, its plan, its chain and its answer so far. */
+  var live = null;
+  var shown = '', stick = true, busy = false, timer = null, asking = '', notice = '', polling = false;
+  /** When the last request came back, and the once-a-second beat that lets the dot go stale on its own. */
+  var lastOk = 0, beat = null;
+
+  var $ = function (id) { return document.getElementById(id); };
+  var thread = $('thread'), head = $('head'), conn = $('conn');
+
+  // ---- talking to the TV ---------------------------------------------------------------------
+
+  /** One request, 8 s at most: the TV may be busy running a task, and a phone that waits forever looks broken. */
+  function ask(method, path, body, ok, fail) {
+    var control = typeof AbortController === 'function' ? new AbortController() : null;
+    var gaveUp = setTimeout(function () { if (control) control.abort(); }, TIMEOUT_MS);
+    var init = { method: method, cache: 'no-store', headers: {} };
+    if (token) init.headers.Authorization = 'Bearer ' + token;
+    if (body !== null && body !== undefined) {
+      init.headers['Content-Type'] = 'application/json';
+      init.body = JSON.stringify(body);
+    }
+    if (control) init.signal = control.signal;
+    fetch(path, init).then(function (r) {
+      return r.text().then(function (text) {
+        clearTimeout(gaveUp);
+        if (r.status === 401) { unpaired(); throw new Error('unpaired'); }
+        var data = null;
+        try { data = text ? JSON.parse(text) : null; } catch (notJson) { }
+        if (r.status >= 400) { (fail || quiet)(data && data.error ? data.error : '电视没有回应。'); return; }
+        link(true); // any answer at all is the link being alive
+        ok(data);
+      });
+    }).catch(function (e) {
+      clearTimeout(gaveUp);
+      if (e && e.message === 'unpaired') return;
+      (fail || quiet)(e && e.name === 'AbortError' ? '电视忙得没回应，等一下再试。'
+              : '连接不上电视，请确认手机和电视连着同一个 Wi-Fi。');
+    });
+  }
+
+  /** The header dot and word: white only while a request came back in the last 10 s, dim and pulsing when it did not
+   * (the TV may simply have gone quiet, so the dot must go stale by itself and not wait for a request to fail). */
+  function link(ok) {
+    if (ok) lastOk = Date.now();
+    var fresh = lastOk > 0 && Date.now() - lastOk < FRESH_MS;
+    head.className = fresh ? '' : 'off';
+    conn.textContent = fresh ? '已连接' : '连接中…';
+  }
+
+  /** The quiet notice: the header says the link is down, and one dim line at the bottom says why. */
+  function quiet(message) {
+    link(false);
+    notice = message;
+    render();
+  }
+
+  function connected() {
+    link(true);
+    if (!notice) return;
+    notice = '';
+    render();
+  }
+
+  function unpaired() {
+    token = '';
+    localStorage.removeItem(TOKEN);
+    if (timer) { clearTimeout(timer); timer = null; }
+    if (beat) { clearInterval(beat); beat = null; }
+    live = null;
+    $('app').className = '';
+    $('pair').className = 'show';
+  }
+
+  // ---- drawing --------------------------------------------------------------------------------
+
+  function esc(s) {
+    return String(s === null || s === undefined ? '' : s).replace(/[&<>]/g, function (c) {
+      return c === '&' ? '&amp;' : c === '<' ? '&lt;' : '&gt;';
+    });
+  }
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  /** The last three things the task did, oldest first: the panel's thinking chain, under the step they belong to. */
+  function chain(actions) {
+    if (!actions || !actions.length) return '';
+    var out = '';
+    for (var i = Math.max(0, actions.length - 3); i < actions.length; i++) {
+      var a = actions[i];
+      if (!a || !a.what) continue;
+      var mark = a.ok ? '✓' : (a.status === 'denied' || a.status === 'rejected') ? '⊘' : '×';
+      out += '<div><i></i><span>' + mark + '　' + esc(a.what) + '</span></div>';
+    }
+    return out ? '<div class="chain">' + out + '</div>' : '';
+  }
+
+  /** The plan: numbered steps, ✓ for the ones behind us, a turning arc on the one being worked on. */
+  function plan(t) {
+    var steps = t.steps || [], cur = -1, out = '', i;
+    for (i = 0; i < steps.length; i++) if (steps[i].status === 'in_progress') { cur = i; break; }
+    if (cur < 0) for (i = 0; i < steps.length; i++)
+      if (steps[i].status !== 'done' && steps[i].status !== 'skipped') { cur = i; break; }
+    for (i = 0; i < steps.length; i++) {
+      var s = steps[i] || {}, past = s.status === 'done' || s.status === 'skipped';
+      var mark = past ? '✓' : i === cur ? '<i class="arc"></i>' : pad(i + 1);
+      out += '<div class="step ' + (past ? 'done' : i === cur ? 'now' : '') + '">'
+              + '<span class="n">' + mark + '</span><span class="t">' + esc(s.text) + '</span></div>';
+      if (i === cur) out += chain(t.actions);
+    }
+    if (cur < 0) out += chain(t.actions);
+    if (!steps.length) out = chain(t.actions);
+    return out;
+  }
+
+  function liveHtml(t) {
+    var out = '<div class="row"><div class="bubble">' + esc(t.said) + '</div></div>';
+    var steps = plan(t);
+    if (t.goal || steps) out += '<div class="plan">'
+            + (t.goal ? '<div class="goal">' + esc(t.goal) + '</div>' : '') + steps + '</div>';
+    if (t.question) out += '<div class="reply">' + esc(t.question) + '</div>';
+    else if (t.reply) out += '<div class="reply">' + esc(t.reply) + '</div>';
+    return out;
+  }
+
+  /** The whole thread, redrawn only when it actually changed: the poll runs every 700 ms while a task does. */
+  function render() {
+    var html = '', i;
+    for (i = 0; i < log.length; i++) {
+      html += '<div class="row"><div class="bubble">' + esc(log[i].said) + '</div></div>';
+      if (log[i].reply) html += '<div class="reply">' + esc(log[i].reply) + '</div>';
+    }
+    if (live) html += liveHtml(live);
+    if (notice) html += '<div class="note">' + esc(notice) + '</div>';
+    if (html === shown) return;
+    shown = html;
+    thread.innerHTML = html;
+    if (stick) thread.scrollTop = thread.scrollHeight;
+  }
+
+  // ---- what the TV is doing --------------------------------------------------------------------
+
+  /** Is this task's id already among the finished ones? An id is decided once, however often the poll reports it. */
+  function inDone(id) {
+    for (var i = 0; i < done.length; i++) if (done[i].id === id) return true;
+    return false;
+  }
+
+  function showConsent(prompt) {
+    $('consent').className = prompt ? 'show' : '';
+    $('ask').textContent = prompt || '';
+  }
+
+  function model(state) {
+    var t = state && state.task && state.task.utterance ? state.task : null;
+    var awaiting = state && state.awaiting ? state.awaiting : '';
+    busy = !!(state && state.busy);
+    showConsent(awaiting === 'consent' ? state.prompt || '' : '');
+    asking = awaiting === 'answer' && t ? t.question_asked || '' : '';
+    $('text').placeholder = asking ? '回答星仪的问题…' : '跟星仪说点什么…';
+    if (!t) { live = null; return; }
+    if (PhoneThread.finished(t)) {
+      live = null;
+      if (!inDone(t.id)) { done.push(t); while (done.length > 20) done.shift(); }
+      log = PhoneThread.merge(hist, done, Date.now());
+      return;
+    }
+    live = {
+      id: t.id, said: t.utterance, goal: t.goal || '', steps: t.steps || [], actions: t.actions || [],
+      reply: t.last_reply || '', question: asking
+    };
+  }
+
+  function schedule() {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(poll, busy ? BUSY_MS : IDLE_MS);
+  }
+
+  function poll() {
+    if (polling || !token) return;
+    polling = true;
+    ask('GET', '/api/state', null, function (state) {
+      polling = false;
+      connected();
+      model(state);
+      render();
+      schedule();
+    }, function (message) {
+      polling = false;
+      quiet(message);
+      schedule();
+    });
+  }
+
+  /** At once: after anything the phone sent, and when the page comes back to the front. */
+  function now() {
+    if (timer) { clearTimeout(timer); timer = null; }
+    poll();
+  }
+
+  // ---- what the phone sends --------------------------------------------------------------------
+
+  function submit() {
+    var box = $('text'), text = box.value.replace(/^\s+|\s+$/g, '');
+    if (!text) return;
+    box.value = '';
+    grow();
+    live = { id: '', said: text, goal: '', steps: [], actions: [], reply: '', question: '' };
+    render();
+    ask('POST', '/api/say', { text: text, speak: speak }, function () { now(); });
+  }
+
+  function grow() {
+    var box = $('text');
+    box.style.height = 'auto';
+    box.style.height = Math.min(132, box.scrollHeight) + 'px';
+  }
+
+  function setSpeak(on) {
+    speak = on;
+    localStorage.setItem(SPEAK, on ? '1' : '0');
+    $('speak').setAttribute('aria-checked', on ? 'true' : 'false');
+  }
+
+  $('text').addEventListener('input', grow);
+  $('text').addEventListener('keydown', function (e) {
+    // Enter sends, Shift+Enter is a new line — and never while a Chinese keyboard is still composing
+    if (e.key !== 'Enter' || e.shiftKey || e.isComposing || e.keyCode === 229) return;
+    e.preventDefault();
+    submit();
+  });
+  $('send').addEventListener('click', submit);
+  $('speak').addEventListener('click', function () { setSpeak(!speak); });
+  $('yes').addEventListener('click', function () { ask('POST', '/api/consent', { approve: true }, now); });
+  $('no').addEventListener('click', function () { ask('POST', '/api/consent', { approve: false }, now); });
+  $('chips').addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('button') : null;
+    if (!b || b.id === 'speak') return;
+    if (b.getAttribute('data-stop')) { ask('POST', '/api/stop', {}, now); return; }
+    var key = b.getAttribute('data-key');
+    if (key) ask('POST', '/api/key', { key: key }, now);
+  });
+  thread.addEventListener('scroll', function () {
+    stick = thread.scrollHeight - thread.scrollTop - thread.clientHeight < 80;
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { if (timer) { clearTimeout(timer); timer = null; } return; }
+    now();
+  });
+
+  // ---- pairing ---------------------------------------------------------------------------------
+
+  $('show').addEventListener('click', function () {
+    $('perr').textContent = '';
+    ask('POST', '/api/pair/start', {}, function () {
+      $('step2').className = 'show';
+      $('code').focus();
+    }, function (message) { $('perr').textContent = message; });
+  });
+
+  function pair() {
+    var code = $('code').value.replace(/\s/g, '');
+    if (!/^[0-9]{6}$/.test(code)) { $('perr').textContent = '请输入电视上显示的六位数字。'; return; }
+    $('perr').textContent = '';
+    ask('POST', '/api/pair', { code: code, name: '手机' }, function (data) {
+      token = data.token;
+      localStorage.setItem(TOKEN, token);
+      $('code').value = '';
+      $('step2').className = '';
+      start();
+    }, function (message) { $('perr').textContent = message; });
+  }
+
+  $('go').addEventListener('click', pair);
+  $('code').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.isComposing && e.keyCode !== 229) pair();
+  });
+
+  // ---- start -----------------------------------------------------------------------------------
+
+  var seeded = false;
+
+  function start() {
+    $('pair').className = '';
+    $('app').className = 'show';
+    shown = '';
+    link(false); // dim until the first answer comes back
+    if (!beat) beat = setInterval(function () { link(false); }, 1000);
+    if (!seeded) {
+      seeded = true;
+      ask('GET', '/api/history', null, function (h) {
+        hist = Array.isArray(h) ? h : [];
+        log = PhoneThread.merge(hist, done, Date.now());
+        render();
+      }, function () { });
+    }
+    now();
+  }
+
+  setSpeak(speak);
+  grow();
+  if (token) start(); else $('pair').className = 'show';
+})();
+</script>
+</body>
+</html>

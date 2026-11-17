@@ -1,0 +1,525 @@
+{
+ "data": {
+  "errcode": 0,
+  "errmsg": "",
+  "areaBoxList": [
+   {
+    "boxId": "3505",
+    "itemList": [
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200tvpsyz0"
+      },
+      "videoInfo": {
+       "title": "看懂《甄嬛传》就读懂了人性",
+       "typeName": "纪录片",
+       "year": 0,
+       "area": "其它地区",
+       "subTitle": "《甄嬛传》人性解读",
+       "descrip": "作为宫斗剧的巅峰之作、豆瓣评分9.1的神剧，毫无疑问《甄嬛传》值得深扒。但正因为这是一部人人称颂的好剧，所以剧中的很多细",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "n3509xqbaky",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "xfxd9mej2luhfoz"
+      },
+      "videoInfo": {
+       "title": "芈月传",
+       "typeName": "电视剧",
+       "year": 2015,
+       "area": "内地",
+       "subTitle": "同主演·孙俪",
+       "descrip": "兵荒马乱的战国时代，一个被安加了“霸星”宿命的小女孩在楚威王的宫殿中诞生了。作为一代霸主，楚威王渴望雄霸天下，他对这个可",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "s00190fcjfl",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "ix5xxn7iawh8x5a"
+      },
+      "videoInfo": {
+       "title": "美人心计",
+       "typeName": "电视剧",
+       "year": 2010,
+       "area": "内地",
+       "subTitle": "年度宫廷大戏",
+       "descrip": "西汉初年，幼年窦漪房因母亲卷入后宫斗争被追杀，导致满门抄斩，长大后误打误撞被选入宫为奴成为家人子。她设计将周美人生的儿子",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "8VMla3oaEYp",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "ceusrubximxm0g8"
+      },
+      "videoInfo": {
+       "title": "新三国",
+       "typeName": "电视剧",
+       "year": 2010,
+       "area": "内地",
+       "subTitle": "同主演·陈建斌",
+       "descrip": "东汉末年，朝纲混乱。内有董卓巨奸权倾朝野，专横跋扈；外有黄巾军起义，撼动社稷。时有曹操韬光养晦，欲为国除害。逃出京城后，",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "g0023yhas9e",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "qviv9yyjn83eyfu"
+      },
+      "videoInfo": {
+       "title": "花千骨",
+       "typeName": "电视剧",
+       "year": 2015,
+       "area": "内地",
+       "subTitle": "霍建华赵丽颖师徒乱世情",
+       "descrip": "后蜀平凡孤女花千骨，机缘巧合之下成为武林第一大派最年轻的掌门白子画唯一的徒弟。花千骨随师父一起到后蜀各州游历，救助孤寡，",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "n0016ibg4eb",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "jzhtr2cgy35ejz0"
+      },
+      "videoInfo": {
+       "title": "那年花开月正圆",
+       "typeName": "电视剧",
+       "year": 2017,
+       "area": "内地",
+       "subTitle": "同主演·孙俪",
+       "descrip": "1884年，周莹跟着养父周老四来到关中，输光钱财的周老四将周莹卖到沈家当丫头。周莹逃跑时躲进吴家东院大少爷吴聘的轿中，颇",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "b00249eiunm",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "fbgp27u2cs2sidh"
+      },
+      "videoInfo": {
+       "title": "还珠格格3天上人间",
+       "typeName": "电视剧",
+       "year": 2003,
+       "area": "内地",
+       "subTitle": "黄奕马伊利再续还珠",
+       "descrip": "在随皇阿玛南巡途中，山东正闹饥荒，小燕子一激动，将随身携带的食物全部给了灾民，乾隆也只好忍饥挨饿，山东地方官为了讨好乾隆",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "p00266s96ep",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200803dr6b"
+      },
+      "videoInfo": {
+       "title": "兰香如故",
+       "typeName": "电视剧",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "高门跌落！婢女深宅挣生机",
+       "descrip": "大学士府长孙女沈嘉兰与吏部尚书林家的长孙林锦岐订下婚约，然而朝堂风云突变，祖父沈大学士被判谋逆之罪，沈家惨遭灭门。林家为",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "c4102g9a01t",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "0rok1fggj7zwsez"
+      },
+      "videoInfo": {
+       "title": "雍正王朝",
+       "typeName": "电视剧",
+       "year": 1999,
+       "area": "内地",
+       "subTitle": "唐国强演勤勉帝王",
+       "descrip": "公元1722年康熙驾崩，素有“冷面王”之称的四阿哥胤禛继位。胤禛虽然并不是朝野所看好的皇位人选，却是康熙亲自选择的雍正皇",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "i0024tpfgbs",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "orodh4o77jriy0w"
+      },
+      "videoInfo": {
+       "title": "金枝欲孽",
+       "typeName": "电视剧",
+       "year": 2004,
+       "area": "中国香港",
+       "subTitle": "邓萃雯黎姿后宫攻心！",
+       "descrip": "玉莹、尔淳等秀女入宫选秀。玉莹外表娇弱，实则聪慧狡黠；尔淳则是被太监徐万田安排入宫争宠。入宫后，尔淳及其姐妹排挤玉莹，玉",
+       "status": 0,
+       "playSites": []
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "r5vtahc8vj93nx8"
+      },
+      "videoInfo": {
+       "title": "陆贞传奇",
+       "typeName": "电视剧",
+       "year": 2013,
+       "area": "内地",
+       "subTitle": "陈晓赵丽颖甜虐相恋",
+       "descrip": "陆贞出身于官商世家，母亲早亡的她自小善良聪慧，是父亲生意上的得力助手，因此被继母妒恨，后遭继母迫害，导致父死家亡，无处安",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "o0012yc3ibr",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002001w361jz"
+      },
+      "videoInfo": {
+       "title": "尚公主",
+       "typeName": "电视剧",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "扶摇直尚险途携手破危局",
+       "descrip": "剧集讲述了不甘命运的天家嫡女暮晚摇与智谋无双的寒门才俊言尚携手共筑清平天下的故事，在层层爽点中打造极致人设，看乱世惊涛中",
+       "status": 0,
+       "playSites": []
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "awsa7d6s5swucbo"
+      },
+      "videoInfo": {
+       "title": "白鹿原",
+       "typeName": "电视剧",
+       "year": 2017,
+       "area": "内地",
+       "subTitle": "经典小说剧版再改编",
+       "descrip": "20世纪初，渭河平原滋水县有一个白鹿原，生活着一群普通却不平凡的百姓。白鹿两家合而为村，相互依存又关系微妙。少东家白嘉轩",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "h4100kw3sc1",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "c2xpl7t4eppkq7n"
+      },
+      "videoInfo": {
+       "title": "红楼梦",
+       "typeName": "电视剧",
+       "year": 2010,
+       "area": "内地",
+       "subTitle": "新人演绎红楼名著",
+       "descrip": "本片根据中国古典四大名著之一的《红楼梦》改编，以贾、史、王、薛四大家族为背景，以贾宝玉、林黛玉爱情悲剧为主线，着重描写荣",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "o4101ardcen",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "normalList": {
+   "itemList": [
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "sdp001kemwgrsyo"
+     },
+     "videoInfo": {
+      "title": "后宫甄嬛传",
+      "typeName": "电视剧",
+      "year": 2011,
+      "area": "内地",
+      "subTitle": "来源·外站",
+      "descrip": "时为满清雍正元年，结束了血腥的夺位之争，新的君主（陈建斌饰）继位，国泰民安，政治清明，但在一片祥和的表象之下，一股暗流蠢",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "播放源",
+        "enName": "letv",
+        "totalEpisode": 76,
+        "episodeInfoList": [
+         {
+          "id": "https://v.qq.com/search_redirect.html?url=https%3A%2F%2Fwww.le.com%2Fptv%2Fvplay%2F1578861.html",
+          "title": "",
+          "url": "https://v.qq.com/search_redirect.html?cid=sdp001kemwgrsyo&url=https%3A%2F%2Fwww.le.com%2Fptv%2Fvplay%2F1578861.html"
+         }
+        ]
+       },
+       {
+        "showName": "播放源",
+        "enName": "youku",
+        "totalEpisode": 0,
+        "episodeInfoList": []
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "sdp0010051ud12a"
+     },
+     "videoInfo": {
+      "title": "甄嬛传(美版)",
+      "typeName": "电视剧",
+      "year": 2015,
+      "area": "内地",
+      "subTitle": "来源·外站",
+      "descrip": "故事发生在雍正皇帝（陈建斌 饰）在位期间，盛大的皇宫选秀仪式上，本不愿入宫的大理寺少卿甄远道长女甄嬛（孙俪 饰），因某种",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "播放源",
+        "enName": "letv",
+        "totalEpisode": 76,
+        "episodeInfoList": [
+         {
+          "id": "https://v.qq.com/search_redirect.html?url=https%3A%2F%2Fwww.le.com%2Fptv%2Fvplay%2F31475052.html",
+          "title": "",
+          "url": "https://v.qq.com/search_redirect.html?cid=sdp0010051ud12a&url=https%3A%2F%2Fwww.le.com%2Fptv%2Fvplay%2F31475052.html"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "d3254mtsibq"
+     },
+     "videoInfo": {
+      "title": "用<em>甄嬛传</em>的视角，打开大如传名场面之炩嫔不会也喜欢梅花了吧",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "v3564j2k8ov"
+     },
+     "videoInfo": {
+      "title": "《<em>甄嬛传</em>》名场面再现，孙俪一个不经意的动作，竟直接封神了",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "l3554utvgyy"
+     },
+     "videoInfo": {
+      "title": "<em>甄嬛传</em>",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "u32869irdvg"
+     },
+     "videoInfo": {
+      "title": "<em>甄嬛传</em>",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    }
+   ]
+  }
+ }
+}

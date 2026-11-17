@@ -1,0 +1,577 @@
+{
+ "data": {
+  "errcode": 0,
+  "errmsg": "",
+  "areaBoxList": [
+   {
+    "boxId": "3505",
+    "itemList": [
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc0020020cyvqh"
+      },
+      "videoInfo": {
+       "title": "雪中悍刀行",
+       "typeName": "电视剧",
+       "year": 2021,
+       "area": "内地",
+       "subTitle": "同主演·张若昀",
+       "descrip": "为逃避做隋珠公主的驸马，“天下第一纨绔”的北椋世子徐凤年在父亲徐骁的安排下褪去锦衣华服，初进江湖，和马夫老黄苦中作乐，结",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "r00418ld4f2",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc0020042zp1r8"
+      },
+      "videoInfo": {
+       "title": "年会不能停！2",
+       "typeName": "电影",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "同主演·张若昀",
+       "descrip": "该片讲述了众和集团分公司小组长刘奔与曾在年会引发关注的老员工马杰共同经历荒诞职场旅程，通过系列奇葩遭遇重新认知自我价值的",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "s4102dlk9wg",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002002yfzpaf"
+      },
+      "videoInfo": {
+       "title": "人之初",
+       "typeName": "电视剧",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "同主演·张若昀",
+       "descrip": "一场突如其来的事故，将两个年轻人紧紧缠绕在一起。为破解身世之谜，他们携手合作配合警方共同挖清这座城市的陈年黑暗，解开重重",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "q4101rbtkw5",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc003jze7nfry7"
+      },
+      "videoInfo": {
+       "title": "《庆余年第三季》抢先看",
+       "typeName": "电视剧",
+       "year": 0,
+       "area": "",
+       "subTitle": "",
+       "descrip": "从原著的角度，深度解读电视剧庆余年",
+       "status": 0,
+       "playSites": []
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200qon7vo3"
+      },
+      "videoInfo": {
+       "title": "大奉打更人",
+       "typeName": "电视剧",
+       "year": 2024,
+       "area": "内地",
+       "subTitle": "同题材·英雄成长",
+       "descrip": "现代打工人杨凌，意外进入到充满“悬幻”色彩的大奉王朝，并且改头换面成为一名监察百官、为民服务的打更人铜锣——许七安。他运",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "n4100haur7s",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002001w361jz"
+      },
+      "videoInfo": {
+       "title": "尚公主",
+       "typeName": "电视剧",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "扶摇直尚险途携手破危局",
+       "descrip": "剧集讲述了不甘命运的天家嫡女暮晚摇与智谋无双的寒门才俊言尚携手共筑清平天下的故事，在层层爽点中打造极致人设，看乱世惊涛中",
+       "status": 0,
+       "playSites": []
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200d9f9wpq"
+      },
+      "videoInfo": {
+       "title": "憨婿",
+       "typeName": "电视剧",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "上门赘婿 天下无敌",
+       "descrip": "理工高材生韦浩意外魂穿大庸朝，竟成为大庸人尽皆知的“韦憨子”！拥有独特思维方式的韦浩凭借现代知识一路开挂狂揽万金，加封侯",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "a4102silnhb",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200stucyge"
+      },
+      "videoInfo": {
+       "title": "少年歌行之风花雪月",
+       "typeName": "电视剧",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "少年江湖再燃浪漫武侠新风",
+       "descrip": "寒水寺忘忧大师坐化后，一口神秘的黄金棺材入世，掀起江湖纷争。各方势力针锋相对，雷无桀、萧瑟、唐莲、司空千落、天女蕊等相继",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "i4101cgp5kv",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "j6b8z5urtg2wj5h"
+      },
+      "videoInfo": {
+       "title": "将夜2",
+       "typeName": "电视剧",
+       "year": 2020,
+       "area": "内地",
+       "subTitle": "同题材·英雄成长",
+       "descrip": "传说永夜将至，人间浩劫。书院的十三先生、大唐帝国的守护者宁缺为桑桑治病赶赴盂兰节。世人都怀疑宁缺就是冥王之子，他将会给世",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "t0033d4wvjz",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "vbb35hm6m6da1wc"
+      },
+      "videoInfo": {
+       "title": "陈情令",
+       "typeName": "电视剧",
+       "year": 2019,
+       "area": "内地",
+       "subTitle": "肖战王一博共闯侠义江湖",
+       "descrip": "十六年前，天下五分，姑苏蓝氏，云梦江氏，清河聂氏，岐山温氏，兰陵金氏共治天下。温氏一家独大，其余四家均受其苦。众家青年中",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "w0031s4gikk",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200iyue5he"
+      },
+      "videoInfo": {
+       "title": "长安的荔枝",
+       "typeName": "电视剧",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "同题材·轻喜剧",
+       "descrip": "《长安的荔枝》讲述了主人公李善德在同僚的欺瞒之下从监事变身“荔枝使”，被迫接下一道为贺贵妃生辰、需从岭南运送新鲜荔枝到长",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "k410187y6uq",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002009qpobrh"
+      },
+      "videoInfo": {
+       "title": "贤婿",
+       "typeName": "电视剧",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "上门赘婿 天下无敌",
+       "descrip": "一场意外，让萧宁魂穿大境朝沦为苏家赘婿，他以古法点化茶韵酒香，引得万民竞逐；创报纸、揽英才，助公主纵横朝堂；面对商女刁难",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "v4101vdg8zk",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200i3s1yd7"
+      },
+      "videoInfo": {
+       "title": "与凤行",
+       "typeName": "电视剧",
+       "year": 2024,
+       "area": "内地",
+       "subTitle": "同题材·轻喜剧",
+       "descrip": "该剧改编自九鹭非香的同名小说，上古神殒，世间只余最后一个神君——行止。传言，这位行止神君数万年来独居天外天，无情无欲。仙",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "d0048nosrlr",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "qbjoi3ofgpro5cr"
+      },
+      "videoInfo": {
+       "title": "择天记[DVD版]",
+       "typeName": "电视剧",
+       "year": 2017,
+       "area": "内地",
+       "subTitle": "同题材·英雄成长",
+       "descrip": "这是一个少年和他的小伙伴们逆天改命创造一个全新时代的热血故事。身世神秘的陈长生，在襁褓之中被师父计道人从黄金巨龙口中救下",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "q0023zxiiq8",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "normalList": {
+   "itemList": [
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "mzc002001wf6pjn"
+     },
+     "videoInfo": {
+      "title": "庆余年第三季",
+      "typeName": "电视剧",
+      "year": 2026,
+      "area": "内地",
+      "subTitle": "余年不尽共赴一梦",
+      "descrip": "在江南，范闲做局，通过内库竞标大大削弱明家的势力，令二皇子和长公主一派元气大伤。范闲回京都述职，在山谷遭遇诡异伏击，局势",
+      "status": 1,
+      "playSites": [
+       {
+        "showName": "腾讯视频",
+        "enName": "qq",
+        "totalEpisode": 1,
+        "episodeInfoList": [
+         {
+          "id": "t4101rknej1",
+          "title": "立即播放",
+          "url": "https://v.qq.com/x/cover/mzc002001wf6pjn/t4101rknej1.html"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "mzc002002kqssyu"
+     },
+     "videoInfo": {
+      "title": "庆余年第二季",
+      "typeName": "电视剧",
+      "year": 2024,
+      "area": "内地",
+      "subTitle": "与范闲再探庙堂江湖",
+      "descrip": "故事讲述了一个身世神秘的青年范闲，历经家族、江湖、庙堂的种种考验与锤炼，他秉持正义、良善，开始了新的人生征途，继续书写出",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "腾讯视频",
+        "enName": "qq",
+        "totalEpisode": 37,
+        "episodeInfoList": [
+         {
+          "id": "q4100dpkd26",
+          "title": "立即播放",
+          "url": "https://v.qq.com/x/cover/mzc002002kqssyu/q4100dpkd26.html"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "rjae621myqca41h"
+     },
+     "videoInfo": {
+      "title": "庆余年",
+      "typeName": "电视剧",
+      "year": 2019,
+      "area": "内地",
+      "subTitle": "张若昀身陷棋局绝处逢生",
+      "descrip": "某大学文学史专业的学生张庆熟读古典名著，但他用现代观念剖析古代文学史的论文命题不被叶教授所认可。为了让叶教授成为自己的研",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "腾讯视频",
+        "enName": "qq",
+        "totalEpisode": 46,
+        "episodeInfoList": [
+         {
+          "id": "i0032qxbi2v",
+          "title": "立即播放",
+          "url": "https://v.qq.com/x/cover/rjae621myqca41h/i0032qxbi2v.html"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "mzc002004dw1xx2"
+     },
+     "videoInfo": {
+      "title": "庆余年第一季 特别版",
+      "typeName": "电视剧",
+      "year": 2024,
+      "area": "内地",
+      "subTitle": "张若昀身陷棋局绝处逢生",
+      "descrip": "某大学文学史专业的学生张庆熟读古典名著，但他用现代观念剖析古代文学史的论文命题不被叶教授所认可。为了让叶教授成为自己的研",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "腾讯视频",
+        "enName": "qq",
+        "totalEpisode": 25,
+        "episodeInfoList": [
+         {
+          "id": "g4100eu22qm",
+          "title": "立即播放",
+          "url": "https://v.qq.com/x/cover/mzc002004dw1xx2/g4100eu22qm.html"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "w00400y30sh"
+     },
+     "videoInfo": {
+      "title": "【张若昀纯享】八个字拿下《<em>庆余年</em>》",
+      "typeName": "综艺",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "y4100ia3m15"
+     },
+     "videoInfo": {
+      "title": "田雨纯享：如何变成《<em>庆余年</em>》的王大人",
+      "typeName": "综艺",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "c0048nq26jm"
+     },
+     "videoInfo": {
+      "title": "开放日《<em>庆余年</em>2》剧组探班",
+      "typeName": "综艺",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "y3373nm6nk2"
+     },
+     "videoInfo": {
+      "title": "《<em>庆余年</em>》原著：筷子插门定生死，监察院死牢的无窗间入口",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    }
+   ]
+  }
+ }
+}

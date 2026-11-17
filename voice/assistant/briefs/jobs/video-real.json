@@ -1,0 +1,22 @@
+{
+ "id": "video-real",
+ "title": "云视听极光 search keyword as it is, a cold B站 video link sent again, B站's login dialog closed, NetEase subtitled titles",
+ "brief": "briefs/video-real.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 105,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "src/xyz/erapi0neer/xingyi/NeteaseCatalog.java",
+  "src/xyz/erapi0neer/xingyi/agent/PlayerPages.java",
+  "tests/NeteaseCatalogTest.java",
+  "tests/agent/SkillChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (39(8[8-9]|9\\d)|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "catalog", "cmd": "sh tests/run_catalog.sh", "timeoutS": 300, "must": ["PASS exact-title and artist-only catalog checks"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_video_real.sh", "timeoutS": 900, "must": ["VIDEO REAL OK"] }
+ ]
+}

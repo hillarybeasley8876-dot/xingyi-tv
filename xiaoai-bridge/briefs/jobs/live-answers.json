@@ -1,0 +1,53 @@
+{
+ "id": "live-answers",
+ "title": "Live answers: web search for real-time questions + follow-up memory",
+ "brief": "briefs/live-answers.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xiaoaibridge/Llm.java",
+  "src/xyz/erapi0neer/xiaoaibridge/Realtime.java",
+  "src/xyz/erapi0neer/xiaoaibridge/ResponsesText.java",
+  "src/xyz/erapi0neer/xiaoaibridge/Conversation.java",
+  "tests/RealtimeTest.java",
+  "tests/ResponsesTextTest.java",
+  "tests/ConversationTest.java",
+  "provision.py"
+ ],
+ "accept": [
+  {
+   "name": "build",
+   "cmd": "sh build.sh",
+   "must": [
+    "xiaoai-bridge.apk"
+   ],
+   "timeoutS": 600
+  },
+  {
+   "name": "jvm-tests",
+   "cmd": "sh tests/run_all.sh",
+   "timeoutS": 600,
+   "must": [
+    "ALL JVM TESTS PASSED",
+    "re:PASS \\d+ passed, 0 failed \\(realtime\\)",
+    "re:PASS \\d+ passed, 0 failed \\(responses text\\)",
+    "re:PASS \\d+ passed, 0 failed \\(conversation\\)"
+   ]
+  },
+  {
+   "name": "answer-api",
+   "cmd": "grep -c \"String answer(String question, int timeoutMs)\" src/xyz/erapi0neer/xiaoaibridge/Llm.java",
+   "must": [
+    "1"
+   ]
+  },
+  {
+   "name": "search-model-provisioned",
+   "cmd": "grep -c search_model provision.py",
+   "mustNot": [
+    "re:^0"
+   ]
+  }
+ ]
+}

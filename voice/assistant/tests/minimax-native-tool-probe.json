@@ -1,0 +1,41 @@
+{
+  "model": "MiniMax-M3.1-Flash",
+  "endpoint": "https://gateway.example.com/v1/chat/completions",
+  "time": "2026-11-03T10:38:43.640612+08:00",
+  "credential_logged": false,
+  "raw_reasoning_logged": false,
+  "rounds": [
+    {
+      "http_status": 200,
+      "elapsed_seconds": 1.12,
+      "finish_reason": "tool_calls",
+      "assistant_fields": [
+        "audio_content",
+        "name",
+        "role",
+        "tool_calls"
+      ],
+      "reasoning_content_present": false,
+      "reasoning_character_count": 0,
+      "tool_call_count": 1
+    },
+    {
+      "http_status": 200,
+      "elapsed_seconds": 1.02,
+      "finish_reason": "stop",
+      "assistant_fields": [
+        "audio_content",
+        "content",
+        "name",
+        "role"
+      ],
+      "reasoning_content_present": false,
+      "reasoning_character_count": 0,
+      "tool_call_count": 0
+    }
+  ],
+  "full_assistant_message_preserved": true,
+  "preserved_message_sha256": "23a84d7c4265db5903a1eaba7935ba910f22458f95f28e15e4ea52ae3821d9ce",
+  "final_visible_answer": "这台合成测试电视的音量是 19，未静音。",
+  "passed": true
+}

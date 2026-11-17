@@ -1,0 +1,50 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="xyz.erapi0neer.xiaoaibridge" android:versionCode="2" android:versionName="1.0.0">
+ <uses-permission android:name="android.permission.INTERNET"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+ <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+ <!-- Granted once from the PC with `pm grant` (development permissions): reading XiaoAi's recognition log, reading the media session. -->
+ <uses-permission android:name="android.permission.READ_LOGS"/>
+ <uses-permission android:name="android.permission.DUMP"/>
+ <!-- dumpsys activity (is Xingyi's own takeover running?) also needs usage-stats access -->
+ <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+ <!-- Xiaomi's firmware switches ADB debugging off at standby, which cuts the PC link and 星仪's own key presses and
+      screenshots. With this permission (granted over adb with `pm grant`, taken away with `pm revoke`: that is the
+      owner's on/off switch) the bridge switches it back on; AdbGuardPolicy says when. -->
+ <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+ <!-- hardwareAccelerated="false": the progress panel is the only window. Hardware-rendered, its RenderThread aborted
+      with "Failed to set damage region ... EGL_BAD_ACCESS" whenever another app's window was torn down, killing this
+      process (2026-11-04). WindowManagerGlobal adds FLAG_HARDWARE_ACCELERATED from this attribute, not from the window flags. -->
+ <!-- Same signing key as 星仪: lets 星仪's screen reach the agent and lets the agent borrow 星仪's ADB identity. -->
+ <permission android:name="xyz.erapi0neer.xingyi.permission.USE_LOCAL_MCP" android:protectionLevel="signature"/>
+ <uses-permission android:name="xyz.erapi0neer.xingyi.permission.USE_LOCAL_MCP"/>
+ <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+ <!-- tv_status: bluetooth on/off and the WiFi name (Android 9 reports the SSID only with location granted; granted once with pm grant). -->
+ <uses-permission android:name="android.permission.BLUETOOTH"/>
+ <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+ <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+ <uses-feature android:name="android.software.leanback" android:required="false"/>
+ <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+ <application android:label="星仪后台 · 小爱接力" android:hardwareAccelerated="false" android:allowBackup="false" android:debuggable="false" android:usesCleartextTraffic="false">
+  <!-- Startable only by callers holding DUMP (adb shell, system). -->
+  <service android:name=".BridgeService" android:exported="true" android:permission="android.permission.DUMP"/>
+  <receiver android:name=".BootReceiver" android:exported="true">
+   <intent-filter>
+    <action android:name="android.intent.action.BOOT_COMPLETED"/>
+    <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+   </intent-filter>
+  </receiver>
+  <!-- 星仪's agent runtime. It lives in this app because this app shows no activity, so MiTV's PeriodicCleaner
+       (which force-stops idle packages that once showed one, accessibility service included) leaves it alone. -->
+  <service android:name="xyz.erapi0neer.xingyi.agent.tv.Eyes" android:label="星仪 · 操作电视" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:exported="true">
+   <intent-filter><action android:name="android.accessibilityservice.AccessibilityService"/></intent-filter>
+   <meta-data android:name="android.accessibilityservice" android:resource="@xml/eyes"/>
+  </service>
+  <service android:name="xyz.erapi0neer.xingyi.agent.tv.AgentService" android:exported="false"/>
+  <provider android:name="xyz.erapi0neer.xingyi.agent.tv.AgentProvider" android:authorities="xyz.erapi0neer.xiaoaibridge.agent" android:exported="true" android:permission="xyz.erapi0neer.xingyi.permission.USE_LOCAL_MCP"/>
+  <receiver android:name="xyz.erapi0neer.xingyi.agent.tv.AgentDebug" android:exported="true" android:permission="android.permission.DUMP">
+   <intent-filter><action android:name="xyz.erapi0neer.xingyi.agent.SUBMIT"/><action android:name="xyz.erapi0neer.xingyi.agent.STATE"/><action android:name="xyz.erapi0neer.xingyi.agent.CONSENT"/><action android:name="xyz.erapi0neer.xingyi.agent.CANCEL"/><action android:name="xyz.erapi0neer.xingyi.agent.HUD"/><action android:name="xyz.erapi0neer.xingyi.agent.SCREEN"/><action android:name="xyz.erapi0neer.xingyi.agent.TRANSCRIPT"/></intent-filter>
+  </receiver>
+  <receiver android:name="xyz.erapi0neer.xingyi.TimerReceiver" android:exported="false"/>
+  <service android:name="xyz.erapi0neer.xingyi.TimerService" android:exported="false"/>
+ </application>
+</manifest>

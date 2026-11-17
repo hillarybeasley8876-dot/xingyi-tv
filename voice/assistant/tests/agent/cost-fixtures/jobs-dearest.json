@@ -1,0 +1,26 @@
+[
+  {
+    "id": "h8",
+    "history": [
+      { "round": 1, "tools": 80, "cost": { "usd": 4.821722, "outTok": 68913 } },
+      { "round": 2, "tools": 11, "cost": { "usd": 1.323325, "outTok": 19568 } },
+      { "round": 3, "tools": 6, "cost": { "usd": 0.80796, "outTok": 10138 } },
+      { "round": 4, "tools": 17, "cost": { "usd": 2.120531, "outTok": 21578 } },
+      { "round": 5, "tools": 5, "cost": { "usd": 0.861899, "outTok": 11089 } }
+    ]
+  },
+  { "id": "h7", "history": [
+    { "round": 1, "tools": 60, "cost": { "usd": 6.23441, "outTok": 56579 } },
+    { "round": 2, "tools": 9, "cost": { "usd": 1.007506, "outTok": 10707 } }
+  ] },
+  { "id": "h6", "history": [
+    { "round": 1, "tools": 55, "cost": { "usd": 5.140077, "outTok": 69786 } },
+    { "round": 2, "tools": 12, "cost": { "usd": 1.275623, "outTok": 14367 } }
+  ] },
+  { "id": "h5", "history": [{ "round": 1, "tools": 30, "cost": { "usd": 3.3, "outTok": 20000 } }] },
+  { "id": "h4", "history": [{ "round": 1, "tools": 28, "cost": { "usd": 3.3, "outTok": 19000 } }] },
+  { "id": "h3", "history": [{ "round": 1, "tools": 20, "cost": { "usd": 0.75, "outTok": 8000 } }] },
+  { "id": "h2", "history": [{ "round": 1, "tools": 15, "cost": { "usd": 0.5, "outTok": 5000 } }] },
+  { "id": "h1", "history": [{ "round": 1, "tools": 10, "cost": { "usd": 0.25, "outTok": 2500 } }] },
+  { "id": "none", "history": [{ "round": 1, "tools": 3 }] }
+]

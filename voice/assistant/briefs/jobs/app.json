@@ -1,0 +1,38 @@
+{
+ "id": "app",
+ "title": "The 星仪 app follows the engine by request id; 历史 and 记忆; one runtime",
+ "brief": "briefs/app.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 120,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/MainActivity.java",
+  "src/xyz/erapi0neer/xingyi/AssistantLayout.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 300,
+   "must": [
+    "re:agent core: (11[4-9]\\d|1[2-9]\\d\\d|[2-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_app.sh",
+   "timeoutS": 900,
+   "must": [
+    "APP OK"
+   ]
+  }
+ ]
+}

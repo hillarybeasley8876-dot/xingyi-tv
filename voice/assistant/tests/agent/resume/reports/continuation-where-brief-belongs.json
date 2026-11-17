@@ -1,0 +1,91 @@
+{
+ "note": "坏在：会话还没起来过（--session-id），第一句给的却是续跑句，不是 brief 的第一句",
+ "tool": "tools/resume/rehearse.mjs",
+ "at": "2026-11-12T05:32:47.000Z",
+ "scratch": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1",
+ "out": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/out",
+ "wt": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/wt",
+ "env": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/env",
+ "claude": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/stub/claude-stub.exe",
+ "realOut": "H:/tools/mitv/voice/assistant-out",
+ "jobs": [
+  {
+   "id": "rehearse-1-kill",
+   "scenario": "kill",
+   "model": "MiniMax-M78",
+   "maxRounds": 3,
+   "state0": {
+    "rounds": 0,
+    "history": 0,
+    "sessionStarted": false,
+    "sessionModel": null,
+    "sessionId": "22222222-2222-4222-8222-222222222222",
+    "status": "new"
+   },
+   "launches": [
+    {
+     "n": 1,
+     "killed": false,
+     "beginRound": 1,
+     "rounds": [
+      1
+     ],
+     "stateBefore": {
+      "rounds": 0,
+      "history": 0,
+      "sessionStarted": false,
+      "sessionModel": null,
+      "sessionId": "22222222-2222-4222-8222-222222222222",
+      "status": "new"
+     },
+     "stateAfter": {
+      "rounds": 1,
+      "history": 1,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "22222222-2222-4222-8222-222222222222",
+      "status": "accepted_mechanical"
+     },
+     "stub": [
+      {
+       "round": 1,
+       "finished": true,
+       "resume": false,
+       "sessionId": "22222222-2222-4222-8222-222222222222",
+       "argv": [
+        "-p",
+        "--model",
+        "MiniMax-M78",
+        "--session-id",
+        "22222222-2222-4222-8222-222222222222"
+       ],
+       "prompt": "The lead resumes this job. Re-read your status file and the brief, check what is on disk, and continue until the acceptance commands pass.",
+       "promptFile": "prompt-1.md"
+      }
+     ],
+     "accept": [
+      {
+       "round": 1,
+       "end": "ok",
+       "pass": true,
+       "why": [],
+       "stray": []
+      }
+     ]
+    }
+   ],
+   "final": {
+    "rounds": 1,
+    "history": 1,
+    "sessionStarted": true,
+    "sessionModel": "MiniMax-M78",
+    "sessionId": "22222222-2222-4222-8222-222222222222",
+    "status": "accepted_mechanical"
+   },
+   "stub": {
+    "runs": 1,
+    "finished": 1
+   }
+  }
+ ]
+}

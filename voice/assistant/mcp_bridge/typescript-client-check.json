@@ -1,0 +1,24 @@
+{
+  "clientSdk": "@modelcontextprotocol/sdk 1.29.0",
+  "server": {
+    "name": "xingyi-tv",
+    "version": "1.0.0"
+  },
+  "tools": [
+    "tv_status",
+    "xingyi_submit",
+    "xingyi_result"
+  ],
+  "reply": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"message\": \"电视离线或未配对，未读取到电视状态。\"}"
+      }
+    ],
+    "structuredContent": {
+      "message": "电视离线或未配对，未读取到电视状态。"
+    },
+    "isError": true
+  }
+}

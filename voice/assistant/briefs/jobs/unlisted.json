@@ -1,0 +1,20 @@
+{
+ "id": "unlisted",
+ "title": "「华为股价」 is answered 「华为没有上市」, not with 华微电子's price",
+ "brief": "briefs/unlisted.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Quotes.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/PinyinChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (348[4-9]|349\\d|3[5-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "wired", "cmd": "grep -c Quotes.unlisted src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java", "timeoutS": 30,
+    "must": ["re:^[1-9]"] }
+ ]
+}

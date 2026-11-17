@@ -1,0 +1,65 @@
+{
+ "what": "云视听极光暂停浮层的真机截图（2026-11-14 11:10-11:18 用 overlay_probe.py 拍的，缩到 960x540）。为什么是截图而不是 uiautomator：整个播放页是 SurfaceView 画的，uiautomator dump 在播放页只给一个空节点（15 次一模一样的『nodes 1 | texts 0』），浮层上的 00:MM:SS 和剧集名一个都读不到——这就是三条场景（暂停、快进、选集）的判据从来不可能成功的根因。",
+ "captured": "2026-11-14T11:10+08:00",
+ "episode": "别无选择 第5集",
+ "duration_s": 2833,
+ "note": "position_s 是这一帧左下角的进度（人手读的，见同目录的 time-sheet）；null 表示那一帧没有进度条（广告卡片挡住 / 还没进正片）。全帧 960x540，原分辨率 1920x1080（放缩 2 倍）。",
+ "frames": [
+  {
+   "file": "player-00h04m01.png",
+   "position_s": 241,
+   "duration_s": 2833
+  },
+  {
+   "file": "player-00h04m24.png",
+   "position_s": 264,
+   "duration_s": 2833
+  },
+  {
+   "file": "player-00h04m40.png",
+   "position_s": 286,
+   "duration_s": 2833,
+   "corrected": "2026-11-14 11:52：原来是 280，是我手读错的。这一帧左下角自己的时钟是 00:04:46 = 286 秒（裁出来放大看过），进度条比例读出 287.5 秒，两边一致。其余八帧的手读值和画面时钟、比例读数都在 2 秒内对得上。"
+  },
+  {
+   "file": "player-00h05m30.png",
+   "position_s": 330,
+   "duration_s": 2833
+  },
+  {
+   "file": "player-00h05m53.png",
+   "position_s": 353,
+   "duration_s": 2833
+  },
+  {
+   "file": "player-00h06m15.png",
+   "position_s": 375,
+   "duration_s": 2833
+  },
+  {
+   "file": "player-00h06m37.png",
+   "position_s": 397,
+   "duration_s": 2833
+  },
+  {
+   "file": "player-00h07m00.png",
+   "position_s": 420,
+   "duration_s": 2833
+  },
+  {
+   "file": "player-00h07m24.png",
+   "position_s": 444,
+   "duration_s": 2833
+  },
+  {
+   "file": "player-no-bar-01.png",
+   "position_s": null,
+   "duration_s": null
+  },
+  {
+   "file": "player-no-bar-14.png",
+   "position_s": null,
+   "duration_s": null
+  }
+ ]
+}

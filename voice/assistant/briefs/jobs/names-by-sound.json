@@ -1,0 +1,42 @@
+{
+ "id": "names-by-sound",
+ "title": "Stock names heard as homophones: search again by pinyin, accept only what sounds the same",
+ "brief": "briefs/names-by-sound.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 110,
+ "owns": [
+  "tests/agent/pinyin_gen.py",
+  "src/xyz/erapi0neer/xingyi/agent/PinyinData.java",
+  "src/xyz/erapi0neer/xingyi/agent/Pinyin.java",
+  "src/xyz/erapi0neer/xingyi/agent/Quotes.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/PinyinChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 400,
+   "must": [
+    "re:agent core: (2579|25[89]\\d|2[6-9]\\d\\d|[3-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_names_by_sound.sh",
+   "timeoutS": 900,
+   "must": [
+    "NAMES OK"
+   ]
+  }
+ ]
+}

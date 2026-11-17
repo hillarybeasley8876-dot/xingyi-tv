@@ -1,0 +1,42 @@
+{
+ "id": "official-installs",
+ "title": "Install a browser (and B站) from the vendor's own source, signature-checked",
+ "brief": "briefs/official-installs.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/OfficialApps.java",
+  "src/xyz/erapi0neer/xingyi/OfficialAppInstaller.java",
+  "src/xyz/erapi0neer/xingyi/LocalAdb.java",
+  "src/xyz/erapi0neer/xingyi/Legacy.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/OfficialAppsChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 400,
+   "must": [
+    "re:agent core: (285[3-9]|28[6-9]\\d|29\\d\\d|[3-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_official_installs.sh",
+   "timeoutS": 900,
+   "must": [
+    "OFFICIAL INSTALLS OK"
+   ]
+  }
+ ]
+}

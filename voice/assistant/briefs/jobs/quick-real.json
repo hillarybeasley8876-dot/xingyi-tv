@@ -1,0 +1,18 @@
+{
+ "id": "quick-real",
+ "title": "The quick commands the user really said and that missed (伴奏 verbs, fillers, 显示器, 开机, %, stock verbs, stop+home)",
+ "brief": "briefs/quick-real.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/QuickCommand.java",
+  "tests/agent/QuickChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (37[2-9]\\d|3[89]\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_quick_real.sh", "timeoutS": 900, "must": ["QUICK REAL OK"] }
+ ]
+}

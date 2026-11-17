@@ -1,0 +1,1 @@
+{"app":"红果短剧","developer":"北京笔墨留香科技有限公司","page":"https://applink.novelquickapp.com/","url":"","package":"","note":"官网下载页为 novelquickapp.com 旗下官方页面，页面明确写有“扫码下载安装「红果短剧App」”；北京市文旅局公示也将 hongguoduanju.com、novelquickapp.com 与“红果短剧Android 软件”对应，但当前公开页未直接给出可抓取到的 https .apk 直链。"}

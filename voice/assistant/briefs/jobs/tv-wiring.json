@@ -1,0 +1,38 @@
+{
+ "id": "tv-wiring",
+ "title": "TV wiring: web_search tool, honest-stop observer, say(), B站 cold start, playback wait, search cap",
+ "brief": "briefs/tv-wiring.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentEngine.java",
+  "src/xyz/erapi0neer/xingyi/agent/Tool.java",
+  "src/xyz/erapi0neer/xingyi/agent/AgentLoop.java",
+  "src/xyz/erapi0neer/xingyi/agent/SearchBudget.java",
+  "src/xyz/erapi0neer/xingyi/agent/Observation.java",
+  "src/xyz/erapi0neer/xingyi/agent/PlayerPages.java",
+  "tests/agent/WiringChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 300,
+   "must": ["re:agent core: (26[7-9]|2[7-9]\\d|[3-9]\\d\\d) passed, 0 failed"]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": ["ANDROID CHECK OK"]
+  },
+  {
+   "name": "tv-build-and-wiring",
+   "cmd": "sh tests/agent/accept_tv_wiring.sh",
+   "timeoutS": 900,
+   "must": ["WIRING OK"]
+  }
+ ]
+}

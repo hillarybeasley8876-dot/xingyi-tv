@@ -1,0 +1,19 @@
+{
+ "id": "ktcp-controls",
+ "title": "暂停 / 继续播放 reach 云视听极光's player (it has no media session: the key goes to its window)",
+ "brief": "briefs/ktcp-controls.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/PlayerPages.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/SkillChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (4(19[89]|2\\d\\d)|4[3-9]\\d\\d|[5-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_ktcp_controls.sh", "timeoutS": 900, "must": ["KTCP CONTROLS OK"] }
+ ]
+}

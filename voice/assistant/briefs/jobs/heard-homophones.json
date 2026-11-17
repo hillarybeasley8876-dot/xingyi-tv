@@ -1,0 +1,18 @@
+{
+ "id": "heard-homophones",
+ "title": "An everyday word is not an earlier name: 「未来几天天气」 gets no 「蔚来」 hint, 「王玥」 is not 「王珺」",
+ "brief": "briefs/heard-homophones.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Heard.java",
+  "src/xyz/erapi0neer/xingyi/agent/Pinyin.java",
+  "tests/agent/HeardChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (35(29|[3-9]\\d)|3[6-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] }
+ ]
+}

@@ -1,0 +1,8 @@
+build/
+__pycache__/
+*.pyc
+mcp_bridge/.venv/
+tests/layout-classes/
+tests/minimax-classes/
+tests/timer-compile/
+tests/agent/evidence/live*/s*.png

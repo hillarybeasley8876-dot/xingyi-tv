@@ -1,0 +1,38 @@
+{
+ "id": "phone-console-2",
+ "title": "The phone page fits the phone; the home screen learns what 星仪 is doing",
+ "brief": "briefs/phone-console-2.md",
+ "isolation": "worktree",
+ "maxRounds": 4,
+ "timeoutMin": 90,
+ "owns": [
+  "assets/agent/phone.html",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentEngine.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 400,
+   "must": [
+    "re:agent core: (337\\d|33[89]\\d|3[4-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_phone_console.sh",
+   "timeoutS": 900,
+   "must": [
+    "PHONE CONSOLE OK"
+   ]
+  }
+ ]
+}

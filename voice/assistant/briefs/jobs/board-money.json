@@ -1,0 +1,44 @@
+{
+ "id": "board-money",
+ "title": "状态板的「消耗」写钱，不写工具次数（spend() 进两边的板子：Board.java + board.mjs）",
+ "brief": "briefs/board-money.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Board.java",
+  "src/xyz/erapi0neer/xingyi/agent/Cost.java",
+  "tools/board/board.mjs",
+  "tests/agent/BoardChecks.java",
+  "tests/agent/CostChecks.java",
+  "tests/agent/board-fixtures/",
+  "tests/agent/cost-fixtures/",
+  "status/BOARD.md"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|539[3-9]|5[4-9]\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_cost.sh",
+   "timeoutS": 900,
+   "must": [
+    "COST OK"
+   ]
+  }
+ ]
+}

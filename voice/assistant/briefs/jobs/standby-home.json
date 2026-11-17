@@ -1,0 +1,39 @@
+{
+ "id": "standby-home",
+ "title": "After standby the home screen is on top, not the app that was left behind it (the firmware kills the home screen at screen-off; whatever was behind it surfaces)",
+ "brief": "briefs/standby-home.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 90,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/MemoryCare.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/MemoryGuard.java",
+  "tests/agent/MemoryCareChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: (462[2-9]|46[3-9]\\d|4[7-9]\\d\\d|[5-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_standby_home.sh",
+   "timeoutS": 900,
+   "must": [
+    "STANDBY HOME OK"
+   ]
+  }
+ ]
+}

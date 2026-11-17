@@ -1,0 +1,40 @@
+{
+ "id": "hints",
+ "title": "Hints: a quiet card when the screen comes on",
+ "brief": "briefs/hints.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 120,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Hints.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/Hud.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentDebug.java",
+  "tests/agent/HintChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 300,
+   "must": [
+    "re:agent core: (11[89]\\d|1[2-9]\\d\\d|[2-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_hints.sh",
+   "timeoutS": 900,
+   "must": [
+    "HINTS OK"
+   ]
+  }
+ ]
+}

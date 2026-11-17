@@ -1,0 +1,41 @@
+{
+ "id": "reported",
+ "title": "用户报的每个问题配一条可执行检查，并证明这条检查在修复前不存在（台账 + 闸门）",
+ "brief": "briefs/reported.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 110,
+ "owns": [
+  "tests/agent/reported.json",
+  "src/xyz/erapi0neer/xingyi/agent/Reported.java",
+  "tests/agent/ReportedMain.java",
+  "tests/agent/ReportedChecks.java",
+  "tests/agent/reported.sh"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 600,
+   "must": [
+    "re:agent core: (4[9-9]\\d\\d|[5-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "ledger",
+   "cmd": "sh tests/agent/reported.sh",
+   "timeoutS": 600,
+   "must": [
+    "REPORTED OK"
+   ]
+  }
+ ]
+}

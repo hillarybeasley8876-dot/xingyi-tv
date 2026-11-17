@@ -1,0 +1,25 @@
+{
+ "id": "home-ark-2",
+ "title": "常用 fills the band (信号源, 投屏, 全部应用, 设置); the weather is never the 农历",
+ "brief": "briefs/home-ark-2.md",
+ "isolation": "worktree",
+ "maxRounds": 4,
+ "timeoutMin": 90,
+ "owns": [
+  "src/xyz/erapi0neer/orrery/Shelves.java",
+  "src/xyz/erapi0neer/orrery/HomeActivity.java",
+  "src/xyz/erapi0neer/orrery/HomeLayout.java",
+  "tools/ShelvesCheck.java",
+  "tools/HomeLayoutCheck.java"
+ ],
+ "accept": [
+  {
+   "name": "build-checks-design",
+   "cmd": "sh tools/accept_home_ark.sh",
+   "timeoutS": 900,
+   "must": [
+    "HOME ARK OK"
+   ]
+  }
+ ]
+}

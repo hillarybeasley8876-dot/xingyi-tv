@@ -1,0 +1,40 @@
+{
+ "id": "heard-like",
+ "title": "Names heard another way matched to earlier turns; why-questions are not closed by a data tool",
+ "brief": "briefs/heard-like.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Heard.java",
+  "src/xyz/erapi0neer/xingyi/agent/AgentLoop.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentEngine.java",
+  "tests/agent/HeardChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 400,
+   "must": [
+    "re:agent core: (263[89]|26[4-9]\\d|2[7-9]\\d\\d|[3-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_heard_like.sh",
+   "timeoutS": 900,
+   "must": [
+    "HEARD OK"
+   ]
+  }
+ ]
+}

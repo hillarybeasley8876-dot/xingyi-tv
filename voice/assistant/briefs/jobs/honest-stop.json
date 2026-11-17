@@ -1,0 +1,40 @@
+{
+ "id": "honest-stop",
+ "title": "Honest early stop: last real action, what is on the TV now, say(), 20 rounds",
+ "brief": "briefs/honest-stop.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Ledger.java",
+  "src/xyz/erapi0neer/xingyi/agent/AgentLoop.java",
+  "src/xyz/erapi0neer/xingyi/agent/Tool.java",
+  "tests/agent/StopChecks.java",
+  "tests/agent/AgentCoreTest.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 300,
+   "must": [
+    "re:agent core: (15[6-9]|1[6-9]\\d|[2-9]\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "api",
+   "cmd": "sh tests/agent/accept_honest_stop.sh",
+   "must": [
+    "API_OK"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,261 @@
+Activity Resolver Table:
+  Full MIME Types:
+      voice/audio:
+        159c241 com.netease.cloudmusic.tv/.activity.TvRedirectActivity filter 944c658
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "voice"
+          Authority: "netease.audioplayer": -1
+          Type: "voice/audio"
+
+  Base MIME Types:
+      voice:
+        159c241 com.netease.cloudmusic.tv/.activity.TvRedirectActivity filter 944c658
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "voice"
+          Authority: "netease.audioplayer": -1
+          Type: "voice/audio"
+
+  Schemes:
+      nmcloudmusictv:
+        159c241 com.netease.cloudmusic.tv/.activity.TvRedirectActivity filter 6c773b1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "nmcloudmusictv"
+      voice:
+        159c241 com.netease.cloudmusic.tv/.activity.TvRedirectActivity filter 944c658
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "voice"
+          Authority: "netease.audioplayer": -1
+          Type: "voice/audio"
+
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        badb3e6 com.netease.cloudmusic.tv/com.netease.cloudmusic.app.LoadingActivity filter c44af3b
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+          Category: "android.intent.category.LEANBACK_LAUNCHER"
+
+  MIME Typed Actions:
+      android.intent.action.VIEW:
+        159c241 com.netease.cloudmusic.tv/.activity.TvRedirectActivity filter 944c658
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "voice"
+          Authority: "netease.audioplayer": -1
+          Type: "voice/audio"
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      com.netease.cloudmusic.change_widget_musicinfo_action:
+        fa9dd27 com.netease.cloudmusic.tv/com.netease.cloudmusic.module.appwidget.PlayerWidget filter cf1f6c
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+          Action: "com.netease.music.action.STAR_MUSIC"
+          Action: "com.netease.cloudmusic.change_widget_musicinfo_action"
+        fdf3bd4 com.netease.cloudmusic.tv/com.netease.cloudmusic.module.appwidget.PlayerWidgetFourTwo filter d4b7935
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+          Action: "com.netease.music.action.STAR_MUSIC"
+          Action: "com.netease.cloudmusic.change_widget_musicinfo_action"
+        3f417d com.netease.cloudmusic.tv/com.netease.cloudmusic.module.appwidget.PlayerWidgetFourFour filter c0ef1ca
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+          Action: "com.netease.music.action.STAR_MUSIC"
+          Action: "com.netease.cloudmusic.change_widget_musicinfo_action"
+      com.netease.music.action.STAR_MUSIC:
+        fa9dd27 com.netease.cloudmusic.tv/com.netease.cloudmusic.module.appwidget.PlayerWidget filter cf1f6c
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+          Action: "com.netease.music.action.STAR_MUSIC"
+          Action: "com.netease.cloudmusic.change_widget_musicinfo_action"
+        fdf3bd4 com.netease.cloudmusic.tv/com.netease.cloudmusic.module.appwidget.PlayerWidgetFourTwo filter d4b7935
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+          Action: "com.netease.music.action.STAR_MUSIC"
+          Action: "com.netease.cloudmusic.change_widget_musicinfo_action"
+        3f417d com.netease.cloudmusic.tv/com.netease.cloudmusic.module.appwidget.PlayerWidgetFourFour filter c0ef1ca
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+          Action: "com.netease.music.action.STAR_MUSIC"
+          Action: "com.netease.cloudmusic.change_widget_musicinfo_action"
+      android.appwidget.action.APPWIDGET_UPDATE:
+        fa9dd27 com.netease.cloudmusic.tv/com.netease.cloudmusic.module.appwidget.PlayerWidget filter cf1f6c
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+          Action: "com.netease.music.action.STAR_MUSIC"
+          Action: "com.netease.cloudmusic.change_widget_musicinfo_action"
+        fdf3bd4 com.netease.cloudmusic.tv/com.netease.cloudmusic.module.appwidget.PlayerWidgetFourTwo filter d4b7935
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+          Action: "com.netease.music.action.STAR_MUSIC"
+          Action: "com.netease.cloudmusic.change_widget_musicinfo_action"
+        3f417d com.netease.cloudmusic.tv/com.netease.cloudmusic.module.appwidget.PlayerWidgetFourFour filter c0ef1ca
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+          Action: "com.netease.music.action.STAR_MUSIC"
+          Action: "com.netease.cloudmusic.change_widget_musicinfo_action"
+      android.intent.action.MEDIA_BUTTON:
+        4912872 com.netease.cloudmusic.tv/com.netease.cloudmusic.receiver.MediaButtonEventReceiver filter d13301f
+          Action: "android.intent.action.MEDIA_BUTTON"
+          mPriority=2147483647, mOrder=0, mHasPartialTypes=false
+
+Service Resolver Table:
+  Non-Data Actions:
+      com.netease.cloudmusic.network.detect:
+        64d24c3 com.netease.cloudmusic.tv/com.netease.cloudmusic.network.deteck.DetectService filter a9d17be
+          Action: "com.netease.cloudmusic.network.detect"
+
+Registered ContentProviders:
+  com.netease.cloudmusic.tv/androidx.core.content.FileProvider:
+    Provider{1de4140 com.netease.cloudmusic.tv/androidx.core.content.FileProvider}
+  com.netease.cloudmusic.tv/com.netease.cloudmusic.utils.CommonFileProvider:
+    Provider{b037879 com.netease.cloudmusic.tv/com.netease.cloudmusic.utils.CommonFileProvider}
+  com.netease.cloudmusic.tv/.provider.TvContentProvider:
+    Provider{5c559be com.netease.cloudmusic.tv/.provider.TvContentProvider}
+  com.netease.cloudmusic.tv/androidx.startup.InitializationProvider:
+    Provider{d534a1f com.netease.cloudmusic.tv/androidx.startup.InitializationProvider}
+  com.netease.cloudmusic.tv/com.tencent.mmkv.MMKVContentProvider:
+    Provider{6316c com.netease.cloudmusic.tv/com.tencent.mmkv.MMKVContentProvider}
+  com.netease.cloudmusic.tv/com.netease.cloudmusic.datareport.provider.ProcessProvider:
+    Provider{b3a2335 com.netease.cloudmusic.tv/com.netease.cloudmusic.datareport.provider.ProcessProvider}
+  com.netease.cloudmusic.tv/androidx.lifecycle.ProcessLifecycleOwnerInitializer:
+    Provider{e7953ca com.netease.cloudmusic.tv/androidx.lifecycle.ProcessLifecycleOwnerInitializer}
+  com.netease.cloudmusic.tv/me.jessyan.autosize.InitProvider:
+    Provider{96c693b com.netease.cloudmusic.tv/me.jessyan.autosize.InitProvider}
+  com.netease.cloudmusic.tv/org.xjy.android.treasure.provider.TreasureProvider:
+    Provider{9daf858 com.netease.cloudmusic.tv/org.xjy.android.treasure.provider.TreasureProvider}
+
+ContentProvider Authorities:
+  [com.netease.cloudmusic.tv.treasurepreferences]:
+    Provider{9daf858 com.netease.cloudmusic.tv/org.xjy.android.treasure.provider.TreasureProvider}
+      applicationInfo=ApplicationInfo{5f6bdb1 com.netease.cloudmusic.tv}
+  [com.netease.cloudmusic.tv.common.fileprovider]:
+    Provider{b037879 com.netease.cloudmusic.tv/com.netease.cloudmusic.utils.CommonFileProvider}
+      applicationInfo=ApplicationInfo{5f6bdb1 com.netease.cloudmusic.tv}
+  [com.netease.cloudmusic.tv.MMKVContentProvider]:
+    Provider{6316c com.netease.cloudmusic.tv/com.tencent.mmkv.MMKVContentProvider}
+      applicationInfo=ApplicationInfo{5f6bdb1 com.netease.cloudmusic.tv}
+  [com.netease.cloudmusic.tv.autosize-init-provider]:
+    Provider{96c693b com.netease.cloudmusic.tv/me.jessyan.autosize.InitProvider}
+      applicationInfo=ApplicationInfo{5f6bdb1 com.netease.cloudmusic.tv}
+  [com.netease.cloudmusic.tv.datareport.preferences]:
+    Provider{b3a2335 com.netease.cloudmusic.tv/com.netease.cloudmusic.datareport.provider.ProcessProvider}
+      applicationInfo=ApplicationInfo{5f6bdb1 com.netease.cloudmusic.tv}
+  [com.netease.cloudmusic.tv.lifecycle-process]:
+    Provider{e7953ca com.netease.cloudmusic.tv/androidx.lifecycle.ProcessLifecycleOwnerInitializer}
+      applicationInfo=ApplicationInfo{5f6bdb1 com.netease.cloudmusic.tv}
+  [com.netease.cloudmusic.tv.provider]:
+    Provider{5c559be com.netease.cloudmusic.tv/.provider.TvContentProvider}
+      applicationInfo=ApplicationInfo{5f6bdb1 com.netease.cloudmusic.tv}
+  [com.netease.cloudmusic.tv.fileprovider]:
+    Provider{1de4140 com.netease.cloudmusic.tv/androidx.core.content.FileProvider}
+      applicationInfo=ApplicationInfo{5f6bdb1 com.netease.cloudmusic.tv}
+  [com.netease.cloudmusic.tv.androidx-startup]:
+    Provider{d534a1f com.netease.cloudmusic.tv/androidx.startup.InitializationProvider}
+      applicationInfo=ApplicationInfo{5f6bdb1 com.netease.cloudmusic.tv}
+
+Key Set Manager:
+  [com.netease.cloudmusic.tv]
+      Signing KeySets: 7
+
+Packages:
+  Package [com.netease.cloudmusic.tv] (fc0e296):
+    userId=10022
+    pkg=Package{2e5e17 com.netease.cloudmusic.tv}
+    codePath=/data/app/com.netease.cloudmusic.tv-VnKnmI3bkxiXdyw0SraMcg==
+    resourcePath=/data/app/com.netease.cloudmusic.tv-VnKnmI3bkxiXdyw0SraMcg==
+    legacyNativeLibraryDir=/data/app/com.netease.cloudmusic.tv-VnKnmI3bkxiXdyw0SraMcg==/lib
+    primaryCpuAbi=armeabi-v7a
+    secondaryCpuAbi=null
+    versionCode=1002010 minSdk=17 targetSdk=29
+    versionName=1.2.10
+    splits=[base]
+    apkSigningVersion=2
+    applicationInfo=ApplicationInfo{5f6bdb1 com.netease.cloudmusic.tv}
+    flags=[ HAS_CODE ALLOW_CLEAR_USER_DATA LARGE_HEAP ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE PARTIALLY_DIRECT_BOOT_AWARE ]
+    dataDir=/data/user/0/com.netease.cloudmusic.tv
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    timeStamp=2026-11-03 13:18:36
+    firstInstallTime=2026-08-16 21:43:08
+    lastUpdateTime=2026-11-03 13:18:37
+    installerPackageName=com.xiaomi.mitv.appstore
+    signatures=PackageSignatures{1334204 version:2, signatures:[65f19d34], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ HAS_CODE ALLOW_CLEAR_USER_DATA LARGE_HEAP ]
+    requested permissions:
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.BLUETOOTH
+      android.permission.BLUETOOTH_ADMIN
+      android.permission.INTERNET
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.READ_LOGS
+      android.permission.READ_PHONE_STATE
+      android.permission.WAKE_LOCK
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.READ_CONTACTS
+      android.permission.ACCESS_FINE_LOCATION
+      android.permission.ACCESS_COARSE_LOCATION
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.WRITE_SETTINGS
+      android.permission.GET_TASKS
+      android.permission.REORDER_TASKS
+      android.permission.MODIFY_AUDIO_SETTINGS
+      android.permission.VIBRATE
+      com.android.launcher.permission.INSTALL_SHORTCUT
+      com.huawei.android.launcher.permission.CHANGE_BADGE
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
+      com.sec.android.provider.badge.permission.READ
+      com.sec.android.provider.badge.permission.WRITE
+      com.htc.launcher.permission.READ_SETTINGS
+      com.htc.launcher.permission.UPDATE_SHORTCUT
+      com.sonyericsson.home.permission.BROADCAST_BADGE
+      com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
+      com.anddoes.launcher.permission.UPDATE_COUNT
+      com.majeur.launcher.permission.UPDATE_BADGE
+      android.permission.READ_APP_BADGE
+      com.oppo.launcher.permission.READ_SETTINGS
+      com.oppo.launcher.permission.WRITE_SETTINGS
+      android.permission.FOREGROUND_SERVICE
+      com.asus.permission.READ_SDID_PROVIDER
+      com.asus.msa.SupplementaryDID.ACCESS
+      freemme.permission.msa
+    install permissions:
+      android.permission.MODIFY_AUDIO_SETTINGS: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      android.permission.BLUETOOTH: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.REORDER_TASKS: granted=true
+      android.permission.BLUETOOTH_ADMIN: granted=true
+      android.permission.ACCESS_LOCATION_EXTRA_COMMANDS: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.VIBRATE: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      com.android.launcher.permission.INSTALL_SHORTCUT: granted=true
+      android.permission.WAKE_LOCK: granted=true
+    User 0: ceDataInode=-4294706095 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      gids=[3002, 3003, 3001]
+      runtime permissions:
+        android.permission.READ_EXTERNAL_STORAGE: granted=true, flags=[ USER_FIXED ]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true, flags=[ USER_FIXED ]
+
+Package Changes:
+  Sequence number=31
+  User 0:
+    seq=1, package=com.xiaomi.voicecontrol
+    seq=14, package=xyz.erapi0neer.orrery
+    seq=29, package=xyz.erapi0neer.xingyi
+    seq=30, package=xyz.erapi0neer.xiaoaibridge
+
+
+Dexopt state:
+  [com.netease.cloudmusic.tv]
+    path: /data/app/com.netease.cloudmusic.tv-VnKnmI3bkxiXdyw0SraMcg==/base.apk
+      arm: [status=speed-profile] [reason=bg-dexopt]
+
+
+Compiler stats:
+  [com.netease.cloudmusic.tv]
+     base.apk - 30299

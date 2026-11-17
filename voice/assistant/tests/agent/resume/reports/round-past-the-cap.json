@@ -1,0 +1,91 @@
+{
+ "note": "坏在：state 说 rounds=2 已经到顶（maxRounds=2），却从第 3 轮开始跑 —— 轮数跑出了封顶",
+ "tool": "tools/resume/rehearse.mjs",
+ "at": "2026-11-12T05:32:47.000Z",
+ "scratch": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1",
+ "out": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/out",
+ "wt": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/wt",
+ "env": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/env",
+ "claude": "H:/tools/mitv/voice/assistant-out/tmp/resume/rehearse-1/stub/claude-stub.exe",
+ "realOut": "H:/tools/mitv/voice/assistant-out",
+ "jobs": [
+  {
+   "id": "rehearse-1-cap",
+   "scenario": "cap",
+   "model": "MiniMax-M78",
+   "maxRounds": 2,
+   "state0": {
+    "rounds": 2,
+    "history": 2,
+    "sessionStarted": true,
+    "sessionModel": "MiniMax-M78",
+    "sessionId": "44444444-4444-4444-8444-444444444444",
+    "status": "failed_round"
+   },
+   "launches": [
+    {
+     "n": 1,
+     "killed": false,
+     "beginRound": 3,
+     "rounds": [
+      3
+     ],
+     "stateBefore": {
+      "rounds": 2,
+      "history": 2,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "44444444-4444-4444-8444-444444444444",
+      "status": "failed_round"
+     },
+     "stateAfter": {
+      "rounds": 3,
+      "history": 3,
+      "sessionStarted": true,
+      "sessionModel": "MiniMax-M78",
+      "sessionId": "44444444-4444-4444-8444-444444444444",
+      "status": "needs_lead"
+     },
+     "stub": [
+      {
+       "round": 3,
+       "finished": true,
+       "resume": true,
+       "sessionId": "44444444-4444-4444-8444-444444444444",
+       "argv": [
+        "-p",
+        "--model",
+        "MiniMax-M78",
+        "--resume",
+        "44444444-4444-4444-8444-444444444444"
+       ],
+       "prompt": "The lead resumes this job. Re-read your status file and the brief, check what is on disk, and continue until the acceptance commands pass.",
+       "promptFile": "prompt-3.md"
+      }
+     ],
+     "accept": [
+      {
+       "round": 3,
+       "end": "ok",
+       "pass": true,
+       "why": [],
+       "stray": []
+      }
+     ]
+    }
+   ],
+   "final": {
+    "rounds": 3,
+    "history": 3,
+    "sessionStarted": true,
+    "sessionModel": "MiniMax-M78",
+    "sessionId": "44444444-4444-4444-8444-444444444444",
+    "status": "needs_lead"
+   },
+   "stub": {
+    "runs": 1,
+    "finished": 1
+   }
+  }
+ ]
+}

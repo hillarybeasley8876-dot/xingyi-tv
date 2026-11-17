@@ -1,0 +1,29 @@
+[
+ {
+  "id": "red-acceptance",
+  "title": "验收红在一条命令上的那一单（fixture）",
+  "status": "needs_lead",
+  "rounds": 4,
+  "startedMs": 1794439200000,
+  "updatedMs": 1794446400000,
+  "accept": [
+   { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500 },
+   { "name": "bridge", "cmd": "sh tests/agent/accept_handoff.sh", "timeoutS": 900 }
+  ],
+  "lastText": "bridge 那一条没过，日志在 build/accept-handoff-cmd.log。",
+  "history": [
+   { "round": 3, "end": "ok", "tools": 120, "cost": { "usd": 3.1, "outTok": 90000 } },
+   {
+    "round": 4,
+    "end": "ok",
+    "tools": 90,
+    "cost": { "usd": 1.4, "outTok": 40000 },
+    "acc": [
+     { "name": "core-checks", "pass": true, "why": [] },
+     { "name": "stray", "pass": false, "why": ["改了不该改的文件"] },
+     { "name": "bridge", "pass": false, "why": ["HANDOFF OK 没出现"] }
+    ]
+   }
+  ]
+ }
+]

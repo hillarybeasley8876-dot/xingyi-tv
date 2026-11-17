@@ -1,0 +1,23 @@
+{
+ "id": "cost-none-demo",
+ "title": "一轮都没记成本的那一单（fixture）",
+ "status": "accepted_mechanical",
+ "rounds": 1,
+ "maxRounds": 4,
+ "startedAt": "2026-11-12T02:20:00+08:00",
+ "startedMs": 1794423600000,
+ "updatedMs": 1794423600000,
+ "merged": true,
+ "commit": "bbb2222ccc3333ddd4444eee5555fff6666",
+ "lastText": "这一单的 history 里一个 cost 都没有。",
+ "history": [
+  {
+   "round": 1,
+   "end": "ok",
+   "tools": 7,
+   "acc": [
+    { "name": "core-checks", "pass": true, "why": [] }
+   ]
+  }
+ ]
+}

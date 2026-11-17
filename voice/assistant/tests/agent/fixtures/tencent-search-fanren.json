@@ -1,0 +1,255 @@
+{
+ "data": {
+  "errcode": 0,
+  "errmsg": "",
+  "areaBoxList": [
+   {
+    "boxId": "MainNeed",
+    "itemList": [
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc0033x2b7ys57"
+      },
+      "videoInfo": {
+       "title": "凡人修仙传仙界篇",
+       "typeName": "动漫",
+       "year": 0,
+       "area": "",
+       "subTitle": "沙雕动画凡人修仙传仙界篇 ",
+       "descrip": "二创动画，凡人修仙传仙界篇",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 72,
+         "episodeInfoList": [
+          {
+           "id": "z3171ldqt0c",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc0033x2b7ys57/z3171ldqt0c.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc003934zndbwn"
+      },
+      "videoInfo": {
+       "title": "凡人修仙传灵界篇",
+       "typeName": "动漫",
+       "year": 0,
+       "area": "",
+       "subTitle": "",
+       "descrip": "凡人沙雕动画-原著剧情",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 678,
+         "episodeInfoList": [
+          {
+           "id": "k3547m3f1qb",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc003934zndbwn/k3547m3f1qb.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc003onbddtsyr"
+      },
+      "videoInfo": {
+       "title": "凡人修仙传",
+       "typeName": "动漫",
+       "year": 0,
+       "area": "",
+       "subTitle": "",
+       "descrip": "",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 127,
+         "episodeInfoList": [
+          {
+           "id": "a3545o3u183",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc003onbddtsyr/a3545o3u183.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc0037fa8o5d2c"
+      },
+      "videoInfo": {
+       "title": "《凡人修仙传》正在更新中",
+       "typeName": "动漫",
+       "year": 0,
+       "area": "",
+       "subTitle": "这个仙界不太正经",
+       "descrip": "",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 227,
+         "episodeInfoList": [
+          {
+           "id": "e3085bs8ihu",
+           "title": "立即播放",
+           "url": "https://v.qq.com/x/cover/mzc0037fa8o5d2c/e3085bs8ihu.html"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "sdp001000ar3ukg"
+      },
+      "videoInfo": {
+       "title": "凡人修仙传",
+       "typeName": "动漫",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "来源·外站",
+       "descrip": "韩立得知云梦三派即将举办试剑大会，优胜者可进入灵眼之树，决定参与，以获取更多机缘。试剑大会中，韩立通过使用大量符箓一路“",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "播放源",
+         "enName": "bilibili",
+         "totalEpisode": 199,
+         "episodeInfoList": [
+          {
+           "id": "https://v.qq.com/search_redirect.html?url=https%3A%2F%2Fwww.bilibili.com%2Fbangumi%2Fplay%2Fep733316",
+           "title": "",
+           "url": "https://v.qq.com/search_redirect.html?cid=sdp001000ar3ukg&url=https%3A%2F%2Fwww.bilibili.com%2Fbangumi%2Fplay%2Fep733316"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "sdp001000aabhuk"
+      },
+      "videoInfo": {
+       "title": "凡人修仙传",
+       "typeName": "电视剧",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "来源·外站",
+       "descrip": "该剧改编自忘语的同名小说，讲述了一个资质平庸的山村穷小子，在机缘巧合下进入修仙门派，依靠自己的谋略与谨慎，一路不断努力突",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "播放源",
+         "enName": "youku",
+         "totalEpisode": 30,
+         "episodeInfoList": [
+          {
+           "id": "https://v.qq.com/search_redirect.html?url=https%3A%2F%2Fm.youku.com%2Falipay_video%2Fid_XNjQ3MTc1MDYwMA%3D%3D.html",
+           "title": "",
+           "url": "https://v.qq.com/search_redirect.html?cid=sdp001000aabhuk&url=https%3A%2F%2Fm.youku.com%2Falipay_video%2Fid_XNjQ3MTc1MDYwMA%3D%3D.html"
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "normalList": {
+   "itemList": [
+    {
+     "doc": {
+      "dataType": 5000,
+      "id": "MainNeed"
+     },
+     "videoInfo": {
+      "title": null,
+      "typeName": null,
+      "year": null,
+      "area": null,
+      "subTitle": null,
+      "descrip": "",
+      "status": null,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "w3161suhjol"
+     },
+     "videoInfo": {
+      "title": "<em>凡人修仙传</em>：第11话！合欢散来袭！韩立被强吻！老魔报仇一刻也不能忍！",
+      "typeName": "动漫",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "o3562nzkru6"
+     },
+     "videoInfo": {
+      "title": "<em>凡人修仙传</em>140：韩立再见毒蛟鬼妖，得知妖修进攻外星海的真相",
+      "typeName": "动漫",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "b3564n2rr78"
+     },
+     "videoInfo": {
+      "title": "<em>凡人修仙传</em>",
+      "typeName": "动漫",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    }
+   ]
+  }
+ }
+}

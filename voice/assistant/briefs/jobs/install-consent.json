@@ -1,0 +1,41 @@
+{
+ "id": "install-consent",
+ "title": "Any app the user names, from the maker's site, installed after the user hears source, signer, package and size",
+ "brief": "briefs/install-consent.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/ApkConsent.java",
+  "src/xyz/erapi0neer/xingyi/ConsentInstaller.java",
+  "src/xyz/erapi0neer/xingyi/Legacy.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/ApkConsentChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 400,
+   "must": [
+    "re:agent core: (295[1-9]|29[6-9]\\d|[3-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_install_consent.sh",
+   "timeoutS": 900,
+   "must": [
+    "INSTALL CONSENT OK"
+   ]
+  }
+ ]
+}

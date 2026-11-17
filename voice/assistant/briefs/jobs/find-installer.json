@@ -1,0 +1,40 @@
+{
+ "id": "find-installer",
+ "title": "find_installer: the official Android installer link, kept for the model, never read out",
+ "brief": "briefs/find-installer.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Installers.java",
+  "src/xyz/erapi0neer/xingyi/agent/WebSearch.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/InstallerChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 400,
+   "must": [
+    "re:agent core: (30[7-9]\\d|3[1-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_find_installer.sh",
+   "timeoutS": 900,
+   "must": [
+    "FIND INSTALLER OK"
+   ]
+  }
+ ]
+}

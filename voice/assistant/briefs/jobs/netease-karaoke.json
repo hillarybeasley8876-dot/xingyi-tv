@@ -1,0 +1,25 @@
+{
+ "id": "netease-karaoke",
+ "title": "伴奏/原唱 in one step: netease_karaoke tool, quick command, the label read right",
+ "brief": "briefs/netease-karaoke.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 105,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Karaoke.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "src/xyz/erapi0neer/xingyi/agent/AgentLoop.java",
+  "src/xyz/erapi0neer/xingyi/agent/QuickCommand.java",
+  "PROMPTS.md",
+  "tests/agent/SkillChecks.java",
+  "tests/agent/QuickChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (36(2[4-9]|[3-9]\\d)|3[7-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "prompts-doc", "cmd": "python tests/agent/prompts_doc.py --check", "timeoutS": 120, "must": ["PROMPTS.md is up to date"] },
+  { "name": "calibration", "cmd": "H:/tools/node/node-v24.22.2-win-x64/node.exe tests/agent/calibrate.mjs banzou yuanchang", "timeoutS": 600,
+    "must": ["EXPECT OK"], "mustNot": ["EXPECT FAIL", "ERROR"] }
+ ]
+}

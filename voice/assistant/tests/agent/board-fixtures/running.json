@@ -1,0 +1,39 @@
+{
+ "id": "running-demo",
+ "title": "在跑的那一单（fixture）",
+ "status": "running",
+ "rounds": 2,
+ "maxRounds": 6,
+ "sessionStarted": true,
+ "startedAt": "2026-11-12T03:50:00+08:00",
+ "startedMs": 1794426600000,
+ "updatedMs": 1794426900000,
+ "cwd": "H:\\tools\\mitv\\voice\\assistant-wt\\running-demo",
+ "lastText": "第二轮还在跑。\n刚把 tools/board/board.mjs 写完，验收三条里过了两条 | 第三条 bridge 还在编，最后一句故意写得很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长",
+ "history": [
+  {
+   "round": 1,
+   "end": "ok",
+   "tools": 12,
+   "models": { "MiniMax-M78": 20 },
+   "wrongModel": false,
+   "stray": [],
+   "acc": [
+    { "name": "core-checks", "pass": true, "why": [] },
+    { "name": "android-check", "pass": true, "why": [] }
+   ]
+  },
+  {
+   "round": 2,
+   "end": "ok",
+   "tools": 25,
+   "models": { "MiniMax-M78": 41 },
+   "wrongModel": false,
+   "stray": [],
+   "acc": [
+    { "name": "core-checks", "pass": true, "why": [] },
+    { "name": "android-check", "pass": true, "why": [] }
+   ]
+  }
+ ]
+}

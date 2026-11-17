@@ -1,0 +1,15 @@
+{
+  "id": "black-screen-home",
+  "at": "2026-11-12T22:26:29+08:00",
+  "ok": true,
+  "by": "black-screen-home.py",
+  "notes": [
+    "测试应用 xyz.erapi0neer.fluidlab 在前：True（前面是 xyz.erapi0neer.fluidlab/xyz.erapi0neer.fluid.LabActivity）",
+    "「屏幕黑了」说完以后前面是：xyz.erapi0neer.orrery/.HomeActivity",
+    "回答：reply: 刚才前台是Fluid Lab，已经退回桌面"
+  ],
+  "shots": [
+    "probe-out\\black-screen-home-before.png",
+    "probe-out\\black-screen-home-after.png"
+  ]
+}

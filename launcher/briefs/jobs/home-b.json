@@ -1,0 +1,27 @@
+{
+ "id": "home-b",
+ "title": "The home screen as variant B: the ruler index, the info line, now playing, the shelf-long axis",
+ "brief": "briefs/home-b.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/orrery/HomeUi.java",
+  "src/xyz/erapi0neer/orrery/HomeActivity.java",
+  "src/xyz/erapi0neer/orrery/HomeInfo.java",
+  "src/xyz/erapi0neer/orrery/HomeLayout.java",
+  "tools/HomeLayoutCheck.java",
+  "tools/home_check.sh",
+  "AndroidManifest.xml"
+ ],
+ "accept": [
+  {
+   "name": "build-checks-design",
+   "cmd": "sh tools/accept_home_b.sh",
+   "timeoutS": 900,
+   "must": [
+    "HOME B OK"
+   ]
+  }
+ ]
+}

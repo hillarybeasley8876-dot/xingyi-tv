@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "xingyi-tv": {
+      "command": "H:\\tools\\mitv\\voice\\assistant\\mcp_bridge\\.venv\\Scripts\\python.exe",
+      "args": ["H:\\tools\\mitv\\voice\\assistant\\mcp_bridge\\server.py"],
+      "env": {"PYTHONUTF8": "1"}
+    }
+  }
+}

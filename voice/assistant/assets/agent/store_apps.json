@@ -1,0 +1,663 @@
+{
+ "source": "小米电视应用商店「全部应用」，2026-11-05",
+ "apps": [
+  {
+   "package": "com.ktcp.video",
+   "name": "云视听极光",
+   "aliases": [
+    "腾讯视频",
+    "极光",
+    "腾讯视频TV",
+    "云视听极光TV"
+   ]
+  },
+  {
+   "package": "com.xiaodianshi.tv.yst",
+   "name": "云视听小电视",
+   "aliases": [
+    "B站电视版",
+    "小电视",
+    "哔哩哔哩电视版",
+    "哔哩哔哩TV"
+   ]
+  },
+  {
+   "package": "com.gitvdemo.video",
+   "name": "银河奇异果",
+   "aliases": [
+    "爱奇艺",
+    "奇异果",
+    "爱奇艺TV",
+    "爱奇艺电视版"
+   ]
+  },
+  {
+   "package": "com.hunantv.license",
+   "name": "芒果TV",
+   "aliases": [
+    "芒果",
+    "芒果TV",
+    "芒果tv"
+   ]
+  },
+  {
+   "package": "cn.egame.terminal.cloudtv",
+   "name": "天翼云游戏",
+   "aliases": []
+  },
+  {
+   "package": "com.hongen.app.word.ott",
+   "name": "洪恩识字",
+   "aliases": []
+  },
+  {
+   "package": "com.quark.yun.tv",
+   "name": "夸克网盘",
+   "aliases": [
+    "夸克",
+    "夸克网盘"
+   ]
+  },
+  {
+   "package": "com.dailyyoga.tv",
+   "name": "每日瑜伽",
+   "aliases": []
+  },
+  {
+   "package": "com.tvbc.mddtv",
+   "name": "BesTV粤视厅",
+   "aliases": []
+  },
+  {
+   "package": "com.newtv.cboxtv",
+   "name": "央视频TV",
+   "aliases": [
+    "央视频",
+    "CCTV",
+    "央视"
+   ]
+  },
+  {
+   "package": "air.com.gongfubb.wksz.tv",
+   "name": "悟空识字",
+   "aliases": []
+  },
+  {
+   "package": "com.dancetv.bokecc.sqaredancetv",
+   "name": "CIBN糖豆",
+   "aliases": []
+  },
+  {
+   "package": "com.yougu.catHouse.mitv",
+   "name": "猫宅日记",
+   "aliases": []
+  },
+  {
+   "package": "com.cmgame.gamehalltv",
+   "name": "咪咕游戏TV版",
+   "aliases": []
+  },
+  {
+   "package": "com.vcinema.client.tv",
+   "name": "华数南瓜电影",
+   "aliases": [
+    "南瓜电影"
+   ]
+  },
+  {
+   "package": "com.apowo.hysg.mitv",
+   "name": "三国的后裔",
+   "aliases": []
+  },
+  {
+   "package": "com.baijiahulian.tvmaodou",
+   "name": "毛豆爱古诗",
+   "aliases": []
+  },
+  {
+   "package": "com.stvgame.atm.mitv",
+   "name": "奥特曼英雄归来",
+   "aliases": []
+  },
+  {
+   "package": "com.ihuman.pinyin.ott",
+   "name": "洪恩拼音",
+   "aliases": []
+  },
+  {
+   "package": "com.menghuantv.buyu.mitv",
+   "name": "梦幻捕鱼",
+   "aliases": []
+  },
+  {
+   "package": "com.yyw.box.androidclient",
+   "name": "115生活",
+   "aliases": []
+  },
+  {
+   "package": "com.hpplay.happyplay.aw",
+   "name": "乐播投屏",
+   "aliases": [
+    "乐播",
+    "乐播投屏"
+   ]
+  },
+  {
+   "package": "cn.shanhai.shsanguo",
+   "name": "大三国时代",
+   "aliases": []
+  },
+  {
+   "package": "com.changba.sd",
+   "name": "唱吧",
+   "aliases": [
+    "唱吧"
+   ]
+  },
+  {
+   "package": "com.netease.cloudmusic.tv",
+   "name": "网易云音乐",
+   "aliases": [
+    "网易云",
+    "网易云音乐"
+   ]
+  },
+  {
+   "package": "com.lutongnet.nldmx",
+   "name": "脑力大冒险",
+   "aliases": []
+  },
+  {
+   "package": "com.lutongnet.ott.health",
+   "name": "身材有道",
+   "aliases": []
+  },
+  {
+   "package": "com.xy51.qidian.dldl.mitv",
+   "name": "新斗罗大陆",
+   "aliases": []
+  },
+  {
+   "package": "cn.jj.tv",
+   "name": "JJ斗地主",
+   "aliases": [
+    "JJ斗地主"
+   ]
+  },
+  {
+   "package": "com.xy51.wdtkwdt.mitv",
+   "name": "我的坦克我的团",
+   "aliases": []
+  },
+  {
+   "package": "cn.miguvideo.migutv",
+   "name": "咪视界",
+   "aliases": [
+    "咪咕视频",
+    "咪咕"
+   ]
+  },
+  {
+   "package": "com.cloudgame.plugin.mitv",
+   "name": "云游戏",
+   "aliases": []
+  },
+  {
+   "package": "com.dangbei.dbmusic",
+   "name": "当贝音乐",
+   "aliases": [
+    "当贝音乐"
+   ]
+  },
+  {
+   "package": "air.com.gongfubb.wk123.tv",
+   "name": "悟空数学",
+   "aliases": []
+  },
+  {
+   "package": "com.letv.tv",
+   "name": "CIBN乐视频",
+   "aliases": [
+    "乐视",
+    "乐视视频"
+   ]
+  },
+  {
+   "package": "com.ucmobile.yun.tv",
+   "name": "UC网盘TV版",
+   "aliases": []
+  },
+  {
+   "package": "com.lutongnet.ottmcsj",
+   "name": "探奇动物界",
+   "aliases": []
+  },
+  {
+   "package": "com.xy51.kzys.mitv",
+   "name": "空之要塞：启航",
+   "aliases": []
+  },
+  {
+   "package": "com.iptv.ylhb",
+   "name": "萌宝绘本故事",
+   "aliases": []
+  },
+  {
+   "package": "air.com.gongfubb.wkpy.tv",
+   "name": "悟空拼音",
+   "aliases": []
+  },
+  {
+   "package": "com.jiajia.v8.bootloader",
+   "name": "运动加加TV版",
+   "aliases": []
+  },
+  {
+   "package": "cn.aysm.xmb",
+   "name": "艾因小萌班",
+   "aliases": []
+  },
+  {
+   "package": "com.example.administrator.game.mitv",
+   "name": "左右脑开发",
+   "aliases": []
+  },
+  {
+   "package": "com.xuexue.ai.english.android.tv",
+   "name": "阳阳英语总动员电视版",
+   "aliases": []
+  },
+  {
+   "package": "com.baosheng.ktv",
+   "name": "开唛K歌",
+   "aliases": []
+  },
+  {
+   "package": "com.sohuott.tv.vod",
+   "name": "云视听悦厅TV",
+   "aliases": [
+    "搜狐视频",
+    "搜狐"
+   ]
+  },
+  {
+   "package": "com.lutongnet.ott.ggly",
+   "name": "果果乐园",
+   "aliases": []
+  },
+  {
+   "package": "com.ftaro.caocao.mitv",
+   "name": "乱世曹操传",
+   "aliases": []
+  },
+  {
+   "package": "com.yueshitv.movie.mi",
+   "name": "银河影MAX",
+   "aliases": []
+  },
+  {
+   "package": "com.stvgame.calabash.mitv",
+   "name": "葫芦娃",
+   "aliases": []
+  },
+  {
+   "package": "com.ftaro.metalsoldier.mitv",
+   "name": "合金机兵",
+   "aliases": []
+  },
+  {
+   "package": "com.ftaro.kingwar.mitv",
+   "name": "三国演义:吞噬无界",
+   "aliases": []
+  },
+  {
+   "package": "cn.jmake.karaoke.box.xiaomi",
+   "name": "CIBN雷石K歌",
+   "aliases": []
+  },
+  {
+   "package": "com.kwai.tv.yst",
+   "name": "云视听快TV",
+   "aliases": [
+    "快手",
+    "快手TV"
+   ]
+  },
+  {
+   "package": "com.xy51.qhjx.sy.mitv",
+   "name": "拳魂觉醒",
+   "aliases": []
+  },
+  {
+   "package": "com.hifimusic.xiaomi",
+   "name": "HiFi音乐",
+   "aliases": []
+  },
+  {
+   "package": "com.xunlei.downloadprovider.hd",
+   "name": "迅雷云盘",
+   "aliases": [
+    "迅雷",
+    "迅雷云盘"
+   ]
+  },
+  {
+   "package": "net.cibntv.ott.sk",
+   "name": "CIBN4K花园",
+   "aliases": []
+  },
+  {
+   "package": "cn.jmake.karaoke.opera",
+   "name": "CIBN听戏唱曲",
+   "aliases": []
+  },
+  {
+   "package": "com.qisyun.sunday",
+   "name": "知了知屏",
+   "aliases": []
+  },
+  {
+   "package": "cc.cibn.tv.kaibo",
+   "name": "CIBN开播",
+   "aliases": []
+  },
+  {
+   "package": "com.zentraedi.zspace.tv",
+   "name": "极空间",
+   "aliases": []
+  },
+  {
+   "package": "com.xiaomi.mitv.calendar",
+   "name": "电视日历",
+   "aliases": []
+  },
+  {
+   "package": "com.tencent.qqmusictv",
+   "name": "QQ音乐",
+   "aliases": [
+    "QQ音乐",
+    "qq音乐"
+   ]
+  },
+  {
+   "package": "com.kugou.android.tv",
+   "name": "酷狗音乐",
+   "aliases": [
+    "酷狗",
+    "酷狗音乐"
+   ]
+  },
+  {
+   "package": "com.tencent.karaoketv",
+   "name": "全民K歌",
+   "aliases": [
+    "全民K歌",
+    "全民k歌"
+   ]
+  },
+  {
+   "package": "com.joym.xiongdakuaipaotv.mi",
+   "name": "熊出没之熊大快跑",
+   "aliases": []
+  },
+  {
+   "package": "cn.com.wasu.main",
+   "name": "华数TV",
+   "aliases": [
+    "华数"
+   ]
+  },
+  {
+   "package": "com.iptv.liyuanhang_ott",
+   "name": "梨园行戏曲",
+   "aliases": []
+  },
+  {
+   "package": "com.tencent.start.tv",
+   "name": "腾讯START云游戏",
+   "aliases": [
+    "START",
+    "腾讯START",
+    "腾讯云游戏"
+   ]
+  },
+  {
+   "package": "rca.rc.tvtaobao",
+   "name": "电视淘宝",
+   "aliases": [
+    "淘宝",
+    "电视淘宝"
+   ]
+  },
+  {
+   "package": "com.joym.Xcmzjjxdtv.mi",
+   "name": "熊出没之机甲熊大",
+   "aliases": []
+  },
+  {
+   "package": "com.gitv.game.video",
+   "name": "酷玩空间站",
+   "aliases": []
+  },
+  {
+   "package": "org.cocos2dx.gugudoudizhu.mitv",
+   "name": "咕咕斗地主",
+   "aliases": []
+  },
+  {
+   "package": "com.lutongnet.kalaok2",
+   "name": "百灵K歌",
+   "aliases": []
+  },
+  {
+   "package": "com.bestv.ott.baseservices",
+   "name": "百视通TV",
+   "aliases": [
+    "百视通"
+   ]
+  },
+  {
+   "package": "com.xy51.playcrab.kos.mitv",
+   "name": "一拳超人：最强之男",
+   "aliases": []
+  },
+  {
+   "package": "com.ihuman.english.ott",
+   "name": "洪恩ABC",
+   "aliases": []
+  },
+  {
+   "package": "com.ihuman.imath.ott",
+   "name": "洪恩思维",
+   "aliases": []
+  },
+  {
+   "package": "com.xy51.snsgz2.youzu.mitv",
+   "name": "少年三国志2",
+   "aliases": []
+  },
+  {
+   "package": "com.daoran.AI.mengbaoqiyuji",
+   "name": "萌宝奇遇记",
+   "aliases": []
+  },
+  {
+   "package": "com.fmxos.app.smarttv",
+   "name": "喜马拉雅",
+   "aliases": [
+    "喜马拉雅",
+    "喜马拉雅FM"
+   ]
+  },
+  {
+   "package": "tv.huan.xiaoyoucast",
+   "name": "小柚投屏",
+   "aliases": []
+  },
+  {
+   "package": "com.fenbi.android.pedia.tv",
+   "name": "斑马百科",
+   "aliases": []
+  },
+  {
+   "package": "com.netease.filmlytv.xiaomitv",
+   "name": "网易爆米花",
+   "aliases": []
+  },
+  {
+   "package": "com.xiaomi.mitv.smartshare.casthelper",
+   "name": "投屏助手",
+   "aliases": []
+  },
+  {
+   "package": "com.lexinyou.game.dragon.mitv2",
+   "name": "龙之契约",
+   "aliases": []
+  },
+  {
+   "package": "com.gitv.kids",
+   "name": "银河少儿",
+   "aliases": []
+  },
+  {
+   "package": "com.daoran.AI.xingqihuolipaidui",
+   "name": "星启活力派对",
+   "aliases": []
+  },
+  {
+   "package": "com.holyblade.yzax.game",
+   "name": "千年风华",
+   "aliases": []
+  },
+  {
+   "package": "tv.huan.tudoudou",
+   "name": "土豆逗科普",
+   "aliases": []
+  },
+  {
+   "package": "com.xiaomi.mitv.light",
+   "name": "幻彩随影",
+   "aliases": []
+  },
+  {
+   "package": "com.xy51.dldllove.mitv",
+   "name": "斗罗大陆-逆转时空",
+   "aliases": []
+  },
+  {
+   "package": "com.oumi.utility.media.hub.tv",
+   "name": "VidHub",
+   "aliases": []
+  },
+  {
+   "package": "com.xy51.sevendoc.xgzl.mitv",
+   "name": "寻光之旅",
+   "aliases": []
+  },
+  {
+   "package": "com.gitv.health.video",
+   "name": "GITV百姓健康",
+   "aliases": []
+  },
+  {
+   "package": "com.xy51.zhaohe.mitv",
+   "name": "召唤与合成",
+   "aliases": []
+  },
+  {
+   "package": "com.xy51.wxgd.mitv",
+   "name": "无限格斗",
+   "aliases": []
+  },
+  {
+   "package": "com.igrs.omnienjoy.projector",
+   "name": "享屏",
+   "aliases": []
+  },
+  {
+   "package": "com.bestv.ott.baseservices.qcxj",
+   "name": "BesTV七彩戏剧",
+   "aliases": []
+  },
+  {
+   "package": "com.lutongnet.ott.tqdwy",
+   "name": "探趣动物园",
+   "aliases": []
+  },
+  {
+   "package": "com.xy51.sanguosha.mjz.mitv",
+   "name": "三国杀名将传",
+   "aliases": []
+  },
+  {
+   "package": "com.xiaomi.station.tv",
+   "name": "小米智能存储",
+   "aliases": []
+  },
+  {
+   "package": "com.xy51.nslm2zkb.hy.mitv",
+   "name": "女神联盟2",
+   "aliases": []
+  },
+  {
+   "package": "com.xy51.gongfuyx.mitv",
+   "name": "功夫英雄",
+   "aliases": []
+  },
+  {
+   "package": "tv.fun.orgban",
+   "name": "BesTV橙子瓣瓣",
+   "aliases": []
+  },
+  {
+   "package": "com.bestv.ott.baseservices.little",
+   "name": "BesTV小小幼幼园",
+   "aliases": []
+  },
+  {
+   "package": "com.smgtech.vvdplayer",
+   "name": "SMG投屏助手",
+   "aliases": []
+  },
+  {
+   "package": "com.xiaomatv.artaiclass",
+   "name": "CIBN小马AI美术",
+   "aliases": []
+  },
+  {
+   "package": "vip.mindshow.tv",
+   "name": "爱演示",
+   "aliases": []
+  },
+  {
+   "package": "tv.huan.ktjs",
+   "name": "客厅健身",
+   "aliases": []
+  },
+  {
+   "package": "tv.huan.mxhbk",
+   "name": "萌想虎百科",
+   "aliases": []
+  },
+  {
+   "package": "tv.huan.baduanjin",
+   "name": "八段锦",
+   "aliases": []
+  },
+  {
+   "package": "com.i4.tv.broadcast",
+   "name": "爱思投屏TV版",
+   "aliases": []
+  },
+  {
+   "package": "tv.huan.xykp",
+   "name": "小柚科普",
+   "aliases": []
+  },
+  {
+   "package": "com.jiyingxia.mall.tv",
+   "name": "极影匣",
+   "aliases": []
+  }
+ ]
+}

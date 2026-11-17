@@ -1,0 +1,33 @@
+{
+ "id": "memory",
+ "title": "Memory: remember / forget / remember_name tools over the profile (pure core)",
+ "brief": "briefs/memory.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 90,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Memory.java",
+  "src/xyz/erapi0neer/xingyi/agent/MemoryTools.java",
+  "tests/agent/MemoryChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 300,
+   "must": ["re:agent core: (3[1-9]\\d|[4-9]\\d\\d) passed, 0 failed"]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": ["ANDROID CHECK OK"]
+  },
+  {
+   "name": "memory-api",
+   "cmd": "sh tests/agent/accept_memory.sh",
+   "timeoutS": 120,
+   "must": ["MEMORY OK"]
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "id": "netease-fast",
+ "title": "Keys through the TV's remote service (6095), 伴奏 brings the player page back, a sleeping TV wakes for a song",
+ "brief": "briefs/netease-fast.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 105,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/KeyNames.java",
+  "src/xyz/erapi0neer/xingyi/agent/Karaoke.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/RemoteKeys.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/ScreenWake.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/SkillChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (38(09|[1-9]\\d)|39\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_netease_fast.sh", "timeoutS": 900, "must": ["NETEASE FAST OK"] }
+ ]
+}

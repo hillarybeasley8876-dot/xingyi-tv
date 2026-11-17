@@ -1,0 +1,39 @@
+{
+ "id": "watch-heard",
+ "title": "A title as speech recognition wrote it still finds its show (same sound, numbers written the other way); the search answer is slimmed before it is cached",
+ "brief": "briefs/watch-heard.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/TencentVideo.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/MovieChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: (443[4-9]|44[4-9]\\d|4[5-9]\\d\\d|[5-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_watch_heard.sh",
+   "timeoutS": 900,
+   "must": [
+    "WATCH HEARD OK"
+   ]
+  }
+ ]
+}

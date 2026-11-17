@@ -1,0 +1,21 @@
+{
+  "id": "seek-one-minute",
+  "at": "2026-11-14T13:19:24+08:00",
+  "ok": true,
+  "by": "seek-one-minute.py",
+  "notes": [
+    "「我想看别无选择第5集」说完，播放页在前：True（前面是 com.ktcp.video/.activity.TVPlayerActivity）",
+    "音频服务说这个应用：started",
+    "第 1 次看画面（124 秒）：进度条比例 0.1548（约 439 秒）；左上角那行字在",
+    "正片在放了（第 1 次看，124 秒）：进度条读得出比例",
+    "before：进度条 x 164..838（y=504），填充到 268，比例 0.1563 -> 442.9 秒",
+    "「快进一分钟」的回答：reply: 已快进 1 分钟",
+    "after：进度条 x 164..838（y=504），填充到 283，比例 0.1785 -> 505.8 秒",
+    "进度 443 秒 -> 506 秒，差 63 秒；两次暂停之间片子自己走了 5 秒（扣掉以后跳了大约 58 秒）",
+    "任务说「已快进」：True"
+  ],
+  "shots": [
+    "H:\\tools\\mitv\\voice\\assistant\\build\\realpath-frames\\seek-one-minute-before-131903-318604.png",
+    "H:\\tools\\mitv\\voice\\assistant\\build\\realpath-frames\\seek-one-minute-after-131914-930235.png"
+  ]
+}

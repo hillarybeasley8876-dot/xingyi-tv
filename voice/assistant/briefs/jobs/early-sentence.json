@@ -1,0 +1,20 @@
+{
+ "id": "early-sentence",
+ "title": "An answer starts being read at its first sentence, not at its second page",
+ "brief": "briefs/early-sentence.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Speech.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentEngine.java",
+  "tests/agent/StreamChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (36[2-9]\\d|3[7-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "wired", "cmd": "grep -c Speech.early( src/xyz/erapi0neer/xingyi/agent/tv/AgentEngine.java", "timeoutS": 30,
+    "must": ["re:^[1-9]"] }
+ ]
+}

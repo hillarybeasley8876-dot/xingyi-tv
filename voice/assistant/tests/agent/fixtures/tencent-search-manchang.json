@@ -1,0 +1,555 @@
+{
+ "data": {
+  "errcode": 0,
+  "errmsg": "",
+  "areaBoxList": [
+   {
+    "boxId": "3505",
+    "itemList": [
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200hmy1v5l"
+      },
+      "videoInfo": {
+       "title": "《漫长的季节》隐藏真相",
+       "typeName": "纪录片",
+       "year": 0,
+       "area": "其它地区",
+       "subTitle": "",
+       "descrip": "已完结\n在《漫长的季节》中我们除了能看到精彩的凶杀悬疑，还能看到独属于那个年代的人物故事和爱恨纠葛。本档栏目特邀中国政法",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "c3511oup3b8",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc0020098xcllx"
+      },
+      "videoInfo": {
+       "title": "醉梦",
+       "typeName": "电视剧",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "同题材·探寻真相",
+       "descrip": "多年前，记者沈乐水记录下老拉城啤酒厂工人们的生活。如今，她重回拉城，再次拿起摄像机，探寻那些被时间遗忘的角落。曹军、屠春",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "e4102s0t1jg",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "gjptgjxq2deuikw"
+      },
+      "videoInfo": {
+       "title": "心迷宫",
+       "typeName": "电影",
+       "year": 2014,
+       "area": "内地",
+       "subTitle": "同题材·探寻真相",
+       "descrip": "一个想要挣脱父权控制的青年，在一次争执中失手杀死了同村的痞子，被迫逃亡。他没有想过会用这样的方式逃离安逸的生活，离开之际",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "f4101yz8f3q",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002008n7xsn3"
+      },
+      "videoInfo": {
+       "title": "扫毒风暴",
+       "typeName": "电视剧",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "同主演·秦昊",
+       "descrip": "1995年，走私商卢少骅一夜间倾家荡产，却也因此意识到一种新型毒品——冰毒，所能带来的巨大利润，他心生邪念走入制贩毒歧途",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "i4101vvv9pe",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200sp5f6qy"
+      },
+      "videoInfo": {
+       "title": "被隐匿的真相",
+       "typeName": "电视剧",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "同题材·悬案",
+       "descrip": "青年刑警唐堂跟随师父参与调查一起十五年前的裸宴案，曾经的主犯白启明再次回到青城市引起了警方的高度重视。在对其布控调查的期",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "g4101nfbc7g",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002002yfzpaf"
+      },
+      "videoInfo": {
+       "title": "人之初",
+       "typeName": "电视剧",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "同题材·探寻真相",
+       "descrip": "一场突如其来的事故，将两个年轻人紧紧缠绕在一起。为破解身世之谜，他们携手合作配合警方共同挖清这座城市的陈年黑暗，解开重重",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "q4101rbtkw5",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200htmlstu"
+      },
+      "videoInfo": {
+       "title": "棋士",
+       "typeName": "电视剧",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "王宝强陈明昊人性博弈",
+       "descrip": "《棋士》以世纪初的南方城市为背景，讲述了一个普通的围棋老师崔业因一场意外卷入罪案，逐步走向犯罪，被身为警察的哥哥崔伟穷追",
+       "status": 0,
+       "playSites": []
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200ugphvq1"
+      },
+      "videoInfo": {
+       "title": "默杀",
+       "typeName": "电影",
+       "year": 2024,
+       "area": "内地",
+       "subTitle": "13亿票房复仇爽片",
+       "descrip": "女子中学学生陈语彤遭遇校园霸凌，母亲李涵却无法拯救身处“地狱”的女儿，身边所有人更是“视而不见”，一场集体的沉默酝酿着更",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "r41009oz2fy",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "7xznp6wv213h77o"
+      },
+      "videoInfo": {
+       "title": "乡村爱情1",
+       "typeName": "电视剧",
+       "year": 2006,
+       "area": "内地",
+       "subTitle": "同主演·范伟",
+       "descrip": "该剧讲述了林业大学毕业的待业青年谢永强、农村女青年王小蒙的爱情生活、创业故事。剧中谢永强与同村女孩王小蒙的爱情遭遇很多挫",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "b0018kf4wi3",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200lobmhjn"
+      },
+      "videoInfo": {
+       "title": "三大队",
+       "typeName": "电影",
+       "year": 2023,
+       "area": "内地",
+       "subTitle": "口碑佳作！张译12年追凶",
+       "descrip": "电影《三大队》根据真实事件改编，原作名为《请转告局长，三大队任务完成了》（作者深蓝）。\n刑侦大队队长程兵带领的三大队在办",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "x0048rl37js",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200knouwkg"
+      },
+      "videoInfo": {
+       "title": "寻雪迷踪",
+       "typeName": "电视剧",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "姜超史元庭破小镇灵异悬案",
+       "descrip": "骗子网红的巫术占卜，招来一起离奇绑架案。二十四小时之内，美女神婆，黑市绑匪，钱庄老板粉墨登场，在忙于奔命或救命的路上，各",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "g4101b7ac9t",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200acwia9w"
+      },
+      "videoInfo": {
+       "title": "猎罪图鉴",
+       "typeName": "电视剧",
+       "year": 2022,
+       "area": "内地",
+       "subTitle": "檀健次金世佳以画识凶",
+       "descrip": "该剧讲述了因一起尘封旧案而结怨的模拟画像师沈翊和刑警队长杜城，在机缘巧合下被迫搭档，两人联手侦破多起离奇疑案，共同追踪谜",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "g00423lkmas",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "79m0lxrtiovlg73"
+      },
+      "videoInfo": {
+       "title": "沙海",
+       "typeName": "电视剧",
+       "year": 2018,
+       "area": "内地",
+       "subTitle": "同主演·秦昊",
+       "descrip": "普通高考落榜生黎簇意外被袭击后被卷入一个以世界现状为目的的庞大计划中。然后认识了这一切的幕后布局者，以旅行摄影作家关根身",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "d0027j9renh",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200npw5kps"
+      },
+      "videoInfo": {
+       "title": "拯救嫌疑人",
+       "typeName": "电影",
+       "year": 2023,
+       "area": "内地",
+       "subTitle": "同题材·探寻真相",
+       "descrip": "华人金牌女律师陈智琪在女儿被绑架后，接到神秘电话要求她在五天之内为一位死刑犯做无罪辩护，否则撕票！被逼无奈下陈智琪联手警",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "d0047ww3b29",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "normalList": {
+   "itemList": [
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "mzc00200fhhxx8d"
+     },
+     "videoInfo": {
+      "title": "漫长的季节",
+      "typeName": "电视剧",
+      "year": 2023,
+      "area": "内地",
+      "subTitle": "范伟秦昊陈明昊生活悬疑",
+      "descrip": "小城桦林，此时，出租司机王响做梦也没想到，他还有机会遇到一个他此生最想遇到，又最怕遇到的人。是仇人还是故人？遇到了，就得",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "腾讯视频",
+        "enName": "qq",
+        "totalEpisode": 12,
+        "episodeInfoList": [
+         {
+          "id": "v0046des2cr",
+          "title": "立即播放",
+          "url": "https://v.qq.com/x/cover/mzc00200fhhxx8d/v0046des2cr.html"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "mzc00200p1bdcfe"
+     },
+     "videoInfo": {
+      "title": "漫长的季节[卫视版]",
+      "typeName": "电视剧",
+      "year": 2023,
+      "area": "内地",
+      "subTitle": "范伟秦昊陈明昊生活悬疑",
+      "descrip": "小城桦林，此时，出租司机王响做梦也没想到，他还有机会遇到一个他此生最想遇到，又最怕遇到的人。是仇人还是故人？遇到了，就得",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "腾讯视频",
+        "enName": "qq",
+        "totalEpisode": 18,
+        "episodeInfoList": [
+         {
+          "id": "f0048u04bgo",
+          "title": "立即播放",
+          "url": "https://v.qq.com/x/cover/mzc00200p1bdcfe/f0048u04bgo.html"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "sdp001kbs372n14"
+     },
+     "videoInfo": {
+      "title": "漫长的离乡",
+      "typeName": "纪录片",
+      "year": 2017,
+      "area": "荷兰",
+      "subTitle": "全网搜",
+      "descrip": "叙利亚爆发战争后，约有九百万难民被迫离乡，其中很多人暂住到了黎巴嫩。然而恐怖组织ISIS夺权后，这批难民却再也回不去自己",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "播放源",
+        "enName": "sdp",
+        "totalEpisode": 0,
+        "episodeInfoList": []
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "s0046co6p7n"
+     },
+     "videoInfo": {
+      "title": "纯享：群星合唱《<em>漫长的季节</em>》片尾曲《再回首》",
+      "typeName": "综艺",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "q35124c10wd"
+     },
+     "videoInfo": {
+      "title": "《<em>漫长的季节</em>》大结局，龚彪没死，导演真调皮",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "d3511f80kow"
+     },
+     "videoInfo": {
+      "title": "<em>漫长的季节</em>：太真实了！结婚前VS结婚后",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "q3512lx9s2p"
+     },
+     "videoInfo": {
+      "title": "【花絮】秦昊老年装细节把控很到位",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    }
+   ]
+  }
+ }
+}

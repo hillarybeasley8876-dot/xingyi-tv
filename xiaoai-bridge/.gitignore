@@ -1,0 +1,8 @@
+build/
+out/
+*.keystore
+__pycache__/
+tests/m3work/
+build-*/
+# which APK is on the TV, written by bridge.sh install (machine-local state)
+installed-apk.json

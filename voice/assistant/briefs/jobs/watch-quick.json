@@ -1,0 +1,22 @@
+{
+ "id": "watch-quick",
+ "title": "「我想看 X」 is decided by what Tencent Video has (a quick command with a strict lookup), not by the model's guess; titles with punctuation, shows not out yet, a series before a film of the same name",
+ "brief": "briefs/watch-quick.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Feeds.java",
+  "src/xyz/erapi0neer/xingyi/agent/TencentVideo.java",
+  "src/xyz/erapi0neer/xingyi/agent/QuickCommand.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/MovieChecks.java",
+  "tests/agent/QuickChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (43(2[7-9]|[3-9]\\d)|4[4-9]\\d\\d|[5-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_watch_quick.sh", "timeoutS": 900, "must": ["WATCH QUICK OK"] }
+ ]
+}

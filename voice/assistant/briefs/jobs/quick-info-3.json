@@ -1,0 +1,23 @@
+{
+ "id": "quick-info-3",
+ "title": "Another city's weather on any day as a quick command, day words never in the place, one-item hot lists and the last game read well",
+ "brief": "briefs/quick-info-3.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/QuickCommand.java",
+  "src/xyz/erapi0neer/xingyi/agent/HotList.java",
+  "src/xyz/erapi0neer/xingyi/agent/Sports.java",
+  "tests/agent/QuickChecks.java",
+  "tests/agent/ContextChecks.java",
+  "tests/agent/DispatchChecks.java",
+  "tests/agent/FeedChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (400[2-9]|40[1-9]\\d|4[1-9]\\d\\d|[5-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_quick_info3.sh", "timeoutS": 900, "must": ["QUICK INFO3 OK"] }
+ ]
+}

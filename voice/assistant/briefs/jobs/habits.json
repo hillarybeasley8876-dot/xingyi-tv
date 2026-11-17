@@ -1,0 +1,34 @@
+{
+ "id": "habits",
+ "title": "Habits: 星仪 learns the user's habits from what it does and puts a summary into every prompt",
+ "brief": "briefs/habits.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Habits.java",
+  "src/xyz/erapi0neer/xingyi/agent/MemoryTools.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/AgentEngine.java",
+  "tests/agent/HabitChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 300,
+   "must": ["re:agent core: (55[4-9]|5[6-9]\\d|[6-9]\\d\\d) passed, 0 failed"]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": ["ANDROID CHECK OK"]
+  },
+  {
+   "name": "tv-build-and-wiring",
+   "cmd": "sh tests/agent/accept_habits.sh",
+   "timeoutS": 900,
+   "must": ["HABITS OK"]
+  }
+ ]
+}

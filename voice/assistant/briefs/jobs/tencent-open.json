@@ -1,0 +1,24 @@
+{
+ "id": "tencent-open",
+ "title": "tencent_video_open: a show found in Tencent Video's own search and opened in 云视听极光 by its cover id; where it plays when not there",
+ "brief": "briefs/tencent-open.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 105,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/TencentVideo.java",
+  "src/xyz/erapi0neer/xingyi/agent/Feeds.java",
+  "src/xyz/erapi0neer/xingyi/agent/Movies.java",
+  "src/xyz/erapi0neer/xingyi/agent/AgentLoop.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/MovieChecks.java",
+  "PROMPTS.md"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (40(6[7-9]|[7-9]\\d)|4[1-9]\\d\\d|[5-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] },
+  { "name": "prompts-doc", "cmd": "python tests/agent/prompts_doc.py --check", "timeoutS": 120, "must": ["PROMPTS.md is up to date"] },
+  { "name": "bridge", "cmd": "sh tests/agent/accept_tencent_open.sh", "timeoutS": 900, "must": ["TENCENT OPEN OK"] }
+ ]
+}

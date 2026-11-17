@@ -1,0 +1,20 @@
+{
+ "entries": [
+  {
+   "id": "ktcp-pause-real",
+   "feature": "真机上按暂停，极光真的暂停了",
+   "why": "静音检查只看到 dumpsys 里的字符串，没看到画面",
+   "needs": ["放一集"],
+   "since": "2026-11-11",
+   "script": "tests/agent/verify.sh"
+  },
+  {
+   "id": "standby-home-real",
+   "feature": "待机时说「回桌面」，真的回到桌面",
+   "why": "静音检查没有真的待机过",
+   "needs": ["亮屏", "有人在旁边"],
+   "since": "2026-11-12",
+   "script": ""
+  }
+ ]
+}

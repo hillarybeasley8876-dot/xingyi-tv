@@ -1,0 +1,28 @@
+{
+  "id": "pause-through-xiaoai",
+  "at": "2026-11-14T12:56:03+08:00",
+  "ok": true,
+  "by": "pause-through-xiaoai.py",
+  "notes": [
+    "「我想看别无选择第5集」的回答：reply: 已在云视听极光播放《别无选择》第 5 集；不是会员的话正片前有一两分钟广告",
+    "「我想看别无选择第5集」说完，播放页在前：True（前面是 com.ktcp.video/.activity.TVPlayerActivity）",
+    "第 1 次看画面（125 秒）：进度条比例 0.1600（约 453 秒）；左上角那行字在",
+    "正片在放了（第 1 次看，125 秒）：进度条读得出比例",
+    "正片在放、说「暂停」之前，音频服务说：started",
+    "说完 3 秒以后，音频服务说：paused",
+    "任务做了什么：reply: 好的",
+    "  音频服务的事件：12:55:51 player piid:95 state:stopped",
+    "  音频服务的事件：12:55:51 player piid:231 state:started",
+    "  音频服务的事件：12:55:52 player piid:223 state:paused",
+    "  音频服务的事件：12:55:52 player piid:231 state:started",
+    "  音频服务的事件：12:55:52 new player piid:239 uid/pid:10021/10898 type:android.media.AudioTrack attr:AudioAttributes: usage=USAGE_MEDIA ",
+    "  音频服务的事件：12:55:53 player piid:239 state:started",
+    "  音频服务的事件：12:55:53 player piid:95 state:started",
+    "  音频服务的事件：12:55:54 player piid:239 state:stopped",
+    "  音频服务的事件：12:55:54 player piid:239 state:stopped",
+    "  音频服务的事件：12:55:54 releasing player piid:239"
+  ],
+  "shots": [
+    "probe-out\\pause-through-xiaoai.png"
+  ]
+}

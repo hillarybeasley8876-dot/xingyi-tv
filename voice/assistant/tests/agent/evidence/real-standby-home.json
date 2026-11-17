@@ -1,0 +1,28 @@
+{
+  "id": "standby-home",
+  "at": "2026-11-14T11:37:06+08:00",
+  "ok": true,
+  "by": "standby-home.py",
+  "notes": [
+    "开浏览器之前记下电视的时间：2026-11-14 11:35:25（判据读的系统事件从这一刻起）",
+    "浏览器在前：True（前面是 com.phlox.tvwebbrowser/.activity.main.MainActivity）",
+    "按了 HOME，前面是 xyz.erapi0neer.orrery/.HomeActivity",
+    "熄屏了：静等 90 秒观察窗口，一个键都不按、一次都不读最前面的 activity（守护心跳 20 秒，够两次以上）",
+    "窗口里系统记了 9 条事件（2026-11-14 11:35:25 起）：",
+    "    2026-11-14 11:35:26  MOVE_TO_BACKGROUND     xyz.erapi0neer.orrery",
+    "    2026-11-14 11:35:26  MOVE_TO_FOREGROUND     com.phlox.tvwebbrowser",
+    "    2026-11-14 11:35:27  MOVE_TO_BACKGROUND     com.phlox.tvwebbrowser",
+    "    2026-11-14 11:35:27  MOVE_TO_FOREGROUND     xyz.erapi0neer.orrery",
+    "    2026-11-14 11:35:31  MOVE_TO_FOREGROUND     com.phlox.tvwebbrowser",
+    "    2026-11-14 11:35:31  SCREEN_NON_INTERACTIVE android",
+    "    2026-11-14 11:35:32  MOVE_TO_BACKGROUND     com.phlox.tvwebbrowser",
+    "    2026-11-14 11:36:01  MOVE_TO_FOREGROUND     xyz.erapi0neer.orrery",
+    "    2026-11-14 11:36:01  MOVE_TO_BACKGROUND     xyz.erapi0neer.orrery",
+    "浮上来了：2026-11-14 11:35:31 com.phlox.tvwebbrowser（熄屏后 0 秒）",
+    "桌面回到最上面：2026-11-14 11:36:01（熄屏后 30 秒，判据是 60 秒内）",
+    "判了什么：过"
+  ],
+  "shots": [
+    "probe-out\\standby-home-end.png"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+ "id": "ktcp-state",
+ "title": "「暂停」 said to XiaoAi stays paused on 云视听极光 (its keys are toggles and its own voice agent acts first): the audio service tells what its player is doing; switch_input confirms itself",
+ "brief": "briefs/ktcp-state.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/AudioPlayers.java",
+  "src/xyz/erapi0neer/xingyi/agent/PlayerPages.java",
+  "src/xyz/erapi0neer/xingyi/agent/AgentLoop.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/SkillChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: (464[2-9]|46[5-9]\\d|4[7-9]\\d\\d|[5-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_ktcp_state.sh",
+   "timeoutS": 900,
+   "must": [
+    "KTCP STATE OK"
+   ]
+  }
+ ]
+}

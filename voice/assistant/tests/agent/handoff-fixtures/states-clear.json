@@ -1,0 +1,26 @@
+[
+ {
+  "id": "clear-merged",
+  "title": "今天已经合了的那一单（fixture）",
+  "status": "accepted_mechanical",
+  "rounds": 1,
+  "merged": true,
+  "commit": "67d8651bb",
+  "startedMs": 1794446400000,
+  "updatedMs": 1794450000000,
+  "lastText": "三条验收全过，已经合进主仓库。",
+  "history": [
+   {
+    "round": 1,
+    "end": "ok",
+    "tools": 31,
+    "cost": { "usd": 2.5, "outTok": 60000 },
+    "acc": [
+     { "name": "core-checks", "pass": true, "why": [] },
+     { "name": "android-check", "pass": true, "why": [] },
+     { "name": "bridge", "pass": true, "why": [] }
+    ]
+   }
+  ]
+ }
+]

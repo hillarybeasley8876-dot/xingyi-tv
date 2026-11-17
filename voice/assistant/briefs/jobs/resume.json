@@ -1,0 +1,41 @@
+{
+ "id": "resume",
+ "title": "被杀掉的单接着跑，而且有证据：假工人 + 假 claude 把 run.mjs 的续跑规则复演一遍（tools/resume/rehearse.mjs）",
+ "brief": "briefs/resume.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 120,
+ "owns": [
+  "tools/resume/",
+  "tests/agent/resume/",
+  "tests/agent/ResumeChecks.java",
+  "tests/agent/accept_resume.sh",
+  "tests/agent/SkillChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|545[8-9]|54[6-9]\\d|5[5-9]\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_resume.sh",
+   "timeoutS": 900,
+   "must": [
+    "RESUME OK"
+   ]
+  }
+ ]
+}

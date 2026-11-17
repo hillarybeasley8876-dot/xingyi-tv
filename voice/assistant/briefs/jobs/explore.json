@@ -1,0 +1,40 @@
+{
+ "id": "explore",
+ "title": "Explore: an app's own deep links, and what 星仪 learned by trying",
+ "brief": "briefs/explore.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 120,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/AppIntents.java",
+  "src/xyz/erapi0neer/xingyi/agent/AppNotes.java",
+  "src/xyz/erapi0neer/xingyi/agent/ExploreTools.java",
+  "tests/agent/ExploreChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 300,
+   "must": [
+    "re:agent core: (13[4-9]\\d|1[4-9]\\d\\d|[2-9]\\d{3}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "build-and-api",
+   "cmd": "sh tests/agent/accept_explore.sh",
+   "timeoutS": 900,
+   "must": [
+    "EXPLORE OK"
+   ]
+  }
+ ]
+}

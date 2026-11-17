@@ -1,0 +1,85 @@
+{
+ "what": "每一路调试广播在真机上带的键（只有形状，没有内容）——2026-11-12 23:07 之前，hint-card-not-a-switch 从 STATE 里读 hints，那个字段从来不在里面（在 MEMORY 里），这条场景从写出来那天就不可能通过，而离线检查一路 REALPATH OK。由 lead 在电视上抓：am broadcast … -a xyz.erapi0neer.xingyi.agent.STATE / .MEMORY，只留键和容器形状。",
+ "captured": "2026-11-13T01:52+08:00",
+ "STATE": {
+  "awaiting": null,
+  "busy": null,
+  "eyes": null,
+  "perf": {
+   "median_first_round_ms": null,
+   "median_first_shown_ms": null,
+   "median_first_speech_ms": null,
+   "median_round_ms": null,
+   "median_wall_ms": null,
+   "tasks": null
+  },
+  "perf_recent": [
+   {
+    "first_round_ms": null,
+    "first_shown_ms": null,
+    "first_speech_ms": null,
+    "quick": null,
+    "rounds": null,
+    "said": null,
+    "slowest_tool": null,
+    "slowest_tool_ms": null,
+    "wall_ms": null
+   }
+  ],
+  "prompt": null,
+  "request": null,
+  "searches_today": {
+   "web": null,
+   "x": null
+  },
+  "streaming": null,
+  "task": {
+   "actions": [
+    {
+     "ok": null,
+     "read": null,
+     "status": null,
+     "tool": null,
+     "what": null
+    }
+   ],
+   "done_when": null,
+   "error": null,
+   "goal": null,
+   "id": null,
+   "last_reply": null,
+   "source": null,
+   "started_at": null,
+   "state": null,
+   "steps": [
+    {
+     "note": null,
+     "status": null,
+     "text": null
+    }
+   ],
+   "updated_at": null,
+   "utterance": null
+  },
+  "warm": null,
+  "xiaoai_ask": null,
+  "xiaoai_ask_ms_ago": null
+ },
+ "MEMORY": {
+  "aliases": [
+   {
+    "heard": null,
+    "written": null
+   }
+  ],
+  "facts": [
+   null
+  ],
+  "habits": [
+   null
+  ],
+  "hints": null,
+  "notes": [],
+  "schedules": []
+ }
+}

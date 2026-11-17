@@ -1,0 +1,15 @@
+{
+  "id": "panel-while-speaking",
+  "at": "2026-11-12T11:05:14+08:00",
+  "ok": true,
+  "by": "panel-while-speaking.py",
+  "notes": [
+    "静音任务「看一下电视现在开了多久」起来 8.9 秒时还在跑：True",
+    "窗口表里星仪的面板窗口 1 个：Window #1 Window{3d8f8b4 u0 xyz.erapi0neer.xiaoaibridge}:",
+    "屏上的字（给人看的，判的是窗口）：（读不到）",
+    "任务的回答：reply: 电视从上次重启后已经开了 19 小时 49 分了（待机不算重启）。"
+  ],
+  "shots": [
+    "probe-out\\panel-while-speaking-3s.png"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+ "id": "standby-home-events",
+ "title": "判据读系统的事件顺序，不读熄屏时永远是空的那个字段",
+ "brief": "briefs/standby-home-events.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 80,
+ "owns": [
+  "tests/agent/realpath/probe.py",
+  "tests/agent/realpath/scenarios/standby-home.py",
+  "tests/agent/realpath/scenarios/pause-through-xiaoai.py",
+  "tests/agent/realpath/scenarios/seek-one-minute.py",
+  "tests/agent/realpath/scenarios/episode-open.py",
+  "tests/agent/realpath/rehearse.py",
+  "tests/agent/realpath/usage_check.py",
+  "tests/agent/accept_real_path.sh"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|583[6-9]|58[4-9]\\d|59\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_real_path.sh",
+   "timeoutS": 900,
+   "must": [
+    "REALPATH OK"
+   ]
+  }
+ ]
+}

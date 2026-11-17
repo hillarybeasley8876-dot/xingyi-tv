@@ -1,0 +1,40 @@
+{
+ "id": "schedules",
+ "title": "Schedules: schedule_task / list_schedules / cancel_schedule and the TV clock that fires them",
+ "brief": "briefs/schedules.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 120,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Schedules.java",
+  "src/xyz/erapi0neer/xingyi/agent/ScheduleTools.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/Scheduler.java",
+  "tests/agent/ScheduleChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 300,
+   "must": [
+    "re:agent core: (8[5-9]\\d|9\\d\\d|9\\d\\d|\\d{4}) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 300,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "tv-build-and-api",
+   "cmd": "sh tests/agent/accept_schedules.sh",
+   "timeoutS": 900,
+   "must": [
+    "SCHEDULES OK"
+   ]
+  }
+ ]
+}

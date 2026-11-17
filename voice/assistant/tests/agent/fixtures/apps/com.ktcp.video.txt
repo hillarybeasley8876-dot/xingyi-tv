@@ -1,0 +1,761 @@
+Activity Resolver Table:
+  Schemes:
+      txdt0and0ymkjb42rak7:
+        40883ed com.ktcp.video/com.tencent.qqlive.module.videoreport.scheme.SchemeRouterActivity filter 49fdde7
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "txdt0and0ymkjb42rak7"
+      tenvideo2:
+        6209222 com.ktcp.video/.activity.OpenJumpActivity filter 6c119cd
+          Action: "com.tencent.qqlivetv.open"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "tenvideo2"
+        6209222 com.ktcp.video/.activity.OpenJumpActivity filter 7a2a282
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "tenvideo2"
+          Authority: "tvrecommendation": -1
+          Path: "PatternMatcher{LITERAL: /video}"
+        6209222 com.ktcp.video/.activity.OpenJumpActivity filter 5d285c9
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "tenvideo2"
+          Authority: "tvrecommendation": -1
+          Path: "PatternMatcher{LITERAL: /video}"
+
+  Non-Data Actions:
+      com.tv.ktcp.sync.open.detail:
+        6209222 com.ktcp.video/.activity.OpenJumpActivity filter 4efd93
+          Action: "com.tencent.qqlivetv.open"
+          Action: "com.tv.tcl.open.detail"
+          Action: "com.tv.ktcp.sync.open.detail"
+          Category: "android.intent.category.DEFAULT"
+      com.tv.tcl.open.detail:
+        6209222 com.ktcp.video/.activity.OpenJumpActivity filter 4efd93
+          Action: "com.tencent.qqlivetv.open"
+          Action: "com.tv.tcl.open.detail"
+          Action: "com.tv.ktcp.sync.open.detail"
+          Category: "android.intent.category.DEFAULT"
+      android.intent.action.MAIN:
+        b0c4b3 com.ktcp.video/.activity.MainActivity filter 47b0364
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.MONKEY"
+          Category: "android.intent.category.LAUNCHER"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.LEANBACK_LAUNCHER"
+      com.dynamic.load.proxy.activity.VIEW:
+        ca47a70 com.ktcp.video/com.tencent.qqlivetv.dynamicload.core.DLProxyActivity filter cddffda
+          Action: "com.dynamic.load.proxy.activity.VIEW"
+          Category: "android.intent.category.DEFAULT"
+      com.ktcp.game.Launcher:
+        1f671e9 com.ktcp.video/.activity.GameLaunchActivity filter e2c3fa6
+          Action: "com.ktcp.game.Launcher"
+          Category: "android.intent.category.DEFAULT"
+      com.ktcp.video.activity.dialog:
+        fd9ae6e com.ktcp.video/.activity.DialogActivity filter 6e1dfef
+          Action: "com.ktcp.video.activity.dialog"
+          Category: "android.intent.category.DEFAULT"
+      com.ktcp.plugin.Launcher:
+        9e8f90f com.ktcp.video/.activity.PluginLaunchActivity filter 2c72ae8
+          Action: "com.ktcp.plugin.Launcher"
+          Category: "android.intent.category.DEFAULT"
+        4aecd9c com.ktcp.video/.activity.VoicePluginLaunchActivity filter 5502501
+          Action: "com.ktcp.plugin.Launcher"
+          Category: "android.intent.category.DEFAULT"
+      com.ktcp.video.activity.force_upgrade:
+        3bb43a5 com.ktcp.video/.activity.ForceUpgradeActivity filter a74b585
+          Action: "com.ktcp.video.activity.force_upgrade"
+          Category: "android.intent.category.DEFAULT"
+      com.tencent.video.h5.open:
+        bf6437a com.ktcp.video/com.tencent.qqlivetv.h5.H5BrowserActivity filter 1dc64ce
+          Action: "com.tencent.video.h5.open"
+          Category: "android.intent.category.DEFAULT"
+      com.ktcp.video.activity.eastereggs:
+        ac6172b com.ktcp.video/.activity.EasterEggsActivity filter 2415afc
+          Action: "com.ktcp.video.activity.eastereggs"
+          Category: "android.intent.category.DEFAULT"
+      com.dynamic.load.proxy.fragmentactivity.VIEW:
+        7a92788 com.ktcp.video/com.tencent.qqlivetv.dynamicload.core.DLProxyFragmentActivity filter b168c0b
+          Action: "com.dynamic.load.proxy.fragmentactivity.VIEW"
+          Category: "android.intent.category.DEFAULT"
+      com.tencent.qqlivetv.open:
+        6209222 com.ktcp.video/.activity.OpenJumpActivity filter 4efd93
+          Action: "com.tencent.qqlivetv.open"
+          Action: "com.tv.tcl.open.detail"
+          Action: "com.tv.ktcp.sync.open.detail"
+          Category: "android.intent.category.DEFAULT"
+      android.intent.action.SEARCH:
+        6209222 com.ktcp.video/.activity.OpenJumpActivity filter 596f1d0
+          Action: "android.intent.action.SEARCH"
+
+Receiver Resolver Table:
+  Schemes:
+      txaiagent:
+        8417521 com.ktcp.video/.receiver.VoiceHostReceiver filter fa0acf6
+          Action: "com.ktcp.aiagent.alarm"
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "txaiagent"
+          Authority: "openintent": -1
+          Authority: "openprotocol": -1
+        8417521 com.ktcp.video/.receiver.VoiceHostReceiver filter 860c8f7
+          Action: "com.ktcp.aiagent.alarm"
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "txaiagent"
+          Authority: "openprotocol": -1
+      tenvideo2:
+        e151d46 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenBroadcastReceiver filter 8ea20a0
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.BROWSABLE"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "tenvideo2"
+      package:
+        80cfb07 com.ktcp.video/com.tencent.qqlivetv.externalapk.InstallReciver filter b415d15
+          Action: "android.intent.action.PACKAGE_ADDED"
+          Scheme: "package"
+
+  Non-Data Actions:
+      com.ktcp.aiagent.alarm:
+        8417521 com.ktcp.video/.receiver.VoiceHostReceiver filter 767b591
+          Action: "com.ktcp.aiagent.alarm"
+      com.ktcp.hippy.loading.finish:
+        6d3434 com.ktcp.video/.hippy.HippyActivityReceiver filter 65c2646
+          Action: "com.ktcp.hippy.error"
+          Action: "com.ktcp.hippy.loading.finish"
+          Action: "com.ktcp.hippy.exit"
+      com.ktcp.video.PRELOAD:
+        89f425d com.ktcp.video/.receiver.AutoBootReceiver filter 4f3e61b
+          Action: "android.intent.action.MEDIA_MOUNTED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "com.ktcp.video.AUTO_BOOT"
+          Action: "com.ktcp.video.PRELOAD"
+      com.ktcp.video.H5.stop_service:
+        2f5c7d2 com.ktcp.video/com.tencent.qqlivetv.h5.CloseH5ProcessBroadCastReceiver filter 2f9e534
+          Action: "com.ktcp.video.H5.stop_service"
+      com.tv.tothird.delall:
+        e151d46 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenBroadcastReceiver filter 6965a3
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_CHANNEL"
+          Action: "QQLIVETV.OPEN.INTENT.SEARCH.SEARCH"
+          Action: "QQLIVETV.OPEN.INTENT.LIVE.OPEN_TVSTATION"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_VIDEO"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_DETAIL"
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_HOME"
+          Action: "QQLIVETV.OPEN.INTENT.CHILD.VARIFY"
+          Action: "com.tv.tothird.delall"
+          Action: "com.ktcp.video"
+          Action: "com.ktcp.video.logout"
+          Action: "QQLIVETV.OPEN.INTENT.CHANGE.MODE"
+      com.ktcp.video.UPDATE_SPLASH_CACHE:
+        3f440a3 com.ktcp.video/com.tencent.qqlivetv.start.ad.AdAlarmReceiver filter 2a2b8ff
+          Action: "com.ktcp.video.UPDATE_SPLASH_CACHE"
+      QQLIVETV.OPEN.INTENT.SEARCH.SEARCH:
+        e151d46 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenBroadcastReceiver filter 6965a3
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_CHANNEL"
+          Action: "QQLIVETV.OPEN.INTENT.SEARCH.SEARCH"
+          Action: "QQLIVETV.OPEN.INTENT.LIVE.OPEN_TVSTATION"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_VIDEO"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_DETAIL"
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_HOME"
+          Action: "QQLIVETV.OPEN.INTENT.CHILD.VARIFY"
+          Action: "com.tv.tothird.delall"
+          Action: "com.ktcp.video"
+          Action: "com.ktcp.video.logout"
+          Action: "QQLIVETV.OPEN.INTENT.CHANGE.MODE"
+      video_test_command:
+        bc35fa0 com.ktcp.video/.receiver.TestCommandReceiver filter 32460d2
+          Action: "video_test_command"
+          Category: "android.intent.category.Default"
+      QQLIVETV.OPEN.INTENT.CHANGE.MODE:
+        e151d46 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenBroadcastReceiver filter 6965a3
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_CHANNEL"
+          Action: "QQLIVETV.OPEN.INTENT.SEARCH.SEARCH"
+          Action: "QQLIVETV.OPEN.INTENT.LIVE.OPEN_TVSTATION"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_VIDEO"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_DETAIL"
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_HOME"
+          Action: "QQLIVETV.OPEN.INTENT.CHILD.VARIFY"
+          Action: "com.tv.tothird.delall"
+          Action: "com.ktcp.video"
+          Action: "com.ktcp.video.logout"
+          Action: "QQLIVETV.OPEN.INTENT.CHANGE.MODE"
+      android.intent.action.MEDIA_MOUNTED:
+        89f425d com.ktcp.video/.receiver.AutoBootReceiver filter 4f3e61b
+          Action: "android.intent.action.MEDIA_MOUNTED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "com.ktcp.video.AUTO_BOOT"
+          Action: "com.ktcp.video.PRELOAD"
+      com.tv.favorite.add.toapp:
+        f12a759 com.ktcp.video/com.tencent.qqlivetv.model.open.SyncBroadcastReceiver filter 1cc888
+          Action: "com.tv.favorite.del.toapp"
+          Action: "com.tv.history.del.toapp"
+          Action: "com.tv.favorite.add.toapp"
+      QQLIVETV.OPEN.INTENT.LIVE.OPEN_TVSTATION:
+        e151d46 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenBroadcastReceiver filter 6965a3
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_CHANNEL"
+          Action: "QQLIVETV.OPEN.INTENT.SEARCH.SEARCH"
+          Action: "QQLIVETV.OPEN.INTENT.LIVE.OPEN_TVSTATION"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_VIDEO"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_DETAIL"
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_HOME"
+          Action: "QQLIVETV.OPEN.INTENT.CHILD.VARIFY"
+          Action: "com.tv.tothird.delall"
+          Action: "com.ktcp.video"
+          Action: "com.ktcp.video.logout"
+          Action: "QQLIVETV.OPEN.INTENT.CHANGE.MODE"
+      com.ktcp.video:
+        e151d46 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenBroadcastReceiver filter 6965a3
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_CHANNEL"
+          Action: "QQLIVETV.OPEN.INTENT.SEARCH.SEARCH"
+          Action: "QQLIVETV.OPEN.INTENT.LIVE.OPEN_TVSTATION"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_VIDEO"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_DETAIL"
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_HOME"
+          Action: "QQLIVETV.OPEN.INTENT.CHILD.VARIFY"
+          Action: "com.tv.tothird.delall"
+          Action: "com.ktcp.video"
+          Action: "com.ktcp.video.logout"
+          Action: "QQLIVETV.OPEN.INTENT.CHANGE.MODE"
+      QQLIVETV.OPEN.INTENT.VOD.OPEN_VIDEO:
+        e151d46 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenBroadcastReceiver filter 6965a3
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_CHANNEL"
+          Action: "QQLIVETV.OPEN.INTENT.SEARCH.SEARCH"
+          Action: "QQLIVETV.OPEN.INTENT.LIVE.OPEN_TVSTATION"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_VIDEO"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_DETAIL"
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_HOME"
+          Action: "QQLIVETV.OPEN.INTENT.CHILD.VARIFY"
+          Action: "com.tv.tothird.delall"
+          Action: "com.ktcp.video"
+          Action: "com.ktcp.video.logout"
+          Action: "QQLIVETV.OPEN.INTENT.CHANGE.MODE"
+      com.ktcp.video.AUTO_BOOT:
+        89f425d com.ktcp.video/.receiver.AutoBootReceiver filter 4f3e61b
+          Action: "android.intent.action.MEDIA_MOUNTED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "com.ktcp.video.AUTO_BOOT"
+          Action: "com.ktcp.video.PRELOAD"
+      com.ktcp.timealign.sync.receive:
+        1c48f1e com.ktcp.video/.receiver.SendAccoutInfoToUpgrade filter 7e0a6cc
+          Action: "com.ktcp.video.FETCH_OPENID_INFO"
+          Action: "com.ktcp.timealign.sync.receive"
+      QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_CHANNEL:
+        e151d46 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenBroadcastReceiver filter 6965a3
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_CHANNEL"
+          Action: "QQLIVETV.OPEN.INTENT.SEARCH.SEARCH"
+          Action: "QQLIVETV.OPEN.INTENT.LIVE.OPEN_TVSTATION"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_VIDEO"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_DETAIL"
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_HOME"
+          Action: "QQLIVETV.OPEN.INTENT.CHILD.VARIFY"
+          Action: "com.tv.tothird.delall"
+          Action: "com.ktcp.video"
+          Action: "com.ktcp.video.logout"
+          Action: "QQLIVETV.OPEN.INTENT.CHANGE.MODE"
+      com.tencent.qqlivetv.open.logout.sync:
+        38043ff com.ktcp.video/com.tencent.qqlivetv.model.open.LoginStateSyncReceiver filter eaebc7a
+          Action: "com.tencent.qqlivetv.open.logout.sync"
+      com.tv.video.SYNC_HISTORY_DATA:
+        88ed5cc com.ktcp.video/.receiver.SyncHistoryFollowReceiver filter fd763b8
+          Action: "com.tv.video.SYNC_HISTORY_DATA"
+          Action: "com.tv.video.SYNC_FOLLOW_DATA"
+      com.tv.history.del.toapp:
+        f12a759 com.ktcp.video/com.tencent.qqlivetv.model.open.SyncBroadcastReceiver filter 1cc888
+          Action: "com.tv.favorite.del.toapp"
+          Action: "com.tv.history.del.toapp"
+          Action: "com.tv.favorite.add.toapp"
+      com.ktcp.video.FETCH_OPENID_INFO:
+        1c48f1e com.ktcp.video/.receiver.SendAccoutInfoToUpgrade filter 7e0a6cc
+          Action: "com.ktcp.video.FETCH_OPENID_INFO"
+          Action: "com.ktcp.timealign.sync.receive"
+      video_apk_upgrade:
+        1bd6015 com.ktcp.video/.receiver.UpgradeReceiver filter 2749f5d
+          Action: "video_apk_upgrade"
+      com.ktcp.video.capmock.api:
+        6267f2a com.ktcp.video/com.tencent.qqlivetv.capmock.CapMockApiReceiver filter 909d007
+          Action: "com.ktcp.video.capmock.api"
+      android.intent.action.BOOT_COMPLETED:
+        d9f211b com.ktcp.video/com.ktcp.msg.lib.BootCompletedReceiver filter d60d459
+          Action: "android.intent.action.BOOT_COMPLETED"
+        eb982b8 com.ktcp.video/com.tencent.qqlivetv.keeplive.receiver.BootReceiver filter 8c3b81e
+          Action: "android.intent.action.BOOT_COMPLETED"
+        d20e891 com.ktcp.video/com.tencent.qqlivetv.android.recommendation.RecommendReceiver filter 86f382a
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "action.kill.process"
+        89f425d com.ktcp.video/.receiver.AutoBootReceiver filter 4f3e61b
+          Action: "android.intent.action.MEDIA_MOUNTED"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "com.ktcp.video.AUTO_BOOT"
+          Action: "com.ktcp.video.PRELOAD"
+      com.ktcp.voice.SEARCH:
+        f0563f6 com.ktcp.video/.receiver.VoiceSearchReceiver filter e2f9c2b
+          Action: "com.ktcp.voice.SEARCH"
+      QQLIVETV.OPEN.INTENT.VOD.OPEN_DETAIL:
+        e151d46 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenBroadcastReceiver filter 6965a3
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_CHANNEL"
+          Action: "QQLIVETV.OPEN.INTENT.SEARCH.SEARCH"
+          Action: "QQLIVETV.OPEN.INTENT.LIVE.OPEN_TVSTATION"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_VIDEO"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_DETAIL"
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_HOME"
+          Action: "QQLIVETV.OPEN.INTENT.CHILD.VARIFY"
+          Action: "com.tv.tothird.delall"
+          Action: "com.ktcp.video"
+          Action: "com.ktcp.video.logout"
+          Action: "QQLIVETV.OPEN.INTENT.CHANGE.MODE"
+      com.ktcp.hippy.error:
+        6d3434 com.ktcp.video/.hippy.HippyActivityReceiver filter 65c2646
+          Action: "com.ktcp.hippy.error"
+          Action: "com.ktcp.hippy.loading.finish"
+          Action: "com.ktcp.hippy.exit"
+      QQLIVETV.OPEN.INTENT.CHILD.VARIFY:
+        e151d46 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenBroadcastReceiver filter 6965a3
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_CHANNEL"
+          Action: "QQLIVETV.OPEN.INTENT.SEARCH.SEARCH"
+          Action: "QQLIVETV.OPEN.INTENT.LIVE.OPEN_TVSTATION"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_VIDEO"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_DETAIL"
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_HOME"
+          Action: "QQLIVETV.OPEN.INTENT.CHILD.VARIFY"
+          Action: "com.tv.tothird.delall"
+          Action: "com.ktcp.video"
+          Action: "com.ktcp.video.logout"
+          Action: "QQLIVETV.OPEN.INTENT.CHANGE.MODE"
+      com.ktcp.hippy.exit:
+        6d3434 com.ktcp.video/.hippy.HippyActivityReceiver filter 65c2646
+          Action: "com.ktcp.hippy.error"
+          Action: "com.ktcp.hippy.loading.finish"
+          Action: "com.ktcp.hippy.exit"
+      com.ktcp.video.logout:
+        e151d46 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenBroadcastReceiver filter 6965a3
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_CHANNEL"
+          Action: "QQLIVETV.OPEN.INTENT.SEARCH.SEARCH"
+          Action: "QQLIVETV.OPEN.INTENT.LIVE.OPEN_TVSTATION"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_VIDEO"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_DETAIL"
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_HOME"
+          Action: "QQLIVETV.OPEN.INTENT.CHILD.VARIFY"
+          Action: "com.tv.tothird.delall"
+          Action: "com.ktcp.video"
+          Action: "com.ktcp.video.logout"
+          Action: "QQLIVETV.OPEN.INTENT.CHANGE.MODE"
+      action.kill.process:
+        d20e891 com.ktcp.video/com.tencent.qqlivetv.android.recommendation.RecommendReceiver filter 86f382a
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "action.kill.process"
+      com.tv.video.SYNC_FOLLOW_DATA:
+        88ed5cc com.ktcp.video/.receiver.SyncHistoryFollowReceiver filter fd763b8
+          Action: "com.tv.video.SYNC_HISTORY_DATA"
+          Action: "com.tv.video.SYNC_FOLLOW_DATA"
+      QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_HOME:
+        e151d46 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenBroadcastReceiver filter 6965a3
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_CHANNEL"
+          Action: "QQLIVETV.OPEN.INTENT.SEARCH.SEARCH"
+          Action: "QQLIVETV.OPEN.INTENT.LIVE.OPEN_TVSTATION"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_VIDEO"
+          Action: "QQLIVETV.OPEN.INTENT.VOD.OPEN_DETAIL"
+          Action: "QQLIVETV.OPEN.INTENT.CHANNEL.GOTO_HOME"
+          Action: "QQLIVETV.OPEN.INTENT.CHILD.VARIFY"
+          Action: "com.tv.tothird.delall"
+          Action: "com.ktcp.video"
+          Action: "com.ktcp.video.logout"
+          Action: "QQLIVETV.OPEN.INTENT.CHANGE.MODE"
+      com.tencent.qqlivetv.open.query:
+        4b3f7 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenCommonQueryReceiver filter 28b0221
+          Action: "com.tencent.qqlivetv.open.query"
+      com.tv.favorite.del.toapp:
+        f12a759 com.ktcp.video/com.tencent.qqlivetv.model.open.SyncBroadcastReceiver filter 1cc888
+          Action: "com.tv.favorite.del.toapp"
+          Action: "com.tv.history.del.toapp"
+          Action: "com.tv.favorite.add.toapp"
+
+Service Resolver Table:
+  Schemes:
+      txaiagent:
+        8e01264 com.ktcp.video/.service.AiAgentOpenService filter 6130ab1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "txaiagent"
+          Authority: "openintent": -1
+
+  Non-Data Actions:
+      com.ktcp.video.thirdparty.KtcpPayVideoService:
+        a5a7ccd com.ktcp.video/com.tencent.qqlivetv.thirdpay.KtcpPayVideoService filter d7a5e9c
+          Action: "com.ktcp.video.thirdparty.KtcpPayVideoService"
+          Category: "android.intent.category.DEFAULT"
+      android.intent.action.MAIN:
+        e1bc982 com.ktcp.video/.service.IflytekXiriService filter f86eb22
+          Action: "android.intent.action.MAIN"
+          Action: "com.iflytek.xiri2.app.NOTIFY"
+          Category: "android.intent.category.LAUNCHER"
+      com.ktcp.video.PLUGIN_DOWNLOAD:
+        5c69893 com.ktcp.video/.service.PluginDownloadService filter 5af5ee9
+          Action: "com.ktcp.video.PLUGIN_DOWNLOAD"
+      com.ktcp.video.H5TVAPI.start_service:
+        cbdf0d0 com.ktcp.video/.h5.H5TVAPIService filter bcc976e
+          Action: "com.ktcp.video.H5TVAPI.start_service"
+          Category: "android.intent.category.Default"
+          mPriority=1000, mOrder=0, mHasPartialTypes=false
+      com.tencent.qqlivetv.keeplive.proc.DaemonService:
+        d1f18c9 com.ktcp.video/com.tencent.qqlivetv.keeplive.proc.DaemonService filter 943ab96
+          Action: "com.tencent.qqlivetv.keeplive.proc.DaemonService"
+          mPriority=2000, mOrder=0, mHasPartialTypes=false
+      com.iflytek.xiri2.app.NOTIFY:
+        e1bc982 com.ktcp.video/.service.IflytekXiriService filter f86eb22
+          Action: "android.intent.action.MAIN"
+          Action: "com.iflytek.xiri2.app.NOTIFY"
+          Category: "android.intent.category.LAUNCHER"
+      com.ktcp.video.operation:
+        440fbce com.ktcp.video/.service.OperationService filter 9542e0f permission com.ktcp.video.permission.OPERATION
+          Action: "com.ktcp.video.operation"
+          Category: "android.intent.category.DEFAULT"
+          mPriority=1000, mOrder=0, mHasPartialTypes=false
+      com.ktcp.video.service.KeepLiveService:
+        bb82aef com.ktcp.video/.service.KeepLiveService filter 6c1b304
+          Action: "com.ktcp.video.service.KeepLiveService"
+          mPriority=2000, mOrder=0, mHasPartialTypes=false
+      MITV.COMMENT.SERVICE:
+        d1f18c9 com.ktcp.video/com.tencent.qqlivetv.keeplive.proc.DaemonService filter c1bf317
+          Action: "MITV.COMMENT.SERVICE"
+          Category: "android.intent.category.Default"
+          mPriority=2000, mOrder=0, mHasPartialTypes=false
+      com.ktcp.video.service.DaemonLiveService:
+        e5949fc com.ktcp.video/.service.DaemonLiveService filter e1ca0ed
+          Action: "com.ktcp.video.service.DaemonLiveService"
+          mPriority=2000, mOrder=0, mHasPartialTypes=false
+      com.ktcp.video.MAIN_UPGRADE:
+        5777885 com.ktcp.video/.service.UpgradeService filter 662a9b3
+          Action: "com.ktcp.video.MAIN_UPGRADE"
+          mPriority=1000, mOrder=0, mHasPartialTypes=false
+      com.ktcp.icagent.SERVICE_ACTION_BIND:
+        67506da com.ktcp.video/com.ktcp.icagent.core.ICAgentService filter e9600a5
+          Action: "com.ktcp.icagent.SERVICE_ACTION_BIND"
+      com.ktcp.video.SUB_UPGRADE:
+        e86870b com.ktcp.video/.service.UpgradeProcessService filter b28fb70
+          Action: "com.ktcp.video.SUB_UPGRADE"
+          mPriority=1000, mOrder=0, mHasPartialTypes=false
+
+Permissions:
+  Permission [com.ktcp.video.permission.OPENCOMMONQUERY_PROVIDER.read] (9ef09e8):
+    sourcePackage=com.ktcp.video
+    uid=10021 gids=null type=0 prot=normal
+    perm=Permission{13c1801 com.ktcp.video.permission.OPENCOMMONQUERY_PROVIDER.read}
+    packageSetting=PackageSetting{7acb6a6 com.ktcp.video/10021}
+
+Permissions:
+  Permission [com.ktcp.video.permission.READ_SYNC_DATA] (e9488e7):
+    sourcePackage=com.ktcp.video
+    uid=10021 gids=null type=0 prot=normal
+    perm=Permission{9edc94 com.ktcp.video.permission.READ_SYNC_DATA}
+    packageSetting=PackageSetting{7acb6a6 com.ktcp.video/10021}
+
+Permissions:
+  Permission [com.ktcp.video.provider] (951333d):
+    sourcePackage=com.ktcp.video
+    uid=10021 gids=null type=0 prot=normal
+    perm=Permission{35d9732 com.ktcp.video.provider}
+    packageSetting=PackageSetting{7acb6a6 com.ktcp.video/10021}
+
+Permissions:
+  Permission [com.ktcp.video.permission.OPERATION] (596cc83):
+    sourcePackage=com.ktcp.video
+    uid=10021 gids=null type=0 prot=normal
+    perm=Permission{3d72e00 com.ktcp.video.permission.OPERATION}
+    packageSetting=PackageSetting{7acb6a6 com.ktcp.video/10021}
+
+Permissions:
+  Permission [com.ktcp.video.permission.REMOTE_SHARED_PREFERENCE_PROVIDER] (6a2c639):
+    sourcePackage=com.ktcp.video
+    uid=10021 gids=null type=0 prot=signature|privileged
+    perm=Permission{4c9f47e com.ktcp.video.permission.REMOTE_SHARED_PREFERENCE_PROVIDER}
+    packageSetting=PackageSetting{7acb6a6 com.ktcp.video/10021}
+
+Registered ContentProviders:
+  com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP0:
+    Provider{9efaddf com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP0}
+  com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP1:
+    Provider{b812a2c com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP1}
+  com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP2:
+    Provider{ae08cf5 com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP2}
+  com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP3:
+    Provider{70cda8a com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP3}
+  com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP4:
+    Provider{bcb48fb com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP4}
+  com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderUI:
+    Provider{2ecbd18 com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderUI}
+  com.ktcp.video/com.ktcp.lib.timealign.storage.PrefProvider:
+    Provider{8fa0371 com.ktcp.video/com.ktcp.lib.timealign.storage.PrefProvider}
+  com.ktcp.video/androidx.lifecycle.ProcessLifecycleOwnerInitializer:
+    Provider{9e61556 com.ktcp.video/androidx.lifecycle.ProcessLifecycleOwnerInitializer}
+  com.ktcp.video/.helper.autosize.InitProvider:
+    Provider{7fb79d7 com.ktcp.video/.helper.autosize.InitProvider}
+  com.ktcp.video/.sandbox.SandboxContentProvider:
+    Provider{87c92c4 com.ktcp.video/.sandbox.SandboxContentProvider}
+  com.ktcp.video/androidx.core.content.FileProvider:
+    Provider{95a65ad com.ktcp.video/androidx.core.content.FileProvider}
+  com.ktcp.video/com.tencent.qqlivetv.model.open.OpenAccountSyncProvider:
+    Provider{74630e2 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenAccountSyncProvider}
+  com.ktcp.video/com.ktcp.msg.lib.db.PushMsgProvider:
+    Provider{c93dc73 com.ktcp.video/com.ktcp.msg.lib.db.PushMsgProvider}
+  com.ktcp.video/com.tencent.qmethod.pandoraex.provider.PandoraExProvider:
+    Provider{c121730 com.ktcp.video/com.tencent.qmethod.pandoraex.provider.PandoraExProvider}
+  com.ktcp.video/.provider.SyncContentProvider:
+    Provider{5e4afa9 com.ktcp.video/.provider.SyncContentProvider}
+  com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP0:
+    Provider{59a792e com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP0}
+  com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP1:
+    Provider{b45cccf com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP1}
+  com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP2:
+    Provider{839765c com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP2}
+  com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP3:
+    Provider{9af9d65 com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP3}
+  com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP4:
+    Provider{2d8fa3a com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP4}
+  com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderUI:
+    Provider{57c66eb com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderUI}
+  com.ktcp.video/com.ktcp.sharedpreference.SharedPreferenceProvider:
+    Provider{2159c48 com.ktcp.video/com.ktcp.sharedpreference.SharedPreferenceProvider}
+  com.ktcp.video/com.tencent.qqlivetv.model.provider.TVContentProvider:
+    Provider{81aae1 com.ktcp.video/com.tencent.qqlivetv.model.provider.TVContentProvider}
+  com.ktcp.video/com.ave.rogers.vplugin.fwk.PluginInstallProvider:
+    Provider{44c8006 com.ktcp.video/com.ave.rogers.vplugin.fwk.PluginInstallProvider}
+  com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderPersist:
+    Provider{e3886c7 com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderPersist}
+  com.ktcp.video/com.tencent.qqlivetv.model.open.OpenCommonQueryProvider:
+    Provider{c0c34f4 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenCommonQueryProvider}
+  com.ktcp.video/com.tencent.qqlivetv.android.search.AndroidSearchProvider:
+    Provider{20d141d com.ktcp.video/com.tencent.qqlivetv.android.search.AndroidSearchProvider}
+
+ContentProvider Authorities:
+  [com.ktcp.video.autosize-init-provider]:
+    Provider{7fb79d7 com.ktcp.video/.helper.autosize.InitProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.pandoraprovider]:
+    Provider{c121730 com.ktcp.video/com.tencent.qmethod.pandoraex.provider.PandoraExProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.Plugin.NP.UIP]:
+    Provider{2ecbd18 com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderUI}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video]:
+    Provider{8fa0371 com.ktcp.video/com.ktcp.lib.timealign.storage.PrefProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.lifecycle-process]:
+    Provider{9e61556 com.ktcp.video/androidx.lifecycle.ProcessLifecycleOwnerInitializer}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.Plugin.NP.0]:
+    Provider{9efaddf com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP0}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.Plugin.NP.1]:
+    Provider{b812a2c com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP1}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.Plugin.NP.2]:
+    Provider{ae08cf5 com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP2}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.Plugin.NP.3]:
+    Provider{70cda8a com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP3}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.Plugin.NP.4]:
+    Provider{bcb48fb com.ktcp.video/com.ave.rogers.vplugin.component.provider.PluginPitProviderP4}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.tencent.qqlivetv.model.provider]:
+    Provider{81aae1 com.ktcp.video/com.tencent.qqlivetv.model.provider.TVContentProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.open.query.provider]:
+    Provider{c0c34f4 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenCommonQueryProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.loader.p.main]:
+    Provider{e3886c7 com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderPersist}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.REMOTE_SHARED_PREFERENCE]:
+    Provider{2159c48 com.ktcp.video/com.ktcp.sharedpreference.SharedPreferenceProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.loader.p.mainN100]:
+    Provider{59a792e com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP0}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.provider.sync]:
+    Provider{5e4afa9 com.ktcp.video/.provider.SyncContentProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.loader.p.mainN1]:
+    Provider{57c66eb com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderUI}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.loader.p.mainN96]:
+    Provider{2d8fa3a com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP4}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.loader.p.mainN97]:
+    Provider{9af9d65 com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP3}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.loader.p.mainN98]:
+    Provider{839765c com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP2}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.loader.p.mainN99]:
+    Provider{b45cccf com.ktcp.video/com.ave.rogers.vplugin.component.process.ProcessPitProviderP1}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.msg.lib.db.video]:
+    Provider{c93dc73 com.ktcp.video/com.ktcp.msg.lib.db.PushMsgProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.fileProvider]:
+    Provider{95a65ad com.ktcp.video/androidx.core.content.FileProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.sandbox.provider]:
+    Provider{87c92c4 com.ktcp.video/.sandbox.SandboxContentProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.open.OpenAccountSyncProvider]:
+    Provider{74630e2 com.ktcp.video/com.tencent.qqlivetv.model.open.OpenAccountSyncProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.search.androidtv]:
+    Provider{20d141d com.ktcp.video/com.tencent.qqlivetv.android.search.AndroidSearchProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+  [com.ktcp.video.install.p.pip]:
+    Provider{44c8006 com.ktcp.video/com.ave.rogers.vplugin.fwk.PluginInstallProvider}
+      applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+
+Key Set Manager:
+  [com.ktcp.video]
+      Signing KeySets: 8
+
+Packages:
+  Package [com.ktcp.video] (7acb6a6):
+    userId=10021
+    pkg=Package{dacc863 com.ktcp.video}
+    codePath=/data/app/com.ktcp.video-HuaMiWQfIvrrFkMXnBhHkg==
+    resourcePath=/data/app/com.ktcp.video-HuaMiWQfIvrrFkMXnBhHkg==
+    legacyNativeLibraryDir=/data/app/com.ktcp.video-HuaMiWQfIvrrFkMXnBhHkg==/lib
+    primaryCpuAbi=armeabi
+    secondaryCpuAbi=null
+    versionCode=1275006 minSdk=16 targetSdk=19
+    versionName=20.1.0.2015
+    splits=[base]
+    apkSigningVersion=2
+    applicationInfo=ApplicationInfo{7209692 com.ktcp.video}
+    flags=[ HAS_CODE ALLOW_CLEAR_USER_DATA LARGE_HEAP ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_UNRESIZEABLE ]
+    dataDir=/data/user/0/com.ktcp.video
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesOptionalLibraries:
+      org.apache.http.legacy
+      com.sony.dtv.picturequalitycontrol
+    usesLibraryFiles:
+      /system/framework/org.apache.http.legacy.boot.jar
+    timeStamp=2026-09-23 01:58:46
+    firstInstallTime=2026-09-23 01:58:47
+    lastUpdateTime=2026-09-23 01:58:47
+    installerPackageName=com.xiaomi.mitv.appstore
+    signatures=PackageSignatures{731ac60 version:2, signatures:[63515b22], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ HAS_CODE ALLOW_CLEAR_USER_DATA LARGE_HEAP ]
+    declared permissions:
+      com.ktcp.video.provider: prot=normal, INSTALLED
+      com.ktcp.video.permission.REMOTE_SHARED_PREFERENCE_PROVIDER: prot=signature|privileged, INSTALLED
+      com.ktcp.video.permission.OPENCOMMONQUERY_PROVIDER.read: prot=normal, INSTALLED
+      com.ktcp.video.permission.OPERATION: prot=normal, INSTALLED
+      com.ktcp.video.permission.READ_SYNC_DATA: prot=normal, INSTALLED
+    requested permissions:
+      android.permission.SCHEDULE_EXACT_ALARM
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.BLUETOOTH
+      android.permission.BLUETOOTH_ADMIN
+      android.permission.BROADCAST_STICKY
+      android.permission.CHANGE_NETWORK_STATE
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.DISABLE_KEYGUARD
+      android.permission.FOREGROUND_SERVICE
+      android.permission.GET_PACKAGE_SIZE
+      android.permission.INTERNET
+      android.permission.MODIFY_AUDIO_SETTINGS
+      android.permission.REORDER_TASKS
+      android.permission.WAKE_LOCK
+      com.ktcp.aiagent.permission.BUSINESS_INTERACTION
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.ACCESS_FINE_LOCATION
+      android.permission.ACCESS_COARSE_LOCATION
+      android.permission.SYSTEM_ALERT_WINDOW
+      android.permission.WRITE_SETTINGS
+      android.permission.CLEAR_APP_CACHE
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+      android.permission.READ_LOGS
+      android.permission.REAL_GET_TASKS
+      android.permission.REQUEST_INSTALL_PACKAGES
+      android.permission.MANAGE_USERS
+      android.permission.ACCESS_DOWNLOAD_MANAGER
+      android.permission.READ_SETTINGS
+      android.permission.SYSTEM_OVERLAY_WINDOW
+      android.permission.RECEIVE_USER_PRESENT
+      android.permission.GET_TASKS
+      com.huawei.hwid.permission.ACCESS
+      com.huawei.appmarket.provider.readPermission
+      com.ktcp.launcher.PREF_PROVIDER
+      com.mstar.android.permissionn.ACCESS_TV_DATA
+      com.tencent.qqmusictv.playerservice
+      com.ktcp.video.WebView
+      com.sony.dtv.permission.READ_MODEL_VARIATION_INFO_NORMAL
+      android.permission.READ_EXTERNAL_STORAGE
+      com.ktcp.video.provider
+      com.ktcp.video.permission.OPERATION
+      android.permission.CAMERA
+      android.permission.POST_NOTIFICATIONS
+      com.mitv.permission.QUERY_DEVICE_INFO
+      android.permission.RECORD_AUDIO
+      com.audiocn.karaoke.micmanager.provider
+      com.android.providers.tv.permission.WRITE_EPG_DATA
+      com.android.providers.tv.permission.READ_EPG_DATA
+      com.asus.msa.SupplementaryDID.ACCESS
+    install permissions:
+      android.permission.WRITE_SETTINGS: granted=true
+      android.permission.ACCESS_FINE_LOCATION: granted=true
+      android.permission.MODIFY_AUDIO_SETTINGS: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      com.android.providers.tv.permission.READ_EPG_DATA: granted=true
+      android.permission.BLUETOOTH: granted=true
+      com.mitv.permission.QUERY_DEVICE_INFO: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.REORDER_TASKS: granted=true
+      android.permission.BLUETOOTH_ADMIN: granted=true
+      android.permission.READ_EXTERNAL_STORAGE: granted=true
+      com.android.providers.tv.permission.WRITE_EPG_DATA: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      android.permission.ACCESS_COARSE_LOCATION: granted=true
+      android.permission.BROADCAST_STICKY: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      com.ktcp.video.provider: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      android.permission.CAMERA: granted=true
+      com.ktcp.video.permission.OPERATION: granted=true
+      android.permission.WRITE_EXTERNAL_STORAGE: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      android.permission.RECORD_AUDIO: granted=true
+      android.permission.WAKE_LOCK: granted=true
+    User 0: ceDataInode=-4294834831 installed=true hidden=false suspended=false stopped=true notLaunched=false enabled=0 instant=false virtual=false
+      gids=[3002, 3003, 3001]
+      runtime permissions:
+
+Package Changes:
+  Sequence number=31
+  User 0:
+    seq=1, package=com.xiaomi.voicecontrol
+    seq=14, package=xyz.erapi0neer.orrery
+    seq=29, package=xyz.erapi0neer.xingyi
+    seq=30, package=xyz.erapi0neer.xiaoaibridge
+
+
+Dexopt state:
+  [com.ktcp.video]
+    path: /data/app/com.ktcp.video-HuaMiWQfIvrrFkMXnBhHkg==/base.apk
+      arm: [status=speed-profile] [reason=bg-dexopt]
+      known secondary dex files:
+        /data/user/0/com.ktcp.video/app_vp_a/-1447386320.jar
+          class loader context: =UnsupportedClassLoaderContext=
+
+
+Compiler stats:
+  [com.ktcp.video]
+     base.apk - 43547

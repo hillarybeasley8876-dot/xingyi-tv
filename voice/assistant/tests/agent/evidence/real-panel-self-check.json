@@ -1,0 +1,13 @@
+{
+  "id": "panel-self-check",
+  "at": "2026-11-12T22:06:08+08:00",
+  "ok": true,
+  "by": "panel-self-check.py",
+  "notes": [
+    "任务跑的时候，面板窗口出现 1 个：Window #1 Window{673cf87 u0 xyz.erapi0neer.xiaoaibridge}:",
+    "self_check 说了什么：- self_check: 自检 -> observed reply: 面板是好的：读屏、面板、本机调试都正常。你这句话现在就显示在右上角的面板上，刚才没弹可能是后台刚重启的那几秒。"
+  ],
+  "shots": [
+    "probe-out\\panel-self-check.png"
+  ]
+}

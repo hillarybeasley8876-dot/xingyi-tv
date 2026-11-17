@@ -1,0 +1,40 @@
+{
+ "id": "handoff-built-not-installed",
+ "title": "交接页说出「编好了还没装」",
+ "brief": "briefs/handoff-built-not-installed.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 90,
+ "owns": [
+  "tools/handoff/handoff.mjs",
+  "src/xyz/erapi0neer/xingyi/agent/Handoff.java",
+  "tests/agent/HandoffChecks.java",
+  "tests/agent/handoff-fixtures"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|589[3-9]|59\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_handoff.sh",
+   "timeoutS": 900,
+   "must": [
+    "HANDOFF OK"
+   ]
+  }
+ ]
+}

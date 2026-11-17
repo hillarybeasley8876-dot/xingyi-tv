@@ -1,0 +1,503 @@
+{
+ "data": {
+  "errcode": 0,
+  "errmsg": "",
+  "areaBoxList": [
+   {
+    "boxId": "3505",
+    "itemList": [
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002004k31fxg"
+      },
+      "videoInfo": {
+       "title": "蒸蒸日上",
+       "typeName": "电视剧",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "澡堂楼上开律所，烟火人间",
+       "descrip": "东北某城律师街上，女律师萧龙女在浴池楼上开了家小律所。她为替弱者维权离开大所，与精英律师李信决裂，只带着实习生古苗苗，又",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "l4102lklxnd",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200nmxmuzj"
+      },
+      "videoInfo": {
+       "title": "《狂飙》高启强团伙真实原型",
+       "typeName": "纪录片",
+       "year": 0,
+       "area": "其它地区",
+       "subTitle": "",
+       "descrip": "电视剧《狂飙》作为一部扫黑除恶题材的电视剧，这部剧最大的特点，就是够真实。剧里的人物、故事，很多都是根据真 实的社会事件",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "w3501dtiv10",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200yupx59o"
+      },
+      "videoInfo": {
+       "title": "《狂飙》原型：黑恶势力大曝光",
+       "typeName": "原创",
+       "year": 0,
+       "area": "",
+       "subTitle": "扫黑除恶，揭秘黑暗势力",
+       "descrip": "《狂飙》自播出以来，口碑热度同样一路“狂飙”！\n正邪双方的不同遭遇，剥开层层笼罩的保护伞，鲜血淋漓地展露出了社会当中真实",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "y350533fj0z",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002005nzzsjs"
+      },
+      "videoInfo": {
+       "title": "解析《狂飙》人物原型：安欣背后的无名英雄",
+       "typeName": "纪录片",
+       "year": 0,
+       "area": "其它地区",
+       "subTitle": "安欣原型人物和案件",
+       "descrip": "在电视剧《狂飙》中，安欣这个人物，取材于多个真实原型，这个角色的闪光点，正是来自于千万个有“轴”劲、有韧劲、有忍功的平凡",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "r3503ihx93c",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200zm1aje0"
+      },
+      "videoInfo": {
+       "title": "猎冰",
+       "typeName": "电视剧",
+       "year": 2024,
+       "area": "内地",
+       "subTitle": "同主演·张颂文",
+       "descrip": "平静的沿海小城三平市，缉毒大队在一次行动中意外缴获一批新型冰毒，其规模和纯度都极为罕见，三平公安立即展开调查。部队转业女",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "z0048qql7p4",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200lxzhhqz"
+      },
+      "videoInfo": {
+       "title": "扫黑风暴",
+       "typeName": "电视剧",
+       "year": 2021,
+       "area": "内地",
+       "subTitle": "同题材·警匪打黑",
+       "descrip": "该剧描绘了中央第三十六督导组在组长骆山河的带领下来到被黑恶势力盘踞多年的绿藤市，开展扫黑除恶专项斗争。曾被诬陷为黑警而赶",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "d0040cqqgtz",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002008n7xsn3"
+      },
+      "videoInfo": {
+       "title": "扫毒风暴",
+       "typeName": "电视剧",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "段奕宏秦昊扫毒猎逃大对决",
+       "descrip": "1995年，走私商卢少骅一夜间倾家荡产，却也因此意识到一种新型毒品——冰毒，所能带来的巨大利润，他心生邪念走入制贩毒歧途",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "i4101vvv9pe",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200otibal3"
+      },
+      "videoInfo": {
+       "title": "扫黑·决战",
+       "typeName": "电影",
+       "year": 2021,
+       "area": "内地",
+       "subTitle": "同主演·张颂文",
+       "descrip": "首部以全国扫黑除恶行动为题材的影视化作品，讲述了扫黑除恶调查组组长宋一锐带领组员由一起强拆案深入调查，突破层层阻挠，与幕",
+       "status": 0,
+       "playSites": []
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200lobmhjn"
+      },
+      "videoInfo": {
+       "title": "三大队",
+       "typeName": "电影",
+       "year": 2023,
+       "area": "内地",
+       "subTitle": "同主演·张译",
+       "descrip": "电影《三大队》根据真实事件改编，原作名为《请转告局长，三大队任务完成了》（作者深蓝）。\n刑侦大队队长程兵带领的三大队在办",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "x0048rl37js",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200aykk0r0"
+      },
+      "videoInfo": {
+       "title": "黑白禁区",
+       "typeName": "电视剧",
+       "year": 2020,
+       "area": "内地",
+       "subTitle": "卧底欧豪穿越生死边缘",
+       "descrip": "卧底警察淦天雷打入贩毒“凯撒集团”内部，配合警方频频立功。正当即将接管凯撒集团并准备一网打尽之际身份暴露，淦天雷爱人奋不",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "b0035jy832t",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc002006mhxhj2"
+      },
+      "videoInfo": {
+       "title": "法医秦明之天谴者",
+       "typeName": "电视剧",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "天谴降临，秦明破高能重案",
+       "descrip": "龙番郊区，女子陈尸铁笼，遭野猫啃食，胸口刀伤致命。法医秦明循迹发现致幻剂、荧光粉与神秘“天谴者”来信，牵出多起关联命案。",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "e410291z9sk",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "tyxha27sasikn8c"
+      },
+      "videoInfo": {
+       "title": "扫毒",
+       "typeName": "电影",
+       "year": 2013,
+       "area": "内地",
+       "subTitle": "三影帝组战斗版合伙人",
+       "descrip": "从小一起长大的好兄弟马昊天、张子伟和苏建秋共同效力于警队扫毒科。在一次临时改变计划的行动后，建秋因为卧底身份不能与妻子过",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "y0033kycrt9",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "h188mdjtrh3up22"
+      },
+      "videoInfo": {
+       "title": "湄公河行动",
+       "typeName": "电影",
+       "year": 2016,
+       "area": "内地",
+       "subTitle": "彭于晏张涵予金三角火拼",
+       "descrip": "2011年10月5日，两艘中国商船在湄公河金三角水域遭遇袭击，13名中国船员全部遇难，泰国警方从船上搜出90万颗冰毒。消",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "y0022eckcdz",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200lxdr71l"
+      },
+      "videoInfo": {
+       "title": "中国大案录",
+       "typeName": "电视剧",
+       "year": 1996,
+       "area": "内地",
+       "subTitle": "真实案件改编的重案要案",
+       "descrip": "《中国大案录》是由中国大陆制片，高群书指导的剧集。片中有多名参与案件的警察亲自出演。",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "p0042dhwis2",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "normalList": {
+   "itemList": [
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "sdp0010051ttxdf"
+     },
+     "videoInfo": {
+      "title": "狂飙",
+      "typeName": "电视剧",
+      "year": 2023,
+      "area": "内地",
+      "subTitle": "来源·外站",
+      "descrip": "京海市一线刑警安欣（张译饰），在与黑恶势力的斗争中，不断遭到保护伞的打击，始终无法将犯罪分子绳之以法。全国政法队伍教育整",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "播放源",
+        "enName": "qiyi",
+        "totalEpisode": 39,
+        "episodeInfoList": [
+         {
+          "id": "https://v.qq.com/search_redirect.html?url=https%3A%2F%2Fwww.iqiyi.com%2Fv_xkt6z3z798.html%3Fvfm%3Dm_103_txsp",
+          "title": "",
+          "url": "https://v.qq.com/search_redirect.html?cid=sdp0010051ttxdf&url=https%3A%2F%2Fwww.iqiyi.com%2Fv_xkt6z3z798.html%3Fvfm%3Dm_103_txsp"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "f0047t73o1z"
+     },
+     "videoInfo": {
+      "title": "贾冰《<em>狂飙</em>》版语音导航：什么档次跟我用一样的导航",
+      "typeName": "综艺",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "i3515xzq90k"
+     },
+     "videoInfo": {
+      "title": "《<em>狂飙</em>》现实版！西安菜霸覆灭记",
+      "typeName": "新闻",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "v3507m8msqp"
+     },
+     "videoInfo": {
+      "title": "<em>狂飙</em>",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "k4101zig2aq"
+     },
+     "videoInfo": {
+      "title": "男生组试戏 《<em>狂飙</em>》，全员想变身高启强高启盛？",
+      "typeName": "综艺",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    }
+   ]
+  }
+ }
+}

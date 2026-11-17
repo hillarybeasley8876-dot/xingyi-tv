@@ -1,0 +1,17 @@
+{
+ "id": "heard-homophones-2",
+ "title": "Heard's boundary words cover how stocks and songs are really asked for",
+ "brief": "briefs/heard-homophones-2.md",
+ "isolation": "worktree",
+ "maxRounds": 5,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Heard.java",
+  "tests/agent/HeardChecks.java"
+ ],
+ "accept": [
+  { "name": "core-checks", "cmd": "sh tests/agent/run_core.sh", "timeoutS": 500,
+    "must": ["re:agent core: (35(6[7-9]|[7-9]\\d)|3[6-9]\\d\\d|[4-9]\\d{3}) passed, 0 failed"] },
+  { "name": "android-check", "cmd": "sh tests/agent/android_check.sh", "timeoutS": 400, "must": ["ANDROID CHECK OK"] }
+ ]
+}

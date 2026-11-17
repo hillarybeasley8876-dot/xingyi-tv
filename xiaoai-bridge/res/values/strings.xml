@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="eyes_description">让星仪读取当前画面并代你操作电视上的应用，执行过程会显示在屏幕右上角。</string>
+</resources>

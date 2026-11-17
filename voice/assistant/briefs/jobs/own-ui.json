@@ -1,0 +1,46 @@
+{
+ "id": "own-ui",
+ "title": "星仪 knows its own panel, opens no app to look for it, gets the user out of a black screen, and switches the hint card only when asked",
+ "brief": "briefs/own-ui.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 100,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/OwnApps.java",
+  "src/xyz/erapi0neer/xingyi/agent/QuickCommand.java",
+  "src/xyz/erapi0neer/xingyi/agent/Hints.java",
+  "src/xyz/erapi0neer/xingyi/agent/HintTools.java",
+  "src/xyz/erapi0neer/xingyi/agent/Dispatch.java",
+  "src/xyz/erapi0neer/xingyi/agent/tv/TvTools.java",
+  "tests/agent/SkillChecks.java",
+  "tests/agent/QuickChecks.java",
+  "tests/agent/HintChecks.java",
+  "tests/agent/DispatchChecks.java"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|484[5-9]|48[5-9]\\d|49\\d\\d|[5-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_own_ui.sh",
+   "timeoutS": 900,
+   "must": [
+    "OWN UI OK"
+   ]
+  }
+ ]
+}

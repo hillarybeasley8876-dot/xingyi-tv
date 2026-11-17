@@ -1,0 +1,42 @@
+{
+ "id": "board",
+ "title": "一页状态板：在跑什么、卡在哪、消耗多少、怎么停（run.mjs board → status/BOARD.md）",
+ "brief": "briefs/board.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 100,
+ "owns": [
+  "tools/board/board.mjs",
+  "src/xyz/erapi0neer/xingyi/agent/Board.java",
+  "tests/agent/BoardChecks.java",
+  "tests/agent/board-fixtures/",
+  "tests/agent/SkillChecks.java",
+  "status/BOARD.md"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 600,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|502[2-9]|50[3-9]\\d|5[1-9]\\d\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "board",
+   "cmd": "sh tests/agent/accept_board.sh",
+   "timeoutS": 900,
+   "must": [
+    "BOARD OK"
+   ]
+  }
+ ]
+}

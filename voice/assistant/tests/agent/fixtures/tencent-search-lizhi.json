@@ -1,0 +1,506 @@
+{
+ "data": {
+  "errcode": 0,
+  "errmsg": "",
+  "areaBoxList": [
+   {
+    "boxId": "3505",
+    "itemList": [
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc003i5r2ujukw"
+      },
+      "videoInfo": {
+       "title": "《长安的荔枝》深度解读",
+       "typeName": "电影",
+       "year": 0,
+       "area": "",
+       "subTitle": "",
+       "descrip": "《长安三万里》深度解读，古代牛马打工人实录",
+       "status": 0,
+       "playSites": []
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200vazcfrs"
+      },
+      "videoInfo": {
+       "title": "古董局中局",
+       "typeName": "电影",
+       "year": 2021,
+       "area": "内地",
+       "subTitle": "雷佳音李现破惊世骗局",
+       "descrip": "一尊价值连城的佛头，牵扯出古玩界惊天骗局！民国年间文物界权威组织“五脉”掌门许一城，将武则天明堂佛头送至海外，被定罪为汉",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "l0041f6cudd",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200bd3gkta"
+      },
+      "videoInfo": {
+       "title": "满江红",
+       "typeName": "电影",
+       "year": 2023,
+       "area": "内地",
+       "subTitle": "同题材·古装喜剧",
+       "descrip": "南宋绍兴年间，岳飞死后四年，秦桧率兵与金国会谈。会谈前夜，金国使者死在宰相驻地，所携密信也不翼而飞。一个小兵与亲兵营副统",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "b0046wa81dm",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "d12y8ru5h71f0gt"
+      },
+      "videoInfo": {
+       "title": "万万没想到",
+       "typeName": "电影",
+       "year": 2015,
+       "area": "内地",
+       "subTitle": "同主演·白客",
+       "descrip": "屌丝小妖王大锤，他生来便与常人不同，两耳尖尖，又有些小法力，总是自诩本地妖王。但让他万万没想到的是，在遇到唐僧师徒四人组",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "n0019n57njh",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "co6hernchr5uql1"
+      },
+      "videoInfo": {
+       "title": "影",
+       "typeName": "电影",
+       "year": 2018,
+       "area": "内地",
+       "subTitle": "同题材·东方美学",
+       "descrip": "这是一个关于替身的故事。替身自古有之，人称“影子”。有刺杀，就有影子，影子必须在危急关头挺身而出，替主人博回一命；影子又",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "z0028awh5k0",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "938avrqhlfvg1di"
+      },
+      "videoInfo": {
+       "title": "荆轲刺秦王",
+       "typeName": "电影",
+       "year": 1998,
+       "area": "内地",
+       "subTitle": "陈凯歌最受争议之作",
+       "descrip": "战国时代，秦王嬴政以统一天下为大业。当时燕国为嬴政的心头之患，为帮助他早日完成统一霸业，赵姬献策到燕国假意策动刺杀嬴政的",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "k0010WwawaU",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "gwz8nqvc78oexgm"
+      },
+      "videoInfo": {
+       "title": "九品芝麻官",
+       "typeName": "电影",
+       "year": 1994,
+       "area": "中国香港",
+       "subTitle": "同题材·古装喜剧",
+       "descrip": "包龙星用钱买来了一个候补知县的职位，可是为人贪婪，县上的人都对他痛恨至极。在他代替正式知县的时候，戚家媳妇戚秦氏遭到了常",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "i0026dt1929",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200f85ound"
+      },
+      "videoInfo": {
+       "title": "鹿鼎记",
+       "typeName": "电影",
+       "year": 1992,
+       "area": "中国香港",
+       "subTitle": "同题材·古装喜剧",
+       "descrip": "清朝初期，康熙皇帝尚且年少，奸臣从中控制政权，民不聊生。“天地会”是一个推翻清朝的民间组织。“天地会”首领陈近南在一次行",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "a41013y9rw2",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200887tz3a"
+      },
+      "videoInfo": {
+       "title": "长安三万里",
+       "typeName": "电影",
+       "year": 2023,
+       "area": "内地",
+       "subTitle": "同题材·东方美学",
+       "descrip": "安史之乱爆发后数年，吐蕃大军攻打西南。大唐节度使高适交战不利，长安岌岌可危。困守孤城的高适向监军太监回忆起自己与李白的一",
+       "status": 0,
+       "playSites": []
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200xyp87bp"
+      },
+      "videoInfo": {
+       "title": "唐探1900",
+       "typeName": "电影",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "王宝强刘昊然笑闹探案",
+       "descrip": "1900年，在美国旧金山唐人街，华裔印第安猎人阿鬼与留美青年秦福因一场凶杀案偶然结识，误打误撞组成唐人街神探组合。开启了",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "f4101ggd7xu",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200tpgbo78"
+      },
+      "videoInfo": {
+       "title": "浪浪山小妖怪",
+       "typeName": "电影",
+       "year": 2025,
+       "area": "内地",
+       "subTitle": "小妖怪取经演活打工人现状",
+       "descrip": "以一只妖界“打工猪”的视角展开，因为想看看浪浪山外面的世界，小猪妖开启了一段异想天开的旅程，在离目标越来越近时，一切却突",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "y4101ca2mcp",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200bektv93"
+      },
+      "videoInfo": {
+       "title": "敦煌英雄",
+       "typeName": "电影",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "章宇窦骁雷佳音血战归唐",
+       "descrip": "大唐敦煌，重镇漠州。安史之乱后，漠州陷于河西匪军之手，大唐守军全数殉国。此后六十载，丝路断绝，生灵涂炭。匪军首领任光热凶",
+       "status": 0,
+       "playSites": []
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200gag6dkh"
+      },
+      "videoInfo": {
+       "title": "镖人：风起大漠",
+       "typeName": "电影",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "同题材·护送任务",
+       "descrip": "一趟特殊的押镖任务，打破了大漠的平静，各方入局，甚至搅动了天下风云……\n大漠镖客刀马受恩人莫族长委托护送神秘人知世郎回长",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "g4102f0fkum",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "doc": {
+       "dataType": 2,
+       "id": "mzc00200b4z0poc"
+      },
+      "videoInfo": {
+       "title": "特立独行",
+       "typeName": "电影",
+       "year": 2026,
+       "area": "内地",
+       "subTitle": "同题材·黑色幽默",
+       "descrip": "超人王长海被特派回老家锻炼，和当地分会长老夏一起组建超英战斗小队。上任第一天，他不顾老夏劝阻，讨伐关系户，打脸老县长，没",
+       "status": 0,
+       "playSites": [
+        {
+         "showName": "腾讯视频",
+         "enName": "qq",
+         "totalEpisode": 0,
+         "episodeInfoList": [
+          {
+           "id": "d41025c02k5",
+           "title": "",
+           "url": ""
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "normalList": {
+   "itemList": [
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "mzc00200tj1w6ah"
+     },
+     "videoInfo": {
+      "title": "长安的荔枝",
+      "typeName": "电影",
+      "year": 2025,
+      "area": "内地",
+      "subTitle": "大鹏演绎长安小吏千里送荔枝",
+      "descrip": "唐天宝年间，人到中年的李善德骂骂咧咧干了很多活，抠抠搜搜花了不少钱，到头来却还是个无名小吏。最终，因一次召见而发生诸多变",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "腾讯视频",
+        "enName": "qq",
+        "totalEpisode": 1,
+        "episodeInfoList": [
+         {
+          "id": "n4101atatfy",
+          "title": "立即播放",
+          "url": "https://v.qq.com/x/cover/mzc00200tj1w6ah/n4101atatfy.html"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 2,
+      "id": "mzc00200iyue5he"
+     },
+     "videoInfo": {
+      "title": "长安的荔枝",
+      "typeName": "电视剧",
+      "year": 2025,
+      "area": "内地",
+      "subTitle": "雷佳音岳云鹏携手“荔”劫",
+      "descrip": "《长安的荔枝》讲述了主人公李善德在同僚的欺瞒之下从监事变身“荔枝使”，被迫接下一道为贺贵妃生辰、需从岭南运送新鲜荔枝到长",
+      "status": 0,
+      "playSites": [
+       {
+        "showName": "腾讯视频",
+        "enName": "qq",
+        "totalEpisode": 53,
+        "episodeInfoList": [
+         {
+          "id": "k410187y6uq",
+          "title": "立即播放",
+          "url": "https://v.qq.com/x/cover/mzc00200iyue5he/k410187y6uq.html"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "b30929gaabu"
+     },
+     "videoInfo": {
+      "title": "《<em>长安的荔枝</em>》中的张天爱，从太子妃到盛唐女商，观众直呼认不出",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "t309397ghrv"
+     },
+     "videoInfo": {
+      "title": "《<em>长安的荔枝</em>》大结局郑平安惨死，狗儿也选择追随而去",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "e3093zhf2l3"
+     },
+     "videoInfo": {
+      "title": "《<em>长安的荔枝</em>》大结局李善德被追杀，贵妃终究没吃上新鲜<em>荔枝</em>",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    },
+    {
+     "doc": {
+      "dataType": 1,
+      "id": "l3567xxbc3r"
+     },
+     "videoInfo": {
+      "title": "《<em>长安的荔枝</em>》首发预告，雷佳音开启<em>荔枝</em>征途",
+      "typeName": "电视剧",
+      "year": 0,
+      "area": "",
+      "subTitle": "",
+      "descrip": "",
+      "status": 0,
+      "playSites": []
+     }
+    }
+   ]
+  }
+ }
+}

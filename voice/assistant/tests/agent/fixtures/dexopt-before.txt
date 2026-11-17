@@ -1,0 +1,257 @@
+
+Dexopt state:
+  [com.droidlogic.tvinput]
+    path: /product/app/DroidLogicTvInput/DroidLogicTvInput.apk
+      arm: [status=run-from-apk] [reason=unknown]
+  [mitv.service]
+    path: /system/app/TvService/TvService.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [xyz.erapi0neer.orrery]
+    path: /data/app/xyz.erapi0neer.orrery-daft1FO9IkhDyJ3ToVQFuw==/base.apk
+      arm: [status=speed-profile] [reason=bg-dexopt]
+  [xyz.erapi0neer.hudpreview]
+    path: /data/app/xyz.erapi0neer.hudpreview-HYQ9qeCqLkRi3O5wUtG0aw==/base.apk
+      arm: [status=speed-profile] [reason=install]
+  [com.android.providers.media]
+    path: /system/priv-app/MediaProvider/MediaProvider.apk
+      arm: [status=quicken] [reason=prebuilt]
+      used by other apps: [com.android.providers.downloads]
+  [com.xiaomi.mitv.karaoke.service]
+    path: /system/app/KaraokeService/KaraokeService.apk
+      arm: [status=run-from-apk] [reason=unknown]
+  [xyz.erapi0neer.xingyi]
+    path: /data/app/xyz.erapi0neer.xingyi-G-r5QyC5GEvm1fYj6Sq2pw==/base.apk
+      arm: [status=speed-profile] [reason=install]
+  [com.xiaomi.account]
+    path: /data/app/com.xiaomi.account-u8BjnTHld8wkuAjpMoHG7A==/base.apk
+      arm: [status=verify] [reason=inactive]
+  [com.mitv.tvhome]
+    path: /data/app/com.mitv.tvhome-qX3X9_VVg6eg8XYPmNgyNg==/base.apk
+      arm: [status=speed-profile] [reason=bg-dexopt]
+      known secondary dex files:
+        /data/user/0/com.mitv.tvhome/app_apk_dir/com.mitv.tvhome.kgsdk-100087/com.mitv.tvhome.kgsdk.apk
+          class loader context: =UnsupportedClassLoaderContext=
+        /data/user/0/com.mitv.tvhome/app_sdk_replace/sdk_replace-release.jar
+          class loader context: =UnsupportedClassLoaderContext=
+        /data/user/0/com.mitv.tvhome/files/pluginsdkplayer/2.1508.1.260609/1.1508.1.06804/pluginsdkplayer-release-1.1508.1.06804.apk
+          class loader context: =UnsupportedClassLoaderContext=
+        /data/user/0/com.mitv.tvhome/app_external_package/131/player_plugin/kingsoft_24.apk
+          class loader context: PCL[];PCL[/system/framework/MitvAPIImpl.jar:/system/framework/mitvmiddlewareimpl.jar:/vendor/framework/droidlogic-tv.jar:/vendor/framework/droidlogic.jar:/system/framework/org.apache.http.legacy.boot.jar:/data/app/com.mitv.tvhome-qX3X9_VVg6eg8XYPmNgyNg==/base.apk]
+        /data/user/0/com.mitv.tvhome/app_apk_dir/com.mitv.tvhome.qmktv-100012/com.mitv.tvhome.qmktv.apk
+          class loader context: =UnsupportedClassLoaderContext=
+        /data/user/0/com.mitv.tvhome/app_external_package/10022/player_plugin/tvtaobao_100020.apk
+          class loader context: PCL[];PCL[/system/framework/MitvAPIImpl.jar:/system/framework/mitvmiddlewareimpl.jar:/vendor/framework/droidlogic-tv.jar:/vendor/framework/droidlogic.jar:/system/framework/org.apache.http.legacy.boot.jar:/data/app/com.mitv.tvhome-ZRMVkvlTgOHvvPUTYOXsbQ==/base.apk]
+        /data/user/0/com.mitv.tvhome/app_external_package/131/player_plugin/kingsoft_16.apk
+          class loader context: PCL[];PCL[/system/framework/MitvAPIImpl.jar:/system/framework/mitvmiddlewareimpl.jar:/vendor/framework/droidlogic-tv.jar:/vendor/framework/droidlogic.jar:/system/framework/org.apache.http.legacy.boot.jar:/vendor/app/tvhome/tvhome.apk]
+        /data/user/0/com.mitv.tvhome/app_apk_dir/com.mitv.plugin.sdk.host-79/com.mitv.plugin.sdk.host.apk
+          class loader context: =UnsupportedClassLoaderContext=
+  [com.spocky.projengmenu]
+    path: /data/app/com.spocky.projengmenu-NpE3KP_0vOuJOpN4dkifMQ==/base.apk
+      arm: [status=speed-profile] [reason=install]
+  [com.xiaomi.mi_connect_service]
+    path: /system/priv-app/MiConnectService/MiConnectService.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.sohu.inputmethod.sogou.tv]
+    path: /system/app/SogouInput_tv_3047f4953_android_tv_xiaomi_box_20250806141812/SogouInput_tv_3047f4953_android_tv_xiaomi_box_20250806141812.apk
+      arm: [status=run-from-apk] [reason=unknown]
+  [com.android.externalstorage]
+    path: /system/priv-app/ExternalStorageProvider/ExternalStorageProvider.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.android.htmlviewer]
+    path: /system/app/HTMLViewer/HTMLViewer.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.gamecenter.sdk.service.mibox]
+    path: /data/app/com.xiaomi.gamecenter.sdk.service.mibox-Y-2K8_EGGz_WM_rXVgKJew==/base.apk
+      arm: [status=verify] [reason=inactive]
+  [com.android.providers.downloads]
+    path: /system/priv-app/DownloadProvider/DownloadProvider.apk
+      arm: [status=quicken] [reason=prebuilt]
+      used by other apps: [com.android.providers.media]
+  [com.phlox.tvwebbrowser]
+    path: /data/app/com.phlox.tvwebbrowser-HR2ee8sFwOEt39y1wTP-cw==/base.apk
+      arm: [status=speed-profile] [reason=bg-dexopt]
+  [com.android.providers.tv]
+    path: /system/priv-app/TvProvider/TvProvider.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.droidlogic]
+    path: /product/priv-app/droidlogic-res/droidlogic-res.apk
+      arm: [status=run-from-apk] [reason=unknown]
+  [com.xiaomi.mitv.tvplayer]
+    path: /vendor/app/tvplayer-20260109_30000561-universal/tvplayer-20260109_30000561-universal.apk
+      arm: [status=verify] [reason=boot]
+  [com.mitv.shoplugin]
+    path: /data/app/com.mitv.shoplugin-swIFREPReab07HT2NWm7rQ==/base.apk
+      arm: [status=verify] [reason=inactive]
+  [com.xm.webcontent]
+    path: /data/app/com.xm.webcontent-VmI2JszvIWRUuNIc7nHPRg==/base.apk
+      arm: [status=verify] [reason=inactive]
+  [com.ktcp.video]
+    path: /data/app/com.ktcp.video-928uVQF_BRKfgHQKOzb3dQ==/base.apk
+      arm: [status=speed-profile] [reason=bg-dexopt]
+      known secondary dex files:
+        /data/user/0/com.ktcp.video/app_vp_a/-1447386320.jar
+          class loader context: =UnsupportedClassLoaderContext=
+  [com.xiaomi.mitv.appstore]
+    path: /data/app/com.xiaomi.mitv.appstore-_wabvHRT_Cgfg4rv_TvhRg==/base.apk
+      arm: [status=verify] [reason=inactive]
+      known secondary dex files:
+        /data/user/0/com.xiaomi.mitv.appstore/app_analytics/analytics_asset.apk
+          class loader context: PCL[];PCL[]
+  [com.android.defcontainer]
+    path: /system/priv-app/DefaultContainerService/DefaultContainerService.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.android.pacprocessor]
+    path: /system/app/PacProcessor/PacProcessor.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.android.certinstaller]
+    path: /system/app/CertInstaller/CertInstaller.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.mitv.settings]
+    path: /system/priv-app/MiTVSettings3/MiTVSettings3.apk
+      arm: [status=speed] [reason=unknown]
+  [android]
+  [com.android.backupconfirm]
+    path: /system/priv-app/BackupRestoreConfirmation/BackupRestoreConfirmation.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.mitv.mediaexplorer]
+    path: /vendor/app/MiTVMediaExplorer_6.0.74_772_CWO_Finch_release_signed/MiTVMediaExplorer_6.0.74_772_CWO_Finch_release_signed.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.hyper_connect.tv]
+    path: /system/app/MiTVHyperConnectService/MiTVHyperConnectService.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.mitv.systemui]
+    path: /system/priv-app/MiTVSystemUI/MiTVSystemUI.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.android.providers.settings]
+    path: /system/priv-app/SettingsProvider/SettingsProvider.apk
+      arm: [status=speed] [reason=prebuilt]
+  [com.xiaomi.smarthome.tv]
+    path: /data/app/com.xiaomi.smarthome.tv-NCMz3j-cmfnDkZ0aT7tiEQ==/base.apk
+      arm: [status=speed-profile] [reason=install]
+  [com.android.sharedstoragebackup]
+    path: /system/priv-app/SharedStorageBackup/SharedStorageBackup.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.android.webview]
+    path: /system/app/webview/webview.apk
+      arm: [status=quicken] [reason=prebuilt]
+      used by other apps: [com.android.captiveportallogin, com.mitv.tvhome, tv.danmaku.bili, com.phlox.tvwebbrowser]
+  [com.android.se]
+    path: /system/app/SecureElement/SecureElement.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.android.inputdevices]
+    path: /system/priv-app/InputDevices/InputDevices.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [xyz.erapi0neer.xingyi.voicecheck]
+    path: /data/app/xyz.erapi0neer.xingyi.voicecheck-kK8xI0Nvga4ZapQtomWTNg==/base.apk
+      arm: [status=speed-profile] [reason=install]
+  [com.xiaomi.setupwizard]
+    path: /system/priv-app/MiTVSetupWizard/MiTVSetupWizard.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.mitv.smartpanel]
+    path: /system/app/SmartPanel/SmartPanel.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.mitv.smartshare]
+    path: /data/app/com.xiaomi.mitv.smartshare-jTNL998PYmewcSFbWM_yPQ==/base.apk
+      arm: [status=speed-profile] [reason=bg-dexopt]
+  [com.xiaomi.voicecontrol]
+    path: /data/app/com.xiaomi.voicecontrol-dCKsv1Or3drRm_z0QSNx7g==/base.apk
+      arm: [status=speed-profile] [reason=bg-dexopt]
+  [com.mitv.cloudcontrol]
+    path: /system/app/CloudControlCenter/CloudControlCenter.apk
+      arm: [status=run-from-apk] [reason=unknown]
+  [android.ext.shared]
+    path: /system/app/ExtShared/ExtShared.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.tvqs]
+    path: /vendor/app/TvQuaSys/TvQuaSys.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [android.ext.services]
+    path: /system/priv-app/ExtServices/ExtServices.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.android.packageinstaller]
+    path: /system/priv-app/1720428546_com.android.packageinstaller_10.5.1/1720428546_com.android.packageinstaller_10.5.1.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.wakeupservice]
+    path: /system/app/WakeUpService-1.32.0-732-81fe424-20250828-mulan-production-normal-release/WakeUpService-1.32.0-732-81fe424-20250828-mulan-production-normal-release.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.android.proxyhandler]
+    path: /system/priv-app/ProxyHandler/ProxyHandler.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.miplay]
+    path: /data/app/com.xiaomi.miplay-LbjnLNZLADJc_wnOqQFv-A==/base.apk
+      arm: [status=speed-profile] [reason=install]
+  [com.mitv.overseaservice]
+    path: /system/app/overseaService/overseaService.apk
+      arm: [status=run-from-apk] [reason=unknown]
+  [com.xiaomi.mitv.upgrade]
+    path: /vendor/app/MiTVUpgrade/MiTVUpgrade.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.mitv.gallery]
+    path: /vendor/app/MiTVGallery/MiTVGallery.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.mitv.healthdiagnosis]
+    path: /system/app/MiTVHealthDiagnosis/MiTVHealthDiagnosis.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.miui.tv.analytics]
+    path: /data/app/com.miui.tv.analytics-oROhvXZLdDZQqkHpENsLKQ==/base.apk
+      arm: [status=speed-profile] [reason=install]
+  [com.xiaomi.mitv.hyper.screensaver]
+    path: /system/priv-app/MiTvHyperScreenSaver_release_30030082/MiTvHyperScreenSaver_release_30030082.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [xyz.erapi0neer.fluidlab]
+    path: /data/app/xyz.erapi0neer.fluidlab-R9Br8T1s3IenjzcluuTwgg==/base.apk
+      arm: [status=speed-profile] [reason=install]
+  [xyz.erapi0neer.xiaoaibridge]
+    path: /data/app/xyz.erapi0neer.xiaoaibridge-hWwC2CG2aBEY5oggYMBREQ==/base.apk
+      arm: [status=speed-profile] [reason=install]
+  [com.android.shell]
+    path: /system/priv-app/Shell/Shell.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.android.wallpaperbackup]
+    path: /system/app/WallpaperBackup/WallpaperBackup.apk
+      arm: [status=speed] [reason=prebuilt]
+  [com.android.location.fused]
+    path: /system/priv-app/FusedLocation/FusedLocation.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.android.systemui]
+    path: /system/priv-app/SystemUI/SystemUI.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.mitv.tvpush.tvpushservice]
+    path: /vendor/app/TVPushService/TVPushService.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [com.xiaomi.account.auth]
+    path: /vendor/app/XMAccountAuth/XMAccountAuth.apk
+      arm: [status=run-from-apk] [reason=unknown]
+  [com.netease.cloudmusic.tv]
+    path: /data/app/com.netease.cloudmusic.tv-VnKnmI3bkxiXdyw0SraMcg==/base.apk
+      arm: [status=speed-profile] [reason=bg-dexopt]
+  [com.android.bluetooth]
+    path: /system/app/Bluetooth/Bluetooth.apk
+      arm: [status=run-from-apk] [reason=unknown]
+  [tv.danmaku.bili]
+    path: /data/app/tv.danmaku.bili-2h0Myns6YBr_VhoBdfuxvQ==/base.apk
+      arm: [status=run-from-apk] [reason=unknown]
+      known secondary dex files:
+        /data/user/0/tv.danmaku.bili/app_tribe/3/bundles/livestream/2416088900/main.apk
+          class loader context: =UnsupportedClassLoaderContext=
+        /data/user/0/tv.danmaku.bili/app_tribe/3/bundles/apm/2416088900/main.apk
+          class loader context: =UnsupportedClassLoaderContext=
+        /data/user/0/tv.danmaku.bili/app_tribe/3/bundles/imageDynamic/2416088900/main.apk
+          class loader context: =UnsupportedClassLoaderContext=
+        /data/user/0/tv.danmaku.bili/app_tribe/3/bundles/gametribe/2442344400/main.apk
+          class loader context: =UnsupportedClassLoaderContext=
+        /data/user/0/tv.danmaku.bili/app_tribe/3/bundles/editorimagetxt/2416088900/main.apk
+          class loader context: =UnsupportedClassLoaderContext=
+        /data/user/0/tv.danmaku.bili/app_tribe/3/bundles/facialrecognitiontribetenc/2416088900/main.apk
+          class loader context: =UnsupportedClassLoaderContext=
+        /data/user/0/tv.danmaku.bili/app_tribe/3/bundles/scankit/2416088900/main.apk
+          class loader context: =UnsupportedClassLoaderContext=
+  [com.android.captiveportallogin]
+    path: /system/app/CaptivePortalLogin/CaptivePortalLogin.apk
+      arm: [status=quicken] [reason=prebuilt]
+  [xyz.erapi0neer.homepreview]
+    path: /data/app/xyz.erapi0neer.homepreview-P9CyrePGDICroIxCWlv3yQ==/base.apk
+      arm: [status=speed-profile] [reason=install]
+  [com.xiaomi.mitv.tvmanager]
+    path: /data/app/com.xiaomi.mitv.tvmanager-HCVXB4o-ESpRSKX9uMGbgg==/base.apk
+      arm: [status=speed-profile] [reason=bg-dexopt]
