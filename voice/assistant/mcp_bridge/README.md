@@ -1,6 +1,6 @@
 # 星仪电视 MCP 服务（2.0）
 
-让电脑上的 MCP 客户端（示例作品24、Claude Desktop、Codex 等）把事情交给电视上的星仪去做。服务进程跑在这台已与电视配对的 Windows 电脑上，经 adb 连到电视里的星仪后台（`xyz.erapi0neer.xiaoaibridge`）。星仪界面不用在前台；电视上照常显示右上角的执行面板，但这个来源不出声。
+让电脑上的 MCP 客户端（Claude Code、Claude Desktop、Codex 等）把事情交给电视上的星仪去做。服务进程跑在这台已与电视配对的 Windows 电脑上，经 adb 连到电视里的星仪后台（`xyz.erapi0neer.xiaoaibridge`）。星仪界面不用在前台；电视上照常显示右上角的执行面板，但这个来源不出声。
 
 | 工具 | 作用 |
 |---|---|
@@ -13,7 +13,7 @@
 
 ## 接入
 
-- `H:\tools\mitv\.mcp.json` 是项目级配置：在这个目录下打开的 示例作品24 会话会提示启用 `xingyi-tv`。
+- `H:\tools\mitv\.mcp.json` 是项目级配置：在这个目录下打开的 Claude Code 会话会提示启用 `xingyi-tv`。
 - 其他客户端可以导入同目录的 [client-config.json](client-config.json)。
 - 电视地址变了就在服务器环境变量里设 `XINGYI_TV=电视IP:5555`。电脑和电视要在同一局域网。
 

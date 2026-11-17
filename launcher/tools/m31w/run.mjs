@@ -2,7 +2,7 @@
 // m31w — orchestrator/worker runner for Orrery, the TV's home screen (copied from 星仪's tools/m31w/run.mjs on 2026-11-08;
 // only the scratch directories, the lead-owned list and the preamble differ).
 //
-// The lead (Claude) writes a job spec + brief; this runner launches a headless 示例作品24 worker whose model is
+// The lead (Claude) writes a job spec + brief; this runner launches a headless Claude Code worker whose model is
 // the free worker model of the gateway (MiniMax-M78 since 2026-10-28, MiniMax-M3.1-Flash before), then does NOT trust its
 // report: it reverts edits outside the job's owned paths, runs the job's acceptance commands itself, and resumes the same
 // worker session with the concrete failures until they pass or the round limit is hit. Every assistant message's real
@@ -47,7 +47,7 @@ const OUTAGE = ['积分不足', '预算不足', 'invalid api key', 'Unauthorized
 // "login fail: Please carry the API secret key" (2026-10-28, while M3.1 answered 200): a busy channel, not a bad key.
 // These are retried with the backoff before the outage words are looked at.
 const TRANSIENT = ['(429)', ' 429', 'login fail', 'Please carry the API secret key', 'temporarily unavailable', 'overloaded'];
-// 示例作品24 writes an assistant message of this model itself when an API call fails: it is not a model that answered.
+// Claude Code writes an assistant message of this model itself when an API call fails: it is not a model that answered.
 const SYNTHETIC_MODEL = '<synthetic>';
 const CONTEXT = ['context window exceeds', 'prompt is too long', 'context_length', '(2013)'];
 // Lead-owned paths: a worker never edits these (reverted if it does).

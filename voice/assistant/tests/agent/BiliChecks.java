@@ -138,14 +138,14 @@ final class BiliChecks {
         check(ys.equals("影视飓风最新的 3 个视频：第一，《动态视频｜2026，它来了…》，昨天，13 万播放；第二，《真的需要摸吗？MacBook Pro PROLED XDR上手》，前天，162 万播放；"
                 + "第三，《动态视频｜苹果的触屏MacBook Pro来了，你会买么？》，10 月 29 日，145 万播放"), "three newest: " + ys);
         String top = BiliVideos.speak(BiliVideos.find(fake(), "星辰亻旅行者", "", "most_played", 1), 1, NOW);
-        check(top.equals("星辰亻旅行者播放最多的视频是《示例作品13》，125 万播放，2019 年 12 月 4 日发的"),
+        check(top.equals("星辰亻旅行者播放最多的视频是《示例作品14》，125 万播放，2019 年 12 月 4 日发的"),
                 "the most played one, cut between words: " + top);
         String topic = BiliVideos.speak(BiliVideos.find(fake(), "", "黑神话", "relevance", 2), 2, NOW);
         check(topic.equals("B站上「黑神话」相关的 2 个视频：第一，《【4K】黑神话悟空全成就保姆级攻略【已完结】》，爱玩的Kaka，2024 年 12 月 27 日，796 万播放；"
                 + "第二，《黑神话策划被泡面砸脸，二十多名玩家甚至摸到小区门口》，子休狐，昨天，2 万播放"),
                 "a topic's videos say whose they are: " + topic);
         String mad = BiliVideos.speak(BiliVideos.find(fake(), "星辰亻旅行者", "MAD", "latest", 2), 2, NOW);
-        check(mad.startsWith("星辰亻旅行者最新的 2 个MAD视频：第一，《【示例PV】作品17》，10 月 12 日，3039 次播放；第二，"), "their MADs: " + mad);
+        check(mad.startsWith("星辰亻旅行者最新的 2 个MAD视频：第一，《【示例PV】作品18》，10 月 12 日，3039 次播放；第二，"), "their MADs: " + mad);
         check(BiliVideos.speak(BiliVideos.find(fake(), "星辰人旅行者", "", "latest", 3), 3, NOW).equals("B站上没找到叫「星辰人旅行者」的 UP 主"), "no such UP");
         check(BiliVideos.speak(BiliVideos.find(fake(), "星辰亻旅行者", "加速世界", "relevance", 3), 3, NOW).equals("星辰亻旅行者的视频里没找到「加速世界」"), "none of that kind");
 

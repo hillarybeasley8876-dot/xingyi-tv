@@ -76,18 +76,18 @@ const screens = {
   biliResults: (q) => `前台：哔哩哔哩 tv.danmaku.bili/.SearchResultActivity\n焦点：[1]\n[1] 文本框「${q}」 可输入\n[2] 标签「综合」 已选\n[3] 标签「用户」 可点\n[4] 卡片「UP主 ${q} · 粉丝 1.2万 · 视频 86」 可点\n[5] 卡片「${q}：第一期 城市夜景延时 · 播放 3.4万」 可点\n[6] 卡片「${q} 的 2026 年度总结 · 播放 1.1万」 可点`,
   biliPlayer: '前台：哔哩哔哩 tv.danmaku.bili/.VideoDetailsActivity\n焦点：[1]\n[1] 视频画面 可点\n[2] 文本「星辰亻旅行者：第一期 城市夜景延时」\n[3] 按钮「点赞」 可点',
   // what the 2026-11-05 runs saw: an UP's search results with play counts, one of them a MAD
-  biliUp: '前台：哔哩哔哩 tv.danmaku.bili/com.bilibili.search2.main.BiliMainSearchActivity\n焦点：[1]\n[1] 文本框「星辰亻旅行者」 可输入\n[2] 标签「综合」 已选\n[3] 标签「用户(3)」 可点\n[4] 卡片「星辰亻旅行者 · 2.1万粉丝 · 73个视频」 可点\n[5] 卡片「示例作品26 · 星辰亻旅行者 · 4:21 · 2289 · 10月18日」 可点\n[6] 卡片「示例作品13 · 星辰亻旅行者 · 2:46 · 125.9万 · 2019年12月4日」 可点\n[7] 卡片「【示例PV】作品23 · 星辰亻旅行者 · 4:06 · 25.3万 · 10月1日」 可点\n[8] 卡片「【MAD/燃向】时代的回声 · 星辰亻旅行者 · 3:12 · 3.1万 · 9月2日」 可点\n[9] 按钮「查看全部73个视频」 可点',
+  biliUp: '前台：哔哩哔哩 tv.danmaku.bili/com.bilibili.search2.main.BiliMainSearchActivity\n焦点：[1]\n[1] 文本框「星辰亻旅行者」 可输入\n[2] 标签「综合」 已选\n[3] 标签「用户(3)」 可点\n[4] 卡片「星辰亻旅行者 · 2.1万粉丝 · 73个视频」 可点\n[5] 卡片「示例作品27 · 星辰亻旅行者 · 4:21 · 2289 · 10月18日」 可点\n[6] 卡片「示例作品14 · 星辰亻旅行者 · 2:46 · 125.9万 · 2019年12月4日」 可点\n[7] 卡片「【示例PV】作品24 · 星辰亻旅行者 · 4:06 · 25.3万 · 10月1日」 可点\n[8] 卡片「【MAD/燃向】时代的回声 · 星辰亻旅行者 · 3:12 · 3.1万 · 9月2日」 可点\n[9] 按钮「查看全部73个视频」 可点',
 };
 // B站's search as bili_videos read it on 2026-11-07 (BiliVideos): each UP's uploads, newest first
 const BILI_UPS = {
   '星辰亻旅行者': [
-    { aid: 111528431382594, title: '示例作品14', date: '前天', views: 1081, tags: 'agent,harness' },
+    { aid: 111528431382594, title: '示例作品15', date: '前天', views: 1081, tags: 'agent,harness' },
     { aid: 118921720599919, title: '【示例小镇 ｜示例】一段很长的示例视频标题，用来测试卡片截断，长度和原来的标题差不多', date: '10 月 18 日', views: 2030, tags: 'Godot' },
-    { aid: 112394507326699, title: '示例作品26', date: '10 月 18 日', views: 2374, tags: '游戏' },
-    { aid: 118453142134402, title: '【示例PV】作品23', date: '10 月 1 日', views: 253847, tags: 'PV,AI' },
-    { aid: 923642204, title: '【示例MAD】作品16', date: '2020 年 8 月 31 日', views: 93530, tags: 'MAD' },
-    { aid: 77831250, title: '示例作品13', date: '2019 年 12 月 4 日', views: 1259336, tags: 'MAD,静止系' },
-    { aid: 25872358, title: '示例作品20', date: '2018 年 6 月 25 日', views: 99674, tags: 'MAD,静止系' }],
+    { aid: 112394507326699, title: '示例作品27', date: '10 月 18 日', views: 2374, tags: '游戏' },
+    { aid: 118453142134402, title: '【示例PV】作品24', date: '10 月 1 日', views: 253847, tags: 'PV,AI' },
+    { aid: 923642204, title: '【示例MAD】作品17', date: '2020 年 8 月 31 日', views: 93530, tags: 'MAD' },
+    { aid: 77831250, title: '示例作品14', date: '2019 年 12 月 4 日', views: 1259336, tags: 'MAD,静止系' },
+    { aid: 25872358, title: '示例作品21', date: '2018 年 6 月 25 日', views: 99674, tags: 'MAD,静止系' }],
   '影视飓风': [
     { aid: 117568757109187, title: '动态视频｜2026，它来了…', date: '昨天', views: 130796, tags: '' },
     { aid: 117563807766583, title: '真的需要摸吗？MacBook Pro PROLED XDR上手', date: '前天', views: 1627274, tags: '数码' },
@@ -558,7 +558,7 @@ function sim(state) {
       const answer = /天气|气温|下雨/.test(q) ? (/明天|11月5日|5日/.test(q) ? '上海明天多云转小雨，15到19度，东北风3级。来源：中国天气网。' : '上海今天阴到多云，现在18度，夜里16到17度。来源：中国天气网。')
         : /金价|黄金/.test(q) ? '今天上海黄金交易所上海金基准价约每克921元，首饰金价每克1150元左右。来源：上海黄金交易所。'
         : /NBA|比赛|赛程/i.test(q) ? '北京时间今天上午有14场NBA常规赛，焦点是湖人对国王、凯尔特人对雄鹿。来源：NBA中国。'
-        : /姚润|叠纸/.test(q) ? '网上从11月4日起在传叠纸创始人姚润昊（也有人写成姚润浩）疑似被扒出境外社交账号，内容和他以往的公众形象反差很大，在乙游玩家圈发酵；到11月5日叠纸和本人都没有公开回应，账号真实性也没被证实。来源：新浪财经、搜狐、微博热搜。'
+        : /姚润|叠纸/.test(q) ? '没有找到可靠来源的报道，网上的说法未经证实，不转述。'
         : /杨永浩/.test(q) ? '没有找到权威媒体关于“杨永浩出事”的报道；网上同名的是门头沟区检察院检察长杨永浩，最近只有任职消息。'
         : /林俊杰/.test(q) && /最新|新歌|单曲|发表|发行/.test(q) ? '林俊杰最新发表的单曲是2026年10月24日上线的《时间的歌》。来源：网易云音乐、QQ音乐。'
         : /open ?ai|oppo/i.test(q) ? 'OpenAI 11月4日发布 Images 2.6，11月3日任命 Jill Hazelbaker 为首席企业事务官。来源：OpenAI 官网。'
@@ -672,7 +672,7 @@ const scenarios = {
     noteList: '随手记里有 1 件：1 号，明天买牛奶（今天 10:05 记的）。',
     expect: { says: '牛奶' } },
   replay: { say: '昨天晚上看的那个视频再放一遍', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher, results: screens.biliUp,
-    history: '找到 1 条：昨天 22:58 你说「打开B站搜索星辰亻旅行者播放它播放量最高的一个视频」，星仪回答「已在B站播放《示例作品13》」（当时在放《示例作品13》）',
+    history: '找到 1 条：昨天 22:58 你说「打开B站搜索星辰亻旅行者播放它播放量最高的一个视频」，星仪回答「已在B站播放《示例作品14》」（当时在放《示例作品14》）',
     expect: { called: ['recall_history'], play: '示例作品' } },
   // a scheduled task firing while the TV is in standby: a video needs the screen first, turning the TV off does not
   firedvideo: { say: '打开B站搜索星辰亻旅行者播放它播放量最高的一个视频', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher,
@@ -918,9 +918,9 @@ const scenarios = {
     expect: { karaoke: true, noUp: true, avoid: ['netease_play', 'web_search', 'open_app'] } },
   yuanchang: { say: '现在是伴奏模式，切回原唱', fg: 'com.netease.cloudmusic.tv', screen: NE_PLAYER, playing: PLAYING_HU, karaokeSim: true, karaoke: true,
     expect: { karaoke: false, noUp: true, avoid: ['netease_play', 'web_search', 'open_app'] } },
-  // On the TV: 「我有点不舒服脚坏了」 got 「没太听清，是脚扭伤不舒服吗，还是别的？」 — the user had to say
-  // 「我脚扭了呀」 before any help came: a body complaint is answered with care and first steps, not asked back
-  footache: { say: '我有点不舒服脚坏了', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher,
+  // On the TV: 「我有点不舒服腿酸了」 got 「没太听清，是脚扭伤不舒服吗，还是别的？」 — the user had to say
+  // 「我腿酸了呀」 before any help came: a body complaint is answered with care and first steps, not asked back
+  footache: { say: '我有点不舒服腿酸了', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher,
     expect: { avoid: ['ask_user', 'web_search', 'plan', 'open_app'], says: ['冰敷', '休息', '医院', '别走', '垫高', '抬高'] } },
   headache: { say: '我头好疼啊', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher,
     expect: { avoid: ['ask_user', 'plan', 'open_app'], says: ['休息', '喝水', '医院', '药', '躺'] } },
