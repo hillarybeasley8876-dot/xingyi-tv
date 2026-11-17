@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="星仪 XINGYI —— 住在电视里的智能体。开源的小米电视语音 harness：接管小爱，70 多个工具，完成要有证据。">
+<meta name="theme-color" content="#05070a">
+<title>星仪 XINGYI · 住在电视里的智能体</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2305080d'/%3E%3Ccircle cx='16' cy='17' r='8.5' fill='none' stroke='%236fe3ff' stroke-width='1.4'/%3E%3Ccircle cx='22' cy='11' r='2' fill='%236fe3ff'/%3E%3C/svg%3E">
+<script>document.documentElement.className=(location.search.indexOf('capture')>=0||matchMedia('(prefers-reduced-motion: reduce)').matches)?'capture':'';</script>
+<style>
+:root{
+  --bg:#05070a;
+  --bg2:#080b11;
+  --panel:#0a0e15;
+  --line:rgba(126,227,255,.13);
+  --line-strong:rgba(126,227,255,.30);
+  --text:#e8eff4;
+  --dim:#75838d;
+  --dim2:#55626b;
+  --accent:#6fe3ff;
+  --amber:#ffb454;
+  --mono:ui-monospace,"Cascadia Mono","SF Mono",Consolas,"Liberation Mono",monospace;
+  --sans:system-ui,-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:var(--sans);font-size:15px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;padding-top:32px;
+}
+body.locked{overflow:hidden}
+::selection{background:rgba(111,227,255,.24);color:#fff}
+a{color:inherit}
+.wrap{max-width:1360px;margin:0 auto;padding:0 48px}
+.mono{font-family:var(--mono)}
+canvas{display:block}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:fixed;top:0;left:0;right:0;height:32px;z-index:50;
+  display:flex;align-items:center;gap:14px;padding:0 18px;
+  background:rgba(5,7,10,.78);border-bottom:1px solid var(--line);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;color:var(--dim);
+  white-space:nowrap;overflow:hidden;
+}
+.bar .led{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:blink 4s infinite;flex:none}
+.bar .b-l{color:var(--text)}
+.bar .b-c{margin-left:auto;display:flex;gap:24px}
+.bar .clock{color:var(--dim)}
+.bar a{color:var(--dim);text-decoration:none;transition:color .2s}
+.bar a:hover{color:var(--accent)}
+@keyframes blink{0%,92%{opacity:1}95%,100%{opacity:.25}}
+
+/* ---------- boot ---------- */
+#boot{
+  position:fixed;inset:0;z-index:100;background:#04060a;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .9s cubic-bezier(.76,0,.24,1);
+}
+#boot.done{transform:translateY(-101%)}
+#boot::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px);
+}
+#boot::after{
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:.55;transform:scaleX(0);transform-origin:left;
+  animation:bootline 2.2s .2s cubic-bezier(.2,.7,.2,1) forwards;
+}
+#boot.flash .boot-inner{animation:bootflash .5s ease-out}
+@keyframes bootline{to{transform:scaleX(1)}}
+@keyframes bootflash{0%{filter:brightness(1)}18%{filter:brightness(2.4)}100%{filter:brightness(1)}}
+.boot-inner{width:min(720px,86vw);font-family:var(--mono);font-size:12.5px;line-height:1;color:#c8d6de;position:relative}
+.boot-head{display:flex;justify-content:space-between;font-size:9.5px;letter-spacing:.38em;color:var(--accent);margin-bottom:26px}
+.boot-head .bh-r{color:var(--dim)}
+#boot-lines{min-height:13.5em}
+.bl{display:grid;grid-template-columns:10.5em 1fr auto;gap:12px;margin-bottom:10px;opacity:0;animation:blin .16s ease forwards}
+@keyframes blin{to{opacity:1}}
+.bk{color:#e8eff4}
+.bd{color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bs{color:var(--accent);letter-spacing:.1em}
+.bs.amber{color:var(--amber)}
+.bs.dim{color:var(--dim2)}
+.boot-foot{margin-top:22px;font-size:11.5px;letter-spacing:.22em;color:var(--accent);opacity:0;transition:opacity .4s}
+.boot-foot.show{opacity:1}
+.cur{display:inline-block;margin-left:6px;animation:cur 1s steps(2) infinite}
+@keyframes cur{50%{opacity:0}}
+html.capture #boot{display:none!important}
+html.capture{scroll-behavior:auto!important}
+html.capture body{padding-top:32px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:calc(100vh - 32px);display:flex;flex-direction:column;overflow:hidden;border-bottom:1px solid var(--line)}
+html.capture .hero{min-height:820px}
+#flow-hero{position:absolute;inset:0;width:100%;height:100%}
+.hero-scrim{position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(90% 70% at 74% 42%,rgba(5,7,10,0) 0%,rgba(5,7,10,0) 46%,rgba(5,7,10,.55) 100%),
+    linear-gradient(90deg,rgba(5,7,10,.94) 0%,rgba(5,7,10,.66) 34%,rgba(5,7,10,.12) 62%,rgba(5,7,10,0) 100%),
+    linear-gradient(0deg,rgba(5,7,10,.9) 0%,rgba(5,7,10,0) 26%);
+}
+.hero-inner{
+  position:relative;z-index:2;flex:1;
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;align-items:end;gap:56px;
+  padding-top:120px;padding-bottom:64px;
+}
+.hero-kick{display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.4em;color:var(--dim);text-transform:uppercase}
+.hero-kick .hk-line{width:44px;height:1px;background:var(--line-strong)}
+.hero-title-row{display:flex;align-items:flex-start;gap:30px;margin-top:30px}
+.hero-title{
+  font-size:clamp(104px,15vw,232px);font-weight:700;line-height:.92;letter-spacing:.04em;
+  background:linear-gradient(180deg,#ffffff 0%,#dff3fa 52%,#8fcbdd 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 90px rgba(111,227,255,.18);
+}
+.hero-en{writing-mode:vertical-rl;display:flex;gap:18px;padding-top:16px;font-family:var(--mono)}
+.hero-en span:first-child{font-size:12px;letter-spacing:.62em;color:var(--accent)}
+.hero-en .en-sub{font-size:9px;letter-spacing:.42em;color:var(--dim2)}
+.tagline{
+  margin-top:34px;font-size:clamp(19px,1.9vw,25px);letter-spacing:.24em;font-weight:500;color:#dfeaf0;
+}
+.tagline::before{content:"";display:inline-block;width:26px;height:1px;background:var(--accent);vertical-align:middle;margin-right:20px;margin-bottom:4px}
+.lede{max-width:640px;margin-top:22px;font-size:14.5px;line-height:2.05;color:var(--dim)}
+.hero-tags{margin-top:30px;display:flex;flex-wrap:wrap;gap:9px}
+.hero-tags span{font-size:10px;letter-spacing:.16em;color:var(--dim);border:1px solid var(--line);padding:6px 12px}
+.hero-side{
+  border-left:1px solid var(--line);padding-left:26px;display:grid;gap:20px;
+  font-size:10px;letter-spacing:.14em;color:var(--dim2);padding-bottom:6px;
+}
+.hs-item span{display:block;color:var(--dim2);font-size:9px;letter-spacing:.34em;margin-bottom:5px}
+.hs-item b{font-weight:400;color:var(--dim);letter-spacing:.1em}
+.hero-foot{position:relative;z-index:2}
+.hero-metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.m{background:rgba(5,7,10,.82);backdrop-filter:blur(6px);padding:18px 26px 16px}
+.m b{font-family:var(--mono);font-size:23px;font-weight:600;letter-spacing:0;color:var(--text);white-space:nowrap}
+.m b em{font-style:normal;font-size:11.5px;color:var(--dim);margin-left:5px;letter-spacing:.06em}
+.m span{display:block;margin-top:7px;font-family:var(--mono);font-size:9px;letter-spacing:.3em;color:var(--dim2);text-transform:uppercase;white-space:nowrap}
+
+/* ---------- ticker ---------- */
+.ticker{overflow:hidden;border-bottom:1px solid var(--line);padding:9px 0;background:var(--bg)}
+.ticker-track{display:inline-flex;white-space:nowrap;animation:tick 52s linear infinite;will-change:transform}
+.ticker span{font-family:var(--mono);font-size:9.5px;letter-spacing:.3em;color:var(--dim2);padding-right:3em}
+.ticker span i{font-style:normal;color:var(--accent);opacity:.7}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+.sec{position:relative;padding:132px 0 118px;border-bottom:1px solid var(--line);overflow:hidden;scroll-margin-top:32px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;align-items:end;gap:34px;margin-bottom:64px;position:relative;z-index:1}
+.sec-idx{font-family:var(--mono);font-size:12px;letter-spacing:.4em;color:var(--accent)}
+.sec-en{font-family:var(--mono);font-size:9.5px;letter-spacing:.44em;color:var(--dim2);text-transform:uppercase;margin-top:9px}
+.sec-title{font-size:clamp(27px,3.1vw,42px);font-weight:650;letter-spacing:.03em;line-height:1.3}
+.ghost{
+  position:absolute;top:-56px;right:10px;z-index:0;
+  font-family:var(--mono);font-weight:700;font-size:clamp(160px,21vw,330px);line-height:1;
+  color:transparent;-webkit-text-stroke:1px rgba(111,227,255,.075);
+  pointer-events:none;user-select:none;
+}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}
+.rv.d2{transition-delay:.16s}
+.rv.d3{transition-delay:.24s}
+.rv.d4{transition-delay:.32s}
+html.capture .rv{opacity:1;transform:none;transition:none}
+
+/* ---------- 01 what ---------- */
+.what-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:start}
+.what-copy .big{font-size:clamp(23px,2.5vw,33px);font-weight:550;line-height:1.62;letter-spacing:.02em;color:#f2f8fb}
+.what-copy p{color:var(--dim);font-size:14px;line-height:2.05;margin-top:24px;max-width:600px}
+.what-copy .mini{font-family:var(--mono);font-size:9.5px;letter-spacing:.3em;color:var(--dim2);margin-top:34px}
+.loop-card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(10,14,21,.9),rgba(6,9,13,.9));padding:26px 28px 20px;position:relative}
+.loop-card::before,.loop-card::after{content:"";position:absolute;width:10px;height:10px;border-color:var(--line-strong);border-style:solid}
+.loop-card::before{top:-1px;left:-1px;border-width:1px 0 0 1px}
+.loop-card::after{bottom:-1px;right:-1px;border-width:0 1px 1px 0}
+.lc-head{font-size:9.5px;letter-spacing:.4em;color:var(--accent);margin-bottom:20px}
+.lc-list{list-style:none;position:relative}
+.lc-list li{display:grid;grid-template-columns:44px 56px 1fr;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid rgba(126,227,255,.08)}
+.lc-list li:first-child{border-top:0}
+.lc-list i{font-family:var(--mono);font-style:normal;font-size:10px;color:var(--dim2);letter-spacing:.2em}
+.lc-list b{font-weight:600;font-size:14.5px;color:var(--text);letter-spacing:.1em}
+.lc-list span{font-size:12px;color:var(--dim2);line-height:1.6}
+
+/* ---------- 02 pipeline ---------- */
+.pipe{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:30px;padding-top:10px}
+.pipe::before{content:"";position:absolute;left:0;right:0;top:14px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--line-strong) 5%,var(--line-strong) 95%,transparent)}
+.pulse{position:absolute;top:11px;left:-120px;width:110px;height:7px;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(111,227,255,.55),transparent 72%);
+  animation:sweep 7s linear infinite}
+@keyframes sweep{from{left:-9%}to{left:100%}}
+.node{position:relative;padding-top:0}
+.dot{display:block;width:9px;height:9px;margin:10px 0 0;border:1px solid var(--accent);border-radius:50%;background:var(--bg);
+  transition:background .5s,box-shadow .5s}
+.pipe.in .dot{background:var(--accent);box-shadow:0 0 14px rgba(111,227,255,.85)}
+.pipe.in .node:nth-child(3) .dot{transition-delay:.1s}
+.pipe.in .node:nth-child(4) .dot{transition-delay:.2s}
+.pipe.in .node:nth-child(5) .dot{transition-delay:.3s}
+.pipe.in .node:nth-child(6) .dot{transition-delay:.4s}
+.pipe.in .node:nth-child(7) .dot{transition-delay:.5s}
+.n-idx{font-family:var(--mono);font-size:9.5px;letter-spacing:.3em;color:var(--dim2);margin-top:16px}
+.n-name{font-size:15.5px;font-weight:600;letter-spacing:.08em;margin-top:5px}
+.n-en{font-family:var(--mono);font-size:8.5px;letter-spacing:.32em;color:var(--accent);margin-top:4px}
+.n-desc{font-size:12px;color:var(--dim);line-height:1.8;margin-top:10px;max-width:190px}
+.loop{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:52px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--dim)}
+.loop .loop-label{color:var(--dim2);letter-spacing:.36em;margin-right:6px}
+.loop b{font-weight:400;color:var(--text);border:1px solid var(--line);padding:6px 13px}
+.loop i{font-style:normal;color:var(--accent)}
+.loop .loop-note{margin-left:auto;color:var(--dim2);font-size:9.5px;letter-spacing:.16em}
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+.note{background:var(--bg);padding:20px 22px;display:flex;gap:15px}
+.note .k{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.24em;padding-top:2px;flex:none}
+.note p{font-size:12.5px;color:var(--dim);line-height:1.85}
+
+/* ---------- 03 trace ---------- */
+.trace-intro{font-size:15px;color:var(--dim);margin-bottom:30px;max-width:720px;line-height:1.95}
+.trace-intro b{color:var(--text);font-weight:600}
+.term{border:1px solid var(--line-strong);background:#060a0f;position:relative}
+.term::before,.term::after{content:"";position:absolute;width:12px;height:12px;border-color:var(--accent);border-style:solid;opacity:.5;pointer-events:none}
+.term::before{top:-1px;left:-1px;border-width:1px 0 0 1px}
+.term::after{bottom:-1px;right:-1px;border-width:0 1px 1px 0}
+.term-bar{display:flex;align-items:center;gap:9px;padding:11px 16px;border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;color:var(--dim2)}
+.tdot{width:7px;height:7px;border:1px solid var(--dim2);border-radius:50%;flex:none}
+.term-title{color:var(--dim);margin-left:6px}
+.term-meta{margin-left:auto;color:var(--accent);letter-spacing:.16em}
+#trace-log{font-family:var(--mono);font-size:12.5px;line-height:2.05;padding:24px 26px;min-height:390px;
+  white-space:pre-wrap;word-break:break-all;color:#b8c6cf}
+#trace-log .ln{display:grid;grid-template-columns:14ch minmax(0,1fr);column-gap:0;opacity:0;animation:lnin .22s ease forwards}
+@keyframes lnin{to{opacity:1}}
+#trace-log .ln>.k{color:var(--accent)}
+#trace-log .ln>.v{color:#b8c6cf}
+#trace-log .ln.ind>.v{color:var(--dim2);padding-left:2ch}
+#trace-log .ln.p{display:block}
+#trace-log .ln.p>.p{color:var(--accent)}
+#trace-log .ln.p>.v{color:var(--text)}
+#trace-log .ln.ans>.k{color:var(--amber)}
+#trace-log .ln.ans>.v{color:#eef6fa}
+.term-foot{display:flex;align-items:center;gap:16px;padding:12px 16px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--dim2)}
+.term-foot button{margin-left:auto;background:none;border:1px solid var(--line-strong);color:var(--text);
+  font-family:var(--mono);font-size:10px;letter-spacing:.24em;padding:8px 17px;cursor:pointer;transition:all .2s}
+.term-foot button:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 18px rgba(111,227,255,.15)}
+
+/* ---------- 04 capacity ---------- */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--bg);padding:26px 24px 20px;display:flex;flex-direction:column;min-height:252px;position:relative;transition:background .35s}
+.card:hover{background:#0a0f16}
+.c-top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;letter-spacing:.3em}
+.c-top .c-idx{color:var(--accent)}
+.c-top .c-tag{color:var(--dim2)}
+.card h3{font-size:16.5px;font-weight:600;letter-spacing:.06em;margin-top:26px}
+.card p{font-size:12.5px;color:var(--dim);line-height:1.9;margin-top:12px;flex:1}
+.c-num{display:flex;align-items:baseline;gap:9px;border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
+.c-num b{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--accent);letter-spacing:0;white-space:nowrap}
+.c-num span{font-family:var(--mono);font-size:9px;letter-spacing:.24em;color:var(--dim2)}
+.tools-head{display:flex;align-items:baseline;gap:18px;margin-top:46px}
+.tools-head .th-k{font-family:var(--mono);font-size:9.5px;letter-spacing:.36em;color:var(--dim2)}
+.tools-head .th-t{font-size:14px;color:var(--dim);letter-spacing:.06em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--dim);border:1px solid var(--line);padding:6px 12px;transition:all .2s}
+.chips span:hover{border-color:var(--line-strong);color:var(--accent)}
+
+/* ---------- 05 orrery ---------- */
+.orrery-grid{display:grid;grid-template-columns:380px minmax(0,1fr);gap:56px;align-items:stretch}
+.orrery-copy p{color:var(--dim);font-size:13.5px;line-height:2.05;margin-bottom:20px}
+.orrery-copy p b{color:var(--text);font-weight:600}
+.eq{font-family:var(--mono);font-size:11.5px;line-height:2.1;color:var(--dim);border-left:1px solid var(--line-strong);padding:10px 0 10px 20px;margin:26px 0}
+.eq i{font-style:normal;color:var(--accent)}
+.orrery-facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:30px}
+.of{background:var(--bg);padding:14px 16px}
+.of b{display:block;font-family:var(--mono);font-size:17px;font-weight:600;color:var(--text)}
+.of span{display:block;font-family:var(--mono);font-size:8.5px;letter-spacing:.26em;color:var(--dim2);margin-top:6px}
+.orrery-panel{position:relative;border:1px solid var(--line-strong);min-height:560px;overflow:hidden;background:#04060a}
+#flow-orrery{position:absolute;inset:0;width:100%;height:100%}
+.orrery-panel::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 46%,transparent 52%,rgba(4,6,10,.72) 100%)}
+.ov{position:absolute;z-index:2;font-family:var(--mono);font-size:9px;letter-spacing:.3em;color:var(--dim2);white-space:nowrap}
+.ov.tl{top:16px;left:18px;color:var(--dim)}
+.ov.tr{top:16px;right:18px;color:var(--accent)}
+.ov.bl{left:18px;bottom:44px;letter-spacing:.24em}
+.ov.br{right:18px;bottom:44px}
+.shelf{position:absolute;z-index:2;left:18px;right:18px;bottom:12px;display:flex;justify-content:space-between;gap:10px;
+  border-top:1px solid var(--line);padding-top:10px;font-family:var(--mono);font-size:8.5px;letter-spacing:.22em;color:var(--dim2)}
+.shelf b{font-weight:400;color:var(--dim)}
+.shelf b.on{color:var(--accent);position:relative}
+.shelf b.on::before{content:"";position:absolute;left:50%;top:-11px;width:1px;height:6px;background:var(--accent)}
+
+/* ---------- 06 doctrine ---------- */
+.q{display:grid;grid-template-columns:88px minmax(0,1fr);gap:30px;padding:36px 0;border-top:1px solid var(--line)}
+.q:first-of-type{border-top:0;padding-top:8px}
+.qi{font-family:var(--mono);font-size:11px;letter-spacing:.32em;color:var(--accent);padding-top:8px}
+.q blockquote{font-size:clamp(18px,2.05vw,27px);font-weight:520;line-height:1.62;letter-spacing:.02em;color:#eef5f8}
+.q .src{font-family:var(--mono);font-size:9.5px;letter-spacing:.28em;color:var(--dim2);margin-top:12px}
+
+/* ---------- numbers ---------- */
+.nums-wrap{border-bottom:1px solid var(--line)}
+.nums-head{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;letter-spacing:.36em;color:var(--dim2);padding:16px 0}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.num{background:var(--bg);padding:38px 30px 34px}
+.num b{display:block;font-family:var(--mono);font-weight:600;font-size:clamp(30px,3.4vw,50px);line-height:1;letter-spacing:-.01em;color:var(--text)}
+.num span{display:block;margin-top:12px;font-family:var(--mono);font-size:9px;letter-spacing:.28em;color:var(--dim2);text-transform:uppercase}
+
+/* ---------- footer ---------- */
+footer{padding:120px 0 0}
+.cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:end;padding-bottom:76px}
+.cta-kick{font-family:var(--mono);font-size:10px;letter-spacing:.42em;color:var(--accent);margin-bottom:22px}
+.cta h2{font-size:clamp(44px,6.2vw,92px);font-weight:700;letter-spacing:.04em;line-height:1.08}
+.cta p{color:var(--dim);font-size:14px;line-height:2;margin-top:20px;max-width:560px}
+.btn{display:inline-flex;align-items:center;gap:14px;border:1px solid var(--accent);color:var(--accent);
+  padding:17px 28px;font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-decoration:none;
+  transition:all .25s;white-space:nowrap}
+.btn:hover{background:var(--accent);color:#04121a;box-shadow:0 0 40px rgba(111,227,255,.35)}
+.btn .arr{transition:transform .25s}
+.btn:hover .arr{transform:translate(2px,-2px)}
+.colophon{border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  padding:18px 0 26px;font-family:var(--mono);font-size:9px;letter-spacing:.26em;color:var(--dim2)}
+.colophon i{font-style:normal;color:var(--dim)}
+
+/* ---------- responsive ---------- */
+@media(max-width:1080px){
+  .hero-inner{grid-template-columns:1fr;padding-top:110px}
+  .hero-side{display:none}
+  .hero-metrics{grid-template-columns:repeat(3,1fr)}
+  .what-grid{grid-template-columns:1fr;gap:48px}
+  .pipe{grid-template-columns:repeat(3,1fr);row-gap:44px}
+  .pipe::before{display:none}
+  .pulse{display:none}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .orrery-grid{grid-template-columns:1fr;gap:40px}
+  .orrery-panel{min-height:480px}
+}
+@media(max-width:720px){
+  body{padding-top:30px}
+  .bar{height:30px;font-size:8.5px;letter-spacing:.16em;gap:10px;padding:0 12px}
+  .bar .b-c{display:none}
+  .bar .clock{margin-left:auto}
+  .wrap{padding:0 20px}
+  .hero{min-height:calc(100svh - 30px)}
+  .hero-inner{padding-top:88px;padding-bottom:44px}
+  .hero-title{font-size:clamp(88px,26vw,140px)}
+  .hero-en{padding-top:8px}
+  .tagline{font-size:16.5px;letter-spacing:.16em;margin-top:26px}
+  .lede{font-size:13.5px}
+  .hero-metrics{grid-template-columns:repeat(3,1fr)}
+  .m{padding:13px 14px}
+  .m b{font-size:17px}
+  .m b em{font-size:9.5px}
+  .m span{font-size:7.5px;letter-spacing:.16em}
+  .sec{padding:78px 0 70px}
+  .ghost{display:none}
+  .sec-head{gap:20px;margin-bottom:44px}
+  .pipe{grid-template-columns:1fr;gap:0;padding-top:0}
+  .node{padding-left:30px;padding-bottom:30px;position:relative}
+  .node::before{content:"";position:absolute;left:4px;top:16px;bottom:0;width:1px;background:var(--line-strong)}
+  .node:last-child::before{display:none}
+  .node:last-child{padding-bottom:0}
+  .dot{position:absolute;left:0;top:9px;margin:0}
+  .n-idx{margin-top:0}
+  .n-desc{max-width:none}
+  .loop{margin-top:38px;gap:7px}
+  .loop b{padding:5px 10px;font-size:9.5px}
+  .loop .loop-note{margin-left:0;width:100%;margin-top:6px}
+  .notes{grid-template-columns:1fr}
+  .trace-intro{font-size:13.5px}
+  #trace-log{font-size:11px;padding:18px 16px;min-height:0}
+  #trace-log .ln{grid-template-columns:11.5ch minmax(0,1fr)}
+  .term-foot{flex-wrap:wrap;font-size:9px}
+  .cards{grid-template-columns:1fr}
+  .card{min-height:0}
+  .num{padding:24px 18px}
+  .num b{font-size:28px}
+  .nums{grid-template-columns:repeat(2,1fr)}
+  .q{grid-template-columns:52px 1fr;gap:16px;padding:26px 0}
+  .cta{grid-template-columns:1fr;gap:34px}
+  .btn{justify-content:center}
+  .orrery-panel{min-height:380px}
+  .eq{font-size:10.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+}
+</style>
+</head>
+<body>
+
+<div id="boot" aria-hidden="true">
+  <div class="boot-inner">
+    <div class="boot-head"><span>XINGYI HARNESS · v1.0</span><span class="bh-r">XIAOMI TV · 2 GB</span></div>
+    <div id="boot-lines"></div>
+    <div class="boot-foot" id="boot-foot">SIGNAL ACQUIRED — 星仪，上线。<span class="cur">▮</span></div>
+  </div>
+</div>
+
+<header class="bar" aria-hidden="true">
+  <span class="led"></span>
+  <span class="b-l">XINGYI</span>
+  <span>TERMINAL</span>
+  <span class="b-c"><span>70+ TOOLS</span><span>20+ ON DEMAND</span><span>MEM LOCAL ONLY</span><span>2 GB SURVIVAL</span></span>
+  <span class="clock" id="clock">--:--:--</span>
+  <a href="https://github.com/hillarybeasley8876-dot/xingyi-tv" target="_blank" rel="noopener">GITHUB ↗</a>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <canvas id="flow-hero" aria-hidden="true"></canvas>
+  <div class="hero-scrim"></div>
+
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-kick"><span class="hk-line"></span>XIAOMI TV VOICE HARNESS · 开源</div>
+      <div class="hero-title-row">
+        <h1 class="hero-title">星仪</h1>
+        <div class="hero-en" aria-hidden="true"><span>XINGYI</span><span class="en-sub">TV AGENT · ORRERY</span></div>
+      </div>
+      <p class="tagline">住在电视里的智能体。</p>
+      <p class="lede">小爱做不到的事交给它——先理解，再用工具真的去操作电视，过程显示在屏幕右上角，做完由小爱读出结果。</p>
+      <div class="hero-tags mono"><span>2 GB 的电视</span><span>没有 root</span><span>固件每次开机都关掉调试口</span></div>
+    </div>
+    <div class="hero-side mono" aria-hidden="true">
+      <div class="hs-item"><span>SITE</span><b>上海 · UTC+8</b></div>
+      <div class="hs-item"><span>DEVICE</span><b>小米电视 · Mali-G31 MP2</b></div>
+      <div class="hs-item"><span>STATE</span><b>NOMINAL</b></div>
+    </div>
+  </div>
+
+  <div class="hero-foot">
+    <div class="hero-metrics">
+      <div class="m"><b>70<em>+</em></b><span>工具 · Tools</span></div>
+      <div class="m"><b>284<em>ms</em></b><span>快速命令</span></div>
+      <div class="m"><b>2<em>GB</em></b><span>整机内存</span></div>
+      <div class="m"><b>5 911</b><span>离线检查</span></div>
+      <div class="m"><b>30<em>fps</em></b><span>桌面锁帧</span></div>
+      <div class="m"><b>409<em>ms</em></b><span>开机守卫写回</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>SYS OK <i>·</i> 70+ TOOLS REGISTERED <i>·</i> 20+ DATA TOOLS ON DEMAND <i>·</i> ADB GUARD ARMED <i>·</i> 20 ROUNDS / 36 CALLS / 150 S <i>·</i> MEMORY LOCAL ONLY <i>·</i> 100+ QUICK COMMANDS 25–300 MS <i>·</i> 2 GB SURVIVAL <i>·</i> ORRERY 30 FPS <i>·</i> </span>
+    <span>SYS OK <i>·</i> 70+ TOOLS REGISTERED <i>·</i> 20+ DATA TOOLS ON DEMAND <i>·</i> ADB GUARD ARMED <i>·</i> 20 ROUNDS / 36 CALLS / 150 S <i>·</i> MEMORY LOCAL ONLY <i>·</i> 100+ QUICK COMMANDS 25–300 MS <i>·</i> 2 GB SURVIVAL <i>·</i> ORRERY 30 FPS <i>·</i> </span>
+  </div>
+</div>
+
+<!-- ================= 01 WHAT ================= -->
+<section class="sec" id="what">
+  <div class="wrap">
+    <div class="ghost" aria-hidden="true">01</div>
+    <div class="sec-head rv">
+      <div><div class="sec-idx">01</div><div class="sec-en">What It Is</div></div>
+      <h2 class="sec-title">它是什么</h2>
+    </div>
+
+    <div class="what-grid">
+      <div class="what-copy rv">
+        <p class="big">小米电视的语音入口是小爱。<br>星仪不替换它——接管它。</p>
+        <p>唤醒、识别、发声留给小爱；理解、执行、核对由星仪接手。一句话进来，先写计划，再动手；每一步的结果都回到引擎里，核对过才说完成。</p>
+        <p>它住在「接力」应用里——没有任何界面，从不进系统的清理名单。小米电视会强停「显示过全屏、又五分钟没用」的应用，这是 2 GB 电视上的第一课。</p>
+        <p class="mini">SOURCE · HARNESS.md · 2026.11</p>
+      </div>
+
+      <aside class="loop-card rv d2">
+        <div class="lc-head">CORE LOOP · 一句话的一生</div>
+        <ol class="lc-list">
+          <li><i>01</i><b>理解</b><span>先想清楚这句话要做什么。</span></li>
+          <li><i>02</i><b>计划</b><span>一到六步，怎样算完成，写短。</span></li>
+          <li><i>03</i><b>执行</b><span>70 多个工具，优先一步直达的连接器。</span></li>
+          <li><i>04</i><b>观察</b><span>读屏、读媒体会话、看画面。</span></li>
+          <li><i>05</i><b>核对</b><span>没有证据的完成，会被引擎作废。</span></li>
+          <li><i>06</i><b>汇报</b><span>一两句话，小爱读出来。</span></li>
+        </ol>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 PIPELINE ================= -->
+<section class="sec" id="pipeline">
+  <div class="wrap">
+    <div class="ghost" aria-hidden="true">02</div>
+    <div class="sec-head rv">
+      <div><div class="sec-idx">02</div><div class="sec-en">Pipeline</div></div>
+      <h2 class="sec-title">一句话怎么走</h2>
+    </div>
+
+    <div class="pipe rv">
+      <span class="pulse" aria-hidden="true"></span>
+      <div class="node"><span class="dot"></span><div class="n-idx">01</div><div class="n-name">你说话</div><div class="n-en">YOU</div><div class="n-desc">一句普通话，带点口音也行。</div></div>
+      <div class="node"><span class="dot"></span><div class="n-idx">02</div><div class="n-name">小爱</div><div class="n-en">WAKE · LISTEN</div><div class="n-desc">唤醒与识别。它说的每一句，接力都在听。</div></div>
+      <div class="node"><span class="dot"></span><div class="n-idx">03</div><div class="n-name">接力</div><div class="n-en">RELAY</div><div class="n-desc">拦截、收集、转交。无界面，从不进清理名单。</div></div>
+      <div class="node"><span class="dot"></span><div class="n-idx">04</div><div class="n-name">星仪引擎</div><div class="n-en">ENGINE</div><div class="n-desc">计划、70 多个工具、证据校验。</div></div>
+      <div class="node"><span class="dot"></span><div class="n-idx">05</div><div class="n-name">电视</div><div class="n-en">DEVICE</div><div class="n-desc">本机 ADB 与无障碍服务。真的按键。</div></div>
+      <div class="node"><span class="dot"></span><div class="n-idx">06</div><div class="n-name">小爱读出</div><div class="n-en">VOICE</div><div class="n-desc">结果借它的嗓子读出来。</div></div>
+    </div>
+
+    <div class="loop rv d1">
+      <span class="loop-label">LOOP</span>
+      <b>理解</b><i>→</i><b>计划</b><i>→</i><b>执行</b><i>→</i><b>观察</b><i>→</i><b>核对</b><i>→</i><b>汇报</b>
+      <span class="loop-note">引擎强制：没写计划时，只允许读取类工具</span>
+    </div>
+
+    <div class="notes rv d2">
+      <div class="note"><span class="k">A</span><p>按键走电视自带的遥控服务，一次 31–58 ms，比系统 input 命令快一个量级。</p></div>
+      <div class="note"><span class="k">B</span><p>屏幕关着时先点亮再点歌——待机时网易云的开屏页不会自己走完，歌出不来。</p></div>
+      <div class="note"><span class="k">C</span><p>模型的文字永远不会变成 shell 命令：命令只由固定格式和校验过的数字拼出。</p></div>
+      <div class="note"><span class="k">D</span><p>结果即证据：命中投稿、媒体会话换了一首、音量读回 30——这些才算数。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 TRACE ================= -->
+<section class="sec" id="trace">
+  <div class="wrap">
+    <div class="ghost" aria-hidden="true">03</div>
+    <div class="sec-head rv">
+      <div><div class="sec-idx">03</div><div class="sec-en">Trace</div></div>
+      <h2 class="sec-title">一次真实的任务</h2>
+    </div>
+
+    <p class="trace-intro rv">「播放星辰亻旅行者最新的视频」——从冷启动到确认在播，<b>47 秒</b>。B站已经在后台时，<b>2.4 秒</b>到视频页。</p>
+
+    <div class="term rv d1">
+      <div class="term-bar"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span><span class="term-title">TRACE · 真实任务回放</span><span class="term-meta">T+47.0s</span></div>
+      <pre id="trace-log" aria-live="polite"></pre>
+      <div class="term-foot"><span>47 秒里，没有问过用户一次。</span><button id="trace-btn" type="button">↻ 回放</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 CAPACITY ================= -->
+<section class="sec" id="capacity">
+  <div class="wrap">
+    <div class="ghost" aria-hidden="true">04</div>
+    <div class="sec-head rv">
+      <div><div class="sec-idx">04</div><div class="sec-en">Capability</div></div>
+      <h2 class="sec-title">70 多个工具，和逼它用对的规则</h2>
+    </div>
+
+    <div class="cards">
+      <article class="card rv">
+        <div class="c-top"><span class="c-idx">A1</span><span class="c-tag">VOICE</span></div>
+        <h3>接管小爱</h3>
+        <p>唤醒、识别、发声留给小爱；理解、执行、核对交给星仪。小爱做不到的事，说一句就到了这里。</p>
+        <div class="c-num"><b>0</b><span>个新唤醒词</span></div>
+      </article>
+      <article class="card rv d1">
+        <div class="c-top"><span class="c-idx">A2</span><span class="c-tag">SPEED</span></div>
+        <h3>快速命令</h3>
+        <p>音量、点歌、开应用、看番、查金价——100+ 句式不经模型，直接执行。「音量调到25」实测 284 毫秒。</p>
+        <div class="c-num"><b>25–300<em style="font-style:normal;font-size:11px;color:var(--dim)"> ms</em></b><span>不经模型</span></div>
+      </article>
+      <article class="card rv d2">
+        <div class="c-top"><span class="c-idx">A3</span><span class="c-tag">PROOF</span></div>
+        <h3>证据</h3>
+        <p>和操作同一轮的完成才算数；没有证据的完成会被引擎作废，结果交还模型，接着做。</p>
+        <div class="c-num"><b>0</b><span>例外</span></div>
+      </article>
+      <article class="card rv d3">
+        <div class="c-top"><span class="c-idx">A4</span><span class="c-tag">CONSENT</span></div>
+        <h3>要点头</h3>
+        <p>安装、支付、删除这类操作先问；电视上会显示、小爱会读出来，60 秒不答视为不做。不替你输入密码。</p>
+        <div class="c-num"><b>60<em style="font-style:normal;font-size:11px;color:var(--dim)"> s</em></b><span>等你回答</span></div>
+      </article>
+      <article class="card rv">
+        <div class="c-top"><span class="c-idx">A5</span><span class="c-tag">SURVIVE</span></div>
+        <h3>2 GB 生存</h3>
+        <p>内存守护、20 秒心跳、进程被杀后任务自动续做。B站占了 1.3 GB 的时候，它照样活着。</p>
+        <div class="c-num"><b>20<em style="font-style:normal;font-size:11px;color:var(--dim)"> s</em></b><span>心跳</span></div>
+      </article>
+      <article class="card rv d1">
+        <div class="c-top"><span class="c-idx">A6</span><span class="c-tag">REPAIR</span></div>
+        <h3>自检自修</h3>
+        <p>读屏掉了重绑、面板窗口坏了重加。每一项修完，用同一个探测再验一遍，才说「修好了」。</p>
+        <div class="c-num"><b>4</b><span>项可自修</span></div>
+      </article>
+      <article class="card rv d2">
+        <div class="c-top"><span class="c-idx">A7</span><span class="c-tag">MCP</span></div>
+        <h3>电脑那边的 MCP</h3>
+        <p>tv_do、tv_state、tv_screen——电视成为任何 MCP 客户端的工具，不用把它拉到前台。</p>
+        <div class="c-num"><b>6</b><span>个接口</span></div>
+      </article>
+      <article class="card rv d3">
+        <div class="c-top"><span class="c-idx">A8</span><span class="c-tag">PHONE</span></div>
+        <h3>手机控制台</h3>
+        <p>电视上显示配对码，手机浏览器打开就是控制台，添加到主屏幕当 App 用。</p>
+        <div class="c-num"><b>:18780</b><span>不装 App</span></div>
+      </article>
+    </div>
+
+    <div class="tools-head rv d1"><span class="th-k">DATA FEEDS</span><span class="th-t">20 多个公开数据工具，按需发送——触发词没出现，它们连提示词都不进。</span></div>
+    <div class="chips rv d2">
+      <span>行情</span><span>汇率</span><span>金价</span><span>油价</span><span>基金</span><span>彩票开奖</span><span>NBA</span><span>足球</span><span>世界时间</span><span>央视节目单</span><span>新闻</span><span>热搜</span><span>地震速报</span><span>黄历</span><span>天气预警</span><span>番剧更新</span><span>豆瓣评分</span><span>歌手新歌</span><span>B站视频</span><span>天气</span><span>历史上的今天</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 ORRERY ================= -->
+<section class="sec" id="orrery">
+  <div class="wrap">
+    <div class="ghost" aria-hidden="true">05</div>
+    <div class="sec-head rv">
+      <div><div class="sec-idx">05</div><div class="sec-en">Orrery 4 · Terminal</div></div>
+      <h2 class="sec-title">桌面也是开源的</h2>
+    </div>
+
+    <div class="orrery-grid">
+      <div class="orrery-copy rv">
+        <p><b>Orrery 4「终端」</b>是一块自己写的电视桌面。背景是 Chen 吸引子上的粒子流体：每帧 393,216 个粒子在 GPU 上推进，在 Mali-G31 MP2 上锁 30 fps。</p>
+        <p>右边这块是同一个方程在浏览器里的简化版——同一组方程，更少的粒子。农历和天气来自星仪：桌面不联网，问星仪。</p>
+        <div class="eq"><i>dx/dt</i> = 35(y − x)<br><i>dy/dt</i> = −7x − xz + 28y<br><i>dz/dt</i> = xy − 3z</div>
+        <div class="orrery-facts">
+          <div class="of"><b>393,216</b><span>PARTICLES</span></div>
+          <div class="of"><b>30.0</b><span>FPS · LOCKED</span></div>
+          <div class="of"><b>COMPUTE</b><span>SHADER</span></div>
+          <div class="of"><b>0</b><span>EXTERNAL DEPS</span></div>
+        </div>
+      </div>
+
+      <div class="orrery-panel rv d1">
+        <canvas id="flow-orrery" aria-hidden="true"></canvas>
+        <div class="ov tl">ORRERY 4 · 终端</div>
+        <div class="ov tr">CHEN ATTRACTOR · LIVE</div>
+        <div class="ov bl" style="white-space:nowrap">XINGYI·待命</div>
+        <div class="ov br">30.0 FPS</div>
+        <div class="shelf">
+          <span>常用</span><b class="on">影音</b><span>游戏</span><span>信号源</span><span>工具</span><span>全部</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 DOCTRINE ================= -->
+<section class="sec" id="doctrine">
+  <div class="wrap">
+    <div class="ghost" aria-hidden="true">06</div>
+    <div class="sec-head rv">
+      <div><div class="sec-idx">06</div><div class="sec-en">Doctrine</div></div>
+      <h2 class="sec-title">五条准则</h2>
+    </div>
+
+    <div class="q rv"><div class="qi">01</div><div><blockquote>完成要有证据。没有证据的 finish，会被引擎作废。</blockquote><div class="src">ENGINE RULE · 引擎强制</div></div></div>
+    <div class="q rv"><div class="qi">02</div><div><blockquote>账本空着，不等于都验完了。</blockquote><div class="src">UNVERIFIED LEDGER · 验证账本</div></div></div>
+    <div class="q rv"><div class="qi">03</div><div><blockquote>取样看不见瞬间的事。判据要读事件记录，不读状态快照。</blockquote><div class="src">STANDBY-HOME · 同一类错的第三次</div></div></div>
+    <div class="q rv"><div class="qi">04</div><div><blockquote>「没回音」不等于「对方拒绝」。</blockquote><div class="src">HAND-BACK · 交给小爱的那句话</div></div></div>
+    <div class="q rv"><div class="qi">05</div><div><blockquote>说「修不了」之前，先证明修不了。</blockquote><div class="src">SELF-CHECK · 故意弄坏来验</div></div></div>
+  </div>
+</section>
+
+<!-- ================= NUMBERS ================= -->
+<div class="nums-wrap">
+  <div class="wrap">
+    <div class="nums-head"><span>MEASURED · 实测</span><span>2026.11</span></div>
+  </div>
+  <div class="nums">
+    <div class="num"><b>70+</b><span>Tools · 工具</span></div>
+    <div class="num"><b>20+</b><span>Data feeds · 按需</span></div>
+    <div class="num"><b>5 911</b><span>Offline checks · 离线检查</span></div>
+    <div class="num"><b>198</b><span>Calibration scenes · 校准场景</span></div>
+    <div class="num"><b>409 ms</b><span>Guard write-back · 守卫写回</span></div>
+    <div class="num"><b>284 ms</b><span>Quick command · 快速命令</span></div>
+    <div class="num"><b>7.6 s</b><span>To play · 真开播</span></div>
+    <div class="num"><b>393 216</b><span>Particles · 粒子</span></div>
+  </div>
+</div>
+
+<!-- ================= CTA ================= -->
+<footer id="open">
+  <div class="wrap">
+    <div class="cta">
+      <div class="rv">
+        <div class="cta-kick">OPEN SOURCE · MIT</div>
+        <h2>全部开源。</h2>
+        <p>引擎、接力、桌面、验证场景，按模块整理上传中。宣传页先到。</p>
+      </div>
+      <a class="btn rv d1" href="https://github.com/hillarybeasley8876-dot/xingyi-tv" target="_blank" rel="noopener">GITHUB <span class="arr">↗</span></a>
+    </div>
+    <div class="colophon">
+      <span>XINGYI TERMINAL <i>·</i> MIT <i>·</i> © 2026 ERAPI0NEER</span>
+      <span>零依赖 <i>·</i> 无外部请求 <i>·</i> 手工排版</span>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script>
+(function(){
+"use strict";
+var CAPTURE = document.documentElement.classList.contains('capture');
+var GITHUB = 'https://github.com/hillarybeasley8876-dot/xingyi-tv';
+
+/* ---------- clock ---------- */
+var clock = document.getElementById('clock');
+function tickClock(){
+  var d = new Date();
+  function p(n){ return (n<10?'0':'')+n; }
+  clock.textContent = p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds())+' CST';
+}
+tickClock(); setInterval(tickClock, 1000);
+
+/* ---------- boot ---------- */
+(function(){
+  var boot = document.getElementById('boot');
+  if(!boot) return;
+  if(CAPTURE){ boot.parentNode.removeChild(boot); return; }
+  var seen = false;
+  try{ seen = sessionStorage.getItem('xingyi.boot') === '1'; }catch(e){}
+  if(seen){ boot.parentNode.removeChild(boot); return; }
+
+  document.body.classList.add('locked');
+  var LINES = [
+    ['小爱接力',   '拦截 · 收集 · 转交',        'OK'],
+    ['无障碍服务', '星仪 · 操作电视',           'OK'],
+    ['本机 ADB',   '按键 · 截图 · 媒体会话',    'OK'],
+    ['遥控服务',   '31–58 ms 一次按键',         'OK'],
+    ['工具注册',   '70 多个 · 20 多个按需',     'LOADED'],
+    ['记忆与习惯', '仅存电视本地',              'LOCAL'],
+    ['ADB 守卫',   '开机 409 ms 写回',          'ARMED'],
+    ['内存守护',   '2 GB 生存模式',             'WATCH'],
+    ['自检',       '每一项修完再验一遍',        'PASS']
+  ];
+  var box = document.getElementById('boot-lines');
+  var foot = document.getElementById('boot-foot');
+  var timers = [];
+  function T(fn, ms){ timers.push(setTimeout(fn, ms)); }
+  var t = 260;
+  LINES.forEach(function(l){
+    T(function(){
+      var d = document.createElement('div');
+      d.className = 'bl';
+      var cls = (l[2]==='ARMED') ? 'amber' : (l[2]==='LOCAL'||l[2]==='WATCH') ? 'dim' : '';
+      d.innerHTML = '<span class="bk">'+l[0]+'</span><span class="bd">'+l[1]+'</span><span class="bs '+cls+'">[ '+l[2]+' ]</span>';
+      box.appendChild(d);
+    }, t);
+    t += 150;
+  });
+  T(function(){ foot.classList.add('show'); }, t+380);
+  T(function(){ boot.classList.add('flash'); }, t+480);
+  T(function(){
+    boot.classList.add('done');
+    document.body.classList.remove('locked');
+    try{ sessionStorage.setItem('xingyi.boot','1'); }catch(e){}
+  }, t+880);
+  T(function(){ if(boot.parentNode) boot.parentNode.removeChild(boot); }, t+1900);
+
+  function skip(){
+    if(!boot.parentNode) return;
+    timers.forEach(clearTimeout);
+    try{ sessionStorage.setItem('xingyi.boot','1'); }catch(e){}
+    document.body.classList.remove('locked');
+    boot.classList.add('done');
+    setTimeout(function(){ if(boot.parentNode) boot.parentNode.removeChild(boot); }, 950);
+  }
+  ['click','keydown','wheel','touchstart'].forEach(function(ev){
+    window.addEventListener(ev, skip, {passive:true});
+  });
+})();
+
+/* ---------- reveal ---------- */
+var rvs = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+if(CAPTURE){
+  rvs.forEach(function(el){ el.classList.add('in'); });
+}else{
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: .12, rootMargin: '0px 0px -8% 0px'});
+    rvs.forEach(function(el){ io.observe(el); });
+  }else{
+    rvs.forEach(function(el){ el.classList.add('in'); });
+  }
+}
+
+/* ---------- trace ---------- */
+(function(){
+  var log = document.getElementById('trace-log');
+  var btn = document.getElementById('trace-btn');
+  if(!log) return;
+  var LINES = [
+    {c:'p', k:'$', v:'播放星辰亻旅行者最新的视频'},
+    {c:'sp'},
+    {c:'ln', k:'[plan]', v:'目标 播放星辰亻旅行者最新的视频 · 3 步'},
+    {c:'ln', k:'[bili_videos]', v:'up=星辰亻旅行者'},
+    {c:'ind', v:'命中  最新投稿《一期新的视频》'},
+    {c:'ind', v:'昨天 · 13 万播放'},
+    {c:'ln', k:'[open_link]', v:'bilibili://video/BV…'},
+    {c:'ind', v:'页面已开 · 等待播放页与媒体会话'},
+    {c:'ind', v:'（B站冷启动，这一步最长）'},
+    {c:'ln', k:'[observe]', v:'媒体会话报告「另一个视频」在放'},
+    {c:'ind', v:'→ 正在播放《一期新的视频》'},
+    {c:'ln', k:'[finish]', v:'done · 证据链完整 ✓'},
+    {c:'ans', k:'答', v:'正在播放《一期新的视频》。'}
+  ];
+  var timers = [];
+  var running = false;
+
+  function clearAll(){ timers.forEach(clearTimeout); timers = []; }
+  function row(l){
+    var d = document.createElement('div');
+    d.className = 'ln ' + l.c;
+    if(l.c === 'sp'){
+      d.innerHTML = '<span class="v">&nbsp;</span>';
+    }else if(l.c === 'ind'){
+      d.innerHTML = '<span></span><span class="v">'+l.v+'</span>';
+    }else{
+      d.innerHTML = '<span class="k">'+esc(l.k)+'</span><span class="v">'+esc(l.v)+'</span>';
+    }
+    return d;
+  }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function renderInstant(){
+    clearAll(); log.innerHTML = '';
+    LINES.forEach(function(l){ log.appendChild(row(l)); });
+    running = false;
+  }
+
+  function play(){
+    clearAll(); log.innerHTML = '';
+    running = true;
+    var i = 0, t = 120;
+    (function next(){
+      if(i >= LINES.length){ running = false; return; }
+      var l = LINES[i++];
+      var el = row(l);
+      log.appendChild(el);
+      t = l.c === 'sp' ? 160 : 240;
+      timers.push(setTimeout(next, t));
+    })();
+  }
+
+  btn.addEventListener('click', play);
+
+  if(CAPTURE){ renderInstant(); return; }
+
+  var started = false;
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting && !started){ started = true; play(); io.disconnect(); }
+      });
+    }, {threshold: .3});
+    io.observe(log);
+  }else{
+    play();
+  }
+})();
+
+/* ---------- chen attractor ---------- */
+(function(){
+  var SCOUT = (function(){
+    var pts = [], x=-3, y=2, z=20, dt=0.003;
+    for(var i=0;i<9000;i++){
+      var dx=35*(y-x), dy=-7*x-x*z+28*y, dz=x*y-3*z;
+      x+=dx*dt; y+=dy*dt; z+=dz*dt;
+      if(i % 10 === 0) pts.push(x,y,z);
+    }
+    return pts;
+  })();
+
+  function Flow(canvas, opts){
+    var o = opts || {};
+    var cfg = {
+      count: o.count || 2200,
+      sub: o.sub || 2,
+      dt: o.dt || 0.0024,
+      fade: o.fade || 0.05,
+      alpha: o.alpha || 0.34,
+      zoom: o.zoom || 1,
+      cxr: (o.cxr != null) ? o.cxr : 0.68,
+      cyr: (o.cyr != null) ? o.cyr : 0.50,
+      stars: o.stars || 0,
+      warm: (o.warm != null) ? o.warm : 120
+    };
+    this.cv = canvas;
+    this.ctx = canvas.getContext('2d');
+    this.cfg = cfg;
+    this.t = 0;
+    this.frames = 0;
+    this.paused = false;
+    this.n = cfg.count;
+    this.p = new Float32Array(this.n * 3);
+    var L = SCOUT.length / 3;
+    for(var i=0;i<this.n;i++){
+      var k = (Math.random() * L) | 0;
+      this.p[i*3]   = SCOUT[k*3]   + (Math.random()-0.5)*0.10;
+      this.p[i*3+1] = SCOUT[k*3+1] + (Math.random()-0.5)*0.10;
+      this.p[i*3+2] = SCOUT[k*3+2] + (Math.random()-0.5)*0.10;
+    }
+    this.stars = null;
+    this.resize = this.resize.bind(this);
+    window.addEventListener('resize', this.resize);
+    this.resize();
+    var self = this;
+    for(var w=0; w<cfg.warm; w++) this.tick(false);
+    this.loop = this.loop.bind(this);
+    this.raf = requestAnimationFrame(this.loop);
+  }
+  Flow.prototype.resize = function(){
+    var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    var w = this.cv.clientWidth || 800, h = this.cv.clientHeight || 600;
+    this.cv.width = Math.max(2, Math.round(w*dpr));
+    this.cv.height = Math.max(2, Math.round(h*dpr));
+    this.dpr = dpr; this.w = w; this.h = h;
+    this.ctx.setTransform(dpr,0,0,dpr,0,0);
+    this.cx = w * this.cfg.cxr;
+    this.cy = h * this.cfg.cyr;
+    this.s = Math.min(w/86, h/84) * this.cfg.zoom;
+    this.ctx.fillStyle = '#05070a';
+    this.ctx.fillRect(0,0,w,h);
+    if(this.cfg.stars){
+      this.stars = [];
+      for(var i=0;i<this.cfg.stars;i++){
+        this.stars.push({x:Math.random()*w, y:Math.random()*h, r:Math.random()<0.85?0.8:1.4, a:0.05+Math.random()*0.16});
+      }
+    }
+  };
+  Flow.prototype.tick = function(draw){
+    var ctx = this.ctx, cfg = this.cfg, p = this.p, n = this.n;
+    var yaw = 0.55 + this.t * 0.022;
+    var ca = Math.cos(yaw), sa = Math.sin(yaw);
+    var tilt = 0.44, ct = Math.cos(tilt), st = Math.sin(tilt);
+    var s = this.s, cx = this.cx, cy = this.cy;
+    var dt = cfg.dt;
+
+    if(draw){
+      ctx.fillStyle = 'rgba(5,7,10,'+cfg.fade+')';
+      ctx.fillRect(0,0,this.w,this.h);
+      if(this.stars){
+        for(var si=0; si<this.stars.length; si++){
+          var sr = this.stars[si];
+          ctx.fillStyle = 'rgba(200,235,250,'+sr.a+')';
+          ctx.fillRect(sr.x, sr.y, sr.r, sr.r);
+        }
+      }
+    }
+
+    ctx.lineWidth = 0.8;
+    ctx.strokeStyle = 'rgba(111,227,255,'+cfg.alpha+')';
+    ctx.beginPath();
+    for(var i=0;i<n;i++){
+      var i3 = i*3;
+      var x = p[i3], y = p[i3+1], z = p[i3+2];
+      for(var k=0;k<cfg.sub;k++){
+        var dx = 35*(y-x), dy = -7*x - x*z + 28*y, dz = x*y - 3*z;
+        var nx = x + dx*dt, ny = y + dy*dt, nz = z + dz*dt;
+        if(draw){
+          var u0 = x*ca - y*sa, v0 = x*sa + y*ca;
+          var u1 = nx*ca - ny*sa, v1 = nx*sa + ny*ca;
+          ctx.moveTo(cx + u0*s, cy - (z-24)*s*0.9 + v0*s*0.30);
+          ctx.lineTo(cx + u1*s, cy - (nz-24)*s*0.9 + v1*s*0.30);
+        }
+        x = nx; y = ny; z = nz;
+      }
+      p[i3] = x; p[i3+1] = y; p[i3+2] = z;
+    }
+    if(draw) ctx.stroke();
+
+    /* warm highlights */
+    if(draw){
+      ctx.lineWidth = 0.9;
+      ctx.strokeStyle = 'rgba(255,180,84,0.42)';
+      ctx.beginPath();
+      for(var j=0;j<n;j+=97){
+        var j3 = j*3;
+        var hx = p[j3], hy = p[j3+1], hz = p[j3+2];
+        var hu0 = hx*ca - hy*sa, hv0 = hx*sa + hy*ca;
+        var hu1 = hu0 + 0.7, hv1 = hv0 + 0.25;
+        ctx.moveTo(cx + hu0*s, cy - (hz-24)*s*0.9 + hv0*s*0.30);
+        ctx.lineTo(cx + hu1*s, cy - (hz-24)*s*0.9 + hv1*s*0.30);
+      }
+      ctx.stroke();
+    }
+    this.t += cfg.sub * dt;
+  };
+  Flow.prototype.loop = function(){
+    this.raf = requestAnimationFrame(this.loop);
+    if(document.hidden) return;
+    if(CAPTURE && this.frames > 160){ return; }
+    this.frames++;
+    this.tick(true);
+  };
+
+  var hero = document.getElementById('flow-hero');
+  if(hero) new Flow(hero, {count: 2400, stars: 150, cxr: 0.70, cyr: 0.46, zoom: 1.02, fade: 0.045});
+
+  var panel = document.getElementById('flow-orrery');
+  if(panel){
+    if(CAPTURE){
+      new Flow(panel, {count: 3200, cxr: 0.52, cyr: 0.52, zoom: 1.42, fade: 0.05});
+    }else{
+      var made = false;
+      if('IntersectionObserver' in window){
+        var io2 = new IntersectionObserver(function(es){
+          es.forEach(function(e){
+            if(e.isIntersecting && !made){ made = true; new Flow(panel, {count: 3200, cxr: 0.52, cyr: 0.52, zoom: 1.42, fade: 0.05}); io2.disconnect(); }
+          });
+        }, {threshold: .2});
+        io2.observe(panel);
+      }else{
+        new Flow(panel, {count: 3200, cxr: 0.52, cyr: 0.52, zoom: 1.42, fade: 0.05});
+      }
+    }
+  }
+})();
+
+})();
+</script>
+</body>
+</html>
