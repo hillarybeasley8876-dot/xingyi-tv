@@ -78,6 +78,11 @@ public final class AgentEngine {
     private volatile long firstSpeechMs = -1;
     /** B站 cold-starts in ~15 s; this is what the user says when they want it. */
     private static final Pattern BILI_WORDS = Pattern.compile("b站|bilibili|哔哩", Pattern.CASE_INSENSITIVE);
+    /** A song asked for (「播放汪苏泷的晴」「我要唱林俊杰的歌」): NetEase takes 10-14 s from silence to playing, most of it its
+     * own cold start (2026-11-18 audit of the TV's perf log: 12 of 16 netease_play calls at 10-16 s; the catalog's two
+     * HTTP calls answer in 0.3 s). The verb must be followed by 歌/音乐/曲, so 「我想知道…」 「这首歌叫什么」 are left alone. */
+    private static final Pattern SONG_WORDS = Pattern.compile("唱|放|听|来一首|来首|播放|点歌|点一首");
+    private static final Pattern SONG_NOUN = Pattern.compile("歌|音乐|曲|fm", Pattern.CASE_INSENSITIVE);
     /** This TV's home screen (launcher/). */
     static final String HOME_PKG = "xyz.erapi0neer.orrery";
     private static final Pattern ABOUT_TIME = Pattern.compile("多久|多长时间|几个?小时|几分钟|看了多少|用了多少|什么时候看");
@@ -779,6 +784,9 @@ public final class AgentEngine {
             // B站 takes ~15 s to cold-start and the model's first round is ~2 s: start it now, while the model plans.
             // bili_search already waits for it, so nothing else changes.
             startBilibiliEarly(text, tools);
+            // The same for a song: NetEase's cold start then overlaps the model's first round instead of following it.
+            // netease_play still brings it to the front and plays; nothing else changes.
+            startNeteaseEarly(text, tools);
             ensureEyes(tools);
             ModelRouter router = ModelRouter.open(app);
             AgentLoop.Model model = new AgentLoop.Model() {
@@ -843,7 +851,13 @@ public final class AgentEngine {
             if (resumeCount > 0 && spoken(source)) VendorSpeech.speak(app, "刚才被系统打断了，我接着做。");
             loop = l;
             if (cancelled(gen)) l.cancel();
+            // The setup between the request and the first model round (reading the TV, starting B站, the tools, the
+            // stores) and the tail after the loop were in no timing at all: 2026-11-11 21:18 took 46 s with 5.8 s of
+            // model and 19 ms of tools, and none of the other 40 s could be placed (2026-11-18 audit). Two lines.
+            long loopBegan = System.currentTimeMillis();
+            timing(new JSONObject().put("kind", "phase").put("name", "setup").put("ms", loopBegan - taskStarted).toString());
             Ledger result = l.run(req);
+            timing(new JSONObject().put("kind", "phase").put("name", "tail").put("ms", System.currentTimeMillis() - loopBegan).toString());
             if (traced(source)) {
                 store.remember(result);
                 history(result, tools);
@@ -909,6 +923,24 @@ public final class AgentEngine {
             Intent i = app.getPackageManager().getLeanbackLaunchIntentForPackage(TvTools.BILI);
             if (i == null) i = app.getPackageManager().getLaunchIntentForPackage(TvTools.BILI);
             if (i == null) return; // not installed: install_app / bili_search will say so
+            app.startActivity(i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        } catch (RuntimeException ignored) { }
+    }
+
+    /** A song asked for: start NetEase's process now so its cold start overlaps the model's first round. It is only
+     * brought up (its own screen, the way it starts), never told to play; netease_play does that. Never throws. */
+    private void startNeteaseEarly(String text, TvTools tools) {
+        try {
+            if (text == null || !SONG_WORDS.matcher(text).find() || !SONG_NOUN.matcher(text).find()) return;
+            // not in standby (a song needs the screen first, and a player cold in the dark only takes memory on a 2 GB TV)
+            android.os.PowerManager pm = (android.os.PowerManager) app.getSystemService(Context.POWER_SERVICE);
+            if (pm != null && !pm.isInteractive()) return;
+            // nothing playing and nothing else to disturb: a video in the background would be covered by NetEase's screen
+            MediaSessions.Session playing = tools.nowPlaying();
+            if (playing != null && "playing".equals(playing.state) && !TvTools.NETEASE.equals(playing.pkg)) return;
+            if (TvTools.NETEASE.equals(tools.foreground())) return; // already up: nothing to warm
+            Intent i = tools.launchIntent(TvTools.NETEASE);
+            if (i == null) return; // not installed: netease_play will say so
             app.startActivity(i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         } catch (RuntimeException ignored) { }
     }
@@ -1090,7 +1122,9 @@ public final class AgentEngine {
             if (gate.risk == Tool.Gate.Risk.SENSITIVE) return false; // the model asks for consent as usual
             // A DENY means XiaoAi already did this very thing for the same sentence (a second 调大/下一首 would double it),
             // and a UIController instruction means it pressed the key itself: say what is true now instead of acting.
-            String reply = gate.risk == Tool.Gate.Risk.DENY && TvTools.ASLEEP_TEST.equals(gate.reason) ? gate.reason
+            // media_control's refusal carries the song and the position (TvTools.playingNow): 「好的」 told the user
+            // nothing about what was playing (2026-11-18 audit), so that reason is said as it is.
+            String reply = gate.risk == Tool.Gate.Risk.DENY && (TvTools.ASLEEP_TEST.equals(gate.reason) || "media_control".equals(q.tool)) ? gate.reason
                     : gate.risk == Tool.Gate.Risk.DENY || ("press_keys".equals(q.tool) && uiPressed(tools))
                     ? alreadyDone(q) : ran(tool, q, turn, task);
             if (reply == null) return false;

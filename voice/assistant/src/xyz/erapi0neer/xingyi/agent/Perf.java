@@ -12,7 +12,7 @@ public final class Perf {
      * user waited for the first word. firstSpeechMs is -1 when nothing was ever said. */
     public static JSONObject summary(List<JSONObject> timings, long wallMs, long firstSpeechMs) {
         JSONObject out = new JSONObject();
-        long modelMs = 0, toolsMs = 0, maxRound = 0, firstRound = 0, slowest = 0;
+        long modelMs = 0, toolsMs = 0, maxRound = 0, firstRound = 0, slowest = 0, setupMs = -1, tailMs = -1;
         int rounds = 0;
         String slowestTool = "";
         for (JSONObject t : timings == null ? Collections.<JSONObject>emptyList() : timings) {
@@ -26,6 +26,10 @@ public final class Perf {
             } else if ("tool".equals(kind)) {
                 toolsMs += ms;
                 if (ms > slowest || slowestTool.isEmpty()) { slowest = ms; slowestTool = t.optString("name"); }
+            } else if ("phase".equals(kind)) {
+                // AgentEngine's two lines around the loop: what was spent before the first model round and after it
+                if ("setup".equals(t.optString("name"))) setupMs = ms;
+                else if ("tail".equals(t.optString("name"))) tailMs = ms;
             }
         }
         put(out, "rounds", rounds);
@@ -37,6 +41,9 @@ public final class Perf {
         put(out, "slowest_tool_ms", slowest);
         put(out, "wall_ms", wallMs);
         put(out, "first_speech_ms", firstSpeechMs);
+        // -1: a task from before 2026-11-18, or the quick path, which has no loop to measure around
+        put(out, "setup_ms", setupMs);
+        put(out, "tail_ms", tailMs);
         return out;
     }
 

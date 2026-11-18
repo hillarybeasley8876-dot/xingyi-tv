@@ -192,6 +192,8 @@ final class TvTools implements AutoCloseable {
     private static final String[] SKIPS = {"PlaybackController.", "AudioPlayer.", "VideoPlayer."};
     /** How long after the request XiaoAi's own skip may still land: 星仪's key waits that long before it is pressed. */
     static final long SKIP_GRACE_MS = 4000;
+    /** The least the press waits regardless, for a request whose model round already took longer than SKIP_GRACE_MS. */
+    static final long SKIP_LATE_MS = 1500;
 
     /** The engine calls this as a task starts, after xiaoaiDid: one read of the session, only when XiaoAi switched. */
     void requestStarted(long elapsed) {
@@ -214,10 +216,13 @@ final class TvTools implements AutoCloseable {
     }
 
     /** XiaoAi's skip landing late after all, before 星仪 presses its own: what is playing then, or null when nothing
-     * changed by SKIP_GRACE_MS after the request. */
+     * changed before the key may be pressed. Anchored on the press, not on the request: a model round takes longer than
+     * SKIP_GRACE_MS on this TV (2026-11-18 audit: anchored on the request, this loop never ran on the model path, and
+     * XiaoAi's late skip plus 星仪's key moved two tracks), so the press always gives XiaoAi at least 1.5 s more. */
     private JSONObject skipLandedLate(Tool.Turn t) throws Exception {
         MediaSessions.Session before = nowPlaying();
-        while (before != null && SystemClock.elapsedRealtime() < requestElapsed + SKIP_GRACE_MS && !t.cancelled()) {
+        long end = Math.max(requestElapsed + SKIP_GRACE_MS, SystemClock.elapsedRealtime() + SKIP_LATE_MS);
+        while (before != null && SystemClock.elapsedRealtime() < end && !t.cancelled()) {
             Thread.sleep(300);
             MediaSessions.Session s = nowPlaying();
             if (s != null && !MediaSessions.sameTrack(before, s))
@@ -693,7 +698,8 @@ final class TvTools implements AutoCloseable {
         catch (android.content.pm.PackageManager.NameNotFoundException e) { return false; }
     }
 
-    private Intent launchIntent(String pkg) {
+    /** The app's own start screen (AgentEngine.startNeteaseEarly brings it up ahead of a song). */
+    Intent launchIntent(String pkg) {
         if (pkg.equals(SETTINGS.getPackageName())) return new Intent().setComponent(SETTINGS);
         Intent i = pm.getLeanbackLaunchIntentForPackage(pkg);
         return i != null ? i : pm.getLaunchIntentForPackage(pkg);
@@ -999,7 +1005,11 @@ final class TvTools implements AutoCloseable {
                 readAt = SystemClock.uptimeMillis();
                 d = read();
             }
-            Thread.sleep(1500);
+            // 400 ms, not 1500: a media session read costs ~90 ms on this TV (media_now_playing's own median), so the
+            // moment playback starts is read within 0.4 s instead of up to 1.5 s later — up to 1.1 s per video, and the
+            // screen is still read only every BILI_READ_GAP_MS (a read is the expensive one). The 68-86 s cold starts of
+            // 11-10 were not this sleep: most of them was the media-bili session parse (fixed since).
+            Thread.sleep(400);
         }
         // The player page is up and playback was still not read: B站 starts the video by itself a little later, and
         // everything the model did after this on 2026-11-10 23:10 only got in its way (media_now_playing, a click on
@@ -2903,9 +2913,17 @@ final class TvTools implements AutoCloseable {
                     // DOWN from the mic, which lands on the progress bar, and RIGHT x4 there seeks the song forward
                     adb.keys(KEYS.get("center"));
                 } else {
-                    // the bar may have hidden while the screen was read: let it hide for sure, then the whole way again
-                    // with CENTER at the end (with the bar hidden CENTER would pause the song, UP open the tutorial)
-                    Thread.sleep(BAR_HIDES_MS);
+                    // the bar may have hidden while the screen was read: let it hide, then the whole way again with CENTER
+                    // at the end (with the bar hidden CENTER would pause the song, UP open the tutorial). Polled, not
+                    // slept: the bar's own label goes with its window, so a read that no longer finds the label means it
+                    // has gone and the keys can go now (2026-11-18 audit: this slept 3.5 s on every switch, and
+                    // 11-09 20:13 the whole tool took 12.1 s). BAR_HIDES_MS stays the ceiling.
+                    long goneBy = SystemClock.uptimeMillis() + BAR_HIDES_MS;
+                    while (SystemClock.uptimeMillis() < goneBy) {
+                        Thread.sleep(250);
+                        d = read();
+                        if (Karaoke.state(d.text()) == null) break;
+                    }
                     micKeys(true);
                 }
                 Thread.sleep(1200);
@@ -3019,7 +3037,7 @@ final class TvTools implements AutoCloseable {
                 Uri uri = Uri.parse(PlayerPages.tencentSearchLink(keyword));
                 long before = Eyes.changeCount();
                 start(new Intent(JIGUANG_OPEN, uri).setPackage(JIGUANG));
-                long end = SystemClock.uptimeMillis() + 20000;
+                long began = SystemClock.uptimeMillis(), end = began + 20000;
                 ScreenDigest d = null;
                 boolean onSearch = false;
                 while (SystemClock.uptimeMillis() < end) {
@@ -3030,6 +3048,10 @@ final class TvTools implements AutoCloseable {
                     if (!JIGUANG.equals(foreground())) continue;
                     d = read();
                     if (d.contains(key) && d.elements.size() > 3) break;
+                    // 云视听极光把搜索页画在自己手里，Eyes 和读屏都读不到它（2026-11-10 10:48 / 13:13：两次都跑满 20 秒，
+                    // 回答「已发出搜索，但没看到搜索页」）。前台已经是它、翻页也拿不到任何窗口事件，就不再干等：6 秒以后
+                    // 按「已发出」回答，并让模型看图（2026-11-18 audit）
+                    if (SystemClock.uptimeMillis() - began > 6000 && Eyes.changeCount() == before) break;
                 }
                 if (d == null) d = settle(before, 500);
                 boolean found = onSearch || (JIGUANG.equals(foreground()) && d.contains(key));

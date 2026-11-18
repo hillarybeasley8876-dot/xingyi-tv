@@ -253,7 +253,16 @@ final class PerfChecks {
         check(s.getLong("slowest_tool_ms") == 700, "slowest_tool_ms is its time");
         check(s.getLong("wall_ms") == 4_200, "wall_ms is passed through");
         check(s.getLong("first_speech_ms") == 2_600, "first_speech_ms is passed through");
-        check(s.length() == 9, "summary has exactly the nine fields: " + s.length());
+        check(s.length() == 11, "summary has exactly the eleven fields: " + s.length());
+        // since 2026-11-18: the two phase lines around the loop (AgentEngine), -1 when a task has none to show
+        check(s.getLong("setup_ms") == -1 && s.getLong("tail_ms") == -1, "no phase lines: setup_ms and tail_ms are -1");
+        List<JSONObject> withPhases = new ArrayList<>(t);
+        withPhases.add(0, o("kind", "phase", "name", "setup", "ms", 3_100));
+        withPhases.add(o("kind", "phase", "name", "tail", "ms", 120));
+        JSONObject p = Perf.summary(withPhases, 7_500, 2_600);
+        check(p.getLong("setup_ms") == 3_100 && p.getLong("tail_ms") == 120,
+                "the phase lines are read by name: " + p.optLong("setup_ms") + " / " + p.optLong("tail_ms"));
+        check(p.getInt("rounds") == 2 && p.getLong("tools_ms") == 745, "and they are no model or tool line");
 
         check(Perf.summary(t, 4_200, -1).getLong("first_speech_ms") == -1, "first_speech_ms is -1 when nothing was said");
 

@@ -106,6 +106,13 @@ final class MusicQueueChecks {
                 && MediaSessions.sameTrack(song(NE, "江南", "playing", 0, 1), song(NE, "江南", "paused", 5, 9))
                 && !MediaSessions.sameTrack(null, song(NE, "江南", "playing", 0, 1)),
                 "the same track: app, title and artist; its state and position do not matter");
+        // a song that began right at the request (under 3 s in): a skip that landed and one that never came read the
+        // same here, so 星仪 leaves it to XiaoAi (2026-11-18 audit: the test did not say this at all)
+        MediaSessions.Session fresh = song(NE, "可惜没如果", "playing", 0, 40_000);
+        check(MediaSessions.xiaoaiSkip(fresh, song(NE, "可惜没如果", "playing", 1_500, 41_500), 40_000, 43_000) == UNKNOWN,
+                "a track 1.5 s in at the request, still playing: UNKNOWN, XiaoAi is believed");
+        check(MediaSessions.xiaoaiSkip(fresh, song(NE, "可惜没如果", "playing", 9_000, 49_000), 40_000, 51_000) == UNKNOWN,
+                "nor does its later position make it MISSED while it is the track of the request");
         // where the track is, for 「这是重播吗」 (2026-11-16 19:45: 「对，现在放的是重新从头播的」 with nothing to go by)
         check(MediaSessions.at(song(NE, "修炼爱情", "playing", 0, 10_000), 143_000).equals("，放到 2:13"),
                 "playing: the reported position plus the time since: " + MediaSessions.at(song(NE, "修炼爱情", "playing", 0, 10_000), 143_000));

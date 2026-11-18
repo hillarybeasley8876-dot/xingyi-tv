@@ -147,7 +147,8 @@ final class TaskProgressView extends LinearLayout {
         if(status==null)return;
         // Only fixed labels from the installer. Never display untrusted errors, paths or URLs here.
         if(status.matches("正在从哔哩哔哩官方下载，共 [0-9]{1,4} MiB|已下载 [0-9]{1,3}%（[0-9]{1,4} / [0-9]{1,4} MiB）"
-                +"|已验证官方签名，版本 [0-9.]{1,20}|核对通过，已安装 tv\\.danmaku\\.bili [0-9.]{1,20}")) { add(status);return; }
+                +"|已验证官方签名，版本 [0-9.]{1,20}|核对通过，已安装 tv\\.danmaku\\.bili [0-9.]{1,20}"
+                +"|Android 安装器还在装，已经等了 [0-9]{1,4} 秒（大应用的安装包要几分钟）")) { add(status);return; }
         int failure=status.indexOf("未完成：");
         if(failure>0) {
             String phase=status.substring(0,failure), detail=status.substring(failure+4);

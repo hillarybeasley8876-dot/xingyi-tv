@@ -51,7 +51,8 @@ must respect those gates: a DENY means "already done" — report the current sta
    - finds the tool named `q.tool` in `tools.tools`; builds a minimal `Tool.Turn` (utterance=text, source, cancelled =
      `gen != currentGeneration()`, progress no-op, say → the engine's existing speech path, round = 1);
    - `gate(q.args, turn)`: DENY → nothing runs: for `adjust_volume` read the volume with the `tv_status` tool and speak
-     「音量 N」, for `media_control` speak 「好的」; then record and return true. The same "already done" path for
+     「音量 N」; for `media_control` speak the gate's own reason (it names the song playing and how far into it, since
+     2026-11-18); a DENY on any other tool is 「好的」. Then record and return true. The same "already done" path for
      `press_keys` when `tools.xiaoaiDid` has a name starting with `UIController.` (XiaoAi pressed the key itself: a second
      Back would leave two pages). READ/ACT → `run(q.args, turn)`;
      SENSITIVE → return false (the model asks for consent as usual);

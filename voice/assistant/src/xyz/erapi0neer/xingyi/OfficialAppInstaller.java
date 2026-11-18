@@ -177,9 +177,23 @@ final class OfficialAppInstaller {
             LocalAdb adb=new LocalAdb(context);
             String installResult;
             checkActive();
+            // pm install of a ~150 MiB package says nothing for minutes (2026-11-08 01:50: 316 s of silence on the TV,
+            // 2026-11-18 audit): say how long it has been waiting, every 15 s, on this thread's own progress channel.
+            final boolean[] waiting={true};
+            Thread beat=new Thread(() -> {
+                long began=System.currentTimeMillis();
+                while(waiting[0]) {
+                    try { Thread.sleep(15000); } catch(InterruptedException stop) { return; }
+                    if(!waiting[0]) return;
+                    try { progress.report("Android 安装器还在装，已经等了 "+(System.currentTimeMillis()-began)/1000+" 秒（大应用的安装包要几分钟）"); }
+                    catch(Exception ignored) { }
+                }
+            }, "install-beat");
+            beat.setDaemon(true);
+            beat.start();
             try { installResult=adb.installVerified(context.getPackageName(),apk.getName(),digest); }
             catch(IOException lostReceipt) { installResult="未收到系统回执"; }
-            finally { adb.cancel(); }
+            finally { waiting[0]=false; beat.interrupt(); adb.cancel(); }
             stage="安装结果核对";
             progress.report("正在核对电视实际安装的包名、版本和签名");
             PackageInfo info=installed();

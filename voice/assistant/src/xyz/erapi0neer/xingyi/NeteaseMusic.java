@@ -144,6 +144,16 @@ final class NeteaseMusic {
         long deadline = SystemClock.elapsedRealtime() + 14000;
         boolean playerRaised = false;
         String reason="播放器尚未提供两次稳定的曲目信息";
+        // One snapshot first: with no player (or one stopped or paused) nothing can be double-started, so the intent goes
+        // out at once. Only a player that is playing needs the two samples below. Until 2026-11-18 every song started
+        // from silence walked the whole 14 s budget (2 s a round) and the user heard 11-14 s of nothing (perf: 11 of 16
+        // netease_play calls at 11-14 s; the same sentence with the song already playing took 805 ms).
+        try {
+            SongOutcome.Observation atStart = reader.readNetEasePlayback();
+            if (atStart == null || atStart.state != 3) return null;
+        } catch (IOException unavailable) {
+            // can't tell: the samples below still decide, and their own error path is unchanged
+        }
         try {
             do {
                 if (cancelled.getAsBoolean()) return result(false,"cancelled","点歌已取消。");

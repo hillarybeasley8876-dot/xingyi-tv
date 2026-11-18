@@ -111,6 +111,12 @@ public final class MediaSessions {
         if (now == null) return Skip.UNKNOWN;
         if (atRequest != null && !sameTrack(atRequest, now)) return Skip.LANDED;
         if (!"playing".equals(now.state) || now.updated <= 0 || now.position < 0 || requestElapsed <= 0) return Skip.UNKNOWN;
+        // The track was already under 3 s in when the request came: it began then, and whether XiaoAi's skip landed
+        // cannot be told from its position — a skip that did land, on a song just started, leaves exactly this reading
+        // (2026-11-18 audit). Before the fix the test was 「played now > time since the request + 3 s」 alone, which is
+        // true of a song that began before the request whether XiaoAi's instruction ever reached the player or not.
+        if (atRequest != null && sameTrack(atRequest, now) && played(atRequest, requestElapsed) < SKIP_MARGIN_MS)
+            return Skip.UNKNOWN;
         long played = now.position + Math.max(0, nowElapsed - now.updated);
         long since = Math.max(0, nowElapsed - requestElapsed);
         return played > since + SKIP_MARGIN_MS ? Skip.MISSED : Skip.UNKNOWN;
