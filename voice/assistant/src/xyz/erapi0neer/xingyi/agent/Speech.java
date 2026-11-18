@@ -50,6 +50,48 @@ public final class Speech {
         return CLOCK_RANGE.matcher(out.toString()).replaceAll("$1到 ").replaceAll("([0-9] [点分]) (?=[\\u4e00-\\u9fa5])", "$1");
     }
 
+    /** 儿 that begins a word of its own right after an erhua-looking stem: 「这事儿子不知道」「两个儿童」「开会儿科医生」,
+     * and the short forms a hospital or a label uses (儿内科, 儿外科, 儿研所, 儿茶素, 儿保, 儿医, 儿艺, 儿基会). */
+    private static final String NOT_A_WORD = "(?![子童女孙媳歌科时戏化郎研内外茶保医艺基])";
+    /**
+     * The words that are written with an erhua 儿 and mean the same without it. A list, not a rule: a rule would take
+     * the 儿 from 女儿 and 婴儿, and from names (上官婉儿, 赵灵儿).
+     *
+     * <p>Kept short on purpose (2026-11-19 review, every case run against the first version): only colloquial words
+     * whose 儿 can go wherever they stand. No noun that is also part of a name or a title (花儿乐队, the singer 小曲儿,
+     * 「小鱼儿」, 「鸟儿们」 in a story, 鱼儿沟站). 一块儿 loses its 儿 and stays 一块 — 「一起」 was wrong for 「这一块儿
+     * 我不太熟」. 这儿 / 那儿 / 哪儿 and 今儿 / 明儿 are left as written: rewriting them broke 「爸爸去哪儿」「小聪明儿」
+     * 「如今儿」, and whether XiaoAi misreads such everyday words at all has not been heard on the TV yet.
+     */
+    private static final Pattern ERHUA = Pattern.compile("(一会|这会|那会|待会|等会|多会|一点|有点|差点|快点|慢点|早点|晚点|多点|少点"
+            + "|大点|小点|一下|一块|没事|有事|啥事|好玩|聊天|小孩|女孩|男孩|哥们|姐们|爷们|大伙|没准|压根|较真|纳闷|打盹|拐弯|心眼"
+            + "|嗓门|脸蛋|饭馆|胡同|冰棍|好好|慢慢|悄悄|偷偷|远远|早早|这样|那样|劲|事|玩|活|味|伴|点|会)儿" + NOT_A_WORD);
+    /** A title or a name the engine quotes is read as it is written: 《花儿与少年》, 「爸爸去哪儿」, 「小鱼儿」. */
+    private static final Pattern TITLE = Pattern.compile("《[^》]{0,60}》|「[^」]{0,60}」");
+
+    /**
+     * The text as XiaoAi's voice gets it — the panel and the record keep what was written. 2026-11-17 00:19: an answer
+     * said 「留着劲儿给你找片听歌更实在」, XiaoAi read the 儿 as a syllable of its own, and the user asked back what had
+     * been said. The colloquial erhua words lose their 儿 (劲儿 → 劲, 一会儿 → 一会, 有点儿 → 有点); 儿 that is a word
+     * of its own (儿子, 女儿, 婴儿), the end of a name, and anything inside 《》 or 「」 stay.
+     */
+    public static String voiced(String text) {
+        if (text == null) return "";
+        if (text.indexOf('儿') < 0) return text;
+        StringBuilder out = new StringBuilder(text.length());
+        java.util.regex.Matcher t = TITLE.matcher(text);
+        int at = 0;
+        while (t.find()) {
+            out.append(withoutErhua(text.substring(at, t.start()))).append(t.group());
+            at = t.end();
+        }
+        return out.append(withoutErhua(text.substring(at))).toString();
+    }
+
+    private static String withoutErhua(String s) {
+        return s.indexOf('儿') < 0 ? s : ERHUA.matcher(s).replaceAll("$1");
+    }
+
     /** Markdown and list layout removed, lines joined into sentences. */
     public static String clean(String text) {
         if (text == null) return "";

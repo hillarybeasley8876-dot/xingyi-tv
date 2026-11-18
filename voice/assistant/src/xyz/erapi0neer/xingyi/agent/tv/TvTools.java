@@ -218,17 +218,25 @@ final class TvTools implements AutoCloseable {
     /** XiaoAi's skip landing late after all, before 星仪 presses its own: what is playing then, or null when nothing
      * changed before the key may be pressed. Anchored on the press, not on the request: a model round takes longer than
      * SKIP_GRACE_MS on this TV (2026-11-18 audit: anchored on the request, this loop never ran on the model path, and
-     * XiaoAi's late skip plus 星仪's key moved two tracks), so the press always gives XiaoAi at least 1.5 s more. */
+     * XiaoAi's late skip plus 星仪's key moved two tracks), so the press always gives XiaoAi at least 1.5 s more.
+     * Landed means another track than the one of the request: the read taken here comes after the gate's, and a skip
+     * landing between the two would make the new track the one to leave (2026-11-18 review). A stop or a newer request
+     * during the wait presses nothing. */
     private JSONObject skipLandedLate(Tool.Turn t) throws Exception {
-        MediaSessions.Session before = nowPlaying();
-        long end = Math.max(requestElapsed + SKIP_GRACE_MS, SystemClock.elapsedRealtime() + SKIP_LATE_MS);
-        while (before != null && SystemClock.elapsedRealtime() < end && !t.cancelled()) {
-            Thread.sleep(300);
-            MediaSessions.Session s = nowPlaying();
-            if (s != null && !MediaSessions.sameTrack(before, s))
-                return ok("observed", label(s.pkg) + " " + s.describe() + "（小爱的那一下切过去了，星仪没有再切）").put("session", session(s));
+        MediaSessions.Session first = nowPlaying();
+        long until = MediaSessions.LateSkip.until(requestElapsed, SystemClock.elapsedRealtime(), SKIP_GRACE_MS, SKIP_LATE_MS);
+        // the deciding is MediaSessions.LateSkip.look (it runs on the PC, where its checks are); here only the clock
+        for (MediaSessions.Session s = first; ; s = nowPlaying()) {
+            switch (MediaSessions.LateSkip.look(atRequest, first, s, SystemClock.elapsedRealtime(), until, t.cancelled())) {
+                case LANDED:
+                    // said like any other skip (the model path reads this message out); the remark is for the model
+                    return ok("observed", label(s.pkg) + " " + s.describe()).put("session", session(s))
+                            .put("note", "小爱自己的那一下晚到了、已经切过去，星仪没有再按键");
+                case STOP: throw new InterruptedException();
+                case PRESS: return null;
+                default: Thread.sleep(300);
+            }
         }
-        return null;
     }
 
     /** How often this task may search the web; one instance per task, because TvTools is one per task. */
@@ -2777,10 +2785,12 @@ final class TvTools implements AutoCloseable {
                 String act = a.optString("action");
                 // XiaoAi's skip is believed unless the player shows it never came (2026-11-16 19:30, skipMissed). The
                 // refusal says what plays now, so the answer needs no media_now_playing round (calibration 11-18: the
-                // model pressed next first in half the runs, then spent a round asking what was on)
+                // model pressed next first in half the runs, then spent a round asking what was on). The reason is the
+                // model's; where there is none (the quick command) the user is told afterSkip
                 if (("next".equals(act) || "previous".equals(act)) && xiaoaiDid(SKIPS)) {
                     MediaSessions.Session now = nowPlaying();
-                    if (!skipMissed(now)) return Gate.deny("小爱已经为这句话切过了，再切一次会多跳一个；" + playingNow(now));
+                    if (!skipMissed(now))
+                        return Gate.deny("小爱已经为这句话切过了，再切一次会多跳一个；" + playingNow(now), MediaSessions.afterSkip(atRequest, now));
                 }
                 return Gate.act();
             }

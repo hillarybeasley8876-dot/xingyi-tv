@@ -34,11 +34,21 @@ public interface Tool {
         public final Risk risk;
         /** For SENSITIVE: what the user is asked to approve. For DENY: why it is refused. */
         public final String reason;
-        private Gate(Risk risk, String reason) { this.risk = risk; this.reason = reason == null ? "" : reason; }
+        /** For DENY, optional: what the user is told where no model puts the refusal into words (a quick command). The
+         * reason is written for the model — 「…照这个告诉用户结果。」 — and is never read out (2026-11-18). Empty: the
+         * caller has words of its own. */
+        public final String said;
+        private Gate(Risk risk, String reason) { this(risk, reason, ""); }
+        private Gate(Risk risk, String reason, String said) {
+            this.risk = risk;
+            this.reason = reason == null ? "" : reason;
+            this.said = said == null ? "" : said;
+        }
         private static final Gate READ = new Gate(Risk.READ, ""), ACT = new Gate(Risk.ACT, "");
         public static Gate read() { return READ; }
         public static Gate act() { return ACT; }
         public static Gate sensitive(String what) { return new Gate(Risk.SENSITIVE, what); }
         public static Gate deny(String why) { return new Gate(Risk.DENY, why); }
+        public static Gate deny(String why, String said) { return new Gate(Risk.DENY, why, said); }
     }
 }

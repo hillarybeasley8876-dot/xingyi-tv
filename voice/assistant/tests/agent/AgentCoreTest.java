@@ -89,6 +89,8 @@ public final class AgentCoreTest {
         LoopFixChecks.run();
         PhoneChecks.run();
         OfferChecks.run();
+        LexiconOracleChecks.run();
+        LexiconChecks.run();
         System.out.println("agent core: " + passed + " passed, " + failed + " failed");
         for (String f : failures) System.out.println("  FAIL " + f);
         if (failed > 0) System.exit(1);

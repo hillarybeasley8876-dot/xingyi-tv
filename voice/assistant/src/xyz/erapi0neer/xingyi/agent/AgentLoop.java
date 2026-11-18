@@ -736,7 +736,7 @@ public final class AgentLoop {
      * a tool's own words would skip it. Calibration 2026-11-05: the answer came back as just 「记住了：…」. */
     private static final Pattern WHY = Pattern.compile("为什么|为啥|怎么回事|怎么又|怎么老|怎么总|咋回事|咋又");
 
-    static boolean asksWhy(String said) { return said != null && WHY.matcher(said).find(); }
+    public static boolean asksWhy(String said) { return said != null && WHY.matcher(said).find(); }
 
     /** The spoken answer when a round did only memory tools and answering connectors and each of them proved itself,
      * else null (the model answers). Facts are stored in the third person (用户喜欢…); the answer speaks to the user. */

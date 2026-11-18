@@ -127,6 +127,57 @@ public final class MediaSessions {
         return a != null && b != null && a.pkg.equals(b.pkg) && a.title.equals(b.title) && a.artist.equals(b.artist);
     }
 
+    /**
+     * The wait before 星仪 presses its own skip, for XiaoAi's to land late after all — the deciding, without the
+     * clock and the reads, so that it runs on the PC (2026-11-19 review: the loop in TvTools had two checks, both of
+     * its source text, and compared with the wrong read, pressed after a stop that came in its last beat, or lost its
+     * time bound without either going red).
+     */
+    public static final class LateSkip {
+        public enum Next { WAIT, LANDED, PRESS, STOP }
+
+        private LateSkip() { }
+
+        /** Until when to wait: {@code graceMs} after the request, and never less than {@code leastMs} from now — a
+         * model round takes longer than the grace on this TV, and anchored on the request alone the wait never ran. */
+        public static long until(long requestElapsed, long nowElapsed, long graceMs, long leastMs) {
+            return Math.max(requestElapsed + graceMs, nowElapsed + leastMs);
+        }
+
+        /**
+         * What to do after one read.
+         *
+         * @param atRequest the track of the request (null: it was not read)
+         * @param first this wait's first read, taken after the gate's: only the baseline when atRequest is null — a
+         *     skip landing between the gate's read and this one would make the new track the one to leave
+         * @param read the latest read (null: nothing readable just now)
+         * @return STOP: a stop or a newer request — nothing is pressed, nothing is said (looked at first, so one that
+         *     comes in the last beat of the wait still holds the key back). LANDED: another track than the baseline.
+         *     PRESS: the time is up, or there is nothing to tell a landing by. WAIT: read again.
+         */
+        public static Next look(Session atRequest, Session first, Session read, long nowElapsed, long until, boolean cancelled) {
+            if (cancelled) return Next.STOP;
+            Session base = atRequest != null ? atRequest : first;
+            if (base == null) return Next.PRESS;
+            if (read != null && !sameTrack(base, read)) return Next.LANDED;
+            return nowElapsed >= until ? Next.PRESS : Next.WAIT;
+        }
+    }
+
+    /**
+     * What the user is told after a 「下一首」「上一首」 where no model puts it into words (the quick command), from what
+     * played at the request and what plays now. Another track is named as the new one. The track of the request still
+     * on is named without claiming a switch: XiaoAi's own skip may have begun it a moment before the request, or never
+     * have come — the name tells the user which. Nothing playing with a title: 「好的」, nothing made up.
+     * Never the gate's reason: that is written for the model (2026-11-18: 「…再切一次会多跳一个；现在…：照这个告诉用户结果。」
+     * was about to be read out on every 「下一首」 XiaoAi had carried out itself).
+     */
+    public static String afterSkip(Session atRequest, Session now) {
+        if (now == null || !"playing".equals(now.state) || now.title.isEmpty()) return "好的";
+        String what = (now.artist.isEmpty() ? "" : now.artist.replace("/", "、") + "的") + "《" + now.title + "》";
+        return sameTrack(atRequest, now) ? "现在放的是" + what : "好的，现在是" + what;
+    }
+
     /** How far into the track (ms) at nowElapsed, or -1 when the session does not say: the position the app last
      * reported, plus the time since then while it plays. */
     public static long played(Session s, long nowElapsed) {

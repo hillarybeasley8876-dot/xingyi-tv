@@ -55,6 +55,9 @@ public final class AgentEngine {
     /** The task a newer request superseded: it ends CANCELLED as usual but says nothing and shows no 已停下 panel,
      * because the user has already moved on and the new task's panel takes its place. */
     private volatile Ledger superseded;
+    /** Requests below this were superseded by a newer one (not stopped by the user): one of them that is still a quick
+     * command — it has no ledger of its own for {@link #superseded} to name — ends without a word too. */
+    private volatile int supersededBelow;
     /** The request (generation) the shown task belongs to: the PC side waits for its own task by it, not for "a new
      * task id", which a XiaoAi request started in between would also be (2026-11-05 audit). */
     private volatile int taskGen = -1;
@@ -76,17 +79,12 @@ public final class AgentEngine {
     private final List<JSONObject> timings = new ArrayList<>();
     private volatile long taskStarted;
     private volatile long firstSpeechMs = -1;
-    /** B站 cold-starts in ~15 s; this is what the user says when they want it. */
-    private static final Pattern BILI_WORDS = Pattern.compile("b站|bilibili|哔哩", Pattern.CASE_INSENSITIVE);
-    /** A song asked for (「播放汪苏泷的晴」「我要唱林俊杰的歌」): NetEase takes 10-14 s from silence to playing, most of it its
-     * own cold start (2026-11-18 audit of the TV's perf log: 12 of 16 netease_play calls at 10-16 s; the catalog's two
-     * HTTP calls answer in 0.3 s). The verb and the noun must be neighbours within one clause, so 「我想知道…」
-     * 「这首歌叫什么」 and 「你会唱歌吗」 are left alone. */
-    private static final Pattern SONG_ASK = Pattern.compile(
-            "(?:播放|点歌|点一首|来一首|来首|放|听|唱)[^，。！？,.!?]{0,10}(?:的歌|歌|音乐|fm)", Pattern.CASE_INSENSITIVE);
+    // B站 cold-starts in ~15 s; which sentences start it early is Dispatch.biliRequest.
+    // A song asked for: NetEase takes 10-14 s from silence to playing, most of it its own cold start (2026-11-18
+    // audit of the TV's perf log: 12 of 16 netease_play calls at 10-16 s; the catalog's two HTTP calls answer in
+    // 0.3 s). Which sentences count is Dispatch.songRequest — it runs on the PC, where its checks are.
     /** This TV's home screen (launcher/). */
     static final String HOME_PKG = "xyz.erapi0neer.orrery";
-    private static final Pattern ABOUT_TIME = Pattern.compile("多久|多长时间|几个?小时|几分钟|看了多少|用了多少|什么时候看");
     /** The home screen's answer, kept for half a minute (it asks whenever it comes to the front), and what the media
      * session last said, read on a thread of its own. */
     private static final long HOME_MS = 30_000, MEDIA_WAIT_MS = 250, WEATHER_WAIT_MS = 800;
@@ -226,7 +224,7 @@ public final class AgentEngine {
         boolean queued = route == Dispatch.Route.QUEUE;
         // SIDE that could not be handed over, and SUPERSEDE: the running task ends quietly, the new one replaces it.
         // QUEUE: the running task goes on to its answer and this question runs after it (one task at a time).
-        if (busy && !queued) { superseded = task; cancel(); }
+        if (busy && !queued) { superseded = task; cancel(); supersededBelow = floor; }
         AgentService.ensure(app);
         int gen = ++generation;
         pending++;
@@ -781,6 +779,11 @@ public final class AgentEngine {
             if (resumeCount == 0) {
                 QuickCommand quick = QuickCommand.match(text, tools.apps().keySet());
                 if (quick != null && runQuick(quick, tools, text, source, gen)) return;
+                // A quick command a newer request took over while it waited (for XiaoAi's late skip, for 云视听极光's
+                // pause) ends here. Going on started the model on a request already cancelled, and its 「已停止。」
+                // was read out over the request that had taken its place (2026-11-19 review). One the user stopped
+                // goes on as before: the loop ends at once and says 「已停止。」, which is the answer to 停.
+                if (cancelled(gen) && gen < supersededBelow) return;
             }
             // B站 takes ~15 s to cold-start and the model's first round is ~2 s: start it now, while the model plans.
             // bili_search already waits for it, so nothing else changes.
@@ -914,12 +917,13 @@ public final class AgentEngine {
      * coming up while the model writes its plan; bili_search waits for it either way. Never throws. */
     private void startBilibiliEarly(String text, TvTools tools) {
         try {
-            if (text == null || !BILI_WORDS.matcher(text).find()) return;
-            // not in standby (a video needs the screen first, and B站 cold in the dark only takes memory on a 2 GB TV),
-            // nor for a question about the time spent there (2026-11-06: 「昨天看了多久B站」 at 05:57 started it)
+            // only a sentence that is going to use B站 (Dispatch.biliRequest, checked on the PC): not one that asks
+            // about it — why it was slow, how long it was watched (2026-11-06: 「昨天看了多久B站」 at 05:57 started it),
+            // what a membership costs — nor one that says not to open it
+            if (text == null || !Dispatch.biliRequest(text)) return;
+            // not in standby (a video needs the screen first, and B站 cold in the dark only takes memory on a 2 GB TV)
             android.os.PowerManager pm = (android.os.PowerManager) app.getSystemService(Context.POWER_SERVICE);
             if (pm != null && !pm.isInteractive()) return;
-            if (ABOUT_TIME.matcher(text).find()) return;
             if (TvTools.BILI.equals(tools.foreground())) return; // already up: nothing to warm
             Intent i = app.getPackageManager().getLeanbackLaunchIntentForPackage(TvTools.BILI);
             if (i == null) i = app.getPackageManager().getLaunchIntentForPackage(TvTools.BILI);
@@ -932,10 +936,11 @@ public final class AgentEngine {
      * brought up (its own screen, the way it starts), never told to play; netease_play does that. Never throws. */
     private void startNeteaseEarly(String text, TvTools tools) {
         try {
-            // the verb and the noun must be neighbours: 「这首歌是谁唱的」 「你会唱歌吗」 「放点音乐视频」 are no song request
-            // (2026-11-18 review: two separate find() brought NetEase up over a paused video)
-            if (text == null || !SONG_ASK.matcher(text).find()) return;
-            if (BILI_WORDS.matcher(text).find()) return; // asked about B站: that prewarm is the one that runs
+            // only a sentence that is a request for music and nothing else (Dispatch.songRequest): the pattern that
+            // stood here took 「你会唱歌吗」 「别放歌了」 「现在放的是什么歌」 for one, and a false one opens an app
+            // nobody asked for (2026-11-19 review, before this reached the TV)
+            if (text == null || !Dispatch.songRequest(text)) return;
+            if (Dispatch.namesBili(text)) return; // B站 is named: its prewarm is the one that decides
             // not in standby (a song needs the screen first, and a player cold in the dark only takes memory on a 2 GB TV)
             android.os.PowerManager pm = (android.os.PowerManager) app.getSystemService(Context.POWER_SERVICE);
             if (pm != null && !pm.isInteractive()) return;
@@ -1052,6 +1057,7 @@ public final class AgentEngine {
         if (loop == null && pending == 0) return;
         superseded = task;
         cancel();
+        supersededBelow = floor;
     }
 
     /** One entry of what 星仪 did (files/agent/history.json, for recall_history): what was said, the answer, what was
@@ -1129,9 +1135,11 @@ public final class AgentEngine {
             if (gate.risk == Tool.Gate.Risk.SENSITIVE) return false; // the model asks for consent as usual
             // A DENY means XiaoAi already did this very thing for the same sentence (a second 调大/下一首 would double it),
             // and a UIController instruction means it pressed the key itself: say what is true now instead of acting.
-            // media_control's refusal carries the song and the position (TvTools.playingNow): 「好的」 told the user
-            // nothing about what was playing (2026-11-18 audit), so that reason is said as it is.
-            String reply = gate.risk == Tool.Gate.Risk.DENY && (TvTools.ASLEEP_TEST.equals(gate.reason) || "media_control".equals(q.tool)) ? gate.reason
+            // A gate that has words for the user (media_control's second skip: what plays now, MediaSessions.afterSkip)
+            // says those. Never its reason: that is written for the model — 「…再切一次会多跳一个；现在…：照这个告诉用户
+            // 结果。」 — and cbed01d read it out as it was (caught in review on 2026-11-18, before it reached the TV).
+            String reply = gate.risk == Tool.Gate.Risk.DENY && TvTools.ASLEEP_TEST.equals(gate.reason) ? gate.reason
+                    : gate.risk == Tool.Gate.Risk.DENY && !gate.said.isEmpty() ? gate.said
                     : gate.risk == Tool.Gate.Risk.DENY || ("press_keys".equals(q.tool) && uiPressed(tools))
                     ? alreadyDone(q) : ran(tool, q, turn, task);
             if (reply == null) return false;

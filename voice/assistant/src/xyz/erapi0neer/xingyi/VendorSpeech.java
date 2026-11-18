@@ -74,7 +74,9 @@ public final class VendorSpeech {
     public static String speak(Context context, String text) {
         if (text == null || text.trim().isEmpty()) return "没有可播报的文字";
         if (!isAvailable(context)) return "小米播报入口不可用";
-        String spoken = text.trim();
+        // what the voice gets is not what the panel shows: erhua words lose the 儿 XiaoAi reads as a syllable of its own
+        // (Speech.voiced, 2026-11-19); every spoken word goes through here
+        String spoken = xyz.erapi0neer.xingyi.agent.Speech.voiced(text.trim());
         if (spoken.length() > 1800) spoken = spoken.substring(0, 1800);
         try {
             lastSpokeAt = android.os.SystemClock.uptimeMillis();

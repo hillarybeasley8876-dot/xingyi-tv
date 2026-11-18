@@ -1,0 +1,41 @@
+{
+ "id": "lexicon-core",
+ "title": "常提到的名字：Lexicon 从对话里学名字和识别的错写法",
+ "brief": "briefs/lexicon-core.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 110,
+ "owns": [
+  "src/xyz/erapi0neer/xingyi/agent/Lexicon.java",
+  "src/xyz/erapi0neer/xingyi/agent/LexiconSounds.java",
+  "src/xyz/erapi0neer/xingyi/agent/Heard.java",
+  "tests/agent/LexiconChecks.java",
+  "status/improve/lexicon-core.md"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|650[0-9]|65[1-9]\\d|6[6-9]\\d\\d|[7-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_lexicon.sh",
+   "timeoutS": 900,
+   "must": [
+    "LEXICON OK"
+   ]
+  }
+ ]
+}

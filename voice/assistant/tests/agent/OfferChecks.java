@@ -32,9 +32,82 @@ final class OfferChecks {
     static void run() {
         try {
             checks();
+            voiced();
         } catch (Exception e) {
             check(false, "offer checks threw " + e);
         }
+    }
+
+    private static void says(String in, String out) {
+        String got = Speech.voiced(in);
+        check(out.equals(got), "voiced: " + in + " -> " + got + " (want " + out + ")");
+    }
+
+    private static void same(String in) { says(in, in); }
+
+    /**
+     * Speech.voiced (2026-11-19): what XiaoAi's voice is given, not what the panel shows. 2026-11-17 00:19 the answer
+     * said 「留着劲儿给你找片听歌更实在」; XiaoAi read the 儿 as a syllable of its own and the user asked back what had
+     * been said. The erhua words people write lose their 儿 for the voice; 儿 that is a word of its own, a name, and
+     * anything inside 《》 stay as written.
+     */
+    static void voiced() throws Exception {
+        says("真要挑刺我也能挑，不过没必要——大半夜的，留着劲儿给你找片听歌更实在。",
+                "真要挑刺我也能挑，不过没必要——大半夜的，留着劲给你找片听歌更实在。");
+        says("等一会儿再说", "等一会再说");
+        says("没事儿，慢慢儿来", "没事，慢慢来");
+        says("小点儿声", "小点声");
+        says("这事儿挺好玩儿的", "这事挺好玩的");
+        says("差点儿忘了，待会儿提醒你", "差点忘了，待会提醒你");
+        says("“留着劲儿”那句话不是冲你", "“留着劲”那句话不是冲你");
+        says("坐着歇会儿，别一直站着", "坐着歇会，别一直站着");
+        // 一块儿 loses its 儿 and nothing else: 「一起」 was wrong wherever it is a piece or a part (2026-11-19 review)
+        says("咱们一块儿看", "咱们一块看");
+        says("这一块儿我不太熟", "这一块我不太熟");
+        says("屏幕右下角那一块儿是执行面板", "屏幕右下角那一块是执行面板");
+        says("第一块儿拼图在左上角", "第一块拼图在左上角");
+        // 儿 that is a word of its own, or the end of a name, stays
+        for (String keep : new String[] {"他儿子和女儿都在", "婴儿和幼儿都能看", "儿童节放儿歌", "这儿子真懂事", "这事儿子不知道",
+                "两个儿童", "上官婉儿是唐朝人", "赵灵儿", "新生儿", "这儿歌真好听", "那儿媳妇人不错", "混血儿", "托儿所", "少儿频道",
+                "明天儿子回来", "今天儿童节", "开会儿童不宜", "薪儿姐", "没有儿化音的句子。", ""})
+            same(keep);
+        // what the first version changed and should not have (2026-11-19 review, each run against it): a singer or a
+        // station whose name ends in 儿, a title outside 《》, a story's 鸟儿们, a word 今儿 / 明儿 only looks like, the
+        // short forms that begin with 儿 — and the everyday 这儿 / 那儿 / 哪儿, left as written until heard on the TV
+        for (String keep : new String[] {"好的，现在是花儿乐队的《嘻唰唰》", "现在放的是小曲儿的《上邪》", "豆瓣上没找到「爸爸去哪儿」",
+                "已忘掉和「小鱼儿」有关的 1 条记忆", "爸爸去哪儿重播", "鸟儿们叽叽喳喳地叫着，花儿们都开了", "鱼儿鱼儿水中游", "鱼儿沟站",
+                "别耍小聪明儿", "如今儿不比从前", "明儿个个都得来", "今天儿内科还有号", "著名儿外科专家", "明天儿研所几点开门",
+                "每天儿茶素的摄入量", "这儿太吵，去那儿吧", "你现在在哪儿", "今儿个天气不错，明儿见", "有空儿给个信儿，这天儿真冷",
+                "他说「等一会儿」就走", "下午三点儿内科开门", "这件事儿研所会处理", "一会儿外科见"})
+            same(keep);
+        says("这儿有点儿吵，去那儿吧", "这儿有点吵，去那儿吧");
+        // a title is read as it is written, and the words around it are still tidied
+        same("正在播放《花儿与少年》");
+        same("网易云正在放《鱼儿》");
+        says("《女儿情》放完了，等一会儿放《花儿为什么这样红》", "《女儿情》放完了，等一会放《花儿为什么这样红》");
+        check(Speech.voiced(null).isEmpty(), "voiced: null is nothing to say");
+        // the TV's own answers: nothing but erhua changes, titles are kept, and a second pass changes nothing more
+        List<String> lines = Files.readAllLines(Paths.get("tests/agent/fixtures/answers-1110.jsonl"), StandardCharsets.UTF_8);
+        int answers = 0, changed = 0;
+        for (String line : lines) {
+            if (line.trim().isEmpty()) continue;
+            String r = new JSONObject(line).optString("reply");
+            if (r.isEmpty()) continue;
+            answers++;
+            String v = Speech.voiced(r);
+            if (!v.equals(r)) changed++;
+            boolean ok = v.equals(Speech.voiced(v)) && (r.indexOf('儿') >= 0 || v.equals(r)) && v.length() <= r.length();
+            java.util.regex.Matcher t = java.util.regex.Pattern.compile("《[^》]*》").matcher(r);
+            while (t.find()) ok &= v.contains(t.group());
+            check(ok, "voiced, a real answer: only erhua goes, titles stay: " + r + " -> " + v);
+        }
+        // some of them do change, and only a few: a voiced that changes nothing, or one that rewrites every tenth answer,
+        // is not this one. Not an exact count: the public copy of the fixture is reworded by the exporter (1 here, 4 there).
+        check(answers > 100 && changed >= 1 && changed <= answers / 10, "the kept answers were read: " + answers + ", and "
+                + changed + " of them lose an erhua for the voice");
+        // the one place every spoken word goes through (xingyi/VendorSpeech is Android code: read in the source)
+        String vendor = new String(Files.readAllBytes(Paths.get("src/xyz/erapi0neer/xingyi/VendorSpeech.java")), StandardCharsets.UTF_8);
+        check(vendor.contains("Speech.voiced(text.trim())"), "VendorSpeech.speak gives XiaoAi the voiced text");
     }
 
     static void checks() throws Exception {
