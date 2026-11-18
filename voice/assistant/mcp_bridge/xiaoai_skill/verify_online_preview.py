@@ -19,7 +19,7 @@ from gateway import ENDPOINT, Settings, application, sign
 
 
 ADB = r"H:\tools\platform-tools\adb.exe"
-TV = "192.168.31.162:5555"
+TV = "192.0.2.10:5555"
 APP = "xyz.erapi0neer.xingyi/"
 HOME = "xyz.erapi0neer.orrery/"
 PREVIEW = "在网易云音乐播放林俊杰的《不为谁而作的歌》"

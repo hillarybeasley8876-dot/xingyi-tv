@@ -14,7 +14,7 @@ JDK="/c/Program Files/Eclipse Adoptium/jdk-17.0.20.101-hotspot/bin"
 export JAVA_HOME="/c/Program Files/Eclipse Adoptium/jdk-17.0.20.101-hotspot"
 KS=/h/tools/mitv/launcher/debug.keystore
 B=/h/tools/mitv/launcher-out/tmp/homepreview-build
-ADB="/h/tools/platform-tools/adb.exe -s 192.168.31.162:5555"
+ADB="/h/tools/platform-tools/adb.exe -s 192.0.2.10:5555"
 rm -rf "$B"; mkdir -p "$B/classes" "$B/dex" "$OUT"
 "$BT/aapt2.exe" link -I "$JAR" --manifest "$(cygpath -m "$HERE/AndroidManifest.xml")" -A "$(cygpath -m "$TREE/assets")" -o "$B/unsigned.apk" --min-sdk-version 23 --target-sdk-version 28
 { cygpath -m "$HERE/PreviewRender.java"; for f in HomeUi HomeLayout Shelves; do [ -f "$TREE/src/xyz/erapi0neer/orrery/$f.java" ] && cygpath -m "$TREE/src/xyz/erapi0neer/orrery/$f.java"; done; } > "$B/sources.txt"

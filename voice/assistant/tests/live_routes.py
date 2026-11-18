@@ -18,7 +18,7 @@ import sys
 import time
 
 ctypes.windll.kernel32.SetPriorityClass(ctypes.windll.kernel32.GetCurrentProcess(), 0x4000)  # below normal
-ADB = [r'H:\tools\platform-tools\adb.exe', '-s', '192.168.31.162:5555']
+ADB = [r'H:\tools\platform-tools\adb.exe', '-s', '192.0.2.10:5555']
 APP = 'xyz.erapi0neer.xingyi'
 FILES = '/sdcard/Android/data/' + APP + '/files/'
 OUT = pathlib.Path(__file__).resolve().parents[2] / 'evidence-0.5'

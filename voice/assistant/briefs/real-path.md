@@ -13,7 +13,7 @@ not in the repository, is not runnable by anyone else, and leaves no evidence fi
 From `voice/assistant-out/tmp/lead/k1111/session8.py` and `k1110/probe.py` (both are readable): `sh`, `tv_clock`, `awake`,
 `resumed`, `remote`, `session`, `shot`, `wait_for`, `run_tool` (the `tvtask.py` / `xiaoai_say.py` runner), `state` (the
 `STATE` broadcast, parsed), `setting` (read a secure setting), and the fixed path of `adb.exe`
-(`H:/tools/platform-tools/adb.exe -s 192.168.31.162:5555`), with a module docstring saying it drives the real TV.
+(`H:/tools/platform-tools/adb.exe -s 192.0.2.10:5555`), with a module docstring saying it drives the real TV.
 No `main()` in it; every scenario is its own script.
 
 ### 2. `scenarios/<id>.py` — one file per real-path scenario, each with `main()` returning 0 (passed) or 3 (could not run)

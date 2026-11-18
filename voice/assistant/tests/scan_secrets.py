@@ -21,7 +21,7 @@ import zipfile
 
 ctypes.windll.kernel32.SetPriorityClass(ctypes.windll.kernel32.GetCurrentProcess(), 0x4000)  # below normal
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-ADB = [r'H:\tools\platform-tools\adb.exe', '-s', '192.168.31.162:5555']
+ADB = [r'H:\tools\platform-tools\adb.exe', '-s', '192.0.2.10:5555']
 TREE = pathlib.Path(r'H:\tools\mitv\voice')
 APP_FILES = '/sdcard/Android/data/xyz.erapi0neer.xingyi/files/'
 

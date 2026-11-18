@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""The real TV, driven through adb: every function here runs a command on the Xiaomi TV at 192.168.31.162:5555 — the
+"""The real TV, driven through adb: every function here runs a command on the Xiaomi TV at 192.0.2.10:5555 — the
 screen, keys, apps, the audio service and 星仪's own debug receiver. Nothing in this package is offline; the only part
 CI runs is check.py, which reads files and never imports this module.
 
@@ -12,8 +12,8 @@ from datetime import datetime, timedelta
 from PIL import Image
 
 ADB = "H:/tools/platform-tools/adb.exe"
-DEV = "192.168.31.162:5555"
-TV = "http://192.168.31.162:6095"        # the TV's own remote service: a key without `input keyevent`'s ~0.85 s
+DEV = "192.0.2.10:5555"
+TV = "http://192.0.2.10:6095"        # the TV's own remote service: a key without `input keyevent`'s ~0.85 s
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, "..", "..", ".."))
 TESTS = os.path.join(ROOT, "tests", "agent")       # tvtask.py and xiaoai_say.py live here

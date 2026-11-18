@@ -5,7 +5,7 @@ Prints the agent's task as it runs and the bridge's log tail at the end (who too
 """
 import argparse, json, re, subprocess, sys, time
 
-ADB = [r"H:\tools\platform-tools\adb.exe", "-s", "192.168.31.162:5555"]
+ADB = [r"H:\tools\platform-tools\adb.exe", "-s", "192.0.2.10:5555"]
 SERVICE = "com.xiaomi.voicecontrol/com.xiaomi.voicecontrol.VoiceControlService"
 DEBUG = "xyz.erapi0neer.xiaoaibridge/xyz.erapi0neer.xingyi.agent.tv.AgentDebug"
 

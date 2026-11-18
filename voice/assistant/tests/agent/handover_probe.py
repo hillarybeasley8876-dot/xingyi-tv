@@ -7,7 +7,7 @@ assistant-out/tmp/handover/. Needs the screen on (a sleeping TV screenshots blac
 """
 import os, subprocess, sys, threading, time
 
-ADB = [r"H:\tools\platform-tools\adb.exe", "-s", "192.168.31.162:5555"]
+ADB = [r"H:\tools\platform-tools\adb.exe", "-s", "192.0.2.10:5555"]
 OUT = r"H:\tools\mitv\voice\assistant-out\tmp\handover"
 HERE = os.path.dirname(os.path.abspath(__file__))
 

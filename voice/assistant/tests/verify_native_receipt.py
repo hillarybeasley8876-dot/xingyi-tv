@@ -15,7 +15,7 @@ def receipt(device):
 
 
 def main():
-    device = Run("192.168.31.162:5555")
+    device = Run("192.0.2.10:5555")
     device.deadline = time.monotonic() + 95
     report = {"origin": "Xiaomi native text/NLP path, no microphone audio"}
     assert device.shell("getprop ro.product.model") == "MiTV-ASTP0"

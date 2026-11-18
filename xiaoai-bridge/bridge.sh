@@ -16,7 +16,7 @@
 #   bridge.sh asr [n]          XiaoAi's recent recognition lines straight from logcat
 export MSYS_NO_PATHCONV=1
 cd "$(dirname "$0")"
-TV=${TV:-192.168.31.162:5555}
+TV=${TV:-192.0.2.10:5555}
 A="/h/tools/platform-tools/adb.exe -s $TV"
 PKG=xyz.erapi0neer.xiaoaibridge
 D=/sdcard/Android/data/$PKG/files

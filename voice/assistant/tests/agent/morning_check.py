@@ -10,7 +10,7 @@ Prints when each answer first showed and was first spoken (perf_recent).
 import os, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ADB = [r"H:\tools\platform-tools\adb.exe", "-s", "192.168.31.162:5555"]
+ADB = [r"H:\tools\platform-tools\adb.exe", "-s", "192.0.2.10:5555"]
 QUESTIONS = ["详细讲讲为什么天空是蓝的，晚霞又为什么是红的", "今天农历几号", "还有几天过年", "早上好", "今天空气质量怎么样",
              # how XiaoAi reads 「20:58–21:03」 (the usage answer) and the sunset in words: 「比」 would need Speech to say times
              "昨天晚上电视开了多久", "几点天黑"]

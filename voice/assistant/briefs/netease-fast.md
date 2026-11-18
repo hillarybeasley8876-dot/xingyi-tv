@@ -9,7 +9,7 @@
    window manager logs `Virtual KeyEvent` DOWN, then UP ~185 ms later). Measured working names: `down`, `right`, `up`,
    `home`, `enter` — and `enter` toggles NetEase's 随心唱 mic button like OK (label flipped 开启随心唱 → 按 上 键调节人声 →
    back, both times within 1.2 s). The whole 随心唱 path (down, right ×4, up) took 2.2 s instead of ~9.5 s. The service
-   listens on the LAN address only (`::ffff:192.168.31.162:6095`), **not** on 127.0.0.1.
+   listens on the LAN address only (`::ffff:192.0.2.10:6095`), **not** on 127.0.0.1.
 2. **伴奏 sent the model to NetEase's home page** (fixed in words by front-truth; now in deed). With NetEase's process
    alive, `nmcloudmusictv://ng/player` (no RESOURCE_ID) through `TvRedirectActivity` brings **the playing song's
    player page** back in 0.15–0.2 s, keeps the position, and skips NetEase's ~4.5 s launch page (with a RESOURCE_ID,

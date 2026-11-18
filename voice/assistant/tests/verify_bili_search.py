@@ -49,7 +49,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument("--mode",choices=("native","reviewed"),required=True)
     p.add_argument("--output",type=Path,required=True);a=p.parse_args()
     if a.output.exists():p.error("Choose a fresh output")
-    r=Run("192.168.31.162:5555");r.deadline=time.monotonic()+106
+    r=Run("192.0.2.10:5555");r.deadline=time.monotonic()+106
     assert r.shell("getprop ro.product.model")=="MiTV-ASTP0" and "mWakefulness=Awake" in r.shell("dumpsys power | grep -m1 mWakefulness=")
     consent=json.loads((VOICE/"evidence-bili/authorized-consent.json").read_text(encoding="utf8"))
     assert consent["user_authorized"] and consent["verified_package"]==PKG and r.version(PKG)==8911100

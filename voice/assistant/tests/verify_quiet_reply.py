@@ -118,7 +118,7 @@ def main():
     parser.add_argument("out", type=Path)
     args = parser.parse_args()
     if args.out.exists(): parser.error("Use a fresh evidence path")
-    r = Run("192.168.31.162:5555")
+    r = Run("192.0.2.10:5555")
     r.deadline = time.monotonic()+85
     pid = r.shell("pidof com.xiaomi.voicecontrol")
     assert pid.isdigit() and r.shell("getprop ro.product.model") == "MiTV-ASTP0"

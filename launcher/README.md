@@ -16,7 +16,8 @@ Orrery 2.0 (Codex's Saturn build) is the first commit and `orrery-2.0.apk`.
   turns the `glint` sine into short flashes kept to the focal band. `tone` [toe, shoulder order, mid contrast, pivot]
   shapes the table: a finite shoulder order keeps gradation in the core, the contrast is an S around the pivot.
 - `HomeUi` — the type layer (clock, date, focused title, numbered axis) on the 1920×1080 grid of
-  `redesign/concepts/attractor/ui.py`; redraws only while something moves. The design brief is `redesign/BRIEF.md`.
+  the 1920×1080 grid the design mock-ups use; redraws only while something moves. The design brief and the mock-ups are
+  in the private development tree (`redesign/`), not in this repository.
 - `HomeActivity` — entries (星仪, 网易云, 云视听极光, other apps, HDMI 1-3, the TV's tools, 应用商店, U盘, 设置),
   D-pad, launch, and render only while resumed with the screen on.
 - `Shelves` (2026-11-06, the user: 「ui还是太乱了 没有分类 收纳 太简约了有点」「安装的应用也不知道在哪找」) — the entries
@@ -25,7 +26,7 @@ Orrery 2.0 (Codex's Saturn build) is the first commit and `orrery-2.0.apk`.
   投屏), 工具 (everything else, settings last), 全部 (everything, the last three days' installs first, marked 新).
   UP/DOWN pick a shelf (the index on the left, with counts), LEFT/RIGHT walk it; each shelf remembers its focus.
   Under the focused name, what it is (语音助手, 视频 · 新安装…). A shelf longer than 7 slides, with 「05 / 14」.
-  Mock-up: `redesign/concepts/attractor/ui_categories.py`; PC check: `sh tools/shelves_check.sh`.
+  Mock-up in the private tree (`redesign/concepts/attractor/ui_categories.py`); PC check: `sh tools/shelves_check.sh`.
   adb: `FOCUS --ei shelf K --ei index N`.
 
 - **veil** (2026-11-06, the user: 「层次感空间感有待加强」): like the echo, a share of the particles splats a second time,
@@ -58,8 +59,8 @@ Orrery 2.0 (Codex's Saturn build) is the first commit and `orrery-2.0.apk`.
   does nothing without the keys (the stars pass is not dispatched, the spray share is 0). `count` is back to 393 216,
   the budget the two had taken (with the veil alone the TV ran 30.0 fps at that count). The `veil` stays.
 
-- **B 「轴」** (2026-11-08, the user: 「美化下ui排版」「我指的是主页面ui」; chosen from two mock-ups, `redesign/concepts/
-  attractor/ui_home_v4.py`): no key hints; under the date a quiet line 农历 · weather; at the top right what is playing
+- **B 「轴」** (2026-11-08, the user: 「美化下ui排版」「我指的是主页面ui」; chosen from two mock-ups in the private tree
+  (`redesign/concepts/attractor/ui_home_v4.py`)): no key hints; under the date a quiet line 农历 · weather; at the top right what is playing
   (NOW PLAYING, only while playing); the shelf index is a ruler (hairline, ticks, 01–05, counts), the open shelf's tick
   in the accent; the focused name 60 px over its own column with one line about it (kind, 新安装, 上次在听《…》); a
   shelf's axis ends after its last entry and fades out (long shelves keep the full width and 05 / 15); a soft floor
@@ -70,7 +71,8 @@ Orrery 2.0 (Codex's Saturn build) is the first commit and `orrery-2.0.apk`.
   app renders the type layer with that tree's code and the bridge's real data; the PC lays it over a still of the flow).
 
 - **Orrery 4 「终端」** (2026-11-08, the user: 「你看看人家明日方舟那种 ui」「但是还是按照线条和简约排版为主」, then the
-  tilted cluster placed 「下方居中」; mock-up `redesign/concepts/attractor/ui_home_ark.py` layout `bottom`; jobs
+  tilted cluster placed 「下方居中」; mock-up `redesign/concepts/attractor/ui_home_ark.py` layout `bottom` (private tree; the card it replaced is
+  rendered by `briefs/ui_home_ark.py`); jobs
   home-ark and home-ark-2; installed 12:02): the open shelf is a line-drawn band at the bottom centre — a 6 × 2 grid
   of 186 × 138 cells (the first entry 2 × 2), leaning back 16° through `android.graphics.Camera`, eight entries a page
   with a code, a ghost numeral, the name, an English line (`HomeLayout.english`) and a state line in each cell; the

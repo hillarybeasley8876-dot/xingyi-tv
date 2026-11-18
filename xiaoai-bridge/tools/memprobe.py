@@ -19,7 +19,7 @@ import time
 from pathlib import Path
 
 ADB = os.environ.get('ADB_EXE', r'H:\tools\platform-tools\adb.exe')
-TV = os.environ.get('TV', '192.168.31.162:5555')
+TV = os.environ.get('TV', '192.0.2.10:5555')
 PKG = 'xyz.erapi0neer.xiaoaibridge'
 HERE = Path(__file__).resolve().parent.parent
 NO_WINDOW = 0x08000000

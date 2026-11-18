@@ -11,7 +11,7 @@ from verify_native_receipt import receipt
 
 def main():
     retest_timer = "--timer-fix" in sys.argv[1:]
-    device = Run("192.168.31.162:5555")
+    device = Run("192.0.2.10:5555")
     device.deadline = time.monotonic() + 130
     assert device.shell("getprop ro.product.model") == "MiTV-ASTP0"
     if retest_timer:

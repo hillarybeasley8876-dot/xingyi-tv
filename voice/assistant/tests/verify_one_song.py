@@ -43,7 +43,7 @@ def exact(p):
         p.get("target_title") in (TITLE,QUALIFIED) and p.get("album") in ("和自己对话","不为谁而作的歌","上一首情歌 (国语精选)")
 
 def main():
-    r=Run("192.168.31.162:5555")
+    r=Run("192.0.2.10:5555")
     r.deadline=time.monotonic()+115
     assert r.shell("getprop ro.product.model")=="MiTV-ASTP0" and r.shell("getprop ro.product.device")=="mulan"
     apk=VOICE/"xingyi-0.8.apk"

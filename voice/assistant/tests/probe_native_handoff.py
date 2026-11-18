@@ -19,7 +19,7 @@ def ask(run, phrase):
 
 
 def run_probe():
-    run = Run("192.168.31.162:5555")
+    run = Run("192.0.2.10:5555")
     run.deadline = time.monotonic() + 100
     assert run.shell("getprop ro.product.model") == "MiTV-ASTP0"
     home = run.shell("cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME").splitlines()[-1]

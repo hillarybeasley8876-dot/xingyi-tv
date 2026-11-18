@@ -6,7 +6,7 @@ import argparse, json, re, subprocess, time
 from pathlib import Path
 
 ADB = r'H:\tools\platform-tools\adb.exe'
-TV = '192.168.31.162:5555'
+TV = '192.0.2.10:5555'
 NO_WINDOW = 0x08000000
 OUT = Path(__file__).resolve().parent.parent / 'out'
 KEEP = re.compile(r'EventOnFullResult text|recv inst tra|receive nlp instruction|playTts|stopTts|onAudioTrack|OnCompletion|'

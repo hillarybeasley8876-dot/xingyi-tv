@@ -141,7 +141,7 @@ def main():
     parser.add_argument("--assistant", type=Path, default=VOICE/"xingyi-0.6.apk")
     parser.add_argument("--evidence", type=Path, default=VOICE/"evidence-0.6"/"native-route.json")
     args = parser.parse_args()
-    serial = os.environ.get("XINGYI_TV", "192.168.31.162:5555")
+    serial = os.environ.get("XINGYI_TV", "192.0.2.10:5555")
     if not re.fullmatch(r"[a-zA-Z0-9.:-]{1,128}", serial) or serial.startswith("-"):
         raise SystemExit("Invalid XINGYI_TV")
     run = Run(serial)

@@ -4,3 +4,6 @@ verification-*/
 lookdev/out/
 lookdev/__pycache__/
 __pycache__/
+*.keystore
+*.jks
+build-*/

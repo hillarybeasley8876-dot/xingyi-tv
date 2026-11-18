@@ -37,7 +37,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 ROOT = pathlib.Path(__file__).resolve().parent
 ADB = r'H:\tools\platform-tools\adb.exe'
-SERIAL = '192.168.31.162:5555'
+SERIAL = '192.0.2.10:5555'
 PKG = 'xyz.erapi0neer.xingyi'
 DATA = '/data/user/0/' + PKG
 BT = pathlib.Path(r'H:\tools\android-sdk\android-15')

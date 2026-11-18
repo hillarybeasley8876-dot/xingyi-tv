@@ -67,7 +67,7 @@ USAGE_FIXTURE = os.path.join(ROOT, "tests", "agent", "fixtures", "realpath",
 PLAYER_DIR = os.path.join(ROOT, "tests", "agent", "fixtures", "realpath", "player")
 
 # 抄 probe.py 的常量，只是为了让场景里那些 %s 有个值；假 probe 一个都不去用。
-ADB, DEV = "H:/tools/platform-tools/adb.exe", "192.168.31.162:5555"
+ADB, DEV = "H:/tools/platform-tools/adb.exe", "192.0.2.10:5555"
 KTCP, NETEASE = "com.ktcp.video", "com.netease.cloudmusic.tv"
 PLAYER, HOME_PKG = "TVPlayerActivity", "orrery"
 OWN_APP = "xyz.erapi0neer.fluidlab"                      # probe.own_app() 读 OwnApps.java 拿到的那个黑屏应用

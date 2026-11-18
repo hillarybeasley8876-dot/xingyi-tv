@@ -62,6 +62,10 @@ def replaced(text, section):
 
 
 def main(argv):
+    if not os.path.exists(NEXT):
+        # the public export does not carry NEXT.md: say so instead of a traceback (2026-11-18 audit)
+        print('NEXT.md is not in this tree (the development copy writes it); nothing to check')
+        return 0
     want = java('markdown', JSON)
     text = read(NEXT)
     new = replaced(text, want)

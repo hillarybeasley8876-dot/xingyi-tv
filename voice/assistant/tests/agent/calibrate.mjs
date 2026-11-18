@@ -185,7 +185,7 @@ function sim(state) {
     list_apps: () => ({ ok: true, apps: state.apps ?? ['网易云音乐', '哔哩哔哩', '云视听极光', '米家', '电视设置', '应用商店'] }),
     // the volume now: 10 as at the request, or what XiaoAi set it to when the scenario says it did (volumeNow)
     tv_status: () => ({ ok: true, volume: state.volumeNow ?? 10, volume_max: 100, muted: false, foreground: state.fg, now_playing: state.playing ?? null,
-      bluetooth: '这台电视没有蓝牙', wifi: '已连接 Xiaomi_5G，IP 192.168.31.162，信号一般（-63 dBm），速率 144 Mbps',
+      bluetooth: '这台电视没有蓝牙', wifi: '已连接 YOUR_WIFI_SSID，IP 192.0.2.10，信号一般（-63 dBm），速率 144 Mbps',
       memory: '可用 310 MB / 共 2.0 GB（内存紧张）', memory_hogs: ['哔哩哔哩 1.3 GB'], storage: '剩余 3.1 GB / 共 16.0 GB', since_restart: '9 天 4 小时（待机不算重启）' }),
     // TvTools.free_memory: the user's apps in the background, the system's figures before and after
     free_memory: () => { state.freed = true;
@@ -1415,6 +1415,10 @@ async function run(name) {
   }
 }
 const pick = process.argv.slice(2);
-for (const n of (pick.length ? pick : Object.keys(scenarios))) {
+const names = pick.length ? pick : Object.keys(scenarios);
+for (const n of names) {
   try { await run(n); } catch (e) { console.log(`  ERROR ${e.message}`); }
 }
+// the denominators a README can quote without drifting (2026-11-18 audit: it said 198 of 199 keys, one of them a
+// duplicate, while the file had 205): `scenarios: N (N keys), ran M`
+console.log(`scenarios: ${Object.keys(scenarios).length} in this file, ran ${names.length}`);

@@ -6,7 +6,7 @@ python tvbench.py --clear                                                remove 
 """
 import json, os, subprocess, sys, time, copy
 
-ADB = ["H:/tools/platform-tools/adb.exe", "-s", "192.168.31.162:5555"]
+ADB = ["H:/tools/platform-tools/adb.exe", "-s", "192.0.2.10:5555"]
 D = "/sdcard/Android/data/xyz.erapi0neer.orrery/files"
 HERE = os.path.dirname(os.path.abspath(__file__))
 LOOK = os.path.join(HERE, "..", "assets", "flow", "look.json")

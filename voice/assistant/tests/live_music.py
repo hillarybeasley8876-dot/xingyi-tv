@@ -6,7 +6,7 @@ import subprocess
 import time
 from pathlib import Path
 
-ADB = [r'H:\tools\platform-tools\adb.exe', '-s', '192.168.31.162:5555']
+ADB = [r'H:\tools\platform-tools\adb.exe', '-s', '192.0.2.10:5555']
 APP = 'xyz.erapi0neer.xingyi'
 FILES = '/sdcard/Android/data/' + APP + '/files/'
 OUT = Path(__file__).resolve().parents[2] / 'evidence-0.4'

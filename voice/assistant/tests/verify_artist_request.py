@@ -39,7 +39,7 @@ def main():
         parser.error("Choose a new output path and 10–300 seconds.")
     if args.query is not None and (args.artist not in args.query or "网易云" not in args.query):
         parser.error("The query must name NetEase and the expected artist.")
-    r = Run("192.168.31.162:5555")
+    r = Run("192.0.2.10:5555")
     r.deadline = time.monotonic() + args.seconds + 25
     if r.shell("getprop ro.product.model") != "MiTV-ASTP0":
         raise RuntimeError("Unexpected TV")

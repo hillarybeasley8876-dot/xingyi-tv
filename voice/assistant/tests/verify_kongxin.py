@@ -88,7 +88,7 @@ def main():
     query = args.query or "网易云音乐播放"+(artist+"的" if artist else "")+"空心"
     if args.output.exists() or not 15 <= args.seconds <= 110 or "空心" not in query or (artist and artist not in query):
         p.error("Use a new report, a matching song request and a bounded test duration")
-    r = Run("192.168.31.162:5555")
+    r = Run("192.0.2.10:5555")
     r.deadline = time.monotonic()+args.seconds+30
     if r.shell("getprop ro.product.model") != "MiTV-ASTP0" or "mWakefulness=Awake" not in r.shell("dumpsys power | grep -m1 mWakefulness="):
         raise RuntimeError("Target TV is not awake")

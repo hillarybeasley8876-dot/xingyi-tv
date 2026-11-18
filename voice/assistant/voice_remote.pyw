@@ -17,7 +17,7 @@ from tkinter import ttk
 from tkinter.scrolledtext import ScrolledText
 
 APP = "xyz.erapi0neer.xingyi"
-TV = os.environ.get("XINGYI_TV", "192.168.31.162:5555")
+TV = os.environ.get("XINGYI_TV", "192.0.2.10:5555")
 ADB = Path(__file__).resolve().parents[3] / "platform-tools" / "adb.exe"
 CACHE = Path("H:/hf-cache/hub/models--mobiuslabsgmbh--faster-whisper-large-v3-turbo/snapshots")
 HIDDEN = getattr(subprocess, "CREATE_NO_WINDOW", 0)

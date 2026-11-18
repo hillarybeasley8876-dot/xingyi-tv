@@ -40,7 +40,7 @@ def wait(tv, predicate, seconds):
 
 
 def main(enable, live=False):
-    tv = Run("192.168.31.162:5555")
+    tv = Run("192.0.2.10:5555")
     tv.deadline = time.monotonic()+110
     assert tv.shell("getprop ro.product.model") == "MiTV-ASTP0" and tv.shell("getprop ro.product.device") == "mulan"
     tv.home_package = tv.shell("cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME").splitlines()[-1].split('/')[0]

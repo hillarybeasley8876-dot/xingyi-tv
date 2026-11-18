@@ -74,7 +74,7 @@ def main():
     args = parser.parse_args()
     if args.output.exists():
         parser.error("Choose a fresh evidence file")
-    r = Run("192.168.31.162:5555")
+    r = Run("192.0.2.10:5555")
     r.deadline = time.monotonic()+100
     assert r.shell("getprop ro.product.model") == "MiTV-ASTP0"
     assert r.version(PKG) == 8911100, "benign verification requires the official client already installed"

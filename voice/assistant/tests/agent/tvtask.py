@@ -7,7 +7,7 @@ debug is read aloud by XiaoAi and leaves no trace either; mcp/ui stay silent but
 import argparse, base64, json, os, re, subprocess, sys, time
 from pathlib import Path
 
-ADB = [r"H:\tools\platform-tools\adb.exe", "-s", "192.168.31.162:5555"]
+ADB = [r"H:\tools\platform-tools\adb.exe", "-s", "192.0.2.10:5555"]
 RECEIVER = "xyz.erapi0neer.xiaoaibridge/xyz.erapi0neer.xingyi.agent.tv.AgentDebug"
 EVIDENCE = Path(__file__).with_name("evidence")
 

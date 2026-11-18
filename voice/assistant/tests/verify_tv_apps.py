@@ -137,7 +137,7 @@ def main():
     if args.output.exists():parser.error("Choose a fresh output path")
     if args.verify_existing and args.case!="install":parser.error("--verify-existing only applies to install")
     q,tool,operation=CASES[args.case]
-    r=Run("192.168.31.162:5555"); r.deadline=time.monotonic()+(580 if args.case=="install" else 125)
+    r=Run("192.0.2.10:5555"); r.deadline=time.monotonic()+(580 if args.case=="install" else 125)
     if r.shell("getprop ro.product.model")!="MiTV-ASTP0" or "mWakefulness=Awake" not in r.shell("dumpsys power | grep -m1 mWakefulness="):
         raise RuntimeError("Expected awake MiTV not available")
     remote=runpy.run_path(str(VOICE/"assistant/voice_remote.pyw"))

@@ -7,7 +7,7 @@ import argparse, base64, json, os, re, subprocess, sys, time
 from pathlib import Path
 
 ADB = r'H:\tools\platform-tools\adb.exe'
-TV = os.environ.get('TV', '192.168.31.162:5555')
+TV = os.environ.get('TV', '192.0.2.10:5555')
 PKG = 'xyz.erapi0neer.xiaoaibridge'
 FILES = f'/sdcard/Android/data/{PKG}/files'
 CODEX_LOG = Path(r'H:\tools\mitv\voice\evidence-0.6\wifi-check.log')

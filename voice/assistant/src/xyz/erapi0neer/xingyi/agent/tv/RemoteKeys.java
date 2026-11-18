@@ -18,7 +18,7 @@ import xyz.erapi0neer.xingyi.agent.KeyNames;
  * <p>为什么用 {@link Socket} 自己写请求，不用 {@code java.net} 的 HTTP 客户端：接力的清单写着
  * {@code usesCleartextTraffic="false"}（有意为之，不改），Android 会拒绝明文的 {@code http://} 网址。
  *
- * <p>服务只听局域网地址（{@code ::ffff:192.168.31.162:6095}），不听 127.0.0.1，所以地址从 {@link NetworkInterface} 找。
+ * <p>服务只听局域网地址（{@code ::ffff:192.0.2.10:6095}），不听 127.0.0.1，所以地址从 {@link NetworkInterface} 找。
  * 任何失败都只回 false，并且 60 秒内不再试它（免得每个键白等一次连接超时）。从不抛异常。
  */
 final class RemoteKeys {

@@ -7,7 +7,7 @@ shared files dir; the app moves it into private storage and deletes the shared c
 import argparse, json, subprocess, sys, time, winreg
 
 ADB = r'H:\tools\platform-tools\adb.exe'
-TV = '192.168.31.162:5555'
+TV = '192.0.2.10:5555'
 PKG = 'xyz.erapi0neer.xiaoaibridge'
 SHARED = f'/sdcard/Android/data/{PKG}/files/llm.json'
 NO_WINDOW = 0x08000000

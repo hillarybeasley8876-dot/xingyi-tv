@@ -8,9 +8,9 @@ from unittest import mock
 
 import tv_link
 
-TARGET = "192.168.31.162:5555"
+TARGET = "192.0.2.10:5555"
 ISALIVE = {"status": 0, "msg": "success",
-           "data": {"devicename": "客厅的REDMI 智能电视 A55 2025 节能版", "ip": "192.168.31.162:6095", "platform": 1472}}
+           "data": {"devicename": "客厅的REDMI 智能电视 A55 2025 节能版", "ip": "192.0.2.10:6095", "platform": 1472}}
 
 
 def free_port():
@@ -204,7 +204,7 @@ class EnsureLink(unittest.TestCase):
         adb = FakeAdb()
         with self.assertRaises(tv_link.TvLinkError):
             tv_link.ensure_link(adb, TARGET, probe=lambda host, port: seen.append((host, port)) or {"link": "offline"})
-        self.assertEqual(seen, [("192.168.31.162", 5555)])
+        self.assertEqual(seen, [("192.0.2.10", 5555)])
 
 
 if __name__ == "__main__":

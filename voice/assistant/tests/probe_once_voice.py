@@ -138,7 +138,7 @@ def main():
     parser.add_argument("--extended", action="store_true", help="Test the alternate three read-only prompts.")
     parser.add_argument("--case", type=int, choices=(0, 1, 2, 3), help="Run one numbered prompt; 0 and 1 both select the first prompt.")
     args = parser.parse_args()
-    run = Run(os.getenv("XINGYI_TV", "192.168.31.162:5555"))
+    run = Run(os.getenv("XINGYI_TV", "192.0.2.10:5555"))
     report = {"source": "owned synthetic phrases through Xiaomi EXTERNAL_TEXT without microphone",
               "cases": [], "scope": "temporary test probes only; no fallback command was executed"}
     installed = False

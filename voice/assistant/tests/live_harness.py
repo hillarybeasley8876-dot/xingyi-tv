@@ -3,7 +3,7 @@ Run with the assistant in front. Restores the observed speaker level on exit; no
 """
 from pathlib import Path
 import json,re,shlex,subprocess,sys,time
-adb=[r'H:\tools\platform-tools\adb.exe','-s','192.168.31.162:5555']
+adb=[r'H:\tools\platform-tools\adb.exe','-s','192.0.2.10:5555']
 out=Path(r'H:\tools\mitv\voice\evidence-0.3'); out.mkdir(exist_ok=True)
 folder='/sdcard/Android/data/xyz.erapi0neer.xingyi/files/'
 def cmd(*args,required=True):
