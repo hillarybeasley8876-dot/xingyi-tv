@@ -20,7 +20,7 @@ OpenAI-compatible gateway) and speaks the answer. Two gaps:
    - `static String extract(String json)`: speech-ready text of a Responses API reply. Use top-level `output_text` if it is a non-empty string;
      otherwise concatenate `text` of every `output[i].content[j]` where `output[i].type == "message"` and `content[j].type == "output_text"`.
      Then remove citations and links: a parenthesized markdown link like `([sge.com.cn](https://...))` is removed entirely (with its parentheses);
-     a plain markdown link `[label](url)` becomes `label`; bare `http(s)://...` URLs are removed; markdown emphasis `*` `#` `` ` `` is removed;
+     a plain markdown link `label` becomes `label`; bare `http(s)://...` URLs are removed; markdown emphasis `*` `#` `` ` `` is removed;
      whitespace collapsed; trimmed. Unparseable JSON or nothing found -> "" (never throw).
    - `static boolean usedSearch(String json)`: true if any `output[i].type == "web_search_call"`.
    - Expected for the fixture: `extract` = `今天上海金早盘价847.21元/克，午盘价841.08元/克。`, `usedSearch` = true.

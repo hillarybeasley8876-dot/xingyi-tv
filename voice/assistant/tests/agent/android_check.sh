@@ -6,13 +6,13 @@
 # the install gate). Prints "ANDROID CHECK OK" on success.
 set -eu
 cd "$(dirname "$0")/../.."
-JDK="/c/Program Files/Eclipse Adoptium/jdk-17.0.20.101-hotspot/bin"
-ANDROID=/h/tools/android-sdk/android-35/android.jar
+. tests/env.sh   # JDK, ANDROID_JAR, P: this machine by default, JAVA_HOME / ANDROID_JAR elsewhere
+need_android
 OUT=build/android-check
 rm -rf "$OUT"
 mkdir -p "$OUT"
-"$JDK/javac.exe" -J-XX:ActiveProcessorCount=2 -source 8 -target 8 -nowarn -Xlint:-options -encoding UTF-8 \
-    -cp "$(cygpath -w "$ANDROID")" -d "$(cygpath -w "$OUT")" $(find src -name '*.java')
+"$JDK/javac" -J-XX:ActiveProcessorCount=2 -source 8 -target 8 -nowarn -Xlint:-options -encoding UTF-8 \
+    -cp "$(P "$ANDROID_JAR")" -d "$(P "$OUT")" $(find src -name '*.java')
 # Android throws "Unsupported flags: 256" for these (it crashed the bridge once)
 if grep -rn -E "UNICODE_CHARACTER_CLASS|\(\?U\)" --include='*.java' src; then
     echo "ANDROID CHECK FAILED: Pattern.UNICODE_CHARACTER_CLASS / (?U) is not supported on Android"
