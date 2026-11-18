@@ -85,6 +85,62 @@ public final class MediaSessions {
         return best;
     }
 
+    /** What became of a 「下一首」「上一首」 XiaoAi sent itself for the sentence 星仪 is handling. */
+    public enum Skip { LANDED, MISSED, UNKNOWN }
+
+    /** How much longer than the time since the request a track must have played to have begun before it. The bridge
+     * holds the request up to 0.9 s while it collects XiaoAi's instructions, so a track XiaoAi's skip started cannot
+     * be more than that older than the request; the rest is room for a position the app reported a little late. */
+    public static final long SKIP_MARGIN_MS = 3000;
+
+    /**
+     * Whether XiaoAi's own skip reached the player. 2026-11-16 19:30: 「下一首歌」, XiaoAi sent PlaybackController.Next,
+     * NetEase stayed on 《江南》 (still on it 16 s later), and the guard that keeps 星仪 from skipping a second time
+     * refused the only skip that would have worked: 「小爱已经切过了，现在还是…《江南》」, and the user said it again.
+     * The same instruction did move 云视听极光 to the next episode (2026-11-11), so the instruction alone says nothing.
+     *
+     * @param atRequest what was playing when the request reached 星仪 (null: not read)
+     * @param now what is playing now (null: nothing, or nothing with a media session — 云视听极光 keeps none)
+     * @param requestElapsed when the request reached 星仪, on the device's elapsed-time clock (ms)
+     * @param nowElapsed now, on the same clock
+     * @return LANDED: another track than at the request. MISSED: the same track, playing since well before the request,
+     *     where XiaoAi's skip would have started another one. UNKNOWN: anything else (not playing, no position, a track
+     *     that began around the request); the callers treat it as landed, as before.
+     */
+    public static Skip xiaoaiSkip(Session atRequest, Session now, long requestElapsed, long nowElapsed) {
+        if (now == null) return Skip.UNKNOWN;
+        if (atRequest != null && !sameTrack(atRequest, now)) return Skip.LANDED;
+        if (!"playing".equals(now.state) || now.updated <= 0 || now.position < 0 || requestElapsed <= 0) return Skip.UNKNOWN;
+        long played = now.position + Math.max(0, nowElapsed - now.updated);
+        long since = Math.max(0, nowElapsed - requestElapsed);
+        return played > since + SKIP_MARGIN_MS ? Skip.MISSED : Skip.UNKNOWN;
+    }
+
+    /** The same app on the same title by the same artist. */
+    public static boolean sameTrack(Session a, Session b) {
+        return a != null && b != null && a.pkg.equals(b.pkg) && a.title.equals(b.title) && a.artist.equals(b.artist);
+    }
+
+    /** How far into the track (ms) at nowElapsed, or -1 when the session does not say: the position the app last
+     * reported, plus the time since then while it plays. */
+    public static long played(Session s, long nowElapsed) {
+        if (s == null || s.position < 0 || s.updated <= 0) return -1;
+        if ("playing".equals(s.state)) return s.position + Math.max(0, nowElapsed - s.updated);
+        return "paused".equals(s.state) ? s.position : -1;
+    }
+
+    /**
+     * Where the track is, in words for the model: 「，放到 2:13」, or "" when the session does not say. 2026-11-16 19:45:
+     * 「重播这首歌」, XiaoAi's PlaybackController.StartOver did not land on NetEase; to 「这是重播」 星仪 answered
+     * 「对，现在放的是重新从头播的」 with nothing to go by, and the user: 「但是没有重播」. The position is what tells.
+     */
+    public static String at(Session s, long nowElapsed) {
+        long ms = played(s, nowElapsed);
+        if (ms < 0) return "";
+        long sec = ms / 1000;
+        return "，放到 " + sec / 60 + ":" + (sec % 60 < 10 ? "0" : "") + sec % 60;
+    }
+
     private static void describe(Session s, String raw) {
         // MediaDescription prints "title, subtitle, description"; the title itself may contain ", ".
         String[] parts = raw.split(", ", -1);

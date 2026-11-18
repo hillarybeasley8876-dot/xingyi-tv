@@ -153,7 +153,8 @@ final class RealPathChecks {
         List<String> shipped = registry(shippedJson(), Paths.get(""));
         check(shipped.isEmpty(), "仓库里的 tests/agent/realpath/scenarios.json 是干净的（实际：" + shipped + "）");
         JSONArray entries = new JSONObject(shippedJson()).getJSONArray("scenarios");
-        check(entries.length() == 10, "仓库里那份记着十个场景 " + entries.length());
+        // at least the ten of 2026-11-14; the ids below say none of them went missing
+        check(entries.length() >= 10, "仓库里那份至少记着那十个场景 " + entries.length());
         Set<String> ids = new HashSet<>();
         for (int i = 0; i < entries.length(); i++) ids.add(entries.getJSONObject(i).optString("id", ""));
         check(ids.contains("panel-while-speaking") && ids.contains("panel-self-check") && ids.contains("black-screen-home")

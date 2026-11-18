@@ -87,7 +87,8 @@ final class UnverifiedChecks {
                 "注册表读不出来：一句点名是哪个文件读不出来，不悄悄放过（实际 " + blind + "）");
 
         List<String> scenario = scenarioIds(registry());
-        check(scenario != null && scenario.size() == 10, "仓库里的注册表记着十个场景（实际 "
+        // at least the ten of 2026-11-14: a new scenario is no failure (next-song-through-xiaoai, 2026-11-18, was the 11th)
+        check(scenario != null && scenario.size() >= 10, "仓库里的注册表至少记着那十个场景（实际 "
                 + (scenario == null ? "读不出来" : scenario.size() + " 个 " + scenario) + "）");
         check(scenario != null && strays(ids(shipped()), scenario).isEmpty(),
                 "仓库里的账本：每一条都是注册表里的场景（实际 " + strays(ids(shipped()), scenario) + "）");

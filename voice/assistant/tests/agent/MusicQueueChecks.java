@@ -59,6 +59,63 @@ final class MusicQueueChecks {
         check(all.size() == 1 && all.get(0).queue == 30 && "江南".equals(all.get(0).title) && "playing".equals(all.get(0).state),
                 "the session's queue size is read: " + (all.isEmpty() ? "none" : all.get(0).queue));
         check(MediaSessions.parse(dump.replace("    queueTitle=林俊杰, size=30\n", "")).get(0).queue == 0, "no queue line: 0");
+        skips();
+    }
+
+    private static MediaSessions.Session song(String pkg, String title, String state, long position, long updated) {
+        MediaSessions.Session s = new MediaSessions.Session();
+        s.pkg = pkg; s.title = title; s.artist = "林俊杰"; s.state = state; s.position = position; s.updated = updated;
+        return s;
+    }
+
+    /** Did XiaoAi's own 「下一首」 land (2026-11-16 19:30: it did not, and 星仪 was kept from the only skip that worked). */
+    static void skips() {
+        final String NE = "com.netease.cloudmusic.tv";
+        final MediaSessions.Skip LANDED = MediaSessions.Skip.LANDED, MISSED = MediaSessions.Skip.MISSED, UNKNOWN = MediaSessions.Skip.UNKNOWN;
+        // 《江南》 began at 10 s; 「下一首歌」 reached 星仪 at 40 s; the gate looks at 44 s and 《江南》 is still on
+        MediaSessions.Session jiangnan = song(NE, "江南 (River South)", "playing", 0, 10_000);
+        check(MediaSessions.xiaoaiSkip(jiangnan, song(NE, "江南 (River South)", "playing", 0, 10_000), 40_000, 44_000) == MISSED,
+                "11-16 19:30: the same song, 34 s in, 4 s after the request: XiaoAi's skip never landed, 星仪 may skip");
+        check(MediaSessions.xiaoaiSkip(jiangnan, song(NE, "江南 (River South)", "playing", 33_000, 43_900), 40_000, 44_000) == MISSED,
+                "the same when NetEase reports its position every second");
+        check(MediaSessions.xiaoaiSkip(null, song(NE, "江南 (River South)", "playing", 0, 10_000), 40_000, 40_200) == MISSED,
+                "a quick command reads no session at the request: the position alone tells");
+        // XiaoAi's skip landed: before the session was read at the request, or after it
+        MediaSessions.Session next = song(NE, "可惜没如果", "playing", 0, 40_500);
+        check(MediaSessions.xiaoaiSkip(next, song(NE, "可惜没如果", "playing", 0, 40_500), 40_000, 44_000) == UNKNOWN,
+                "a song that began after XiaoAi's instruction is never taken for a missed skip");
+        check(MediaSessions.xiaoaiSkip(jiangnan, next, 40_000, 44_000) == LANDED, "another song than at the request: landed");
+        check(MediaSessions.xiaoaiSkip(null, song(NE, "可惜没如果", "playing", 0, 39_300), 40_000, 44_000) == UNKNOWN,
+                "a song begun 0.7 s before the request (the bridge holds it up to 0.9 s): not missed");
+        // a request that waited 10 s behind another task: the time counts from when it came, so the landed skip holds
+        check(MediaSessions.xiaoaiSkip(next, song(NE, "可惜没如果", "playing", 0, 40_600), 40_000, 53_000) == UNKNOWN,
+                "a queued request measures from its arrival: 12.4 s into a song that came 13 s ago is not missed");
+        check(MediaSessions.xiaoaiSkip(jiangnan, song(NE, "江南 (River South)", "playing", 0, 37_000), 40_000, 44_000) == UNKNOWN,
+                "exactly the margin (played 7 s, 4 s since the request + 3 s): not missed");
+        check(MediaSessions.xiaoaiSkip(jiangnan, song(NE, "江南 (River South)", "playing", 0, 36_999), 40_000, 44_000) == MISSED,
+                "one millisecond past it: missed");
+        // whatever cannot be told is left as before: XiaoAi is believed
+        check(MediaSessions.xiaoaiSkip(jiangnan, song(NE, "江南 (River South)", "paused", 20_000, 30_000), 40_000, 44_000) == UNKNOWN,
+                "paused: no position to go by");
+        check(MediaSessions.xiaoaiSkip(jiangnan, null, 40_000, 44_000) == UNKNOWN, "nothing with a session (云视听极光 keeps none)");
+        check(MediaSessions.xiaoaiSkip(jiangnan, song(NE, "江南 (River South)", "playing", 30_000, 0), 40_000, 44_000) == UNKNOWN,
+                "no update time printed");
+        check(MediaSessions.xiaoaiSkip(jiangnan, song(NE, "江南 (River South)", "playing", 0, 10_000), 0, 44_000) == UNKNOWN,
+                "no request time");
+        check(!MediaSessions.sameTrack(song(NE, "江南", "playing", 0, 1), song("tv.danmaku.bili", "江南", "playing", 0, 1))
+                && MediaSessions.sameTrack(song(NE, "江南", "playing", 0, 1), song(NE, "江南", "paused", 5, 9))
+                && !MediaSessions.sameTrack(null, song(NE, "江南", "playing", 0, 1)),
+                "the same track: app, title and artist; its state and position do not matter");
+        // where the track is, for 「这是重播吗」 (2026-11-16 19:45: 「对，现在放的是重新从头播的」 with nothing to go by)
+        check(MediaSessions.at(song(NE, "修炼爱情", "playing", 0, 10_000), 143_000).equals("，放到 2:13"),
+                "playing: the reported position plus the time since: " + MediaSessions.at(song(NE, "修炼爱情", "playing", 0, 10_000), 143_000));
+        check(MediaSessions.at(song(NE, "修炼爱情", "paused", 125_400, 30_000), 900_000).equals("，放到 2:05"),
+                "paused: where it stopped, however long ago");
+        check(MediaSessions.at(song(NE, "修炼爱情", "playing", 6_000, 50_000), 51_200).equals("，放到 0:07"), "seconds keep two digits");
+        check(MediaSessions.at(song(NE, "修炼爱情", "playing", 30_000, 0), 51_200).isEmpty()
+                && MediaSessions.at(song(NE, "修炼爱情", "buffering", 30_000, 50_000), 51_200).isEmpty()
+                && MediaSessions.at(null, 51_200).isEmpty() && MediaSessions.played(song(NE, "x", "stopped", 1, 2), 3) == -1,
+                "no update time, buffering, stopped or no session: nothing said");
     }
 
     static void loop() throws Exception {

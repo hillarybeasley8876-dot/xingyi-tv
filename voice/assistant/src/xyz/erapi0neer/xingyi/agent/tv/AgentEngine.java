@@ -174,6 +174,9 @@ public final class AgentEngine {
     /** What XiaoAi itself did for each request handed over (its instruction names), so the tools refuse to repeat
      * a relative action it already took; by request, since a question may wait behind the running task. */
     private final Map<Integer, Set<String>> handed = new java.util.concurrent.ConcurrentHashMap<>();
+    /** When each of those requests came (elapsed-time clock): a request that waited behind another task still measures
+     * from when XiaoAi acted, not from when it ran (TvTools.requestStarted). */
+    private final Map<Integer, Long> arrived = new java.util.concurrent.ConcurrentHashMap<>();
 
     public synchronized String submit(String text, String source) { return submit(text, source, null, null); }
 
@@ -221,7 +224,10 @@ public final class AgentEngine {
         AgentService.ensure(app);
         int gen = ++generation;
         pending++;
-        if (xiaoaiDid != null) handed.put(gen, new HashSet<>(xiaoaiDid));
+        if (xiaoaiDid != null) {
+            handed.put(gen, new HashSet<>(xiaoaiDid));
+            arrived.put(gen, android.os.SystemClock.elapsedRealtime());
+        }
         if (queued) {
             waiting.add(new Object[]{gen, t});
             refreshPanel();
@@ -736,6 +742,7 @@ public final class AgentEngine {
     /** answering: the sentence answers the question 星仪 asked (it was open when the sentence came). */
     private void run(String text, String source, int gen, int resumeCount, String note, boolean answering) {
         Set<String> did = handed.remove(gen);
+        Long came = arrived.remove(gen);
         synchronized (waiting) {
             for (Iterator<Object[]> i = waiting.iterator(); i.hasNext(); ) if ((int) i.next()[0] <= gen) i.remove();
         }
@@ -759,6 +766,9 @@ public final class AgentEngine {
         AgentLoop l;
         try (TvTools tools = new TvTools(app)) {
             if (did != null) tools.xiaoaiDid = did;
+            // when the request came, on the clock the media sessions use: did XiaoAi's own skip land (media_control)
+            tools.requestStarted(came != null ? came
+                    : android.os.SystemClock.elapsedRealtime() - Math.max(0, System.currentTimeMillis() - taskStarted));
             runningDid = did == null ? Collections.<String>emptySet() : did;
             // A simple, unambiguous TV command (音量调到20, 暂停, 回到桌面…) runs its tool at once, with no model round;
             // everything else is planned by the model exactly as before.
@@ -1747,7 +1757,8 @@ public final class AgentEngine {
         o.put("volume", am.getStreamVolume(AudioManager.STREAM_MUSIC) + "/" + am.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
                 + (am.isStreamMute(AudioManager.STREAM_MUSIC) ? "，已静音" : ""));
         MediaSessions.Session s = tools.nowPlaying();
-        if (s != null) o.put("now_playing", tools.label(s.pkg) + " " + s.describe());
+        // with where the track is (「，放到 2:13」): whether a 重播 or a skip happened is read from it (MediaSessions.at)
+        if (s != null) o.put("now_playing", tools.label(s.pkg) + " " + s.describe() + MediaSessions.at(s, android.os.SystemClock.elapsedRealtime()));
         o.put("apps", new JSONArray(tools.apps().keySet()));
         android.os.PowerManager pm = (android.os.PowerManager) app.getSystemService(Context.POWER_SERVICE);
         o.put("screen", pm == null || pm.isInteractive() ? "开着" : "关着（电视在待机）");

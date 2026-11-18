@@ -1,4 +1,16 @@
 {
  "entries": [
+  {
+   "id": "next-song-through-xiaoai",
+   "feature": "对小爱说「下一首」：网易云的歌换了，而且只换一首",
+   "why": "6d32cf8 只有离线证据（MediaSessions.xiaoaiSkip 的 14 条检查）；11-16 19:30 真机上小爱的切歌没到、星仪被拦住。要装上带 6d32cf8 的包以后跑",
+   "needs": [
+    "亮屏",
+    "桌面在前",
+    "20 分钟没人动"
+   ],
+   "since": "2026-11-18",
+   "script": "tests/agent/realpath/scenarios/next-song-through-xiaoai.py"
+  }
  ]
 }

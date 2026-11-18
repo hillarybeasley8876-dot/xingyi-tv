@@ -118,6 +118,18 @@
    "script": "tests/agent/realpath/scenarios/sleeping-episode.py",
    "hours": 2,
    "unverified": ""
+  },
+  {
+   "id": "next-song-through-xiaoai",
+   "what": "对小爱说「下一首」：网易云在放的歌换了，而且只换一首，之后还在放",
+   "needs": [
+    "亮屏",
+    "桌面在前",
+    "20 分钟没人动"
+   ],
+   "script": "tests/agent/realpath/scenarios/next-song-through-xiaoai.py",
+   "hours": 2,
+   "unverified": "next-song-through-xiaoai"
   }
  ]
 }

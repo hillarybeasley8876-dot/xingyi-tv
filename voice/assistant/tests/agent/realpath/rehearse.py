@@ -20,7 +20,9 @@
 是什么值」，到底了就重复最后一个：
 
     resumed_seq / audio_seq / ui_text_seq / hud_seq / awake_seq / memory_seq
-    tool_reply（run_tool / start_tool 拿到的回答）、tool_replies（按那句话查）、proc_running
+    tool_reply（run_tool / start_tool 拿到的回答）、tool_replies（按那句话查）、proc_running、
+    proc_done_at（start_tool 起的任务第几秒说完，按钟算）
+    session_seq（网易云的 media session：probe.session() 那种字典，或者 None = 没有 session）
     audio_events / settings / tv_clock / own_app
     tv_datetime（电视自己的时间，判据的 since）、usage_events（dumpsys usagestats 的事件表，判据读的那一份）
     frame_seq（场景自己 p.frame() 截到的那一帧 png 的路径）、show_frame_seq（等广告时看到的帧）、
@@ -80,6 +82,9 @@ HUD_WIN = "Window{a1b2c3 u0 xyz.erapi0neer.xiaoaibridge/xyz.erapi0neer.xingyi.ag
 OPEN5, SEEK, PAUSE = "我想看别无选择第5集", "快进一分钟", "暂停"
 EPISODE_S = 2833                              # 抄 probe.EPISODE_S：进度条只能读比例，秒数靠它换算
 SONG, ACCOMP, ORIG = "播放汪苏泷的晴", "切到伴奏", "切回原唱"
+LJJ, NEXT = "放林俊杰的歌", "下一首"
+# 网易云 session 的 description（标题, 歌手, 专辑），probe.session() 的 meta 读的就是这一串
+JIANGNAN, KEXI, XIULIAN = "江南, 林俊杰, 第二天堂", "可惜没如果, 林俊杰, 新地球", "修炼爱情, 林俊杰, 因你而在"
 BLACK, HINTS, PANEL, UPTIME = "屏幕黑了", "你看我现在每次给你提示提示提示提示提示", \
     "为什么现在HARNESS面板没有打开", "看一下电视现在开了多久"
 
@@ -113,6 +118,11 @@ def parse_usage(text, since):
 def usage(*rows):
     """一条事件表：(时间, 类型, 包名) 三元组 → 判据吃的那种字典。"""
     return [{"at": a, "type": t, "pkg": k} for a, t, k in rows]
+
+
+def song(state, meta):
+    """网易云的一次 session，和 probe.session() 回的一个样（state 3 在放、2 暂停、6 缓冲、10 正在切下一首）。"""
+    return {"state": state, "position": 12000, "actions": 2360, "meta": meta}
 
 
 def fixture_events():
@@ -207,12 +217,19 @@ class Seq(object):
 
 
 class FakeProc(object):
-    """start_tool() 的那个后台任务：poll() 说它 3 秒时还在不在跑，finish() 拿它的输出。"""
+    """start_tool() 的那个后台任务：poll() 说它还在不在跑，finish() 拿它的输出。
 
-    def __init__(self, out, running=True):
+    `done_at`（局面的 `proc_done_at`）给了的话按钟说话：钟（`Clock.now()`）还没到它就是还在跑，到了就是跑完了——
+    next-song-through-xiaoai 边读 session 边等「说完」，要的是「第几秒说完」；没给就照旧看 `running`。
+    """
+
+    def __init__(self, out, running=True, done_at=None, clock=None):
         self.out, self.running, self.returncode = out, running, None if running else 0
+        self.done_at, self.clock = done_at, clock
 
     def poll(self):
+        if self.done_at is not None:
+            return None if self.clock.now() < float(self.done_at) else 0
         return None if self.running else self.returncode
 
 
@@ -242,6 +259,7 @@ def fake_probe(facts, log, clock):
     m = types.ModuleType("probe")
     m.__fake__ = True                       # 收尾时确认场景 import 到的是它，不是真的 probe
     m.ADB, m.DEV, m.KTCP, m.PLAYER, m.HOME_PKG = ADB, DEV, KTCP, PLAYER, HOME_PKG
+    m.NETEASE = NETEASE
     m.EPISODE_S = EPISODE_S
     # 和真 probe 里那个类同名同父子：场景 `except p.CaptureFailed` 在假模块下也得接得住。
     m.CaptureFailed = FakeCaptureFailed
@@ -254,6 +272,7 @@ def fake_probe(facts, log, clock):
     hud = Seq(facts.get("hud_seq"), [], clock)
     wake = Seq(facts.get("awake_seq"), True, clock)
     memory = Seq(facts.get("memory_seq"), {}, clock)
+    sessions = Seq(facts.get("session_seq"), None, clock)           # 网易云的 media session（None = 没有）
     replies = facts.get("tool_replies") or {}
     running = facts.get("proc_running", True)
 
@@ -318,6 +337,17 @@ def fake_probe(facts, log, clock):
         note("memory ->", v)
         return v
 
+    def session(pkg=NETEASE):
+        """局面里的 `session_seq`：真 probe.session() 那种字典（state 3 = 在放），没有 session 就是 None。
+
+        next-song-through-xiaoai 每 0.3 秒读一次、读到说完以后 15 秒——好几十次，数次数的写法得一格格数，
+        所以那条场景的局面写时间门：钟到几点 session 变成什么（同一个时刻读几次都一样）。抄一份出去，场景改不了局面表。
+        """
+        v = sessions()
+        v = dict(v) if v else None
+        note("session(%s) ->" % pkg, v and (v.get("state"), v.get("meta")))
+        return v
+
     def setting(name):
         return facts.get("settings", {}).get(name, "")
 
@@ -375,7 +405,7 @@ def fake_probe(facts, log, clock):
     def start_tool(tool, text, timeout=60):
         out = reply_of(text)
         note("start_tool", tool, text)
-        return FakeProc(out, running)
+        return FakeProc(out, running, facts.get("proc_done_at"), clock)
 
     def finish(proc, timeout=120):
         note("finish", len(proc.out or ""), "chars")
@@ -496,6 +526,7 @@ def fake_probe(facts, log, clock):
     m.evidence, m.reachable, m.wait_for_show = evidence, reachable, wait_for_show
     m.tv_datetime, m.usage_events, m.attempt = tv_datetime, usage_events, attempt
     m.frame = frame
+    m.session = session
 
     class Restore(FakeRestore):
         """场景的收尾对象：started(pkg) 和 close() 两个方法，什么都不真做。"""
@@ -649,6 +680,53 @@ CASES = [
     {"scenario": "karaoke-switch", "name": "放歌之后音频服务没说在放", "expect": False,
      "facts": {"audio_seq": [""],
                "tool_replies": {ACCOMP: "reply: 已切到伴奏", ORIG: "reply: 已切回原唱"}}},
+
+    # next-song-through-xiaoai：钟的走法——开播那次 wait_for 在第 0 秒读到在放，同一首多放 10 秒，第 10 秒说「下一首」，
+    # proc_done_at 16 = 第 16 秒说完，之后再读 15 秒（读到第 31 秒）。session 全用时间门写：每 0.3 秒读一次，数格子数不过来。
+    {"scenario": "next-song-through-xiaoai", "name": "小爱的切歌到了：江南换成可惜没如果，之后一直在放", "expect": True,
+     "facts": {"session_seq": [{"at": 0, "v": song(3, JIANGNAN)},
+                               {"at": 12.4, "v": song(10, JIANGNAN)},     # 正在切下一首
+                               {"at": 12.8, "v": song(6, "")},            # 缓冲、标题还没上来：不算一首
+                               {"at": 13.2, "v": song(3, KEXI)}],
+               "proc_done_at": 16,
+               "tool_replies": {LJJ: "reply: 好的，放林俊杰的歌", NEXT: "reply: 好的，下一首"}}},
+    {"scenario": "next-song-through-xiaoai", "name": "小爱的那一下晚到了（说完 6 秒才换），还是只换一首", "expect": True,
+     "facts": {"session_seq": [{"at": 0, "v": song(3, JIANGNAN)}, {"at": 22.0, "v": song(3, KEXI)}],
+               "proc_done_at": 16,
+               "tool_replies": {LJJ: "reply: 好的", NEXT: "reply: 小爱的那一下切过去了，星仪没有再切"}}},
+    {"scenario": "next-song-through-xiaoai", "name": "11-16 的样子：说完 15 秒还是江南", "expect": False,
+     "facts": {"session_seq": [song(3, JIANGNAN)],
+               "proc_done_at": 16,
+               "tool_replies": {LJJ: "reply: 好的", NEXT: "reply: 小爱已经切过了，现在还是网易云在放林俊杰的《江南》"}}},
+    {"scenario": "next-song-through-xiaoai", "name": "多跳了：江南 → 可惜没如果 → 修炼爱情", "expect": False,
+     "facts": {"session_seq": [{"at": 0, "v": song(3, JIANGNAN)}, {"at": 12.5, "v": song(3, KEXI)},
+                               {"at": 14.5, "v": song(3, XIULIAN)}],
+               "proc_done_at": 16,
+               "tool_replies": {LJJ: "reply: 好的", NEXT: "reply: 已切到下一首"}}},
+    # 第二下落在说完 12 秒以后：只读到说完那一刻的判据看不见它，读满 15 秒才看得见。
+    {"scenario": "next-song-through-xiaoai", "name": "多跳了：第二下在说完 12 秒后才到", "expect": False,
+     "facts": {"session_seq": [{"at": 0, "v": song(3, JIANGNAN)}, {"at": 12.5, "v": song(3, KEXI)},
+                               {"at": 28.0, "v": song(3, XIULIAN)}],
+               "proc_done_at": 16,
+               "tool_replies": {LJJ: "reply: 好的", NEXT: "reply: 已切到下一首"}}},
+    {"scenario": "next-song-through-xiaoai", "name": "开播没起来：25 秒里 session 一直不是 3", "expect": False,
+     "facts": {"session_seq": [song(2, JIANGNAN)],
+               "proc_done_at": 16,
+               "tool_replies": {LJJ: "reply: 我没找到林俊杰的歌"}}},
+    {"scenario": "next-song-through-xiaoai", "name": "换了一首以后网易云停了（state 2）", "expect": False,
+     "facts": {"session_seq": [{"at": 0, "v": song(3, JIANGNAN)}, {"at": 13.0, "v": song(3, KEXI)},
+                               {"at": 20.0, "v": song(2, KEXI)}],
+               "proc_done_at": 16,
+               "tool_replies": {LJJ: "reply: 好的", NEXT: "reply: 好的"}}},
+    {"scenario": "next-song-through-xiaoai", "name": "换了一首以后网易云的 session 没了", "expect": False,
+     "facts": {"session_seq": [{"at": 0, "v": song(3, JIANGNAN)}, {"at": 13.0, "v": song(3, KEXI)},
+                               {"at": 20.0, "v": None}],
+               "proc_done_at": 16,
+               "tool_replies": {LJJ: "reply: 好的", NEXT: "reply: 好的"}}},
+    {"scenario": "next-song-through-xiaoai", "name": "说之前 session 没有标题：看不出换没换，验不了", "expect": None,
+     "facts": {"session_seq": [song(3, "")],
+               "proc_done_at": 16,
+               "tool_replies": {LJJ: "reply: 好的"}}},
 
     # seek-one-minute：广告放完以后，回答里有「已快进」，而且两次读出来的秒数差了 45–90 秒。
     # 两次是场景自己截的（frame_seq：before / after）；等广告时看到什么走 show_frame_seq。

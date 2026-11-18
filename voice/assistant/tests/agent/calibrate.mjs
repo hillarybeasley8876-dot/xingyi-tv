@@ -6,7 +6,16 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const here = dirname(fileURLToPath(import.meta.url));
-const contract = JSON.parse(readFileSync(join(here, '..', '..', 'assets', 'agent', 'contract.json'), 'utf8'));
+// A scenario name used twice is silently replaced by the later one: 'vague' (「放那个」) never ran from 2026-11-04 to
+// 11-18, and a new 'replaysong' replaced nothing only because the old one came later in the file.
+{
+  const names = [...readFileSync(fileURLToPath(import.meta.url), 'utf8').matchAll(/^ {2}([a-z0-9]+): \{ say: /gm)].map((m) => m[1]);
+  const twice = [...new Set(names.filter((n, i) => names.indexOf(n) !== i))];
+  if (twice.length) throw new Error(`scenario names used twice: ${twice.join(', ')}`);
+}
+// CAL_CONTRACT=<file>: another contract for an A/B (e.g. `git show <commit>:assets/agent/contract.json > old.json`)
+const contract = JSON.parse(readFileSync(process.env.CAL_CONTRACT || join(here, '..', '..', 'assets', 'agent', 'contract.json'), 'utf8'));
+if (process.env.CAL_CONTRACT) console.log(`# contract ${process.env.CAL_CONTRACT}`);
 const key = process.env.GATEWAY_API_KEY;
 if (!key) throw new Error('GATEWAY_API_KEY missing');
 const MODEL = process.env.AGENT_MODEL || 'MiniMax-M3.1-Flash';
@@ -174,7 +183,8 @@ function sim(state) {
     // the same apps the environment lists (2026-11-11: the old fixed list had no 无线投屏 or TV Bro, so a model that had
     // just read them in environment.apps was told they were not there)
     list_apps: () => ({ ok: true, apps: state.apps ?? ['网易云音乐', '哔哩哔哩', '云视听极光', '米家', '电视设置', '应用商店'] }),
-    tv_status: () => ({ ok: true, volume: 10, volume_max: 100, muted: false, foreground: state.fg, now_playing: state.playing ?? null,
+    // the volume now: 10 as at the request, or what XiaoAi set it to when the scenario says it did (volumeNow)
+    tv_status: () => ({ ok: true, volume: state.volumeNow ?? 10, volume_max: 100, muted: false, foreground: state.fg, now_playing: state.playing ?? null,
       bluetooth: '这台电视没有蓝牙', wifi: '已连接 Xiaomi_5G，IP 192.168.31.162，信号一般（-63 dBm），速率 144 Mbps',
       memory: '可用 310 MB / 共 2.0 GB（内存紧张）', memory_hogs: ['哔哩哔哩 1.3 GB'], storage: '剩余 3.1 GB / 共 16.0 GB', since_restart: '9 天 4 小时（待机不算重启）' }),
     // TvTools.free_memory: the user's apps in the background, the system's figures before and after
@@ -245,7 +255,7 @@ function sim(state) {
       // songs whose singer the model may not know (2026-11-08 on the TV): a guessed singer finds nothing, as NeteaseCatalog.find
       const singer = SINGERS[title];
       if (singer && artist && !artist.includes(singer)) return { ok: false, status: 'not_found', message: '网易云曲库没有找到同时符合歌名和歌手的版本。' };
-      state.playing = { app: 'com.netease.cloudmusic.tv', state: 'playing', title: title || '江南', artist: singer || artist || '林俊杰' };
+      state.playing = { app: 'com.netease.cloudmusic.tv', state: 'playing', title: title || '江南', artist: singer || artist || '林俊杰', position: '0:01' };
       return { ok: true, status: 'played', message: `网易云音乐正在播放${state.playing.artist}的《${state.playing.title}》。`, track: state.playing }; },
     xiaoai_ask: (a) => ({ ok: true, status: 'submitted', execution_confirmed: false, message: '已转交小爱' }),
     // 云视听极光 (seen on the TV 2026-11-10): its pages are self-drawn, so the screen reads as nothing; the search page
@@ -268,7 +278,12 @@ function sim(state) {
       return a.play === false
         ? { ok: true, status: 'observed', message: `已在云视听极光打开《${title}》（电视剧，2023，共 30 集）的详情页，按确认键全屏播放` }
         : { ok: true, status: 'observed', message: `已在云视听极光播放《${title}》（电视剧，2023，共 30 集）；不是会员的话正片前有一两分钟广告` }; },
-    remember: (a) => { (state.remembered ??= []).push(a.fact); return { ok: true, status: 'recorded', message: `记住了：${a.fact}`, facts: 1 }; },
+    // as Memory.addFact: a fact the profile already has is not written again, and the answer says so (本来就记得)
+    remember: (a) => { (state.remembered ??= []).push(a.fact);
+      const norm = (s) => String(s ?? '').replace(/[\s，。,.!！?？、“”"「」]/g, '');
+      const known = norm(a.fact) && (state.profile ?? '').split('\n').some((line) => norm(line.replace(/^\s*-\s*/, '')) === norm(a.fact));
+      return known ? { ok: true, status: 'duplicate', message: `本来就记得：${a.fact}`, facts: 1 }
+        : { ok: true, status: 'recorded', message: `记住了：${a.fact}`, facts: 1 }; },
     forget: (a) => ({ ok: true, status: 'forgotten', removed: [a.what], message: `已忘掉和「${a.what}」有关的 1 条记忆` }),
     remember_name: (a) => ({ ok: true, status: 'recorded', message: `记住了：「${a.heard}」写作「${a.written}」` }),
     set_volume: (a) => ({ ok: true, status: 'observed', message: `音量现在是 ${a.level}/100`, volume: a.level }),
@@ -548,6 +563,11 @@ function sim(state) {
         return { ok: true, status: 'observed', message: left ? `已退出${left}，回到桌面` : '已退出网易云音乐，回到桌面；没有在放的了' }; }
       if (state.playing && ['stop', 'pause'].includes(a.action)) { const t = state.playing.title; state.playing = { ...state.playing, state: a.action === 'stop' ? 'stopped' : 'paused' };
         return { ok: true, status: 'observed', message: `网易云音乐 ${a.action === 'stop' ? '已停止' : '已暂停'}《${t}》` }; }
+      // next / previous move to another song, from its start (until 2026-11-18 the same title came back)
+      if (state.playing && ['next', 'previous'].includes(a.action)) {
+        const title = String(state.playing.title).startsWith('江南') ? '可惜没如果 (If Only…)' : '江南 (River South)';
+        state.playing = { ...state.playing, state: 'playing', title, position: '0:01' };
+        return { ok: true, status: 'observed', message: `网易云音乐 正在播放《${title}》`, session: state.playing }; }
       return { ok: true, status: 'observed', message: state.playing ? `网易云音乐 正在播放《${state.playing.title}》` : '已发送' }; },
     open_settings: (a) => { state.fg = 'com.android.tv.settings'; state.screen = `前台：设置 com.android.tv.settings\n焦点：[1]\n[1] 文本「${a.page ?? '设置'}」`;
       return { ok: true, status: 'observed', message: `已打开设置：${a.page ?? 'home'}`, screen: state.screen }; },
@@ -608,7 +628,10 @@ const scenarios = {
   biliplay: { say: '打开B站搜一下星辰亻旅行者，播放他最新那个视频', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher,
     expect: { called: ['bili_videos', 'open_link'], play: 'TV agent工程' } },
   song: { say: '打开网易云音乐播放林俊杰的不为谁而作的歌', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher },
-  vague: { say: '放那个', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher },
+  // nothing says what 「那个」 is: ask (the contract since 96f45c2: never filled from the habits). Named 'vague' until
+  // 2026-11-18, where the later 'vague' replaced it, so it had never run since 11-04.
+  vagueplay: { say: '放那个', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher,
+    expect: { called: ['ask_user'], avoid: ['netease_play', 'bili_search', 'open_link', 'open_app'] } },
   complain: { say: '你刚才为什么搜错了', fg: 'tv.danmaku.bili', screen: screens.biliHome,
     previous: { goal: '在哔哩哔哩搜索“星辰亻旅行者”', state: 'done', steps: [{ text: '打开B站搜索', status: 'done' }], summary: '已在哔哩哔哩搜索“星辰旅行者”' } },
   cont: { say: '继续执行', fg: 'tv.danmaku.bili', screen: screens.biliResults('星辰亻旅行者'),
@@ -638,15 +661,67 @@ const scenarios = {
   mad: { say: '哔哩哔哩播放星辰亻旅行者的MAD', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher,
     results: screens.biliUp, expect: { called: ['bili_videos'], play: '静止系' } },
   // 星仪接管模式: XiaoAi already handled the request (its voice cut); 星仪 reports, never repeats a relative action
-  handedvol: { say: '音量调大一点', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher,
-    note: '小爱自己的处理：动作 Speaker.AdjustVolume、Template.Toast；它本来要说「音量已调到12」', expect: { avoid: ['adjust_volume', 'set_volume'] } },
+  // XiaoAi's volume change lands (measured on the TV: 20 → 30): the environment was read at 10, the TV is at 12 when
+  // the model looks. Until 2026-11-18 tv_status said 10 here; that run M78 read it, saw XiaoAi's change missing and
+  // adjusted again — right for that world, and not this one.
+  // what counts is the answer (12, not 20) and no long detour. Until 11-18: avoid adjust_volume/set_volume — the model
+  // now and then presses before looking (set_volume 20 once in 12 runs of 11-18), and the environment says 10 while the
+  // TV is at 12 until the model looks; a read first is no worse than the TV's own truth, an answer of 20 is
+  handedvol: { say: '音量调大一点', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher, volumeNow: 12,
+    note: '小爱自己的处理：动作 Speaker.AdjustVolume、Template.Toast；它本来要说「音量已调到12」',
+    expect: { says: '12', notSays: ['20'], maxRounds: 3 } },
+  // XiaoAi's skip landed: another song, 2 s in (until 2026-11-18 nothing was playing here at all). A second next is
+  // refused by the engine (6d32cf8) with what plays now; what counts is that the answer names the song XiaoAi's skip
+  // landed on, not one skipped to again, within two rounds (avoid media_control until 11-18: the refusal now carries
+  // the song, and M78 presses first 4 times of 4 and answers in round 2, where it took 1-3 rounds before)
   handednext: { say: '下一首', fg: 'com.netease.cloudmusic.tv', screen: screens.launcher,
-    note: '小爱自己的处理：动作 PlaybackController.Next；它本来要说「好的」', expect: { avoid: ['media_control'] } },
+    playing: { app: 'com.netease.cloudmusic.tv', state: 'playing', title: '可惜没如果 (If Only…)', artist: '林俊杰', position: '0:02' },
+    recent: [{ said: '换一首歌', replied: '已经换好了，网易云正在放林俊杰的《江南》。', minutes_ago: 1 }],
+    note: '小爱自己的处理：动作 PlaybackController.Next；它本来要说「好的」',
+    expect: { says: ['可惜没如果'], notSays: ['江南', '多跳', '再切'], maxRounds: 3 } },
+  // 2026-11-16 19:30: XiaoAi's skip did not land, 《江南》 1:40 in. The engine lets media_control through then (6d32cf8);
+  // the model has to want it, and not say 「小爱已经切过了」
+  handednextmissed: { say: '下一首歌', fg: 'com.netease.cloudmusic.tv', screen: screens.launcher,
+    playing: { app: 'com.netease.cloudmusic.tv', state: 'playing', title: '江南 (River South)', artist: '林俊杰', position: '1:40' },
+    recent: [{ said: '换一首歌', replied: '已经换好了，网易云正在放林俊杰的《江南》。', minutes_ago: 1 }],
+    note: '小爱自己的处理：动作 PlaybackController.Next、Template.Toast；它本来要说「好的」',
+    expect: { called: ['media_control'], notSays: ['已经切过了', '小爱已经切'] } },
+  // 2026-11-16 19:45 on the TV, in order: XiaoAi's StartOver did not land (the song was paused at 2:13); 星仪 pressed
+  // play and said what was playing; to 「这是重播」 it said 「对，现在放的是重新从头播的」; 「但是没有重播」 got a plan to
+  // switch on 单曲循环; 「重播不是单曲循环」 at last played the song again with netease_play — the replay
+  restartsong: { say: '重播这首歌', fg: 'com.netease.cloudmusic.tv', screen: screens.launcher,
+    playing: { app: 'com.netease.cloudmusic.tv', state: 'paused', title: '修炼爱情 (Practice Love)', artist: '林俊杰', position: '2:13' },
+    note: '小爱自己的处理：动作 PlaybackController.StartOver',
+    expect: { called: ['netease_play'], avoid: ['plan', 'screen_look'], notSays: ['单曲循环'] } },
+  isreplay: { say: '这是重播', fg: 'com.netease.cloudmusic.tv', screen: screens.launcher,
+    playing: { app: 'com.netease.cloudmusic.tv', state: 'playing', title: '修炼爱情 (Practice Love)', artist: '林俊杰', position: '2:31' },
+    note: '小爱自己的处理：动作 PlaybackController.StartOver、Suggestion.ShowContextSuggestions',
+    recent: [{ said: '重播这首歌', replied: '网易云音乐 正在播放《修炼爱情 (Practice Love)》 林俊杰（因你而在）', minutes_ago: 0 }],
+    expect: { called: ['netease_play'], notSays: ['重新从头播', '从头播的', '是重播'] } },
+  notreplayed: { say: '但是没有重播', fg: 'com.netease.cloudmusic.tv', screen: screens.launcher,
+    playing: { app: 'com.netease.cloudmusic.tv', state: 'playing', title: '修炼爱情 (Practice Love)', artist: '林俊杰', position: '2:45' },
+    note: '小爱自己的处理：动作 Template.Toast；它本来要说「我还不会唱呢，但是我先记下来啦，学会了就唱给你听~」',
+    recent: [{ said: '重播这首歌', replied: '网易云音乐 正在播放《修炼爱情 (Practice Love)》 林俊杰（因你而在）', minutes_ago: 0 },
+      { said: '这是重播', replied: '对，现在放的是重新从头播的《修炼爱情》，林俊杰的。', minutes_ago: 0 }],
+    expect: { called: ['netease_play'], avoid: ['plan', 'screen_look', 'screen_read'], notSays: ['单曲循环'] } },
+  notloop: { say: '重播不是单曲循环', fg: 'com.netease.cloudmusic.tv', screen: screens.launcher,
+    playing: { app: 'com.netease.cloudmusic.tv', state: 'playing', title: '修炼爱情 (Practice Love)', artist: '林俊杰', position: '3:02' },
+    note: '小爱自己的处理：动作 PlaybackController.SetProperty、Template.Toast；它本来要说「好的，已设为列表循环模式」',
+    recent: [{ said: '这是重播', replied: '对，现在放的是重新从头播的《修炼爱情》，林俊杰的。', minutes_ago: 1 },
+      { said: '但是没有重播', replied: '已停止。', minutes_ago: 0 }],
+    expect: { called: ['netease_play'], avoid: ['plan', 'screen_look'] } },
   handedbili: { say: '打开B站搜索星辰亻旅行者播放它播放量最高的一个视频', fg: 'com.xiaomi.voicecontrol', screen: screens.launcher,
     results: screens.biliUp, note: '小爱自己的处理：动作 Video.ShowSearchPage、Template.Toast；它本来要说「小爱没有找到星辰人旅行者的资源，为您推荐以下相关内容」',
     expect: { called: ['bili_videos'], play: '示例作品' } },
   // memory: explicit facts, recall, and vague requests resolved by facts and learned habits
-  rememberfact: { say: '记住我最喜欢的歌手是林俊杰', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher, expect: { called: ['remember'] } },
+  // A fact the profile does not have yet. Since 2026-11-11 a scenario without a profile of its own gets REAL_PROFILE,
+  // which has this very fact: 2026-11-16 M78 answered 「已经记着了」 without calling remember — true, and the scenario
+  // failed. The habits still name 林俊杰 (常听 4次): that is not the fact, and 「已经记着了」 would be untrue here.
+  rememberfact: { say: '记住我最喜欢的歌手是林俊杰', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher,
+    profile: REAL_PROFILE.replace('- 用户最喜欢的歌手是林俊杰\n', ''), expect: { called: ['remember'] } },
+  // the same sentence when the profile has it: remember (「本来就记得」) or saying so are both right; nothing else is
+  rememberknown: { say: '记住我最喜欢的歌手是林俊杰', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher, profile: REAL_PROFILE,
+    expect: { avoid: ['forget', 'netease_play', 'open_app', 'plan'], says: ['记着', '记得', '记住', '记下'] } },
   recall: { say: '你记得我什么', fg: 'xyz.erapi0neer.orrery', screen: screens.launcher, profile: PROFILE,
     expect: { avoid: ['remember', 'forget'], says: '林俊杰' } },
   // the channel's page (bili_videos' up.space since 2026-11-07), or B站's search for it
@@ -1110,12 +1185,20 @@ function searchAnswer(calls, argsOf, results, said) {
   return r?.ok && r.searched && a && !/没有找到|没找到|没查到|查不到|未找到|找不到|无法确认|没有相关|暂无/.test(a) ? a : null;
 }
 // TvTools' gates for what XiaoAi already did with this sentence (environment.note lists its instructions)
-function handedDenial(name, args, note) {
+function handedDenial(name, args, note, state, sc) {
   if (!note) return null;
   if ((name === 'adjust_volume' || name === 'set_volume') && /Speaker\./.test(note))
     return '小爱已经为这句话调过音量了，再调一次会翻倍；用 tv_status 看现在的音量，告诉用户结果。';
-  if (name === 'media_control' && /next|previous/.test(args.action ?? '') && /PlaybackController\.|AudioPlayer\.|VideoPlayer\./.test(note))
-    return '小爱已经为这句话切过了，再切一次会多跳一个；用 media_now_playing 看现在放的是什么，告诉用户结果。';
+  if (name === 'media_control' && /next|previous/.test(args.action ?? '') && /PlaybackController\.|AudioPlayer\.|VideoPlayer\./.test(note)) {
+    // since 6d32cf8 (MediaSessions.xiaoaiSkip): XiaoAi's skip is believed unless the song playing is the one of the
+    // request and was more than 3 s in then; never with 云视听极光 in front
+    const secs = (s) => { const m = /^(\d+):(\d\d)$/.exec(String(s ?? '')); return m ? Number(m[1]) * 60 + Number(m[2]) : -1; };
+    const now = state?.playing, then = sc?.playing;
+    const missed = now && then && now.state === 'playing' && now.title === then.title && secs(then.position) > 3 && state.fg !== 'com.ktcp.video';
+    if (!missed) return '小爱已经为这句话切过了，再切一次会多跳一个；' + (now
+      ? `现在网易云音乐 ${now.state === 'paused' ? '已暂停' : '正在播放'}《${now.title}》${now.artist ? ' ' + now.artist : ''}${now.position ? '，放到 ' + now.position : ''}：照这个告诉用户结果。`
+      : '用 media_now_playing 看现在放的是什么，告诉用户结果。');
+  }
   return null;
 }
 // AgentLoop.directAnswer / spoken
@@ -1161,11 +1244,17 @@ function closesOnEvidence(calls, argsOf, results) {
 async function run(name) {
   const sc = scenarios[name];
   const state = { karaokeSim: sc.karaokeSim, karaoke: sc.karaoke, say: sc.say, playing: sc.playing, fg: sc.fg, screen: sc.screen, results: sc.results, history: sc.history, noteList: sc.noteList,
-    screenOn: !sc.screenOff };
+    screenOn: !sc.screenOff, volumeNow: sc.volumeNow };
   if (!process.env.CAL_CLEAN_ENV) state.apps = sc.apps ?? REAL_APPS;
+  // a TV that has TV Bro opens a web address in it (the TV since 2026-11-08). Until 2026-11-18 only install_app 浏览器
+  // gave the simulation a browser: hongguowebhas (TV Bro installed) opened the right site in round 1 on 11-11, was told
+  // 「电视上没有应用能打开这个链接」 and spent four rounds on TV Bro; hongguoapk ran to round 10 the same way on 11-16.
+  state.browser = (state.apps ?? []).includes('TV Bro');
   const tools = sim(state);
   const env = { time: '2026-11-04 23:20 星期三', foreground: sc.fg, volume: '10/100',
-    now_playing: sc.playing ? `${sc.playing.app === 'com.netease.cloudmusic.tv' ? '网易云音乐' : '哔哩哔哩'} 正在播放《${sc.playing.title}》` : null,
+    // as AgentEngine.environment since 2026-11-18: paused or playing, and where the track is when the session says
+    now_playing: sc.playing ? `${sc.playing.app === 'com.netease.cloudmusic.tv' ? '网易云音乐' : '哔哩哔哩'} ${sc.playing.state === 'paused' ? '已暂停' : '正在播放'}《${sc.playing.title}》`
+      + (sc.playing.artist && sc.playing.position ? ` ${sc.playing.artist}` : '') + (sc.playing.position ? `，放到 ${sc.playing.position}` : '') : null,
     screen: sc.screenOff ? '关着（电视在待机）' : '开着',
     // AgentEngine.environment since 2026-11-06: where the TV is, the Chinese calendar, the quiet hours (23:00-7:00)
     place: '上海徐汇', calendar: '农历九月廿六（丙午马年）',
@@ -1184,6 +1273,7 @@ async function run(name) {
     env.apps = sc.apps ?? REAL_APPS;
     if (!sc.profile) sc.profile = REAL_PROFILE;
   }
+  state.profile = sc.profile;
   for (const k of (process.env.CAL_DROP ?? '').split(',').filter(Boolean)) delete env[k];
   if (process.env.CAL_TIME_LUNAR) { env.time += '，农历九月廿六'; delete env.calendar; }
   if (sc.note) env.note = sc.note;
@@ -1211,6 +1301,7 @@ async function run(name) {
   if (gated && gated.size) console.log(`  (data tools: ${[...gated].join(', ')})`);
   let total = 0;
   for (let round = 1; round <= 10; round++) {
+    state.rounds = round;   // the model rounds this scenario took (expect.maxRounds)
     if (!state.strong && STRONG && STRONG !== MODEL && (round >= ESCALATE_ROUND || (state.failures ?? 0) >= ESCALATE_FAILURES)) {
       state.strong = true;
       console.log(`  R${round} (escalated to ${STRONG}: ${round >= ESCALATE_ROUND ? 'not done by round ' + ESCALATE_ROUND : 'failed twice'})`);
@@ -1252,7 +1343,7 @@ async function run(name) {
         results[i] = { ok: false, status: 'rejected', message: NEED_PLAN }; continue;
       }
       if (OPENS.has(c.function.name) && asksOnly(sc.say)) { results[i] = { ok: false, status: 'rejected', message: JUST_ASKING }; continue; }
-      const denied = handedDenial(c.function.name, args, sc.note);
+      const denied = handedDenial(c.function.name, args, sc.note, state, sc);
       if (denied) { results[i] = { ok: false, status: 'denied', message: denied }; continue; }
       const fn = tools[c.function.name];
       results[i] = fn ? fn(args) : { ok: false, status: 'rejected', message: '没有这个工具' };
@@ -1315,6 +1406,7 @@ async function run(name) {
     if (sc.expect.noUp && (state.keys ?? []).includes('up')) problems.push('pressed up (the remote tutorial)');
     if (sc.expect.calledAny && !sc.expect.calledAny.some((tool) => (state.called ?? []).includes(tool))) problems.push(`called none of ${sc.expect.calledAny.join(' / ')}`);
     if (sc.expect.exited && !state.exited) problems.push('never left the app (media_control exit)');
+    if (sc.expect.maxRounds && state.rounds > sc.expect.maxRounds) problems.push(`${state.rounds} model rounds, at most ${sc.expect.maxRounds} wanted`);
     // the model may still reach for set_hints: what counts is that the engine's gate left the setting alone
     if (sc.expect.hintsKept && state.hintsSwitched) problems.push('the hint card was switched although nobody asked for it');
     if (sc.expect.notRun && state.playing?.run) problems.push(`played a run of ${state.playing.artist} instead of the song`);

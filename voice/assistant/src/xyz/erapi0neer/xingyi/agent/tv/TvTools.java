@@ -96,6 +96,10 @@ final class TvTools implements AutoCloseable {
     /** XiaoAi's own instructions for the request this task came from (empty otherwise). In 星仪接管模式 XiaoAi still
      * acts on its basic functions: a relative action it already took is not repeated (a second 下一首 or 调大). */
     volatile Set<String> xiaoaiDid = Collections.emptySet();
+    /** When this request reached 星仪 (elapsed-time clock, 0 = unknown) and, for a sentence XiaoAi switched tracks for
+     * itself, what was playing then: media_control reads both to tell whether XiaoAi's skip landed (requestStarted). */
+    volatile long requestElapsed;
+    volatile MediaSessions.Session atRequest;
     /** What find_installer already looked up in this task: the model plans and then searches the same app again
      * (2026-11-08: two searches, ~10 s each), and the second one finds exactly what the first did. */
     private final InstallerCache installers = new InstallerCache();
@@ -182,6 +186,44 @@ final class TvTools implements AutoCloseable {
     private boolean xiaoaiDid(String... prefixes) {
         for (String n : xiaoaiDid) for (String p : prefixes) if (n.startsWith(p)) return true;
         return false;
+    }
+
+    /** XiaoAi's instructions that switch tracks or episodes. */
+    private static final String[] SKIPS = {"PlaybackController.", "AudioPlayer.", "VideoPlayer."};
+    /** How long after the request XiaoAi's own skip may still land: 星仪's key waits that long before it is pressed. */
+    static final long SKIP_GRACE_MS = 4000;
+
+    /** The engine calls this as a task starts, after xiaoaiDid: one read of the session, only when XiaoAi switched. */
+    void requestStarted(long elapsed) {
+        requestElapsed = elapsed;
+        if (xiaoaiDid(SKIPS)) atRequest = nowPlaying();
+    }
+
+    /** XiaoAi switched tracks for this sentence and the player shows it did not (MediaSessions.xiaoaiSkip): then 星仪's
+     * key is the only skip there is. Never in 云视听极光, which keeps no session to tell by. */
+    private boolean skipMissed(MediaSessions.Session now) {
+        if (JIGUANG.equals(foreground())) return false;
+        return MediaSessions.xiaoaiSkip(atRequest, now, requestElapsed, SystemClock.elapsedRealtime())
+                == MediaSessions.Skip.MISSED;
+    }
+
+    /** The end of the refusal of a second skip: what plays now, so the answer needs no media_now_playing round. */
+    private String playingNow(MediaSessions.Session now) {
+        if (now == null) return "用 media_now_playing 看现在放的是什么，告诉用户结果。";
+        return "现在" + label(now.pkg) + " " + now.describe() + MediaSessions.at(now, SystemClock.elapsedRealtime()) + "：照这个告诉用户结果。";
+    }
+
+    /** XiaoAi's skip landing late after all, before 星仪 presses its own: what is playing then, or null when nothing
+     * changed by SKIP_GRACE_MS after the request. */
+    private JSONObject skipLandedLate(Tool.Turn t) throws Exception {
+        MediaSessions.Session before = nowPlaying();
+        while (before != null && SystemClock.elapsedRealtime() < requestElapsed + SKIP_GRACE_MS && !t.cancelled()) {
+            Thread.sleep(300);
+            MediaSessions.Session s = nowPlaying();
+            if (s != null && !MediaSessions.sameTrack(before, s))
+                return ok("observed", label(s.pkg) + " " + s.describe() + "（小爱的那一下切过去了，星仪没有再切）").put("session", session(s));
+        }
+        return null;
     }
 
     /** How often this task may search the web; one instance per task, because TvTools is one per task. */
@@ -701,8 +743,12 @@ final class TvTools implements AutoCloseable {
     }
     private JSONObject session(MediaSessions.Session s) throws JSONException {
         if (s == null) return null;
-        return new JSONObject().put("app", label(s.pkg)).put("package", s.pkg).put("state", s.state)
+        JSONObject o = new JSONObject().put("app", label(s.pkg)).put("package", s.pkg).put("state", s.state)
                 .put("title", s.title).put("artist", s.artist).put("album", s.album);
+        // how far into the track: what tells 「这是重播吗」 (MediaSessions.at); the spoken message stays as it was
+        String at = MediaSessions.at(s, SystemClock.elapsedRealtime());
+        if (!at.isEmpty()) o.put("position", at.substring(at.indexOf("放到") + 2).trim());
+        return o;
     }
 
     /**
@@ -2705,8 +2751,13 @@ final class TvTools implements AutoCloseable {
         tools.add(new Base("media_control") {
             @Override public Gate gate(JSONObject a, Turn t) {
                 String act = a.optString("action");
-                if (("next".equals(act) || "previous".equals(act)) && xiaoaiDid("PlaybackController.", "AudioPlayer.", "VideoPlayer."))
-                    return Gate.deny("小爱已经为这句话切过了，再切一次会多跳一个；用 media_now_playing 看现在放的是什么，告诉用户结果。");
+                // XiaoAi's skip is believed unless the player shows it never came (2026-11-16 19:30, skipMissed). The
+                // refusal says what plays now, so the answer needs no media_now_playing round (calibration 11-18: the
+                // model pressed next first in half the runs, then spent a round asking what was on)
+                if (("next".equals(act) || "previous".equals(act)) && xiaoaiDid(SKIPS)) {
+                    MediaSessions.Session now = nowPlaying();
+                    if (!skipMissed(now)) return Gate.deny("小爱已经为这句话切过了，再切一次会多跳一个；" + playingNow(now));
+                }
                 return Gate.act();
             }
             @Override public String describe(JSONObject a, Turn t) {
@@ -2729,6 +2780,11 @@ final class TvTools implements AutoCloseable {
                 // 云视听极光 has no media session: its key has to go into its own window (see jiguangKey)
                 JSONObject jiguang = jiguangKey(action, code, t);
                 if (jiguang != null) return jiguang;
+                // the gate let a skip through that XiaoAi had sent too, because it had not landed: it still may
+                if (("next".equals(action) || "previous".equals(action)) && xiaoaiDid(SKIPS)) {
+                    JSONObject late = skipLandedLate(t);
+                    if (late != null) return late;
+                }
                 long now = SystemClock.uptimeMillis();
                 audio.dispatchMediaKeyEvent(new KeyEvent(now, now, KeyEvent.ACTION_DOWN, code, 0));
                 audio.dispatchMediaKeyEvent(new KeyEvent(now, now, KeyEvent.ACTION_UP, code, 0));

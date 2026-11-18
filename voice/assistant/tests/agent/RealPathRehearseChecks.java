@@ -166,7 +166,8 @@ final class RealPathRehearseChecks {
         }
         check(n >= 20, "真树的局面表扫到 " + n + " 条局面（十条场景每条至少正反两条，至少 20 条）");
         JSONArray shipped = new JSONObject(shippedJson()).getJSONArray("scenarios");
-        check(shipped.length() == 10, "注册表里还是十个场景 " + shipped.length());
+        // at least the ten of 2026-11-14 (a scenario added is no failure; the ids below say none went missing)
+        check(shipped.length() >= 10, "注册表里至少还是那十个场景 " + shipped.length());
         List<String> short_ = new ArrayList<>();
         for (int i = 0; i < shipped.length(); i++) {
             String id = shipped.getJSONObject(i).optString("id", "");

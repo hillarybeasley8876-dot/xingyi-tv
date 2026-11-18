@@ -1,0 +1,40 @@
+{
+ "id": "next-song-through-xiaoai",
+ "title": "真机场景：对小爱说「下一首」，歌换了而且只换一首",
+ "brief": "briefs/next-song-through-xiaoai.md",
+ "isolation": "worktree",
+ "maxRounds": 6,
+ "timeoutMin": 90,
+ "owns": [
+  "tests/agent/realpath/scenarios/next-song-through-xiaoai.py",
+  "tests/agent/realpath/rehearse.py",
+  "tests/agent/realpath/scenarios.json",
+  "tests/agent/unverified.json"
+ ],
+ "accept": [
+  {
+   "name": "core-checks",
+   "cmd": "sh tests/agent/run_core.sh",
+   "timeoutS": 500,
+   "must": [
+    "re:agent core: ([1-9]\\d{4,}|592[5-9]|59[3-9]\\d|[6-9]\\d\\d\\d) passed, 0 failed"
+   ]
+  },
+  {
+   "name": "android-check",
+   "cmd": "sh tests/agent/android_check.sh",
+   "timeoutS": 400,
+   "must": [
+    "ANDROID CHECK OK"
+   ]
+  },
+  {
+   "name": "bridge",
+   "cmd": "sh tests/agent/accept_next_song.sh",
+   "timeoutS": 900,
+   "must": [
+    "NEXT SONG OK"
+   ]
+  }
+ ]
+}
