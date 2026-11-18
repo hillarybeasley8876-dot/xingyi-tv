@@ -23,7 +23,7 @@
 
 不需要电视，也不需要模型密钥。需要：JDK 17（`JAVA_HOME`）、Node 22 以上、Python 3（带 `pillow`、`numpy`）、
 Android API 35 的 `android.jar`（`ANDROID_JAR`，或 `ANDROID_HOME` 下有 `platforms/android-35`）。
-Windows 用 Git Bash，Linux / macOS 用 sh。
+Windows 用 Git Bash（作者的环境，全部验证过）；Linux / macOS 用 sh——脚本按两种环境写了，但在 Linux 上的完整运行还没验证过，遇到问题欢迎提 issue。
 
 ```sh
 cd voice/assistant
