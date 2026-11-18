@@ -346,7 +346,12 @@ final class TvTools implements AutoCloseable {
         // 历史记录 behind .sms.SmsLoginDialogActivityV3): no step of a task should stare at it, so every read closes it
         if (PlayerPages.isBiliLogin(BILI.equals(Eyes.foregroundPackage()) ? BILI : "", Eyes.foregroundClass())) {
             adb.keys(KEYS.get("back"));
-            Thread.sleep(600);
+            // polled, not slept 600 ms: the dismiss is usually up in one or two frames (2026-11-18 audit: this read is
+            // taken several times per video, and every sleep was paid per read). 600 ms stays the ceiling.
+            long goneBy = SystemClock.uptimeMillis() + 600;
+            while (SystemClock.uptimeMillis() < goneBy
+                    && PlayerPages.isBiliLogin(BILI.equals(Eyes.foregroundPackage()) ? BILI : "", Eyes.foregroundClass()))
+                Thread.sleep(150);
             d = readOnce();
         }
         // and its splash ad covers the page underneath: a full-screen ad with a 「跳过 5」 countdown, on a cold start and
@@ -356,7 +361,9 @@ final class TvTools implements AutoCloseable {
         ScreenDigest.Element skipButton = skip > 0 && Eyes.get() != null ? d.element(skip) : null;
         if (skipButton != null) {
             Eyes.click(skipButton.node);
-            Thread.sleep(500);
+            // the ad's window goes with the click: Eyes' change counter (cheap) says when, 500 ms is the ceiling
+            long seen = Eyes.changeCount(), goneBy = SystemClock.uptimeMillis() + 500;
+            while (SystemClock.uptimeMillis() < goneBy && Eyes.changeCount() == seen) Thread.sleep(150);
             d = readOnce();
         }
         return d;
