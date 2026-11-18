@@ -3058,7 +3058,7 @@ final class TvTools implements AutoCloseable {
                 start(new Intent(JIGUANG_OPEN, uri).setPackage(JIGUANG));
                 long began = SystemClock.uptimeMillis(), end = began + 20000;
                 ScreenDigest d = null;
-                boolean onSearch = false;
+                boolean onSearch = false, early = false;
                 while (SystemClock.uptimeMillis() < end) {
                     if (t.cancelled()) throw new InterruptedException();
                     Thread.sleep(500);
@@ -3074,10 +3074,14 @@ final class TvTools implements AutoCloseable {
                     if (SystemClock.uptimeMillis() - began > 6000) {
                         String cls = FrontApp.cls(adb.call(LocalAdb::focusedApp));
                         String simple = cls.substring(cls.lastIndexOf('.') + 1);
-                        if (simple.contains("Start") || simple.contains("Splash") || simple.contains("Open") || simple.isEmpty()) break;
+                        if (simple.contains("Start") || simple.contains("Splash") || simple.contains("Open") || simple.isEmpty()) { early = true; break; }
                     }
                 }
                 if (d == null) d = settle(before, 500);
+                // left early: what the screen shows cannot be told, so neither 「打开了」 nor 「没打开」 — a neutral word to
+                // the model and screen_look (2026-11-18 review: the search page may still open a few seconds later)
+                if (early) return withScreen(ok("requested", "搜索已交给云视听极光，它的页面还在加载：这个应用的界面读不出文字，"
+                        + "过几秒用 screen_look 看一眼搜出来的是什么；要直接打开某一部用 tencent_video_open"), d);
                 boolean found = onSearch || (JIGUANG.equals(foreground()) && d.contains(key));
                 return withScreen(found ? ok("observed", "云视听极光的搜索页已打开，搜的是「" + keyword
                         + "」。这个应用的界面读不出文字：要看结果用 screen_look，要直接打开某一部用 tencent_video_open")
