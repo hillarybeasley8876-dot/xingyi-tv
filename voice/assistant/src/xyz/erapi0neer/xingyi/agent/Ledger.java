@@ -26,7 +26,9 @@ public final class Ledger {
     /** {tool, what, status, ok} plus "read": true for read-only calls, for every tool that actually ran, in order. */
     public final List<JSONObject> actions = new ArrayList<>();
     public State state = State.RUNNING;
-    public long updatedAt;
+    // volatile: the install heartbeat (OfficialAppInstaller) reports progress from a thread of its own, and every report
+    // goes through the loop's emit(), which writes this field (2026-11-18 review)
+    public volatile long updatedAt;
     /** The panel's data card (weather, quotes, a list) from the last tool that produced one, drawn under the steps;
      * the latest wins. Never saved: a card belongs to the answer on screen, not to the task's record. */
     public volatile JSONObject card;

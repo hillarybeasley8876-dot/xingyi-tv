@@ -560,7 +560,14 @@ final class TvTools implements AutoCloseable {
     private boolean dismissBiliLogin(String[] front) throws IOException, InterruptedException {
         if (!PlayerPages.isBiliLogin(front[0], front[1])) return false;
         adb.keys(KEYS.get("back"));
-        Thread.sleep(600);
+        // polled, as in read(): the dialog is gone in a frame or two, and openBiliVideo pays this every round of its
+        // wait (2026-11-18 review). 600 ms stays the ceiling.
+        long goneBy = SystemClock.uptimeMillis() + 600;
+        while (SystemClock.uptimeMillis() < goneBy) {
+            Thread.sleep(150);
+            String[] now = frontActivity();
+            if (!PlayerPages.isBiliLogin(now[0], now[1])) break;
+        }
         return true;
     }
 
@@ -2926,10 +2933,15 @@ final class TvTools implements AutoCloseable {
                     // has gone and the keys can go now (2026-11-18 audit: this slept 3.5 s on every switch, and
                     // 11-09 20:13 the whole tool took 12.1 s). BAR_HIDES_MS stays the ceiling.
                     long goneBy = SystemClock.uptimeMillis() + BAR_HIDES_MS;
+                    // two reads in a row without the label: one null can be a read that failed or caught the bar mid-
+                    // animation, and pressing from a bar still up would seek the song (2026-11-18 review of this fix)
+                    boolean gone = false;
                     while (SystemClock.uptimeMillis() < goneBy) {
                         Thread.sleep(250);
                         d = read();
-                        if (Karaoke.state(d.text()) == null) break;
+                        Boolean saw = Karaoke.state(d.text());
+                        if (saw == null && gone) break;
+                        gone = saw == null;
                     }
                     micKeys(true);
                 }
@@ -3056,9 +3068,14 @@ final class TvTools implements AutoCloseable {
                     d = read();
                     if (d.contains(key) && d.elements.size() > 3) break;
                     // 云视听极光把搜索页画在自己手里，Eyes 和读屏都读不到它（2026-11-10 10:48 / 13:13：两次都跑满 20 秒，
-                    // 回答「已发出搜索，但没看到搜索页」）。前台已经是它、翻页也拿不到任何窗口事件，就不再干等：6 秒以后
-                    // 按「已发出」回答，并让模型看图（2026-11-18 audit）
-                    if (SystemClock.uptimeMillis() - began > 6000 && Eyes.changeCount() == before) break;
+                    // 回答「已发出搜索，但没看到搜索页」）。6 秒后还停在它自己的启动/跳转页上（不是搜索页、也读不到
+                    // 关键词），就不再干等，按「搜索已发出、页面自己会加载」回答，让模型看图（2026-11-18 audit；审查
+                    // 指出用 Eyes 的全局事件计数不行——任何应用的事件都会让它变，这里改看前台窗口的类名）
+                    if (SystemClock.uptimeMillis() - began > 6000) {
+                        String cls = FrontApp.cls(adb.call(LocalAdb::focusedApp));
+                        String simple = cls.substring(cls.lastIndexOf('.') + 1);
+                        if (simple.contains("Start") || simple.contains("Splash") || simple.contains("Open") || simple.isEmpty()) break;
+                    }
                 }
                 if (d == null) d = settle(before, 500);
                 boolean found = onSearch || (JIGUANG.equals(foreground()) && d.contains(key));

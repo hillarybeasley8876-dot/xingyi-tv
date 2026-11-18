@@ -80,9 +80,10 @@ public final class AgentEngine {
     private static final Pattern BILI_WORDS = Pattern.compile("b站|bilibili|哔哩", Pattern.CASE_INSENSITIVE);
     /** A song asked for (「播放汪苏泷的晴」「我要唱林俊杰的歌」): NetEase takes 10-14 s from silence to playing, most of it its
      * own cold start (2026-11-18 audit of the TV's perf log: 12 of 16 netease_play calls at 10-16 s; the catalog's two
-     * HTTP calls answer in 0.3 s). The verb must be followed by 歌/音乐/曲, so 「我想知道…」 「这首歌叫什么」 are left alone. */
-    private static final Pattern SONG_WORDS = Pattern.compile("唱|放|听|来一首|来首|播放|点歌|点一首");
-    private static final Pattern SONG_NOUN = Pattern.compile("歌|音乐|曲|fm", Pattern.CASE_INSENSITIVE);
+     * HTTP calls answer in 0.3 s). The verb and the noun must be neighbours within one clause, so 「我想知道…」
+     * 「这首歌叫什么」 and 「你会唱歌吗」 are left alone. */
+    private static final Pattern SONG_ASK = Pattern.compile(
+            "(?:播放|点歌|点一首|来一首|来首|放|听|唱)[^，。！？,.!?]{0,10}(?:的歌|歌|音乐|fm)", Pattern.CASE_INSENSITIVE);
     /** This TV's home screen (launcher/). */
     static final String HOME_PKG = "xyz.erapi0neer.orrery";
     private static final Pattern ABOUT_TIME = Pattern.compile("多久|多长时间|几个?小时|几分钟|看了多少|用了多少|什么时候看");
@@ -931,14 +932,20 @@ public final class AgentEngine {
      * brought up (its own screen, the way it starts), never told to play; netease_play does that. Never throws. */
     private void startNeteaseEarly(String text, TvTools tools) {
         try {
-            if (text == null || !SONG_WORDS.matcher(text).find() || !SONG_NOUN.matcher(text).find()) return;
+            // the verb and the noun must be neighbours: 「这首歌是谁唱的」 「你会唱歌吗」 「放点音乐视频」 are no song request
+            // (2026-11-18 review: two separate find() brought NetEase up over a paused video)
+            if (text == null || !SONG_ASK.matcher(text).find()) return;
+            if (BILI_WORDS.matcher(text).find()) return; // asked about B站: that prewarm is the one that runs
             // not in standby (a song needs the screen first, and a player cold in the dark only takes memory on a 2 GB TV)
             android.os.PowerManager pm = (android.os.PowerManager) app.getSystemService(Context.POWER_SERVICE);
             if (pm != null && !pm.isInteractive()) return;
-            // nothing playing and nothing else to disturb: a video in the background would be covered by NetEase's screen
+            // a video in front (B站 / 云视听极光), paused or playing: its screen would be covered. Anything else is fine —
+            // a song request brings NetEase forward either way when the model gets to netease_play
+            String fg = tools.foreground();
+            if (TvTools.BILI.equals(fg) || TvTools.JIGUANG.equals(fg)) return;
             MediaSessions.Session playing = tools.nowPlaying();
-            if (playing != null && "playing".equals(playing.state) && !TvTools.NETEASE.equals(playing.pkg)) return;
-            if (TvTools.NETEASE.equals(tools.foreground())) return; // already up: nothing to warm
+            if (playing != null && ("playing".equals(playing.state) || "paused".equals(playing.state)) && !TvTools.NETEASE.equals(playing.pkg)) return;
+            if (TvTools.NETEASE.equals(fg)) return; // already up: nothing to warm
             Intent i = tools.launchIntent(TvTools.NETEASE);
             if (i == null) return; // not installed: netease_play will say so
             app.startActivity(i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));

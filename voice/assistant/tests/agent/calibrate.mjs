@@ -1384,10 +1384,16 @@ async function run(name) {
     for (const tool of sc.expect.called ?? []) if (!(state.called ?? []).includes(tool)) problems.push(`never called ${tool}`);
     if (sc.expect.opensEpisode != null && !(state.videoOpens ?? []).some((v) => v.episode === sc.expect.opensEpisode)) problems.push(`tencent_video_open episode was not ${sc.expect.opensEpisode}: ${JSON.stringify(state.videoOpens ?? [])}`);
     if (sc.expect.opensPlay != null && !(state.videoOpens ?? []).some((v) => v.play === sc.expect.opensPlay)) problems.push(`tencent_video_open play was not ${sc.expect.opensPlay}: ${JSON.stringify(state.videoOpens ?? [])}`);
-    // says: one string, or several ways of saying it (7006652 / 7,006,652 / 一千零三十八)
+    // says: one string, or several ways of saying it (7006652 / 7,006,652 / 七百万零六千六百五十二)
     const says = sc.expect.says == null ? [] : [].concat(sc.expect.says);
     // a name in Latin letters is the same name however it is cased (MINIMAX / MiniMax)
-    if (says.length && !says.some((w) => String(state.final ?? '').toLowerCase().includes(String(w).toLowerCase()))) problems.push(`answer lacks ${says.join(' / ')}: ${state.final}`);
+    // a number of four digits or more counts when the answer says its digits, however it groups them: 2026-11-18 the
+    // model answered 「700 万 6652」 and 「34 亿 8678 万 4401」 — right, and read out the way Chinese says numbers — and
+    // the literal check failed it.
+    const digits = (s) => String(s ?? '').replace(/[^0-9]/g, '');
+    const said = String(state.final ?? '').toLowerCase();
+    if (says.length && !says.some((w) => said.includes(String(w).toLowerCase())
+        || (digits(w).length >= 4 && digits(said).includes(digits(w))))) problems.push(`answer lacks ${says.join(' / ')}: ${state.final}`);
     for (const w of sc.expect.notSays ?? []) if (String(state.final ?? '').includes(w)) problems.push(`answer says ${w}: ${state.final}`);
     if (sc.expect.keyword && !(state.keywords ?? []).some((k) => k.includes(sc.expect.keyword))) problems.push(`no search for ${sc.expect.keyword} (${(state.keywords ?? []).join(',')})`);
     if (sc.expect.awake && !state.screenOn) problems.push('the screen stayed off');
